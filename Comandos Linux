@@ -74,6 +74,8 @@ uname -or      => Informações do Sistema - Retorna nome do linux(tipo de siste
 uname -as      => Informações do Sistema -  Retorna nome do linux(tipo de sistema) => "Linux mateus-pc 5.4.0-42-generic #46~18.04.1-Ubuntu SMP Fri Jul 10 07:21:24 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux"
 lsb_release -a => retorna informações do sistema 
 cat /etc/os-release => informações do sistema - arcaico
+inxi -S        => informações do sistema
+
 
 watch -n 0.5 nvidia-smi       => Monitorar GPU
 watch -d -n 0.5 nvidia-smi    => Monitorar GPU

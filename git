@@ -18,6 +18,7 @@ git pull => atualizar o repositório local de acordo com o git.
 git merge origin/jose-luiz => Aplica na branch atual o conteúdo da branch Jose-Luiz
 git log --oneline => log compacto em apenas uma linha
 git diff main origin/main => Diferença com o repositório local para o repositório remoto. Necessário executar "git fetch" antes
+git config --global credential.helper cache => Salva as credencias (a próxima senha solicitada será salva)
 
 
 ::Sequência de comandos para subir um repositório apartir do terminal (testar melhor esta sequência)
