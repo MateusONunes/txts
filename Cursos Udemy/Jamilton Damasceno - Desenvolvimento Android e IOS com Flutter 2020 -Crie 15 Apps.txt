@@ -1,0 +1,640 @@
+Desenvolvimento Android e IOS com Flutter 2020 -Crie 15 Apps
+Apps nativos para Android e IOS com Flutter, crie Apps como: Youtube, WhatsApp, Uber, OLX e muito mais!
+4,7 (2.400 classificações)
+9.919 alunos inscritos
+Criado por Jamilton Damasceno
+Última atualização em 6/2020
+ Português
+ Português [Automático]
+ 
+ 
+ Conteúdo do curso
+Recolher tudo 277 aulas
+61:34:20
+–
+Vamos começar?
+09:14
+Boas vindas
+Visualizar
+09:09
+Grupo no Facebook & Redes sociais
+00:05
+–
+Instalação do Flutter
+01:18:00
+Instalação do Flutter - O que irei aprender?
+00:22
+Instalação no Windows
+25:21
+Instalação no MacOS
+23:10
+Instalação no Linux
+16:41
+{Opcional} Instalando VS Code
+12:26
+–
+Criando primeiro projeto
+01:05:28
+Criando primeiro projeto - o que irei aprender?
+00:24
+Interface do Android Studio
+16:48
+Configuração do Android Studio
+14:10
+Virtulização
+08:38
+Configurando Emulador
+15:22
+Executando App no dispositivo real
+10:06
+–
+Executando App no IOS
+17:57
+Instalando Xcode & simulador
+17:57
+–
+Criando meu primeiro App
+34:09
+Criando meu primeiro App - o que irei aprender?
+00:23
+Configurando o projeto
+11:43
+Criando o App
+22:03
+–
+Aprenda Dart do zero
+02:34:23
+Aprenda Dart do zero - o que irei aprender?
+00:51
+Você já sabe outra linguagem de programação?
+00:13
+O que é uma linguagem de programação?
+07:12
+Linguagem de programação Dart
+06:20
+Executando códigos online
+17:11
+O que são variáveis - teoria
+09:57
+O que são variáveis - prática
+14:41
+Tipos de variáveis
+11:20
+Entenda Arrays
+12:28
+Operadores aritiméticos
+08:04
+Operadores relacionais e lógicos
+20:11
+Controle de fluxo - if else
+14:36
+Controle de fluxo - switch
+07:00
+Loops - for & while
+24:19
+–
+Dart Intermediário e avançado
+02:56:49
+Dart intermediário e avançado - o que irei aprender?
+00:26
+Funções
+18:18
+Funções anônimas & parâmetros
+17:28
+Classes e objetos
+24:20
+Construtores
+13:41
+Getter e Setter
+13:49
+Herança
+12:43
+Sobrescrita de métodos
+15:58
+Modificadores Static e Final
+08:53
+Classes abstratas
+07:49
+Interface
+14:17
+Mixins
+05:05
+Coleções - listas
+14:20
+Coleções - mapas
+09:42
+–
+Resumo da Linguagem Dart
+01:08:49
+Resumo da linguagem Dart - o que irei aprender?
+00:41
+Dart básico
+18:19
+Dart intermediário
+23:19
+Dart avançado
+26:30
+–
+Componentes de interface
+03:40:50
+Componentes de interface - o que irei aprender?
+Visualizar
+00:48
+Widgets e Material design
+05:01
+Estrutura de um App
+10:59
+Colunas e linhas
+12:46
+Formatação de textos
+19:44
+Botões
+07:04
+Espaçamentos
+19:46
+Alinhamentos
+13:21
+Imagens
+17:18
+Layout base com Scaffold
+12:32
+Widgets - Stateless & Stateful
+18:04
+#App1 Frases do Dia - Criando interface
+19:38
+#App1 Frases do Dia - Gerando frase
+10:27
+#App2 JokenPo - Criando interface
+21:38
+#App2 JokenPo - Gesture Detector
+09:13
+#App2 JokenPo - Exibindo resultado
+22:31
+–
+Componentes de entrada de dados
+02:07:15
+Componentes de entrada de dados - o que irei aprender?
+Visualizar
+00:37
+Utilizando caixas de texto
+23:35
+#App3 Álcool ou Gasolina - criando interface 
+24:59
+#App3 Álcool ou Gasolina - Calculando resultado
+17:41
+Utilizando Checkbox
+21:18
+Utilizando RadioButton
+14:52
+Utilizando Switch
+09:57
+Utilizando Slider
+14:16
+–
+Navegação
+01:33:02
+Navegação - o que irei aprender?
+Visualizar
+00:31
+Navegando entre telas
+14:48
+#App4 ATM Consultoria - Criando interface
+15:35
+#App4 ATM Consultoria - Criando navegação
+18:29
+Passando dados entre telas
+08:26
+#App5 Cara ou Coroa - Criando interface
+15:31
+#App5 Cara ou Coroa - Finalizando
+12:43
+Nomeando rotas
+06:59
+–
+Consumo de serviço web - webservice
+05:44:16
+Consumo de serviço web - o que irei aprender?
+Visualizar
+00:32
+Entendendo requisições & Api
+19:00
+Criando requisições
+19:15
+Exibindo retorno da requisição na interface
+07:40
+#App6 Preço do bitcoin
+19:14
+Utilizando listas (ListView)
+16:53
+Eventos de clique & exibir dialog (AlertDialog)
+14:09
+Trabalhando com Future
+19:02
+Carregando dados em uma lista (ListView)
+21:48
+Requisição Post & Widget Expanded
+21:45
+Requisições Put, Patch e Delete
+18:29
+#App7 Youtube - Botões de ação
+10:38
+#App7 Youtube - Navegação inferior (BottomNavigationBar)
+18:34
+#App7 Youtube - Ativando API
+21:30
+#App7 Youtube - Recuperando vídeos
+23:41
+#App7 Youtube - Convertendo resultados
+20:37
+#App7 Youtube - Exibindo vídeos em uma lista (ListView)
+19:48
+#App7 Youtube - Utilizando componente de pesquisa (SearchDelegate)
+17:22
+#App7 Youtube - Recuperando textos para pesquisa & Sugestões
+17:06
+#App7 Youtube - Executando vídeos
+07:24
+Ciclo de vida Statefull Widget
+09:49
+–
+Manipulação de dados
+05:38:41
+Manipulação de dados - o que irei aprender?
+Visualizar
+00:55
+Utilizando preferências - parte 1
+07:18
+Utilizando preferências - parte 2
+14:15
+#App8 Lista de tarefas - Floating Action button
+16:40
+#App8 Lista de tarefas - Criando interface
+10:27
+#App8 Lista de tarefas - Salvando dados utilizando arquivo
+17:08
+#App8 Lista de tarefas - Recuperando dados
+13:09
+#App8 Lista de tarefas - Criando e alterando status de uma tarefa
+11:52
+#App8 Lista de tarefas - Utilizando Dismissible widget
+17:30
+#App8 Lista de tarefas - Removendo item com Dismissible
+10:23
+#App8 Lista de tarefas - Desfazendo ação com Snackbar
+15:16
+Introdução ao banco de dados
+20:53
+Configurando banco de dados
+16:43
+Salvando dados
+06:14
+Listando e filtrando - parte 1
+12:18
+Listando e filtrando - parte 2
+13:08
+Atualizando e deletando - parte 1
+10:13
+Atualizando e deletando - parte 2
+15:07
+#App9 Notas diárias - Criando interface
+13:09
+#App9 Notas diárias - Inicializando banco de dados
+21:32
+#App9 Notas diárias - Salvando anotação
+14:20
+#App9 Notas diárias - Listando anotações
+19:22
+#App9 Notas diárias - Formatando datas
+15:03
+#App9 Notas diárias - Atualizando anotação
+19:08
+#App9 Notas diárias - Removendo anotação
+06:38
+–
+Mídias
+01:57:12
+Mídias - o que irei aprender?
+Visualizar
+00:37
+Executando sons
+20:18
+Pausando e parando
+08:52
+Controlando volume
+04:45
+Utilizando abas & TabBar
+14:35
+#App10 Aprenda Inglês - Configurando temas & abas
+14:45
+#App10 Aprenda Inglês - Criando interface com GridView & MediaQuery
+Visualizar
+15:40
+#App10 Aprenda Inglês - Executando sons
+08:53
+Executando vídeos - parte 1
+16:47
+Executando vídeos - parte 2
+12:00
+–
+Firebase
+03:03:02
+Firebase - o que irei aprender?
+00:34
+Introdução ao Firebase
+05:06
+Recursos e preços
+08:39
+Configurando projeto no Android
+24:36
+Configurando projeto no iOS - opcional
+05:21
+Estrutura de dados
+13:40
+Salvando & atualizando
+11:39
+Removendo & recuperando
+18:03
+Aplicando filtros básicos
+15:11
+Pesquisa de texto
+09:34
+Atualizando Google Play Service
+05:41
+Cadastro e verificação de usuário logado
+12:29
+Logar e deslogar usuário
+07:52
+Selecionando imagens - câmera & galeria de fotos
+20:16
+Upload de imagens com Storage
+12:11
+Status do Upload & Baixando imagens
+12:10
+–
+WhatsApp
+06:29:22
+WhatsApp - o que irei aprender?
+Visualizar
+02:29
+Configurando o projeto
+14:44
+Criando interface de login
+15:31
+Criando interface de cadastro
+05:31
+Validando cadastro de usuário
+12:12
+Cadastro de usuário
+11:53
+Login de usuário
+16:04
+Salvando dados do usuário
+12:07
+Criando interface com abas
+07:30
+Listando conversas
+13:54
+Menu de opções - PopupMenuButton
+14:43
+Recursos de rotas - avançado
+20:37
+Criando tela de configurações
+14:44
+Fazendo upload da imagem do perfil
+14:12
+Atualizando dados do perfil
+13:35
+Listando contatos
+18:58
+Abrindo tela de mensagem
+08:43
+Criando interface de mensagem - parte 1
+15:35
+Criando interface de mensagem - parte 2
+16:52
+Salvando mensagem & ajuste na interface
+24:58
+Recuperando mensagens
+16:31
+Trocando mensagens
+09:54
+Enviando imagem na mensagem
+19:09
+Salvando conversa
+18:19
+Listando conversas
+19:27
+Ajustes & Definindo tema Android e IOS
+14:46
+Rolando mensagens automaticamente
+08:15
+Ordenando mensagens por data
+08:07
+WhatsApp Projeto Final
+00:02
+–
+Mapas e Geolocalização
+03:22:16
+O que irei aprender?
+Visualizar
+00:34
+Configurando API
+09:37
+Configurando o projeto
+14:41
+Utilizando a câmera no Mapa
+14:15
+Movimentando a câmera no Mapa
+11:12
+Adicionando marcadores
+12:18
+Desenhando Polygons
+13:55
+Desenhando Polylines
+09:58
+Recuperando local do usuário
+16:33
+Exibindo local do usuário
+16:11
+Utilizando Geocoding
+15:06
+#App12 Minhas viagens - Criando SplashScreen
+13:18
+#App12 Minhas viagens - Configurando mapa & exibindo marcador
+16:50
+#App12 Minhas viagens - Recuperando localização
+14:29
+#App12 Minhas viagens - Salvando e listando viagens - parte 1
+11:21
+#App12 Minhas viagens - Salvando e listando viagens - parte 2
+11:58
+–
+Uber
+07:26:31
+O que irei aprender?
+Visualizar
+01:39
+Configurando o projeto
+15:38
+Criando interface de login
+11:32
+Criando interface de cadastro
+08:16
+Configuração de rotas
+06:19
+Fazendo cadastro
+16:07
+Fazendo login & deslogando
+10:45
+Verificando usuário logado
+13:46
+Configurando mapa
+12:34
+Exibindo local do usuário
+15:03
+Criando interface de viagem
+19:33
+Seleção automática de imagens
+17:10
+Exibindo ícone de passageiro
+12:54
+Recuperando endereço de destino
+12:23
+Salvando requisição
+19:18
+Controlando exibição de elementos na interface
+13:22
+Controlando status da requisição
+18:16
+Cancelando requisição
+06:17
+Listando requisições para o motorista
+12:31
+Exibindo painel de corrida
+11:55
+Controlando status da requisição do motorista
+19:38
+Recuperando requisição ativa
+06:47
+Exibindo dois marcadores
+13:21
+Centralizando passageiro e motorista
+20:28
+Alterando interface pelo status da requisição
+19:19
+Atualizando e exibindo local do usuário - parte 1
+15:22
+Atualizando e exibindo local do usuário - parte 2
+09:33
+Iniciar corrida
+23:19
+Exibindo destino do passageiro
+23:55
+Formatação de números
+07:41
+Finalizando corrida e calculando valor
+15:03
+Finalizando o App
+16:45
+Projeto final Uber
+00:02
+–
+Animações
+02:12:27
+Introdução à animações
+02:36
+Animação implícita
+13:03
+Criando animações básicas
+16:39
+Utilizando Tween Builder
+16:07
+Animações explícitas construídas
+13:41
+Utilizando Animated Builder
+12:28
+Introdução ao projeto interface de login
+02:08
+Criando interface de login
+12:12
+Criando caixa de texto e botão
+10:19
+Animando interface de login
+16:38
+Staggered Animation
+16:36
+–
+OLX
+05:30:47
+O que irei aprender? OLX
+03:12
+Configurando o projeto
+12:35
+Criando interface de login
+10:23
+Cadastro e login de usuário
+17:57
+Configuração de rotas & Menus de anúncios
+18:30
+Máscaras & Padrões
+26:28
+Formulários e validações
+25:05
+Criando interface de anúncio
+07:31
+Estrutura de formulário & botão customizado
+08:46
+Validando imagens com FormField
+18:02
+Selecionando e removendo imagens do anúncio
+09:20
+Dropdown e validação
+18:01
+Campos de textos e validações
+11:02
+Fazendo upload de imagens
+15:13
+Salvando dados do anúncio
+12:13
+Criando interface meus anúncios
+11:01
+Listando meus anúncios
+22:27
+Salvando anúncio público & listas dropdown
+14:24
+Interface de filtros
+07:22
+Listando anúncios públicos
+08:42
+Filtrando anúncios
+06:46
+Detalhes do anúncio - carousel de imagens
+15:33
+Detalhes anúncio - textos e ligação
+11:16
+Ajustes - Regras Firestore & ios
+18:58
+–
+Publicando seu App
+02:43:48
+O que irei aprender?
+00:35
+Fazendo configurações no App
+08:46
+ScreenShot e Vídeo
+06:56
+Edição de imagens - parte 1
+21:39
+Edição de imagens - parte 2
+23:26
+Adicionando ícones
+12:28
+[ANDROID] Gerando o arquivo para publicação
+17:27
+[ANDROID] Publicando na Google Play
+21:52
+[iOS] Criando conta de Desenvolvedor Apple
+07:22
+[iOS] Configurando seu App
+11:32
+[iOS] Publicando na App Store

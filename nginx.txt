@@ -1,0 +1,19 @@
+Nginx ou "engenex"
+
+Vídeos:
+https://www.youtube.com/watch?v=0jP84b2Zyzc
+
+::Arquivos de configuração 
+==========================
+/etc/nginx/ => Pasta de instalação 
+/etc/nginx/sites-enabled/ => Pasta de configuraçao dos sites. Um arquivo por domínio.
+
+
+
+::Comandos
+==========
+service nginx reload
+service nginx restart
+nginx -t => Valida consistência das configurações
+
+

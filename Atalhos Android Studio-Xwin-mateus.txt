@@ -1,0 +1,51 @@
+
+::Interface do Android Studio
+==============================
+http://www.basef.com.br/index.php/Atalhos_do_IntelliJ_Idea
+
+
+Ctrl+y           => Deletar linha atual
+Ctrl+D           => Duplicar Linha Atual
+Ctrl+M           => Posiciona o cursor no centro da tela
+Alt+A            => Exibe lista de pesquisa de actions. Help/Find Actions
+Double Shift     => Exibe lista de pesquisa geral
+Ctrl+P           => Exibe pesquisa de arquivos [Navigate/File(5%)]
+Ctrol+Shift+F    => Pesquisar string nos Arquivos/Projeto
+Ctrl + i         => Seleciona a linha atual - [Action/Select line at caret]
+Ctrl+j           => Traz a linha de baixo para o final da linha atual [Edit/Join Lines(50%)]
+Alt+J            => Econtrar e selecionar a mesma string(Próxima) - [Edit/Find/Add Selecion for next Occurrence]
+Ctrl+Alt+J       => Econtrar e selecionar a mesma string(Todas)   - [Edit/Find/Select All Ocurrences]
+
+Alt+M            => Alterna modo de seleção por coluna (Edit/Column select mode(40%)]
+Shift+Enter      => Inserir linha vazia acima  [Start new line] (Manualmente)
+Ctrl+Enter       => Inserir linha vazia abaixo [Start new line]  (Manualmente)
+AltGr+Enter      => Split Line - Semelhante ao Enter, porem envia o conteúdo para baixo mantendo o cursor no local em que está
+
+AltGr+Seta Direita/Esquerda => Navegar a frente/atrás - [Navigate/Back,Forward 10%]. (Definido manualmente) 
+Alt+Seta cima ou abaixo  => Saltar/Jump/Pular cursor 5 abaixo. - Pugin LineJumper
+Alt , OU .            => Move Linha Acima ou abaixo. [Code/Move Line Down/Up (Final)]
+Ctrl+/                => Comenta seleção com "/"
+Ctrl+Shift+/          => Comenta seleção com /**/
+Ctrl+Alt+s            => Swap-alterna-troca os limites da seleção - Definido Manualmente "Swap selection boudaries"
+Ctrl+Shif+M           => Swap-alterna-troca Move o cursor para a outra ponta (Ponta equivalente) (Move Caret to Matching Brace)
+
+Ctrl+Alt+SetaAcimaAbaixo       => Posicionar o Cursor/Encontrar próxima ocorrencia da palavra que está sobre o cursor. plugin BrowseWordAtCaret
+AltGr+SetaAcima ou Seta Abaixo => Posicionar o Cursor/Navegar entre os métodos(procedures/funcao/metodo) Navigate/next Method(último menu)
+	
+ctrl+shift+u    => Toggle Case - alternar case sensitive (Definido manualmente)[Toggle Case]
+ctrl+w          => Seleção em Blocos-(Extend Selection)
+alt+t           => Live Template - Definido manualmente
+ctrl+shif+v     => Histórico da área de transferência
+
+
+:Configurei na interface do android:
+-Matched brace
+
+::plugin Android Studio:
+https://github.com/acejump/AceJump configurado com "Ctrl+Ç". este plugin tem funcionalidades de atalho parecida com  o VIM
+Scratch => em teste - acesso rápido a arquivinho texto para anotações rápidas
+CodeGlange => Miniatura do Fonte. Ctrl+Shif+G para habilitar/desabilitar
+Presentation Assistant => Plugin para exibir os atalhos que estão sendo efetuados.
+LineJumper => saltos de linhas configuráveis
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

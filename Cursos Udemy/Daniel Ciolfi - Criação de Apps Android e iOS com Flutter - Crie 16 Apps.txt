@@ -1,0 +1,869 @@
+https://www.udemy.com/course/curso-completo-flutter-app-android-ios/
+
+Criação de Apps Android e iOS com Flutter - Crie 16 Apps
+Desenvolva Apps NATIVOS e PROFISSIONAIS para ANDROID e iOS com APENAS 1 CÓDIGO! Flutter: a REVOLUÇÃO da GOOGLE! - 2020
+MAIS BEM COTADOS
+4,7 (9.680 classificações)
+27.722 alunos inscritos
+Criado por Daniel Ciolfi, Rodrigo Marques, Flutter - Brasil | Oficial
+
+Conteúdo do curso
+Recolher tudo 355 aulas
+46:25:20
+–
+Introdução ao Flutter
+11:39
+Conheça o Flutter, a Revolução do Desenvolvimento Mobile!
+Visualizar
+11:05
+Conteúdo das Seções
+Visualizar
+00:34
+–
+Download e Instalação do Flutter e Dart
+01:01:32
+Download e Instalação do Flutter/Dart
+00:21
+[ATENÇÃO] - Setup no Windows
+00:21
+Setup Completo no Windows
+19:26
+Setup Completo no Linux
+23:22
+Setup Completo no MacOS
+10:50
+[OPCIONAL] Setup do VS Code
+07:12
+–
+Criando o Primeiro Projeto em Flutter
+13:54
+Super Dica para Aproveitar Melhor o Curso
+00:35
+Criando um Projeto e Conhecendo a Interface
+10:24
+Utilizando um Dispositivo Real para Testes
+02:47
+Grupo de Alunos no Facebook
+00:07
+–
+Programação em Dart - Básico
+23:35
+Conheça a Linguagem Dart
+Visualizar
+05:32
+Declarando e Modificação Variáveis
+Visualizar
+07:50
+Realizando Operações Aritméticas
+Visualizar
+03:32
+Realizando Operações Lógicas
+Visualizar
+06:41
+–
+Programação em Dart - Intermediário
+34:57
+Tomando Decisões (Condicionais)
+Visualizar
+08:14
+Decisões Limitadas (Switch)
+Visualizar
+03:17
+Realizando Repetições (Loops)
+Visualizar
+05:08
+Funções - Declaração, Parâmetros e Retorno
+Visualizar
+08:23
+Funções - Parâmetros Opcionais e Anônimas
+Visualizar
+07:47
+Escopo das Variáveis
+Visualizar
+02:08
+–
+Orientação à Objetos em Dart - Básico
+21:49
+Classes, Atributos, Métodos e Objetos
+Visualizar
+08:39
+Construtores
+Visualizar
+06:31
+Getters e Setters
+Visualizar
+06:39
+–
+Orientação à Objetos em Dart - Intermediário
+18:28
+Herança
+Visualizar
+09:50
+Reescrita de Métodos
+Visualizar
+04:57
+Modificadores Static, Final e Const
+Visualizar
+03:41
+–
+Orientação à Objetos em Dart - Avançado
+03:25
+Classes Abstratas
+Visualizar
+03:25
+–
+Programação em Dart - Coleções
+12:03
+Listas - Criando e Modificando
+Visualizar
+06:35
+Mapas - Criando e Modificando
+Visualizar
+05:28
+–
+Programação em Dart - Resumo
+16:15
+Resumo - Aviso
+00:12
+Resumo - Parte 1
+08:44
+Resumo - Parte 2
+07:19
++
+Introdução ao Flutter
+2 aulas
+05:34
+Introdução aos Widgets
+03:32
+Material Design
+02:02
++
+App #1 - Contador de Pessoas
+7 aulas
+43:28
+Introdução ao App Contador de Pessoas
+Visualizar
+01:13
+Configurando o Projeto
+06:18
+Coluna e Textos
+08:24
+Botão, Linha e Hierarquia
+06:45
+Image, Padding, Stack
+10:04
+Stateless e Stateful
+10:39
+Download do Projeto Completo
+00:05
++
+App #2 - Cálculo do IMC
+8 aulas
+42:12
+Introdução ao App Cálculo do IMC
+Visualizar
+01:52
+Scaffold e AppBar
+07:01
+TextField e Decoration
+07:27
+ScrollView e RaisedButton
+08:19
+Controller e Cálculos
+09:53
+Formulários e Validações
+07:18
+[OPCIONAL] Resetar código de erro
+00:17
+Download do Projeto Completo
+00:05
++
+App #3 - Conversor de Moedas
+14 aulas
+59:22
+Introdução ao App Conversor de Moedas
+Visualizar
+01:42
+Conheça o Padrão JSON
+04:05
+API de Valores
+05:32
+[ATENÇÃO] - Mudança no Pacote HTTP
+00:33
+Requisitando os Dados
+09:45
+Trabalhando com Futuro
+06:33
+Construindo com FutureBuilder
+06:50
+[ATENÇÃO] - Correção da Borda
+00:15
+Criando a Interface
+09:44
+Otimizando o Código
+08:01
+Realizando a Conversão
+05:36
+[OPCIONAL] Resetar todos os campos
+00:32
+[OPCIONAL] Números decimais no iOS
+00:07
+Download do Projeto Completo
+00:05
++
+App #4 - Lista de Tarefas
+12 aulas
+01:02:10
+Introdução ao App Lista de Tarefas
+Visualizar
+02:35
+[ATENÇÃO] - Versões dos Plugins para o App #4
+00:29
+Lendo e Escrevendo Dados
+11:31
+Iniciando o Layout
+06:47
+Criando a Lista
+07:41
+Adicionando Itens na Lista
+07:01
+Salvando as Tarefas Permanentemente
+04:02
+Itens Removíveis
+07:21
+SnackBar e Desfazendo Ação
+08:06
+Ordenando os Itens
+06:18
+[OPCIONAL] Remover pilha de Snackbars
+00:13
+Download do Projeto Completo
+00:05
++
+App #5 - Buscador de GIFs
+14 aulas
+01:05:42
+Introdução ao App Buscador de GIFs
+Visualizar
+02:48
+[ATENÇÃO] - Versões dos Plugins para o App #5
+00:17
+API do GIPHY
+04:13
+Requisitando os Dados
+07:56
+Iniciando o Layout
+06:11
+Criando um Indicador de Progresso
+06:44
+Correção do Erro da Próxima Aula
+00:12
+Grid de Gifs
+09:58
+Carregando mais Gifs
+10:20
+Criando e Trocando de Tela
+08:10
+Compartilhando Gifs
+04:37
+Imagens Suaves
+03:50
+[OPCIONAL] Search vazio
+00:20
+Download do Projeto Completo
+00:05
++
+App #6 - Agenda de Contatos
+21 aulas
+02:04:21
+Introdução ao App Agenda de Contatos
+Visualizar
+02:49
+[ATENÇÃO] - Versões dos Plugins para o App #6
+00:11
+Criando um Molde para os Contatos
+10:01
+Inicializando o Banco de Dados
+11:20
+Salvando e Obtendo Contato
+07:28
+Finalizando a Classe ContactHelper
+09:09
+Testando o Banco de Dados
+06:50
+Criando um Botão Flutuante
+05:44
+Cartões dos Contatos
+09:28
+Criando a Tela de Contato
+06:51
+Layout da Tela de Contato
+09:05
+Passando o Contato entre Telas
+08:32
+Retornando o Contato Modificado
+06:53
+Exibindo um AlertDialog
+07:11
+Opções de Contato
+09:03
+ImagePicker agora suporta Galeria!
+00:10
+Integração com o Telefone e Camera
+06:25
+Ordenando os Contatos
+06:27
+[OPCIONAL] Imagem circular e não retangular
+00:17
+[OPCIONAL - iOS] Permissões de Câmera e Galeria
+00:21
+Download do Projeto Completo
+00:05
++
+App #7 - Chat Online (Firebase)
+15 aulas
+02:35:10
+Criando o Projeto no Firebase
+09:43
+Entendendo o Banco de Dados
+07:01
+Comando para a Próxima Aula
+00:10
+Configurando o Projeto
+12:49
+Escrevendo Dados no Banco
+07:52
+Lendo Dados no Banco
+12:15
+1 - Criando o Campo de Digitação
+08:34
+2 - Enviando o Texto para o Firebase
+07:17
+3 - Enviando Imagens para o Firebase
+12:10
+4 - Exibindo a Lista de Mensagens
+07:49
+5 - Realizando o Login com o Google
+11:29
+6 - Exibindo as Informações da Mensagem
+10:47
+7 - Melhorando a Funcionalidade do App
+Visualizar
+09:26
+8 - Configurando as Regras do Banco
+17:05
+Configuração do iOS (OPCIONAL)
+20:43
++
+App #8 - Loja Virtual
+52 aulas
+06:44:00
+Introdução ao App Loja Virtual
+Visualizar
+07:41
+Dica Importante
+00:10
+[ATENÇÃO] - Versões dos Plugins e Configurações do Projeto
+01:06
+Criando e Configurando o Projeto
+06:56
+Navegando entre Páginas
+07:16
+Barra Flutuante
+07:57
+Obtendo as Imagens da Tela Inicial
+08:20
+Grade de Imagens
+07:51
+Criando um Drawer Customizado
+10:00
+Itens do Drawer
+09:38
+Trocando de Página pelo Drawer
+06:00
+Estruturando as Categorias
+07:35
+Mostrando Lista de Categorias
+06:44
+Estruturando os Dados dos Produtos
+07:51
+Dica sobre preços inteiros
+00:18
+Criando Tela de Produtos
+06:36
+Grade e Lista de Produtos
+11:08
+Criando a Tile da Grid
+08:08
+Criando a Tile da Lista
+06:55
+Criando a Tela do Produto
+09:02
+Escolhendo o Tamanho do Produto
+09:30
+Finalizando a Tela do Produto
+05:20
+Tela de Login
+11:18
+Tela de Cadastro
+06:34
+Introdução ao ScopedModel
+10:51
+Código para Criar Usuário
+10:20
+Criando um Usuário
+08:40
+SignOut e Melhorias no Cadastro
+09:54
+Realizando o Login
+10:13
+Recuperando a Senha
+03:25
+Estruturando o Produto do Carrinho
+07:48
+Criando o Modelo do Carrinho
+09:37
+Adicionando um Produto ao Carrinho
+15:47
+Criando Tela do Carrinho
+08:30
+Criando o Corpo da Tela do Carrinho
+08:31
+Recuperando os Dados do Produto
+10:13
+Mostrando Item no Carrinho
+09:49
+Recuperando os Produtos do Firebase
+07:26
+Aplicando um Cupom de Desconto
+11:12
+Criando a Card do Frete
+02:43
+Criando o Resumo do Pedido
+08:02
+Calculando os Preços
+07:15
+Realizando o Pedido
+13:25
+Tela de Confirmação do Pedido
+04:51
+[ATENÇÃO] - Correção do Alinhamento da Tela
+00:09
+Criando a Tab de Pedidos
+08:48
+Criando a Card do Pedido
+11:43
+Mostrando os Detalhes do Pedido
+06:03
+Acompanhando o Status do Pedido
+12:00
+Estruturando as Lojas
+07:37
+Criando a Card da Loja
+09:08
+Download do Projeto Completo
+00:05
++
+App #9 - Animações Vetoriais com Flare
+7 aulas
+56:12
+Introdução ao Flare
+11:48
+Importando as Engrenagens (SVG)
+06:39
+Animando as Engrenagens
+08:47
+Animando o Coração
+06:24
+Criando o App com Flutter e Flare
+09:01
+Criando a Splash Screen
+06:22
+Utilizando Bones
+07:11
++
+App #10 - Favoritos do YouTube (BLoC Pattern)
+19 aulas
+02:58:18
+Introdução ao App Favoritos do YouTube
+Visualizar
+04:54
+Criando e Configurando o Projeto
+08:40
+Códigos da API
+00:03
+Recebendo Lista de Vídeos
+15:15
+Criando o Layout da Tela Principal
+04:34
+Retornando Sugestões de Pesquisas
+10:10
+Finalizando o Sistema de Buscas
+14:55
+Introdução às Streams
+Visualizar
+15:46
+Exemplo do Counter com Streams
+10:08
+Introdução ao BLoC
+10:58
+Configurando o BLoC
+09:53
+Exibindo Vídeos Pesquisados
+09:21
+Criando uma Lista Infinita
+15:01
+Criando o BLoC dos Favoritos
+13:14
+Salvando e Carregando os Favoritos
+14:29
+Utilizando o BehaviorSubject
+06:43
+Exibindo Lista de Favoritos
+09:55
+Abrindo o Player de Vídeo
+04:13
+Download do Projeto Completo
+00:05
++
+App #11 - Animações Complexas
+17 aulas
+02:51:07
+Introdução ao App Animações Complexas
+Visualizar
+03:25
+Conheça o Start Flutter
+00:14
+Introdução às Animações
+13:46
+AnimatedWidget e Estado da Animação
+09:54
+AnimatedBuilder
+09:55
+Animações Simultâneas e Curvas
+12:20
+Criando Tela de Login
+10:20
+Criando os Campos do Formulário
+11:15
+Criando o Botão de Sign In
+11:24
+Encolhendo o Botão de Forma Animada
+08:52
+Animação de Zoom Out do Botão
+08:30
+Criando a Tela Principal
+13:08
+Animando o Topo da Home
+15:03
+Alterando as Categorias
+09:39
+Criando a Lista Animada
+18:41
+Realizando a Transição entre Telas
+14:35
+Download do Projeto Completo
+00:05
++
+App #12 - App de Gerenciamento da Loja Online
+35 aulas
+06:40:51
+Introdução ao App de Gerenciamento da Loja Online
+Visualizar
+08:40
+[ATENÇÃO] - Versões dos Plugins
+00:36
+Configurando o Projeto
+08:32
+Criando a Tela de Login
+16:51
+BLoC e Validators
+11:20
+Finalizando a Validação
+11:00
+Listener de Usuário
+12:04
+Finalizando o Login
+17:02
+Sistema de Páginas
+10:53
+Tab de Clientes
+12:45
+Observando Mudanças na Coleção
+11:11
+Obtendo Gasto Total
+11:20
+Exibindo a Lista de Clientes
+13:13
+Procurando um Cliente pelo Nome
+06:50
+Tab de Pedidos
+12:56
+Recuperando Lista de Pedidos em Tempo Real
+12:46
+Exibindo Lista de Pedidos
+13:29
+Mudando o Status do Pedido
+13:28
+Ordenando os Pedidos
+11:01
+Exibindo Lista de Categorias
+10:19
+Exibindo a Lista de Produtos Cadastrados
+06:56
+Iniciando a Tela do Produto
+10:59
+Exibindo Título, Descrição e Preço do Produto
+13:46
+Criando um Campo para as Imagens
+12:44
+Selecionando e Cortando uma Imagem da Câmera ou Galeria
+12:52
+Validando os Dados do Formulário
+13:44
+Bloqueando a Tela Durante Salvamento
+11:32
+Salvando o Produto no Firebase
+19:21
+Criando o Widget de Tamanhos
+14:31
+Finalizando o Widget de Tamanhos
+11:32
+Criando o Diálogo para Editar a Categoria
+11:54
+Carregando os Dados da Categoria
+12:40
+Validando os Dados da Categoria
+09:57
+Salvando a Categoria no Firebase
+12:01
+Download do Projeto Completo
+00:05
++
+App #13 - Integração com Código Android Nativo
+5 aulas
+32:09
+Introdução ao App de Integração ao Código Nativo
+04:09
+Atualização do PlatformChannel
+00:04
+Configurando a Biblioteca Nativa Android
+07:21
+Chamando Funções da Camada Nativa via Flutter
+09:30
+Chamando Funções do Flutter via Camada Nativa
+11:05
++
+App #14 - XLO Clone
+50 aulas
+08:46:53
+Conheça o Super XLO Clone
+Visualizar
+01:16
+Criação do Projeto XLO
+04:05
+Download do Projeto Configurado
+00:01
+Git e Scripts Auxiliares
+07:27
+1 - Criando a Base das Telas
+08:07
+2 - Criando o Drawer Customizado
+12:36
+3 - Trocando de Tela pelo Drawer
+14:27
+4 - Criando o Campo de Pesquisa
+12:18
+5 - Integrando o Campo de Pesquisa com o BLoC
+13:41
+6 - Criando a Barra da Tela Inicial
+08:19
+7 - Criando a Tela de Filtros
+08:19
+8 - Criando o Campo de Ordenação Data/Preço
+12:52
+9 - Criando o Campo de Faixa de Preco
+10:42
+10 - Criando o Campo do Tipo de Anunciante
+13:36
+11 - Criando o Botão Animado do Filtro
+15:18
+12 - Construindo o Objeto do Filtro
+12:58
+13 - Começando a Tela de Login
+12:18
+14 - Declarando o Estado dos Campos
+10:18
+15 - Validando os Campos de Login
+11:33
+16 - Declarando o Estado do Botao
+14:09
+17 - Integrando as Streams da Tela de Login
+14:43
+18 - Finalizando a Tela de Login
+12:46
+19 - Começando a Tela de Cadastro
+13:43
+20 - Calculando a Força da Senha
+15:33
+21 - Finalizando o Campo de Senha
+11:49
+22 - Criando o BLoC do Cadastro
+10:12
+23 - Finalizando a Tela de Cadastro
+13:51
+24 - Começando a Tela de Criação de Anúncio
+13:34
+25 - Adicionando Imagens no Anúncio
+13:30
+26 - Validando o Estado das Imagens
+08:57
+27 - Adicionando o Título, Descrição e Preço
+04:58
+28 - Obtendo o Endereço pelo CEP
+10:42
+29 - Retornando Sucesso ou Erro da API
+12:33
+30 - Criando o Campo de CEP
+09:41
+31 - Criando o BLoC do CEP
+12:53
+32 - Finalizando o Campo de CEP
+17:02
+33 - Criando o Campo de Ocultar Telefone
+11:22
+34 - Armazenando Informações no Objeto Ad
+08:33
+35 - Criando o BLoC da Tela de Inserir Anuncio
+09:27
+36 - Adicionando os Anúncios na Tela Principal
+13:19
+37 - Mostrando os Anúncios na Tela Principal
+11:34
+38 - Criando a Tela do Produto
+11:55
+39 - Preço, Título e Data do Anúncio
+10:39
+40 - Descrição do Produto
+07:29
+41 - Localização e Anunciante do Anúncio
+06:06
+42 - Botões de Ligar e Chat
+12:38
+43 - Criando a Tela Minha Conta
+09:13
+44 - Criando a Tela de Editar Conta
+06:38
+45 - Selecionando o Tipo do Anunciante
+07:11
+E vem mais aula aí! Aguarde!
+00:01
++
+App #15 - Gerência de Estado com MobX
+14 aulas
+01:45:48
+Introdução ao MobX
+16:11
+Geração de Código MobX
+09:55
+Código Base para a Próxima Aula
+00:03
+Reação autorun
+10:58
+Valores @computed
+07:26
+Ocultando e Mostrando a Senha
+05:20
+Bloqueando os Campos Durante o Login
+08:56
+Reação reaction
+06:33
+List vs ObservableList
+13:20
+Definindo o Estado Interno dos Itens
+11:23
+Provendo a Store
+07:45
+[OPCIONAL] MobX Snippets - Android Studio Live Templates
+07:36
+[OPCIONAL] MobX Snippets - VS Code
+00:16
+Download do Projeto Completo
+00:05
++
+App #16 - Adicionando Mapas ao App
+1 aula
+00:07
+Em breve!
+00:07
++
+Compilação do App Android para Lançamento (Release)
+3 aulas
+24:11
+Trocando o Ícone do App
+05:57
+Gerando o Release APK - Parte 1
+07:14
+Gerando o Release APK - Parte 2
+11:00
++
+Antigo Chat Online (Apenas para referência)
+19 aulas
+01:47:31
+Introdução ao App Chat Online
+Visualizar
+02:10
+Conheça o Firebase
+11:04
+[ATENÇÃO] - Versões dos Plugins e Configurações do Projeto
+01:05
+Criando e Configurando Projeto
+09:18
+Configuração no iOS - Opcional
+03:50
+Permissões de Câmera e Galeria no iOS - Opcional
+00:21
+Escrevendo Dados no Banco
+07:40
+Lendo os Dados do Banco
+11:22
+Definindo o Tema
+07:59
+Criando um Campo de Texto
+08:11
+Criando Botão de Enviar
+04:57
+Balões de Mensagem
+06:58
+[ATENÇÃO] - Atualização Firebase Auth
+00:33
+Login com o Google
+06:30
+Enviando Mensagens
+08:51
+Recebendo Mensagens
+08:09
+[ATENÇÃO] - Atualização do Firebase Storage
+00:17
+Carregando Imagens
+08:10
+Download do Projeto Completo
+00:05
++
+Solução de Problemas Frequentes
+6 aulas
+02:30
+Erro ':app:transformClassesWithMultidexlistForDebug' / Ativar MultiDex
+00:10
+Comentários do Fim do Widget
+00:06
+Target of URI doesn't exist: 'package:http/http.dart'
+00:23
+'keytool' não é reconhecido como um comando interno ou externo, um programa...
+00:24
+Migrar para o AndroidX
+00:30
+Flutter Doctor: Android license status unknown
+
+
+

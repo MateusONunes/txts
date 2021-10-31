@@ -1,0 +1,52 @@
+--------------------------------------------------------------------------------------------------------------------------------------
+adb root
+adb pull /data/data/br.com.girassol.app_plataforma_girassol/databases/dbgirassol.db ~/Programas/flutter/Thiago/database/dbgirassol.db
+.help
+
+.headers on
+.mode column
+.tables => exibe lista de tableas
+.q  => sair
+
+--------------------------------------------------------------------------------------------------------------------------------------
+adb shell
+adb devices
+adb -s RX8N3034Z7H shell
+
+su
+cd /data/data/br.com.girassol.app_plataforma_girassol/databases/
+
+sqlite3 dbgirassol.db -line ".mode column" ".headers on" "select * from endereco"
+sqlite3 dbgirassol.db -line ".mode column" ".headers on" "select * from venda"
+sqlite3 dbgirassol.db -line ".mode column" ".headers on" "select * from cliente"
+sqlite3 dbgirassol.db -line ".mode column" ".headers on" "select * from PushNotification"
+sqlite3 dbgirassol.db -line ".mode column" ".headers on" "select * from opcoes_pagamento"
+sqlite3 dbgirassol.db -line ".mode column" ".headers on" "select cd_opcao_pagamento, opcao_pagamento from opcoes_pagamento"   
+sqlite3 dbgirassol.db -line ".mode column" ".headers on" "delete from opcoes_pagamento"   
+select cd_opcao_pagamento, opcao_pagamento from opcoes_pagamento;
+delete from opcoes_pagamento;
+.shell clear
+
+
+sqlite3 dbgirassol.db "update cliente set  apelido = '0', nome= 'Cliente Girassol', cpf_cnpj = '111222333', dt_nascimento = '2020-09-22', email = 'email.cliente@girassol.com', sobrenome = '0', tipo_cliente = null, url_foto = '0' WHERE cd_cliente = 6"
+
+update CLIENTE set NOME = 'Cliente Girassol-h2' where cd_cliente = 6
+
+
+insert into  ENDERECO (CD_ENDERECO,  	BAIRRO,  	CEP,  	COMPLEMENTO,  	LOGRADOURO,  	NUMERO,  	TITULO,  	ID_CIDADE,  	ID_CLIENTE,  	ID_VAREJO)
+values (5, 'Teste Insert', '17340000', 'Complemento teste', 'Logradouro teste', 'Numero teste', 'Titulo Teste', 2, 6, 2);
+
+------
+------ gestor_pedidos_girassol ------ 
+------
+cd /data/data/com.example.app_gestor_pedidos_girassol/databases/
+
+sqlite3 dbgirassolgestorpedido.db 
+
+sqlite3 dbgirassolgestorpedido.db -line ".mode column" ".headers on" "select * from usergirassol"
+sqlite3 dbgirassolgestorpedido.db "delete from usergirassol"
+sqlite3 dbgirassolgestorpedido.db "insert into usergirassol (id, tipo) values (2, 'PG')"
+sqlite3 dbgirassolgestorpedido.db "PRAGMA table_info(usergirassol);" => exibe campos da tabela
+
+
+

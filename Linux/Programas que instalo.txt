@@ -1,0 +1,67 @@
+sudo add-apt-repository ppa:noobslab/nemo
+sudo apt install nemo
+
+sudo apt install tmux
+
+
+
+sudo apt-get install nemo-compare nemo-audio-tab nemo-emblems nemo-filename-repairer nemo-fileroller nemo-gtkhash nemo-image-converter nemo-media-columns nemo-pastebin python-nemo nemo-rabbitvcs nemo-seahorse nemo-share nemo-terminal
+gnome-system-monitor
+
+SimpleScreenRecorder
+smartGit /media/mateus/Dados/Programacao/salvar/Linux/Programas que instalo.txt
+sudo apt-get install net-tools
+
+~/.bashrc
+HISTSIZE=5000
+HISTFILESIZE=5000
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+::discos:
+#Ferramenta modo texto:
+sudo snap install gdu-disk-usage-analyzer
+
+k4dirstat - estatísticas de uso de disco
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+google drive - para xubuntu seguir tutorial:
+https://linuxdicasesuporte.blogspot.com/2017/01/google-drive-no-xfce-debian-e-ubuntu.html
+--------------------------------------------------------------------------------------------------------------------------------
+
+wireshark - Monitor de requisições HTTP
+
+http.user_agent contains "Dart"
+http.request.full_uri contains "girassolnet"
+
+links sobre foerramentas de monitoramento
+https://linuxhint.com/top-10-ubuntu-network-tools/
+
+
+--Semelhantes a wireshark:
+SmartSniff - fantástico mas só tem para windows - https://www.youtube.com/watch?v=FT-Y51QpuN0
+
+--------------------------------------------------------------------------------------------------------------------------------
+::Programas para testar
+Webmin => Parece ser uma ótima interface para configuração
+---------------------------------------------------------------------------------------------------------------------------------
+netdata-é um servidorsão de monitoramento do pc. não estou usando, mas parece interessante.
+
+eu utilizei o comando abaixo pra instalar
+
+bash <(curl -Ss https://my-netdata.io/kickstart.sh)
+
+http://localhost:19999/#menu_system;theme=slate
+
+systemctl status netdata
+systemctl start netdata
+systemctl stop netdata
+
+ferramentas GUI git: https://git-scm.com/download/gui/linux
+
+--------------------------------------------------------------------------------------------------------------------------------
+asdf
+--------------------------------------------------------------------------------------------------------------------------------
+# pasta para salvar arquivos no comando "gnome-screenshot"
+gsettings set org.gnome.gnome-screenshot auto-save-directory "file:////home/mateus/Imagens/sc"

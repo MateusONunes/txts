@@ -1,0 +1,16 @@
+sudo service mysql restart
+
+
+
+sudo mysql_secure_installation => reaz senhas do mySql
+sudo mysqladmin -u root -p password
+sudo netstat -tap |grep mysql => Status do mySql
+
+mysql -u root -p  => conecta no mysql
+
+::dentro do MySql
+mysql -u root -p
+show global variables like 'validate_password%';
+SET GLOBAL validate_password.policy=LOW;
+SET GLOBAL validate_password.length = 1;
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'qw21';

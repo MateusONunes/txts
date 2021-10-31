@@ -1,0 +1,42 @@
+::Comandos utilizados para Instalar odoo (https://www.youtube.com/watch?v=imfgvCqWgHI) :
+
+sudo docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db postgres:11
+sudo docker run -p 8069:8069 --name odoo14 --link db:db -t pfplus/odoo:14.0-20210116
+sudo docker restart (Restart os dockers acima).
+iniciou com a senha mt77-t5y4-a62t
+
+Links:
+utilizado para a instalação: https://www.youtube.com/watch?v=imfgvCqWgHI
+https://hub.docker.com/_/odoo
+
+
+
+sudo docker container ls  -a => Listar Dockers
+
+
+::Iniciar containers:
+sudo docker container restart d0a28191a28a
+sudo docker container restart 9e497c2e706c
+sudo docker container exec -it odoo /bin/bash
+
+
+http://localhost:8069/
+
+
+Instalção do Odoo pelo link enviado pelo Marcos (Akademy) https://academy.kmee.com.br/documentacao/html/2-install-manage/install.html
+=================
+
+git submodule add https://github.com/odoo/odoo -b 12.0
+git clone https://github.com/odoo/odoo -b 12.0
+
+virtualenv venv --python=python3
+source bin/activate
+
+
+
+cd /home/mateus/_des/odoo12
+source venv/bin/activate
+cd core
+./odoo-bin -c odoo.conf
+-u <ModelToUpdate>
+

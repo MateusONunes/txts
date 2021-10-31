@@ -1,0 +1,52 @@
+?                  => Ajuda 
+sudo mysql -u root -p   => Conecta no usuário root
+select version();  => Versão do Banco
+show databases;    => Exibe bancos
+use DATABASE_NAME  => Conecta no banco de dados
+systemctl status mysql => Status do serviço
+
+mysql -h localhost -u root -p -D magento => Conecta na base magento com usuário root
+
+
+::Usuário
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password'; 
+GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'localhost';
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+SHOW GRANTS FOR 'username'@'localhost
+FLUSH PRIVILEGES;
+
+::Criar banco
+create database magento default character set utf8 default collate utf8_general_ci;
+GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'localhost';
+GRANT ALL PRIVILEGES ON magentoBD.* TO 'magento'@'localhost';
+    => dá permissão ao banco magentoBD para o usuário magento
+
+::Backup
+mysqldump -u root -p prestashop > /var/www/html/mysql_20210304.sql
+
+sudo chmod -R 777 /var/lib/mysql/
+sudo chmod -R 777 /usr/bin/mysql
+
+-------------------------------------------------------------------------------------------------------------------
+Links:
+
+::Informações de banco, tables, campos, collations
+https://stackoverflow.com/questions/1049728/how-do-i-see-what-character-set-a-mysql-database-table-column-is
+
+::Alterar o char_set do banco
+https://www.a2hosting.com.br/kb/developer-corner/mysql/convert-mysql-database-utf-8#:~:text=mysql-,To%20change%20the%20character%20set%20encoding%20to%20UTF%2D8%20for,q%20at%20the%20mysql%3E%20prompt.
+
+-------------------------------------------------------------------------------------------------------------------
+Sqls:
+
+::Exibir char set dos bancos:
+ SELECT SCHEMA_NAME 'database', default_character_set_name 'charset', DEFAULT_COLLATION_NAME 'collation' FROM information_schema.SCHEMATA;
+
+::exibir character_set_database para p banco conectado atualmente
+show variables like "character_set_database";
+
+::exibir configurações para todas as tableas
+show table status;
+SELECT CCSA.character_set_name FROM information_schema.`TABLES` T, information_schema.`COLLATION_CHARACTER_SET_APPLICABILITY` CCSA WHERE CCSA.collation_name = T.table_collation AND T.table_schema = "dbname"AND T.table_name ="Nome da tabela";
+
+

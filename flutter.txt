@@ -1,0 +1,42 @@
+Flutter Desktop
+---------------
+https://flutter.dev/desktop
+
+flutter channel dev
+flutter upgrade
+flutter config --enable-linux-desktop
+flutter devices
+flutter run -d linux
+flutter create .
+
+flutter build web
+pub global activate webdev
+flutter packages pub global run webdev
+flutter packages pub global run webdev serve web:9091
+
+google-chrome --user-data-dir=”/var/tmp/Chrome” --disable-web-security
+ 
+
+
+
+*apt install clang
+*sudo apt install ninja-build
+
+flutter create "--list-samples"
+
+::onCreate do Delphi:
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      globalConfig.darkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
+    });
+  }
+  
+  
+::MobX
+flutter pub run build_runner build
+flutter pub run build_runner watch
+  

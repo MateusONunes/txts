@@ -1,0 +1,53 @@
+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
+
+::GIT
+=====
+ver estes comandos: https://woliveiras.com.br/posts/comandos-mais-utilizados-no-git/#Listandoocaminhodoservidor
+outro link (Marcos): https://git-scm.com/docs/git-request-pull
+
+git remote -v => Mostra o repositório de origem
+git status => Ver o ramo e situação do repositório
+rm -rf .git  => para/remover pasta do git (remover o repositório)
+git checkout main => muda para a branch "main"
+git branch app_dark => Cria a nova branch "app_dark"
+git branch  => Lista as branchs
+git log => mostra arquivos a serem enviados para repositório (tem tb git log --graph)
+git reset HEAD~1 => desfaz para o último commit( HEAD~1)
+git reset --hard origin/<NOME_BRANCH>  => Reseta para o repositório do git
+git pull => atualizar o repositório local de acordo com o git.
+git merge origin/jose-luiz => Aplica na branch atual o conteúdo da branch Jose-Luiz
+git log --oneline => log compacto em apenas uma linha
+git diff main origin/main => Diferença com o repositório local para o repositório remoto. Necessário executar "git fetch" antes
+
+
+::Sequência de comandos para subir um repositório apartir do terminal (testar melhor esta sequência)
+git init
+touch README.md
+git add README.md
+git commit -m "Início"
+remote set-url origin https://github.com/MateusONunes/SpringBoot_Estudo_Carros.git
+**Cria o repositório lá no Git :( 
+git push -u origin master
+git remote show origin
+
+
+
+    8  2020-05-12 10:02:31 : sudo apt install git
+    9  2020-05-12 10:02:31 : git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
+   10  2020-05-12 10:02:31 : git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+   23  2020-05-12 10:02:31 : asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  409  2020-05-12 10:02:31 : /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  452  2020-05-12 09:24:41 : git status
+  453  2020-05-12 09:24:47 : git commit
+  454  2020-05-12 09:25:01 : git update
+  455  2020-05-12 09:25:14 : history git
+  501  2020-05-12 10:21:33 : history git
+  503  2020-05-12 10:21:41 : history | grep g
+  
+  
+
+
+
+
+estudar:
+https://www.atlassian.com/br/git/tutorials/undoing-changes/git-reset#:~:text=Revisando%2C%20o%20git%20reset%20%C3%A9,e%20o%20Diret%C3%B3rio%20de%20trabalho.

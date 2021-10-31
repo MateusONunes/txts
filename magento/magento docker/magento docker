@@ -1,0 +1,65 @@
+erro ao instalar magento 2.3. na docker:
+PHP Fatal error:  Allowed memory size of 2147483648 bytes exhausted (tried to allocate 9437184 bytes) in phar:///usr/local/bin/composer/src/Composer/Repository/ComposerRepository.php on line 584
+creio que terei que configurar memória do php
+
+
+
+
+seguindo tutorial https://www.youtube.com/watch?v=8ioZEpPFezk&t=543s
+
+::1 - Instalar Docker-https://www.digitalocean.com/community/tutorials/como-instalar-e-usar-o-docker-no-ubuntu-18-04-pt
+=====================
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+apt-cache policy docker-ce
+
+sudo apt install docker-ce
+
+sudo systemctl status docker
+sudo usermod -aG docker ${USER}
+su - ${USER}
+id -nG
+
+
+
+::2-Docker Composer -https://docs.docker.com/compose/install/#install-compose
+===================
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+==========
+==INÍCIO==
+==========
+
+::3-Baixando imagem -https://github.com/clean-docker/Magento2
+=============================================================
+#publica:d6bd42d655a84504b4a2291d3259cd96
+#private:8c8646722850c213e51fc6bfa12508f4
+
+curl -s https://raw.githubusercontent.com/clean-docker/Magento2/master/init | bash -s MYMAGENTO2 clone
+  ** deu este erro => sed: não foi possível ler : Arquivo ou diretório inexistente
+  
+cd magento2
+#./start
+#./stop
+./shell
+rm index.php
+install-magento2 2.3.6-p1
+
+#vim .user.ini => 2768M
+#vim .htacess => memory_limit => 2768M
+
+
+
+
+
+
+
+
+www-data@0e12cb066b5a:~/html$ install-magento2
+Cannot create cache directory /var/www/.composer/cache/repo/https---repo.magento.com/, or directory is not writable. Proceeding without cache
+Warning from repo.magento.com: You haven't provided your Magento authentication keys. For instructions, visit https://devdocs.magento.com/guides/v2.3/install-gde/prereq/connect-auth.html
+

@@ -1,0 +1,88 @@
+links:
+https://www.youtube.com/watch?v=1MNvgB2jKN4
+https://www.graphile.org/postgraphile/usage-cli/#cli-options
+
+
+deu certo este => postgraphile -c odoo_mateus -s public -a -j --dynamic-json --enhance-graphiql
+
+postgraphile -c odoo_mateus -s public --watch --append-plugins @graphile-contrib/pg-simplify-inflector
+
+
+postgraphile -c 'postgres://postgres:mateus@localhost/odoo_mateus' -s public --enhance-graphiql --dynamic-json
+postgraphile -c postgres://mateus@localhost/odoo_mateus -s public -a -j
+
+**postgres://username:password@host:5432/dbname 
+
+sudo 
+
+postgraphile \
+  --subscriptions \
+  --watch \
+  --dynamic-json \
+  --no-setof-functions-contain-nulls \
+  --no-ignore-rbac \
+  --no-ignore-indexes \
+  --show-error-stack=json \
+  --extended-errors hint,detail,errcode \
+  --export-schema-graphql schema.graphql \
+  --graphiql "/" \
+  --enhance-graphiql \
+  --allow-explain \
+  --enable-query-batching \
+  --legacy-relations omit \
+  --connection postgres:///odoo_mateus \
+  --schema public
+  
+  
+    --append-plugins @graphile-contrib/pg-simplify-inflector \
+    
+    
+mutation MyMutation {
+  createHermesApp(input: {hermesApp: {name: "teste"}, clientMutationId: ""}) {
+    clientMutationId
+  }
+}
+    
+    
+=========================================================================================================
+--talves seja necessário acrescentar -watch para construir indices:
+postgraphile -c odoo_mateus -s public -j --dynamic-json --enhance-graphiql
+    
+----------------    
+{
+  allPopsMissions {
+    nodes {
+      id
+      name
+      partnerId
+      popsMeasurementsByMissionsId {
+        nodes {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+
+----------------
+{
+  allPopsMissions {
+    nodes {
+      id
+      name
+      partnerId
+      popsMeasurementsByMissionsId(condition: {partnerId: 3}) {
+        nodes {
+          id
+          name
+          partnerId
+          state
+          dateStarted
+        }
+      }
+    }
+  }
+}
+
+-------

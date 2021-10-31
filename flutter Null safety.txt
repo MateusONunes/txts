@@ -1,0 +1,9 @@
+habilitar => Dart 2.12.0-0  => '2.12.0-1 < 3.0.0'
+
+
+String> s; => Liberar a variável para iniciarlizar como nula.
+print(x!)  => estou garantido que a variável x não é nula.
+
+flutter run --no-sound-null-safety
+flutter pub outdated --mode=null-safety
+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

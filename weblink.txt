@@ -1,0 +1,35 @@
+sala-conta-Mateus12-
+sala-servidor-Mateus1982-_X!
+mateus-@Sala1982-_X!
+
+ssh root@45.82.72.139
+
+------------------------------------------------------------------------------------------
+:: Script para Agrotec
+**Testar
+cd /home/mateus/_des/mateus/flutter/AgroTec/dev/flutter/AgroTec/
+rm -rf /home/mateus/_des/mateus/flutter/AgroTec/dev/flutter/AgroTec/build/web
+flutter build web
+cd /home/mateus/_des/mateus/flutter/AgroTec/dev/flutter/AgroTec/build
+
+
+
+cd ~/_des/mateus/flutter/AgroTec/dev/flutter/AgroTec/build
+zip -r agrotec.zip web
+scp -r /home/mateus/_des/mateus/flutter/AgroTec/dev/flutter/AgroTec/build/agrotec.zip root@45.82.72.139:/var/www/
+
+cd /var/www# ls
+rm -rf /var/www/html
+rm /var/www/html.zip
+
+unzip /var/www/agrotec.zip -d /var/www/
+mv web html
+
+------------------------------------------------------------------------------------------
+
+
+
+:: Copiar o diretório para dentro do ssh (Estando fora do ssh)
+scp -r /home/mateus/_des/mateus/flutter/AgroTec/dev/flutter/AgroTec/build root@45.82.72.139:/var/www/html
+
+

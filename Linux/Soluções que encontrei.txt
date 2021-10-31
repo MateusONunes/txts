@@ -1,0 +1,6 @@
+:: Para abrir o terminal de comandos apartir do nemo(botão direito):
+
+gsettings set org.cinnamon.desktop.default-applications.terminal exec gnome-shell 
+ou
+gsettings set org.cinnamon.desktop.default-applications.terminal exec xfce4-terminal
+

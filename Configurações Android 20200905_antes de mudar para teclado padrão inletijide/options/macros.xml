@@ -1,0 +1,27 @@
+<application>
+  <component name="ActionMacroManager">
+    <macro name="insert_line">
+      <action id="EditorLineEnd" />
+      <action id="EditorLineStart" />
+      <action id="EditorDeleteLine" />
+      <action id="EditorPaste" />
+      <action id="EditorUp" />
+    </macro>
+    <macro name="insert_line2">
+      <action id="EditorLineEnd" />
+      <action id="EditorLineStart" />
+      <action id="EditorPaste" />
+      <action id="EditorDeleteLine" />
+      <action id="EditorUp" />
+    </macro>
+    <macro name="line_subst">
+      <action id="EditorLineEnd" />
+      <action id="EditorLineStart" />
+      <action id="EditorPaste" />
+      <action id="EditorDeleteLine" />
+      <action id="EditorUp" />
+      <action id="EditorLineEnd" />
+      <action id="EditorLineStart" />
+    </macro>
+  </component>
+</application>

@@ -1,0 +1,52 @@
+php -i
+php -i | grep 'Configuration File'<br>
+
+
+
+ini_set('error_reporting', E_ALL);
+habilitar relatório de erro
+
+
+
+
+<?php ini_set('display_errors', 1); ?>
+at the top of your script will not catch any parse errors. A missing ")" or ";" will still lead to a blank page.
+
+This is because the entire script is parsed before any of it is executed. If you are unable to change php.ini and set
+
+display_errors On
+
+then there is a possible solution suggested under error_reporting:
+
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+include("file_with_errors.php");
+?>
+
+
+
+
+
+
+
+sudo mousepad /usr/share/phpmyadmin/index.php
+sudo mousepad /usr/share/phpmyadmin/libraries/common.inc.php
+
+sudo cp /usr/share/phpmyadmin/libraries/common.inc.php /usr/share/phpmyadmin/libraries/common.inc.php_mateus
+
+sudo mv /usr/share/phpmyadmin/index.php /usr/share/phpmyadmin/index-.php
+sudo mv /usr/share/phpmyadmin/index-.php /usr/share/phpmyadmin/index.php
+
+
+
+sudo mv /usr/share/phpmyadmin /usr/share/phpmyadmin-
+sudo mv /usr/share/phpmyadmin- /usr/share/phpmyadmin
+
+
+drwxr-xr-x    9 root root  4096 fev 15 11:52 phpmyadmin/
+drwxrwxrwx    9 root root  4096 fev 15 11:52 phpmyadmin/
+
+
+ini_set('error_reporting', E_ALL);
+habilitar relatório de erro

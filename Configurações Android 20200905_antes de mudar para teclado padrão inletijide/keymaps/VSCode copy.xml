@@ -1,0 +1,79 @@
+<keymap version="1" name="VSCode copy" parent="VSCode">
+  <action id="AceAction">
+    <keyboard-shortcut first-keystroke="ctrl #10000c7" />
+  </action>
+  <action id="AceLineAction">
+    <keyboard-shortcut first-keystroke="shift ctrl #10000c7" />
+  </action>
+  <action id="AceTargetAction">
+    <keyboard-shortcut first-keystroke="ctrl alt #10000c7" />
+  </action>
+  <action id="Back">
+    <keyboard-shortcut first-keystroke="alt page_down" />
+  </action>
+  <action id="BrowseWordAtCaretPlugin.AutoHighlight">
+    <keyboard-shortcut first-keystroke="altGraph page_down" />
+  </action>
+  <action id="BrowseWordAtCaretPlugin.Next">
+    <keyboard-shortcut first-keystroke="altGraph down" />
+  </action>
+  <action id="BrowseWordAtCaretPlugin.Previous">
+    <keyboard-shortcut first-keystroke="altGraph up" />
+  </action>
+  <action id="DecrementWindowHeight" />
+  <action id="EditorCodeBlockEnd">
+    <keyboard-shortcut first-keystroke="altGraph right" />
+  </action>
+  <action id="EditorCodeBlockStart">
+    <keyboard-shortcut first-keystroke="altGraph left" />
+  </action>
+  <action id="EditorSwapSelectionBoundaries">
+    <keyboard-shortcut first-keystroke="altGraph f1" />
+  </action>
+  <action id="EditorToggleCase">
+    <keyboard-shortcut first-keystroke="ctrl o" />
+  </action>
+  <action id="Flutter.Toolbar.ReloadAction">
+    <keyboard-shortcut first-keystroke="f12" />
+  </action>
+  <action id="Forward">
+    <keyboard-shortcut first-keystroke="alt page_up" />
+  </action>
+  <action id="GotoDeclaration">
+    <mouse-shortcut keystroke="control button1" />
+  </action>
+  <action id="IncrementWindowHeight" />
+  <action id="JumpDown4">
+    <keyboard-shortcut first-keystroke="ctrl alt page_up" />
+  </action>
+  <action id="JumpDown5">
+    <keyboard-shortcut first-keystroke="shift ctrl up" />
+    <keyboard-shortcut first-keystroke="alt left" />
+  </action>
+  <action id="JumpUp4">
+    <keyboard-shortcut first-keystroke="ctrl alt page_down" />
+  </action>
+  <action id="JumpUp5">
+    <keyboard-shortcut first-keystroke="shift ctrl down" />
+    <keyboard-shortcut first-keystroke="alt right" />
+  </action>
+  <action id="Macro.line_subst">
+    <keyboard-shortcut first-keystroke="ctrl q" second-keystroke="s" />
+  </action>
+  <action id="MoveStatementDown" />
+  <action id="MoveStatementUp" />
+  <action id="OpenFile" />
+  <action id="ResizeToolWindowDown" />
+  <action id="ResizeToolWindowUp" />
+  <action id="ShowNavBar" />
+  <action id="StartStopMacroRecording">
+    <keyboard-shortcut first-keystroke="ctrl q" second-keystroke="q" />
+  </action>
+  <action id="UpdateRunningApplication" />
+  <action id="android.deploy.ApplyChanges">
+    <keyboard-shortcut first-keystroke="ctrl f10" />
+  </action>
+  <action id="android.deploy.CodeSwap">
+    <keyboard-shortcut first-keystroke="ctrl alt f10" />
+  </action>
+</keymap>

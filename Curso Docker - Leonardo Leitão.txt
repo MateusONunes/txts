@@ -1,0 +1,208 @@
+Docker: Ferramenta essencial para Desenvolvedores - Leonardo Leitão
+
+::Instalação da Docker - "15. Instalação Linux" - c
+======================
+endereço guia dos comandos: https://docs.docker.com/engine/install/ubuntu/
+
+-Comandos executados:
+
+sudo apt-get update
+
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+  VERSÃO ESPECÍFICA => sudo apt-get install docker-ce=5:20.10.2~3-0~ubuntu-focal docker-ce-cli=5:20.10.2~3-0~ubuntu-focal containerd.io
+
+docker --help
+sudo docker run hello-world
+
+::Instalação da Docker-FIM
+==========================
+
+
+::Instalação da Docker-Compose
+==============================
+link: https://docs.docker.com/compose/install/
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+::Instalação da Docker-Compose-FIM
+==================================
+
+
+# tornar executável 
+sudo chmod +x /usr/local/bin/docker-compose
+
+# verificar a versão 
+docker-compose -v
+
+
+
+::Remover docker
+----------------
+sudo apt-get purge docker-ce docker-ce-cli containerd.io
+
+sudo find / -name '*docker*' -maxdepth 2
+
+sudo rm -rf /var/lib/docker
+sudo rm -rf /var/lib/containerd
+sudo rm -rf /run/docker
+sudo rm -rf /run/docker.sock
+sudo rm -rf /etc/docker
+
+::Remover docker-FIM
+--------------------
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Container é um processo isolado
+LXC - Linux Container.
+Container é um intermediário entre uma Vm e um "ChRoot"
+
+Imagem Docker => É criada apartir de um processo de Build ou de um comando commit
+A imagem é a classe e o container o objeto instanciado.
+
+
+Container : TDocker
+Dock Daemon = DockServer = Docker Engeny
+
+
+** Docker hub - Reporsitório de imagens
+
+Imagem é criada apartir 
+
+
+
+-------
+::Comando run
+=============
+::Existem 2 modos de executar um container:
+-Daemon => fica em back ground (para uso em produção). Primário/primordial
+-Modo interativo => para testes e desenvolvimento, experimentos, testes.
+
+
+::docker container run debian bash --version
+-Baixa a imagem debian (caso não exista)
+-cria o container apartir da imagem debian
+-starta o container
+-executa dentro do container o comando bash --version
+
+::docker container run --name mydeb -it debian bash
+-cria o novo container com nome "mydeb", o 
+
+::Comando run[FIM]
+=============
+
+::docker container run -rm debian bash --version
+-é o mesmo que o comando anterior porém ele vai remover (-rm) o container após sua execução
+
+docker start <nome_container>
+       stop 
+	   restart
+	   run
+	   logs
+	   inpect
+	   exec (Executa comando dentro da docker que está em execução)
+	   
+docker container ls    => lista os containers que estão ativos (o mesmo que "docker container ps")
+docker container ls -a => lista os containers idnependente de status (o mesmo que "docker container ps")
+
+docker image ls
+docker volume ls
+
+docker rm container_name <container_name> => remove container
+docker rmi container_name <image_id> => remove imagem
+docker image rm <image_id>           => remove imagem (exatamente comando anterior)
+
+
+
+docker container run hello-world  => Run sempre cria um container
+docker container ps -a => mostra todos os containers existente
+docker container run -it debian bash => -i Modo imperativo -t executar no terminal
+                                         Este comando abre o terminal do container debian 
+										 
+docker container run --name teste_container_name -it debian bash => nomeia o container como "teste_container_name"
+
+docker container ls -a => Lista os container. -a lista todos (inclusive que não estão em execução). Não entendi a diferenca do "ls" para o "ps"
+
+docker container start -ai <nome_do_container> =>  o "ai"(Atasch Imperativo) é equivalente ao "it" do "ps"(acima). 
+                                                   Inicializa o container <nome_do_container>	
+												   
+
+docker container run -p 8080:80 nginx => cria o container apontando e redireciona a porta do host 8080 para dentro da porta 80 do container.
+                                         Se eu executar "curl http://localhost:8080" vou bater na porta 80 do container "nginx"
+										 
+										 
+docker container run -p 8080:80 -v $(pwd)/html:/usr/share/nginx/html nginx => -v mapeia a dentro do container "/usr/share/nginx/html" para o host "$(pwd)/html"
+                                                                              No exemplo acima se eu fizer "curl localhost:8080" vai me retornar o arquivo "$(pwd)/html"
+
+docker container run -d --name ex-daemon-basic -p 8080:80 -v $(pwd)/html:/usr/share/nginx/html nginx
+  => Detached(Segundo plano ou Daemon)
+
+docker container run teste_arg bash -c 'echo $S3_BUCKET'
+  => Executa o container e executa retorna a saída do comando 'echo $S3_BUCKET' que foi executado dentro do container;
+  
+----------------------------------------------------------------------------------------
+Construção de imagens
+
+docker image pull redis:latest => baixa a ultima(latest) versão da image "redis" do repositório de images - https://hub.docker.com/
+docker image tag redis teste   => cria uma copia da image "redis" para a image "teste"
+docker image rm redis teste    => Exclui as imagens redis e teste
+docker image ls                => Lista todas as imagens já baixadas, é possível ainda usar a sintaxe antiga: docker images
+docker image inspect <tag>     => Extrai diversas informações utilizando um formato JSON da imagem indicada.
+docker image build -t <tag>    => Permite a criação de uma nova imagem, como veremos melhor em build.
+docker image push <tag>        => Permite o envio de uma imagem ou tag local para um registry.
+docker stats (id container)    => estatísticas dos containers
+docker inspect (id container)  => exibe json de informaçõesddd
+
+docker image build -t myfirstimage . => considerando que na pasta atual exista o arquivo "Dockerfile", este comando gerou a imagem myfirstimage(-t é a tag ou nome da imagem)
+docker image inspect --format="{{index .Config.Labels \"maintainer\"}}" teste_arg
+	=> Mostra o conteúdo da tag "maintainer" do inspect
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# "43. Rede Tipo Bridge" Pingar container2 apartir do container1 - https://www.udemy.com/course/curso-docker/learn/lecture/7564278#overview
+docker container run -d --name container1 alpine sleep 1000
+docker container run -d --name container2 alpine sleep 1000
+docker container exec -it container1 ifconfig
+docker container exec -it container2 ifconfig
+docker container exec -it container1 pint 172.17.0.3
+ 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+docker container run -d --net host --name container1 alpine sleep 1000
+docker container run -d --net host --name container2 alpine sleep 1000
+docker container exec -it container1 ifconfig
+docker container exec -it container2 ifconfig
+docker container exec -it container1 pint 192.168.0.2
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+::Outras coisas que não são do curso do Leonardo Leitão:
+
+::Comandos utilizados para Instalar odoo:
+
+sudo docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db postgres:11
+sudo docker run -p 8069:8069 --name odoo14 --link db:db -t pfplus/odoo:14.0-20210116
+sudo docker restart (Restart os dockers acima).
+iniciou com a senha mt77-t5y4-a62t
+
+Links:
+utilizado para a instalação: https://www.youtube.com/watch?v=imfgvCqWgHI
+https://hub.docker.com/_/odoo
+sudo docker container exec -it odoo /bin/bash
+
+

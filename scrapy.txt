@@ -1,0 +1,44 @@
+selenium
+bot
+-----
+
+https://www.youtube.com/watch?v=_Uu_wPFR_fg
+
+
+response.xpach() => mais robusto
+response.css() => mais simples
+
+
+scrapy shell https://quotes.toscrape.com/
+----------------------------------------
+
+response.url
+response.xpath("*//div")
+response.xpath("*//div/span")
+response.xpath("*//div/span[@class='text']")
+response.xpath("*//div/span[@class='text']/text")
+response.xpath("*//span[@class='text']/text()").get()
+response.xpath("*//span[@class='text']/text()").getall()
+
+
+ ou:
+ => response.xpath("*//div/span[@class='text']/text()").getall()
+
+len(response.xpath("*//span[@class='text']/text()").getall())
+
+response.xpath("*//small[@class='author']/text()").getall()
+
+::com css:
+
+response.css('small.author')
+response.css('small.author::text')
+response.css('small.author::text').getall()
+response.css('a.tag::text').getall()
+response.xpath("*//a[@class='tag']").getall()
+response.xpath("*//a[@class='tag']/text()").getall()  
+
+
+
+
+
+

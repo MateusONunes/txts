@@ -1,0 +1,700 @@
+Links sobre comandos linux
+https://www.uniaogeek.com.br/guia-de-comandos-shell-terminal-gnulinux/
+
+::Básicos
+cd
+mkdir
+rm
+ls
+ll
+locate
+find
+cp
+mv
+rm -rf diretorio
+::
+
+gls -l   => Lista arquivos exibindo detalhes
+ls -la   => Lista arquivos exibindo detalhes e ocultos
+ll       => equivalente a ls -la
+df -h    => Mostra pastas e espaços disponíveis e utilizados no hd
+du       => Tamanho das pastas
+du /home =?< tamanho dos arquivos "du -h /home" => Formato humano
+man     => Manual do Comando
+pwd     => (Print Working Directory) - Diretório atual 
+touch   => Tocar o arquivo
+echo    => Escrever testo. Pode ser usado pra escrever no arquivo => echo "hello word" > a.txt
+cat     => ver o conteúdo de um arquivo
+less    => ver o conteúdo de um arquivo um pouco diferente do cat
+tail    => ver o conteúdo de um arquivo - últimas   10 linhas "tail -n2 <Nome_arquivo>" => últimas   2 linhas
+tail -f => Deveria ficar monitorando o arquivo
+head    => ver o conteúdo de um arquivo - primeiras 10 linhas "head -n2 <Nome_arquivo>" => primeiras 2 linhas
+sudo update-alternatives --config java  => |
+sudo update-alternatives --config javac => |=> alternar versão do Java
+if config => informações do ip
+ip addr   => informações do ip
+alias ff="php bin/magento cache:flush"   
+Alt + F2-gksu nemo => Abre o nemo no modo sudo
+nmtui => utilitário para configurar a rede
+
+
+<Comando> | less => Stream da saída do comando. sudo apt-get install -f
+|whereis => mostra origem do programa, ou onde ele está instalado.
+|which   => ver a origem do programa: exemplo: "which echo"
+
+alsamixer => Som
+sudo dpkg -i NOMEARQUIVO.DEB  => Instalar Pacote .deb
+
+
+cURL    => Cliente URL - Get, Put, Delete, Post API
+top ou htop => Visualizar processos.
+ps aux => Lista Processos  (ps aux | grep 9999) 
+
+echo "export HISTTIMEFORMAT="%F %T: "" >> .bashrc            => acrescenta data/hora
+export HISTFILESIZE=0
+history - Histórico dos comandos digitados
+history -c => limpa histórico
+
+vi /etc/profile  => Parece ser um arquivo equivalente ao ~/.bashrc porém é para o ambiente todo
+ln -s            => Cria link simbólico (-s)
+					sudo ln -s ~/t.txt /etc/teste_link_simbolico.txt               => Criei um atalho (Link Simbólico) para o arquivo "~/t.txt"
+					sudo ln -s "/home/mateus/pasta_teste" "/etc/link_pasta_teste"  => Criei um atalho (Link Simbólico) para a pasta "/home/mateus/pasta_teste"
+
+
+nc
+ufw => Firewall
+chmod 777 mateus => Permissão total para a pasta "mateus"
+chmod +x composer.phar => permissão de execução para o arquivo composer.phar
+chmod 755 /etc/init.d/meuscript => Permissão de Execução
+chown => Altera proprietário
+update-rc.d mateus.sh defaults => Add o arquivo mateus.sh para executar na inicialização (O Arquivo tem que estar em "/etc/init.d") - https://www.vivaolinux.com.br/dica/Colocando-script-na-inicializacao-do-Linux-(Ubuntu-Debian)
+printenv    => exibe variáveis de ambiente
+
+uname -or      => Informações do Sistema - Retorna nome do linux(tipo de sistema) => "5.4.0-42-generic GNU/Linux"
+uname -as      => Informações do Sistema -  Retorna nome do linux(tipo de sistema) => "Linux mateus-pc 5.4.0-42-generic #46~18.04.1-Ubuntu SMP Fri Jul 10 07:21:24 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux"
+lsb_release -a => retorna informações do sistema 
+cat /etc/os-release => informações do sistema - arcaico
+
+watch -n 0.5 nvidia-smi       => Monitorar GPU
+watch -d -n 0.5 nvidia-smi    => Monitorar GPU
+
+
+grep - Pesquisa por conteúdos nos arquivos ou retorno de comandos -  (Globally search a Regular Expression and Print)
+
+::Usuários-https://www.alura.com.br/artigos/entendendo-as-permissoes-especiais-do-linux
+==========
+who   => Informações dos usuários logados
+users => Informações dos usuários logados
+id <usuário> => exibe informações de permissões/grupos do usuário
+id -nG       => exibe os grupos que o usuário está.
+sudo usermod -aG docker ${USER}   => Adciona o usuário atual ao grupo "docker"
+
+
+less /etc/passwd          => exibe usuários do sistema
+cut -d : -f 1 /etc/passwd => exibe apenas nomes dos usuários do sistema
+sudo usermod -aG sudo mateus   => previlégios de super usuário para usuário mateus
+sudo deluser magento sudo      => remove mateus do sudo.
+
+
+
+gsettings => Configurações do sistema - parece um registro do windows
+
+Log de mensagens:
+-----------------
+var\log
+dmesg => buffer das últimas mensagens (Acho)
+journalctl
+
+::Serviços
+==========
+systemctl status            => raiz dos servições em execução
+systemctl status |grep ssh  => raiz dos servições em execução - filtrando os status
+systemctl status ssh.service=> Status do serviço  "ssh.service"
+
+
+:: permissões de acesso
+=======================
+ls -l => (long list) exibe as permissões dos arquivos e pastas
+
+chmod <permissões> <Arquivo ou diretório>
+-----------------------------------------
+chmod 777 teste.txt              =>  Permissão de Ler Escrever e executar para Proprietario, grupo e outros usuários para o arquivo teste.txt
+sudo chmod -R 777 /usr/bin/mysql => permissão total a pasta mysql 
+
++---------------------------+
+|Tabela de permissões-"rwx" |
++-------+-------+-------+---+---------------------+     
+|Notação|Binário|Decimal|permissão                |     
++-------+-------+-------+-------------------------+     
+|    ---|    000|      0|Nenhuma                  |     
+|    --x|    001|***   1|Executar                 |     
+|    -w-|    010|***   2|Escrever                 |     
+|    -wx|    011|      3|Escrever e Executar      |     
+|    r--|    100|***   4|Ler                      |     
+|    r-x|    101|      5|Ler e Executar           |     
+|    rw-|    110|      6|Ler e Escrever           |     
+|    rwx|    111|      7|Ler e Escrever e Executar|     
++-------+-------+-------+-------------------------+     
+
++-----------------------------------+
+|Tabela de permissões-"rwx" - Básica|
++-------+-------+-------+-----------+ 
+|Notação|Binário|Decimal|permissão  |     
++-------+-------+-------+-----------+     
+|    ---|    000|      0|Nenhuma    |     
+|    --x|    001|***   1|Executar   |     
+|    -w-|    010|***   2|Escrever   |     
+|    r--|    100|***   4|Ler        |     
++-------+-------+-------+-----------+     
+
+
+
+Sobre as permissões
+-------------------
+drwxrw-r--
+d rwx rw- r--
+T P   G   O
+
+T-> Tipo
+	d=diretório
+	-=arquivo comum de usuário
+	c=arquivo de caractere
+	b=arquivo de bloco
+P - Permissão de Proprietário
+G - Permissão de Grupo
+O - Permissão de Outros usuários
+
+Permissões(nesta ordem):
+	r-Read-leitura
+	w-Write-gravação
+	x-eXecute
+
+:: permissões de acesso-FIM
+===========================
+
+
+=================================================================
+sintaxe: grep [opções] regex(Expressão regular) [arquivos]
+links  : https://cleitonbueno.com/linux-dominando-o-comando-grep/
+		 http://www.linuxcommand.org/lc3_man_pages/grep1.html
+
+grep -s   "alsamixer" *  => (NÃO OCULTOS) Procura na pasta ATUAL            todos os arquivos que tenham o conteúdo "alsamixer"
+grep -s   "alsamixer" .* => (    OCULTOS) Procura na pasta ATUAL            todos os arquivos que tenham o conteúdo "alsamixer"
+grep -s -r "alsamixer" * => Procura na pasta atual e SUBPASTA todos os arquivos que tenham o conteúdo "alsamixer" -r=> Recursivo
+grep -s ^[a-z] *         => Procura na pasta atual arquivos que começam com caracteres minúsculo 
+grep -s [[:digit:]]      => Arquivos que contenham números
+grep -s -n "[Mm]ateus" * => Procura por "Mateus" ou "mateus"
+grep -s -n "mateus$" *   => Todos os arquivos que tenham a palavra "mateus" no final da linha(o "$" faz isto)
+grep -s -n "^mateus" *   => Todos os arquivos que tenham a palavra "mateus" no início da linha(o "$" faz isto)
+grep -s -E -n "Mateus|mateus" * => 	OR - Exibe todos que contanham a string "Mateus" OU "mateus". O Caracter "|" se comporta como OU.
+									Para utilizar "|" é necessário acionar "-E" que seria "Expressões regulares extendidas" (Ou utilizar o comando egrep)
+									"|" é o operador OR
+egrep -s -n "teste.*buscada" * => 	AND - busca por "teste" E "buscada"
+							   		".*" é o operador AND 		
+								
+								
+"egrep" é o mesmo que "grep -E". O "grep -E" deixa da um uograde nas expressões regulares
+
+-i => ignora Maiúscula/Minúscula
+-n => Mostra o número da linha que encontrou a ocorrência
+-c => Mostra a quantidade de ocorrências da string no arquivo
+-s => elimina mensagens desncessárias
+-v => Que não contenha o texto selecionado
+-l => mostra apenas o nome do arquivo onde encontrou a ocorrência
+
+						e a opção "-c" exibe a quantidade de ocorrências
+
+grep -c "$ANDROID" * => Procura na pasta atual e subpasta todos os arquivos que tenham o conteúdo "$ANDROID"
+						e a opção "-c" exibe a quantidade de ocorrências
+-r recursiva
+-E expressão regular recursiva
+env => Mostra todas as variáveis de ambiente
+--color Mostrar saída colorida
+grep--------------------------------------------------------------------------------------------------------------
+
+::find
+======
+links: https://www.linuxforce.com.br/comandos-linux/comandos-linux-comando-find/
+       https://e-tinet.com/linux/comando-find-linux/
+       
+find . -name odoo.conf                   => Localizar recursivamente apartir da pasta atual o arquivo "odoo.conf"
+find . -maxdepth 2 -size -80k -type f    => Localizar na pasta atual "." tipos de arquivos file "f" com profundidade 2(-maxdepth 2) arquivos com menos que 80 Kilobytes
+find . -maxdepth 2 -size +2M -type f     => Localizar na pasta atual "." tipos de arquivos file "f" com profundidade 2(-maxdepth 2) arquivos com mais  que 2  Megabytes
+find /snap -iname ffserve*.*             => Localizar na pasta e subpasta "/snap" arquivos que contenham a string "ffserve" independente de Maiúsc/Min.
+find /snap -iname ffserve*.* > /dev/null => Localizar na pasta e subpasta "/snap" arquivos que contenham a string "ffserve" independente de Maiúsc/Min. (Elimina aqui as mensagens de erros como por exemplo "Permissão negada". Desta maneira o resultado fica apenas com o que interessa)
+
+::find Conteúdo do arquivo
+==========================
+grep -R -H -i "abc" .    => Localiza a string "abc" no diretório atual independente de maisc ou min./
+
+
+
+Geral do Sistema/Hardware
+=========================
+glances => visão geral do sistema
+
+
+escanear portas-informações de portas abertas - dicas daqui: https://www.youtube.com/watch?v=UY0f7cs5GpU
+=============================================
+nmap IP    => Mapear as portas abertas em um IP 
+nmap -p 1-65535 localhost  => Mapear as portas abertas em um IP - da porta 1 a 65535
+nmap -sV -p 1-65535 localhost  => Mapear as portas abertas em um IP - da porta 1 a 65535 e Mostra mais detalhes dos serviços desta porta.
+
+netstat -nlptu | grep 6907 => Informações locais de uma porta
+netstat -nlptu | grep -i "dotnet"=> Servicos dotnet
+netstat -nlptu
+netstat -lntp  => mostra porta abertas
+ 
+
+lsof -i :6907 => Informações de arquivos abertos (No exemplo, informações de arquivos abertos na porta 6907)
+
+
+
+tcpdump -D => Mostra as redes disponíveis
+tcpdump -i <NOMEDAREDE> => monitora a rede
+tcpdump -i wlx8882790dce1e -w testeacp.tx => Monitora a rede e joga no arquivo testeacp.txt
+tcpdump -r testeacp.txt => Visualiza os dados no arquivo capturado.
+
+tcpdump -i enp0s3 port 6907 => Monitora a porta.
+tcpdump -i eth0 dst 64.233.186.121 and icmp   ==> Captura com condição AND
+** tcpdump -i enp0s3 -A port 6907  => -A Exibe o conteúdo do arquivo 
+
+iptraf   -> Interface gráfica texto para monitoramento da rede.
+nethogs  -> Monitora programas/tráfedo de rede
+
+::Pacotes instalados-apt
+------------------------
+|dpkg -l iptraf                            => Informações de Pacotes instalados (No caso informação do pacote iptraf)
+|sudo apt list --installed | grep iptraf   =/
+
+dpkg -L iptraf     => Exibe onde o pacote está istalado
+apt source iptraf  => Exibe onde o Código fonte do pacote está istalado
+
+::Repositórios 
+==============
+/etc/apt/sources.list => Arquivo contendo os repositórios
+apt policy                                                   => Lista os repositórios
+sudo add-apt-repository --remove ppa:PPA_REPOSITORY_NAME/PPA => Remove repositório
+sudo add-apt-repository --add ppa:linuxuprising/java      => Adciona repositório
+apt
+
+
+::Pacotes instalados-snap
+-------------------------
+links: https://guialinux.uniriotec.br/snap/
+sudo snap install scrcpy    => instala o pacote "scrcpy"
+snap info scrcpy            => instala o pacote "scrcpy"
+snap list                   => Lista pacotes instalados 
+
+=> instala o pacote "scrcpy"
+
+
+::Arquivos do linux
+-----------------------
+~/.bashrc          => Arquivo de arranque do terminal
+Tilix              => Terminal multiabas
+iftop-monitorar rede
+google-chrome --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp   ===> Abre o chrome sem CORE
+source .bashrc     => Reexecuta o arquivo .bashrc para a sessão atual
+/etc/profile           => Arquivo executado ao carregar o linux para todosos usuários **Para recarregar(reload ou reset) após alterar =>  "source /etc/profile"
+                          echo "export PATH=/home/mateus/.asdf/installs/java/openjdk-11:$PATH" >> /etc/profile
+                          source /etc/profile
+                          
+/etc/profile.d/        => Arquivo executado ao carregar o linux para todosos usuários
+/etc/bash.bashrc       => Arquivo executado ao carregar o linux para todosos usuários
+/etc/environment       => também é utilizado para configurações iniciais mas não sei ao certo. É indicado para JAVA_HOME. Mas por padrão na minha máquina está "/etc/profile"
+/home/mateus/.profile  => Executado quando efetua o login
+/etc/hosts             => arquivo de hosts do linux
+
+=============================================
+
+
+Cursiosidades para explorar
+===========================
+cat /etc/passwd | cut -d : -f 1 | sort | tr [a-z] [A-Z] | grep ^S
+
+
+
+
+
+::asdf - Importante instalar o plugin da linguagem - https://www.programandocomcarlos.com.br/2020/01/asdf-gerenciador-de-versao-extensivel.html
+===============================================================================================================================================
+
+
+Comandos para instalar asdf - c
+------------------------------------------------------------------------------------------------------------------------
+sudo apt install curl git
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+echo ". $HOME/.asdf/asdf.sh" >> ~/.bashrc
+
+
+asdf current                   => Mostra as linguagens instaladas e suas versões. (asdf current flutter)
+asdf list                      => lista os plugins instalados no computador
+asdf plugin list               => ver plkugins instalados no computador
+asdf plugin add NOME_PLUGIN    => Adicionar um plugin
+asdf install nodejs 12.16.3    => Instala o nodejs 12.16.3
+asdf uninstall nodejs 12.16.3  => Desintala o nodejs 12.16.3
+asdf global nodejs 12.16.3     => Define o "nodejs 12.16.3" como a versão em uso para este computador
+asdf local nodejs 12.16.3      => seleciona o nodejs 12.16.13 (APENAS NA PASTA ATUAL)
+
+asdf plugin list all           => ver plugins disponíveis para instalacao
+asdf list-all flutter          => lista todas as versões disponíveis para flutter
+asdf list flutter              => lista as versões flutter instaladas na minha máquina
+asdf update                    => Atualiza os asdf
+asdf plugin-update --all       => Atualiza os plugins
+
+
+
+comandos a instalar:
+--------------------
+asdf plugin add flutter
+asdf plugin add java
+asdf install flutter 2.0.4-stable
+
+asdf install java openjdk-11
+ echo "export PATH=/home/mateus/.asdf/installs/java/openjdk-11:$PATH" >> /etc/profile
+ source /etc/profile
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+::ssh
+=====
+ssh root@192.168.0.101 -p 22
+
+sudo apt-get install openssh-server   => Instalar o ssh
+vi /etc/ssh/sshd_config          => Edita o principal arquivo de configuração do ssh mudar chave (PermitRootLogin no)
+/etc/init.d/ssh stop             => Pausa  o serviço ssh (sudo service ssh stop)(sudo systemctl ssh stop)
+/etc/init.d/ssh start            => Inicia o serviço ssh (sudo service ssh start)restart 
+sudo su|passwd root              => Definir senha root
+
+mais detalhes em https://www.vivaolinux.com.br/dica/Instalando-e-configurando-servidor-SSH-(Ubuntu)
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+::VIM
+=====
+: => abre comandos
+w => salvar
+q => sair
+
+PostGres
+========
+psql -Upostgres -hlocalhost
+
+::Comandos que utilizei
+=====================
+::Utilizei o comando abaixo para encontrar arquivos em "/" com a string "/home/mateus/.var/app/com.visualstudio.code/data/node_modules/bin"
+
+	find / ! -path "/media/*" ! -path "/proc/*" ! -path "/sys/*"   -size -800k -type f -print0 | xargs -P0 -0 grep -l "/home/mateus/.var/app/com.visualstudio.code/data/node_modules/bin"
+	find / ! -path "/media/*" ! -path "/proc/*" ! -path "/sys/*" -iname adb_auth_host.cpp 2> /dev/null
+		copiar pelo arquivo "adb_auth_host.cpp" em "/"
+
+ 
+  
+::Identificar PID de uma janela
+===============================
+
+obs: Os 2 comandos abaixo o cursor vira um "X" e é necessário clicar na janela que deseja saber o nome
+xprop | grep WM_CLASS => Nome da janela
+xprop | awk '/PID/ {print $3}' => PID da janela
+
+
+
+
+::Atalhos do linux
+===================
+
+Atalhos Janelas
+---------------
+Ctrl+Alt+Seta Acima - Exibe áreas de trabalhos
+Ctrl+Alt+Seta Baixo - Exibe Miniatura das janelas abertas
+Ctrl+Alt+Seta esquerda/Direita - Navega entre as áreas de trabalho
+Ctrl_Alt+Shit+Seta esquerda/direita - Envia a janela para outra área de trabalho
+Super-Esquerda/Direita/Cima/Abaixo - Maximiza tela 
+Super+Shift+Seta => Troca a janela de monitor
+Alt+f7 => Equivale a duplo clique na barra de títulos
+Ctrl+N => Duplica a janela atual
+Alt+Clique e arrastar => Arrastar a janela
+
+Atalhos terminal
+----------------
+Ctrl+U  - Apagar linha digitada
+Tab-Tab - Lista os comandos apartir do prefixo digitado
+Ctrl+R  - Procurar nos comandos digitados
+
+
+
+::VsCode
+========
+links    => https://www.linkedin.com/pulse/todos-os-atalhos-do-vs-code-mateus-barbosa/
+Ctrl+D => Econtrar e selecionar a mesma string
+Ctrl+L         => Seleciona linha atual e passa para a próxima
+
+Alt +Shift+Seta Cima => Marca várias linhas
+Ctrl+Shift+Seta Cima => Idem
+Ctrl+F2              => Marcar todas as palavras igual a palavra que o cursor se encontra
+Alt+Up/Down          => Mover linha ou bloco selecionado para cima ou para baixo.
+Ctrls+"\" => Duplica o arquivo atual na ide
+
+
+Ctrls+"/" => Comenta seleção
+ctrl+shift+d   => Duplicar linha atual (produzido)
+alt+shift+zero => horizontal/vertical
+Shift+Alt+I    => Move o cursor para o final de todas as linhas selecionadas
+Ctrl+k Ctrl+s => Lista os atalhos do VsCode
+Ctrl+Shift+Enter => Insere linha   na linha atual
+Ctrl       Enter => Insere linha após linha atual
+Ctrl+Del         => Deleta apartir do cursor até o próximo " " 
+Ctrl+Shitf+K     => Deleta linha atuale
+Shitf+Del        => Deleta linha atuale copia seu conteúdo para área de transferencia
+
+Ctrl + Shift + k => linha atual
+
+
+Shift+Alt+SetaEsq/Dir => Seleção em Blocos
+Ctrl+Enter       => Inserir linha vazia acima
+Ctrl+Shift+Enter => Inserir linha vazia abaixo
+
+Ctrl+Shift+\     => Saltar para final ou comneço do parenteses
+
+atalhos do vscode e geral(universal para outros editores)
+-------------------------
+Ctrl+Backspace => Apaga palavra a esquerda
+Ctrl+Del       => Apaga palavra a direita
+
+Backup das extensões vsCode
+---------------------------
+code --list-extensions >> ~/vs_code_extensions_list.txt                                  => Salva as extensões em  ~/vs_code_extensions_list.txt
+cat ~/vs_code_extensions_list.txt | xargs -n 1 code --install-extension                  => reinstala as extensões em  ~/vs_code_extensions_list.txt
+code --list-extensions | xargs -n 1 code --uninstall-extension                           => Cuidado!! este comando limpa todas as extensões do vscode 
+
+Snippets => Constutores de código automático 
+
+::scp - Transferência de Arquivos
+::ssh-transferir arquivos (Os 2 comandos abaixo são executaos estando fora do ssh)
+scp ~/t.txt root@45.82.72.139:~/teste_scp/t.txt => Copiei o arquivo "~/t.txt" da minha máquina para o servidor vps no destino "~/teste_scp/t.txt"
+cp psapparel.zip mateus@45.82.72.139:~mateus@45.82.72.139 => copiei da maquina local para a máquina remota
+Eu estava estudando aqui: https://www.youtube.com/watch?v=r4te72Fq-18
+
+
+::Interface do Android Studio
+==============================
+http://www.basef.com.br/index.php/Atalhos_do_IntelliJ_Idea
+
+Ctrl+shift+k => Deletar linha atual
+Alt+Shift+down arrow => Duplicar Linha Atual
+Ctrl+M           => Posiciona o cursor no centro da tela
+Ctrl+Shift+A     => Exibe lista com os arquivos abertos nas abas. No vsCode faz bloco de comentário /**/
+Ctrl+Enter       => Insere linha abaixo do Cursor
+Ctrl+Shift+Enter => Insere linha acima  do Cursor
+Ctrl + i         => Seleciona a linha atual
+Ctrl+j           => Traz a linha de baixo para o final da linha atual
+Alt+Shif+I       => Seleção em Bloco.
+Ctrl+D           => Econtrar e selecionar a mesma string
+Ctrl+L           => Econtrar e selecionar a mesma string(Ctrl+D) porém em uma única etapa 
+Ctrl+Enter       => Inserir linha vazia acima
+Ctrl+Shift+Enter => Inserir linha vazia abaixo
+Navegar atrás    => Alt + pgDown (Definido manualmente)
+Navegar a frente => Alt + pgUp (Definido manualmente)
+
+Alt+Seta direita  => Saltar/Jump/Pular cursor 5 abaixo (ctrl + shift + abaixo faz o mesmo selecionando)
+Alt+Seta esquerda => Saltar/Jump/Pular cursor 5 acima  (ctrl + shift + acima  faz o mesmo selecionando)
+Ctrls+"/"         => Comenta seleção
+Alt+Shif+A        => Comenta seleção com /**/
+
+AltGr-f1(definido) - "Swap selection boudaries" - troca os limites da seleção
+
+Cytl+[ ou ]       => identar
+
+AltGr+SetaAcima ou Seta Abaixo => Encontrar próxima ocorrencia da palavra que está sobre o cursor. plugin BrowseWordAtCaret
+
+
+:Configurei na interface do android:
+-Matched brace
+
+::plugin Android Studio:
+https://github.com/acejump/AceJump
+Scratch => em teste - acesso rápido a texto
+
+::Emulator
+==========
+emulator -list-avds
+emulator @Pixel_2_API_30 -writable-system
+
+adb root                   => Ativou o root
+adb push teste.txt /sdcard => empurrou o arquivo teste.txt do host para dentro do emulador android em execução
+adb pull /sdcard/teste.txt => empurrou o arquivo teste.txt do host para dentro do emulador android em execução (Abaixo outro exemplo)
+adb pull /data/data/br.com.girassol.app_plataforma_girassol/databases/dbgirassol.db ~/Programas/flutter/Thiago/database/dbgirassol.db
+
+adb devices => Lista os emuladores. Lista os devices. Lista os celulares.
+adb -s emulator-5554 shell => Conecta no emulador específico "emulator-5554". Usar quando aparece o erro "adb: more than one device/emulator"
+
+
+::Emulator-FIM
+===============
+
+
+::Informações Gerais
+====================
+Shell Script => *.sh
+
+echo "teste2" >> /etc/mateus/log.txt
+date >> /etc/mateus/log.txt
+echo "---------------------------------" >> /etc/mateus/log.txt
+
+::Firebase
+==========
+Firebase login
+
+::Programas
+===========
+mc - explorer modo texto
+
+
+::Vm Oracle-Recursos Adcionais para habilitar cópia bi-direcional da área de trabalho
+=====================================================================================
+Área de trabalaho Bidirecional no VM Oracle(Instalar recursos adcionais):
+link utilizado para área de trabalaho bidirecional http://taylorlopes.com/ctrlc-e-ctrlv-entre-windows-e-vm-linux-no-virtual-box/
+O link orienta para:
+
+sudo apt-get update
+sudo apt-get install make gcc
+sudo apt-get install linux-headers-$(uname -r)
+init 6
+
+depois inserir cd Adcionais e executar no cd:
+
+sudo sh ./VBoxLinuxAdditions*.run
+observação: Teve uma versão que tive que executar o run.sh
+
+reiniciar e ativar área de trabalho bi-direcional
+FIM==================================================================================
+
+
+
+::Swap Memória
+==============
+Aumentar o tamanho da memória - Início-----------------------------------------------
+sudo swapon --show  => Mostra status da memória
+free -h             => mostra memória usada
+df -h               => Mostra pastas e espaços disponíveis e utilizados no hd
+sudo fallocate -l 3G /swap.img  => cria o arquivo "/swap.img" com 3GB
+ls -lh /swap.img                => lista detalhes do arquivo "/swap.img" 
+
+sudo mkswap /swap.img 
+chmod 600 /swap.img
+sudo swapon /swap.img |=> estes dois comandos apontam para o arquivo "/swap.img" para serem utilizados como swap
+
+Os comandos acima deixaram a swap disponível para esta sessão. Agora para fixar sempre que reiniciar:
+echo '/swap.img none swap sw 0 0' | sudo tee -a /etc/fstab
+
+
+
+Os comandos acima foram extraídos de https://pplware.sapo.pt/linux/dica-linux-como-aumentar-a-memoria-swap-do-sistema/
+
+::Mais comandos de swap:
+sudo swapoff -a  => desativa o uso da memória
+sudo swapon -a   => Ativa o uso da memória
+
+Aumentar o tamanho da memória - FIM-----------------------------------------------
+
+::Limpar memória ram/swap(Memória ociosa)
+=========================================
+sysctl -w vm.drop_caches=3
+sudo swapoff -a && swapon -a
+
+
+::Firewall
+==========
+sudo ufw allow ssh  => Habilita ssh
+sudo ufw enable     => ativa o firewall
+
+::mailutils
+===========
+sudo apt install mailutils -y
+mail -s "teste" mateus.2006@gmail.com => Envia email para mateus com assunto "teste" (Ctrl+D para finalizar assunto)
+mailq
+mailx  => parece que exibe as mensagens recebidas
+
+
+::tightvncserver
+================
+tightvncserver -kill :1
+apt-get install xorg lxde tightvncserver
+tightvncserver -kill :1
+sudo tightvncserver :1
+
+
+
+::Apache
+========
+apachectl -M   => Lista módulos ativos
+
+https://www.youtube.com/watch?v=BXfZtF-1OLA
+
+
+:: gradle
+=========
+gradle tasks
+gradle help --task init => help da taks init
+
+gradle tasks bootRun --continue  => exibe todos os erros (não para no primeiro)
+
+
+GPU
+===
+links:https://qastack.com.br/unix/38560/gpu-usage-monitoring-cuda#:~:text=Para%20Linux%2C%20o%20uso%20nvidia,de%20atualiza%C3%A7%C3%A3o%20de%201%20segundo.
+nvidia-smi -l 1
+
+
+Comandos utilizados para dar Permissão de acesso a pasta compartilhada dentro da Oracle VM
+==========================================================================================
+mateus@mateus-VirtualBox:/media$ ll
+total 16
+drwxr-xr-x   4 root root   4096 abr 29 18:34 ./
+drwxr-xr-x  20 root root   4096 fev 14 23:08 ../
+drwxr-x---+  3 root root   4096 abr 29 18:32 mateus/
+drwxrwx---   1 root vboxsf 4096 abr 29 16:54 sf_home_host/
+
+mateus@mateus-VirtualBox:/media$ groups
+mateus adm cdrom sudo dip plugdev lpadmin lxd sambashare
+mateus@mateus-VirtualBox:/media$ sudo gpasswd -a vboxsf
+[sudo] senha para mateus: 
+gpasswd: usuário 'vboxsf' não existe
+mateus@mateus-VirtualBox:/media$ sudo gpasswd -a mateus vboxsf
+Adicionando usuário mateus ao grupo vboxsf
+mateus@mateus-VirtualBox:/media$ cd sf_home_host/
+bash: cd: sf_home_host/: Permissão negada
+mateus@mateus-VirtualBox:/media$ 
+=> reiniciar
+
+::OracleVm - Virtual Box - Alterar o tamanho do hd. O Exemplo abaixo aumenta para 15 GB
+=======================================================================================
+vboxmanage modifyhd "ubuntu 18.04 Odoo 12.vdi" --resize 15000
+
+
+::tail
+======
+tail    => ver o conteúdo de um arquivo - últimas   10 linhas "tail -n2 <Nome_arquivo>" => últimas   2 linhas
+tail -f => Deveria ficar monitorando o arquivo
+tail -f testelog.txt | grep -v -i -E 'mateus|ornelas' => -v ignora lista de palavras, -i ignore case, -E possibilidade do OR(|)
+tail -f /var/log/postgresql/postgresql-10-main.log | grep -v -i -E 'bus_presence|ir_cron|bus_bus'
+
+
+
+
+KVM - Virtualização Aninhada
+============================
+
+sudo apt-get install cpu-checker
+egrep -c '(vmx|svm)' /proc/cpuinfo
+kvm-ok
+
+
+
+
+::Sites:
+========
+https://packages.ubuntu.com/
+
+

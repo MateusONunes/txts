@@ -1,0 +1,21 @@
+::Curso drf - Django rest framework
+====================================
+https://www.udemy.com/course/criando-apis-rest-com-django-rest-framework-essencial/
+
+O Django REST Framework é uma biblioteca super poderosa que, após instalada e configurada, é
+executada no topo de um projeto Django. 
+
+
+
+24-recapitulando - CRUD completo 
+https://www.udemy.com/course/criando-apis-rest-com-django-rest-framework-essencial/learn/lecture/17827820#overview
+
+
+18. Criando um CRUD genérico com Django REST Framework
+
+19. Sobrescrevendo os métodos genéricos
+https://www.udemy.com/course/criando-apis-rest-com-django-rest-framework-essencial/learn/lecture/17827804#overview
+
+
+Master/details
+22. Utilizando Relações com Django REST Framework-https://www.udemy.com/course/criando-apis-rest-com-django-rest-framework-essencial/learn/lecture/17827816#overview

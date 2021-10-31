@@ -1,0 +1,39 @@
+class odooController(http.Controller):
+    @http.route('/testeapi/', auth='public', type="http")
+    def index(self, **kw):
+        # return json.dumps({'order_id': 1});
+        # return response Response(json.dumps({'order_id': 1}), status=200, content_type="application/json");
+        missions_rec = request.env['pops.missions'].search([('id', '>', 0)]);
+        missions = []
+
+        for mission in missions_rec:
+
+            measurement_rec = request.env['pops.measurement'].search([('missions_id', '=', mission.id)]);
+            vals_measurement = []
+            for measurement in measurement_rec:
+                vals_measurement.append({
+                    'id': measurement.id,
+                    'measurement_latitude':measurement.measurement_latitude,
+                    'measurement_longitude':measurement.measurement_longitude,
+                    'state':measurement.state
+                })
+
+            vals = {
+                "id": mission.id,
+                "name": mission.name,
+                'measurements': vals_measurement
+            }
+
+            missions.append(vals)
+
+        data = {'status': 200, 'response': missions};
+        # return data;
+        return Response(json.dumps({'data': data}), status=200, content_type="application/json")
+
+    @http.route('/testeapi2/', auth='public', type="http")
+    def index2(self, **kw):
+        # return json.dumps({'order_id': 1});
+        # return response Response(json.dumps({'order_id': 1}), status=200, content_type="application/json");
+        missions_rec = request.env['pops.missions'].search_read([('id', '>', 0)]);
+        return missions_rec
+

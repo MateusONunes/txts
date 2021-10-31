@@ -1,0 +1,66 @@
+<application>
+  <component name="VimEditorSettings">
+    <editor />
+  </component>
+  <component name="VimHistorySettings">
+    <history>
+      <history-cmd>
+        <entry>w</entry>
+      </history-cmd>
+    </history>
+  </component>
+  <component name="VimKeySettings">
+    <shortcut-conflicts>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed F</text>
+      </shortcut-conflict>
+    </shortcut-conflicts>
+  </component>
+  <component name="VimMarksSettings">
+    <globalmarks />
+    <filemarks>
+      <file name="$USER_HOME$/Programas/flutter/Thiago/app_plataforma_girassol/lib/domain/Endereco.dart" timestamp="1598309951774">
+        <mark key="[" line="92" column="2" />
+        <mark key="]" line="68" column="40" />
+        <mark key="." line="68" column="39" />
+        <mark key="^" line="68" column="40" />
+      </file>
+      <file name="$USER_HOME$/Programas/flutter/Thiago/app_plataforma_girassol/lib/database/EnderecoDao.dart" timestamp="1598310051430">
+        <mark key="[" line="64" column="47" />
+        <mark key="]" line="64" column="48" />
+        <mark key="." line="64" column="47" />
+        <mark key="^" line="64" column="48" />
+      </file>
+    </filemarks>
+    <jumps />
+  </component>
+  <component name="VimRegisterSettings">
+    <registers>
+      <register name="1" type="2">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="&quot;" type="4">
+        <text>o</text>
+      </register>
+      <register name=":" type="4">
+        <text>w</text>
+      </register>
+      <register name="-" type="4">
+        <text>o</text>
+      </register>
+    </registers>
+  </component>
+  <component name="VimSearchSettings">
+    <search>
+      <last-dir>0</last-dir>
+      <show-last>false</show-last>
+    </search>
+  </component>
+  <component name="VimSettings">
+    <state version="6" enabled="false" />
+    <notifications>
+      <idea-join enabled="false" />
+      <idea-put enabled="false" />
+    </notifications>
+  </component>
+</application>

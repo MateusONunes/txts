@@ -1,0 +1,32 @@
+https://www.youtube.com/watch?v=jCdu8enga-I&t=47s
+
+Start Terminal (Ctrl+Alt+T)
+
+run this command to install imwheel
+
+sudo apt-get install imwheel
+
+if this command no works…..
+
+try, sudo apt install imwheel
+
+again run a command………
+ gedit  ~/.imwheelrc
+
+
+gedit has opened, paste this text in gedit box…..
+
+
+".*"
+None,      Up,   Button4, 3
+None,      Down, Button5, 3
+Control_L, Up,   Control_L|Button4
+Control_L, Down, Control_L|Button5
+Shift_L,   Up,   Shift_L|Button4
+Shift_L,   Down, Shift_L|Button5
+Now run this command...
+killall imwheel && imwheel -b "4 5"
+
+add imwheel in start up apps, follow me..................
+
+imwheel -b "4 5"

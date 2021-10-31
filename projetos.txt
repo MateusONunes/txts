@@ -1,0 +1,94 @@
+-site/app yoga barra
+-app
+	-app trasnsposição de acordes
+	-app perguntas de concurso públicos
+	-app localizar o produto dentro do supermercado. Integrar com a lista de compras e tracar a rota de compras	
+	-Capturar link do computador e jogar pro meu navegador, ou capturar e transformar tudo em texto
+	-*** jogo interativo entre celulares da mesa
+	-app lista compras - tiezer
+
+
+
+-Projeto financeiro do lar.
+    Lista de Compras/Lista de Atividades
+    
+-site/app astrologia
+-site/app sal de terra Deilson Silvia.
+-site/app namidia
+-site/app familia cristal
+-site/app xamanismo
+-jogo interativo entre 2 celulares
+-"Planilhas são sementes de sistemas"
+
+-plataforma para estudo
+	pergunta para o video em tempo de demanda
+
+-youtube - extensão para facilitar o recorte de trechos
+
+-site/app financeiro opensource
+  - pesquisar alternativas já existentes hoje
+  - 
+-bot(Robô)/automação wats - https://www.youtube.com/watch?v=Aixt_qyJfH0
+
+-site/app/repositório de frases de pessoas.
+-identificar direção olhos
+- internet das coisas
+- Dividir aba do chrome em duas janelas
+	Dividir em duas abas na vertical ou horizontal dentro da mesma aba
+
+::Universal Manual
+Manual universal para eu documentar:
+	-Comandos linux
+	-Atalhos de interfaces (Atsalhos de teclado para o vscode por exemplo)
+Provavelmente terá um servidor na internet e terá que funcionar desde no prompt de comandos linux até em um terminal web ou até mesmo no celular.
+-terá opção de executar o comando selecionado (ou então enviar o comando para a linha de comando)
+
+::Universal Manual-FIM
+
+::Plugin Vscode para "Histórico de comandos". Botão que repoduz o último, penultimo, comando etc. Intercala as funções.
+
+::Gravador de telas
+- Gerar gravação de tela de pc otimizada de maneira que não exista a repetição de imagens iguais.
+Por exemplo considerando 1 print-screen a cada segundo:
+
+Se ninguém estiver operando o pc, e o mesmo estiver em uma tela que não haja animações, este meu vídeo no primeiro print ocuparia 60kb por exemplo. os próximos prints seriam pequenos, pois eles indicariam que a referência da tela toda está no primeiro print. Porém quando o relógio mudar o horário, o próximo print vai identificar que apenas "a região próxima ao relógio" teve uma alteração, e o restante da imagem irá buscar a referência na PRIMEIRA IMAGEM.
+
+Outro exemplo: Não tem ninguém operando o computador porém ele está numa página com animações.
+O Primeiro print pegaria a tela inteira e os próximos prints pegarão apenas as alterações que acontecem nas animações, o restante da imagem é igual a PRIMEIRA IMAGEM.
+
+E assim por diante.
+
+Eu imagino que existam programas que trabalhem desta maneira. Tecnicamente existe algum nome para esta maneira de trabalhar? Isto ajudaria muito com minhas pesquisas. Algo tipo "Padrão retroativo de vídeo", sei lá, algum nome técnico para isto?
+
+Peço desculpas no texto grande pois foi a maneira que encontrei para conseguir passa a idéia. Espero que tenha conseguido.
+
+Muit9o obrigado e qualquer ajuda indicação comentário complemento é bem vindo.
+
+
+
+
+
+Neste caso os novos prints terão 
+
+-projeto "human resposte" to google
+
+
+-----------------------------------------
+Ideias gerais
+
+-Rastreador de navegação => "última vez neste site em jan-2020", voce entrou 2 vezes este mês, 10 vezes este ano  gráfico de acesso.
+
+
+
+scrum
+
+
+
+bootstrap
+
+::Plugin Intelijide
+-palavra atual
+ - Copiar/Colar
+- Ponto e virgula no final
+- rastro do ponteiro - numerozinho de 10 a 9 das últimas lozalicações do ponteiro
+- Alt + scrool do mouse 

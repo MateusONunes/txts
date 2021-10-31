@@ -1,0 +1,33 @@
+*ver repositorios salvos
+*salvar atalhos das janelas (ainda não sei como)
+*salvar os atalhos de teclado
+*exportas configurações do IntelijIdea
+*/etc/profile
+*~/basch
+*asdf
+
+::notepad++ https://www.edivaldobrito.com.br/notepadqq-um-notepad-para-linux/
+sudo add-apt-repository ppa:notepadqq-team/notepadqq
+sudo apt-get update
+sudo apt-get install notepadqq
+sudo apt-get install notepadqq-gtk
+
+:: copiar o ~/.Bashrc
+:: Copiar os arquivos abaixo:
+/etc/profile           => Arquivo executado ao carregar o linux para todosos usuários **Para recarregar(reload ou reset) após alterar =>  "source /etc/profile"
+/etc/profile.d/        => Arquivo executado ao carregar o linux para todosos usuários
+/etc/bash.bashrc       => Arquivo executado ao carregar o linux para todosos usuários
+/etc/environment       => também é utilizado para configurações iniciais mas não sei ao certo. É indicado para JAVA_HOME. Mas por padrão na minha máquina está "/etc/profile"
+
+
+
+::xubuntu - xfce
+https://sempreupdate.com.br/como-instalar-ambiente-xfce-no-ubuntu/
+
+::notepad
+https://diolinux.com.br/2014/08/notepad-mais-mais-para-Linux-notepadqq.html
+sudo add-apt-repository ppa:notepadqq-team/notepadqq
+sudo apt-get update
+sudo apt-get install notepadqq 
+
+

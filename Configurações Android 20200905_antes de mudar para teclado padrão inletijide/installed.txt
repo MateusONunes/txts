@@ -1,0 +1,12 @@
+AceJump
+BrowseWordAtCaret
+DBN
+Dart
+IdeaVIM
+Scratch
+com.LineJumper
+com.intellij.plugins.vscodekeymap
+com.softwareco.intellij.plugin
+com.sqlandroid
+io.flutter
+net.vektah.codeglance

@@ -1,0 +1,101 @@
+https://www.youtube.com/watch?v=whzgC8Lc6IA&t=1s
+https://digitalstartup.co.uk/t/how-to-install-magento-2-3-and-build-a-web-server/263
+
+
+adduser mateus-@Sala1982-_
+usermod -aG sudo mateus
+
+sudo nano /etc/ssh/sshd_config
+{PermitRootLogin no}
+sudo systemctl reload sshd
+
+sudo apt install ufw
+sudo ufw allow ssh
+sudo ufw enable
+
+sudo apt-get install software-properties-common
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+
+::1-Apache
+==========
+
+sudo apt-get install apache2 -y
+sudo nano /etc/apache2/sites-available/000-default.conf
+{
+<Directory "/var/www/html">
+    AllowOverride All
+</Directory>
+}
+
+sudo nano /etc/apache2/apache2.conf
+{
+#mateus#
+ServerName 45.82.72.139
+}
+
+sudo apache2ctl configtest
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+sudo ufw allow 'Apache Full'
+
+2-PHP
+=====
+sudo apt-get install php7.2 libapache2-mod-php7.2 php7.2-mysql php7.2-soap php7.2-bcmath php7.2-xml php7.2-mbstring php7.2-gd php7.2-common php7.2-cli php7.2-curl php7.2-intl php7.2-zip zip unzip -y
+
+sudo nano /etc/apache2/mods-enabled/dir.conf
+{.php no início da linha}
+
+sudo nano /etc/apache2/mods-enabled/dir.conf
+
+3-MySql
+=======
+sudo apt-get install mysql-server -y
+**mateus+root
+
+sudo mysql_secure_installation
+
+
+4-phpAdmin
+==========
+sudo apt-get install phpmyadmin php7.2-mbstring php7.2-gettext -y
+**mateus
+
+sudo systemctl restart apache2
+
+5-Criar usuário magento
+=======================
+sudo adduser magento-@Sala1982--
+sudo usermod -g www-data magento
+sudo chown magento:www-data /var/www/html/
+
+6-Instalar Composer
+===================
+sudo curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+sudo composer self-update 1.10.16
+
+cd /var/www/html
+ls -la
+su magento
+rm index.html
+
+sudo nano /etc/ssh/sshd_config
+ClientAliveInterval
+
+
+composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.3.0 .
+
+#publica:d6bd42d655a84504b4a2291d3259cd96
+#private:8c8646722850c213e51fc6bfa12508f4
+
+
+
+
+
+
+
+
+
+

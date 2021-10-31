@@ -1,0 +1,102 @@
+magento
+
+
+min 2gb ram
+
+empresas especializadas em hosperdagem magento
+https://www.magenteiro.com/blog/para-magenteiros/guia-hostings-especializados-em-magento/
+https://www.codecia.com.br/
+https://www.mageuni.com/
+
+
+::Serviço de disparo de email(email transacional)-https://www.magenteiro.com/course/index/viewContent/p/14/c/353/
+
+::Marketplace - aula: https://www.magenteiro.com/course/index/viewContent/p/14/c/355/
+site da magento https://marketplace.magento.com/
+
+::Link de instalação do magento 2 - https://www.magenteiro.com/blog/magento-2/instalar-magento-2-tutorial/
+
+::Magento a partir da versão 2.4, somente instala via prompt/putty,Se quiser instalar por interface visual, utilize a versão 2.3.5 ou algum software de apoio, como CPanel com Softaculous
+
+------------------------------------------------------------------------------------------------------------
+
+Saudações. Acabei de chegar no magento(e tb no ecommerce) e nada sei sobre o assunto. Eu Sai em busca de uma solução ecommerce OpenSource, esbarrei no magento e estou cada vez mais surpreso com a dimensão da coisa, estou achando tudo interessantíssimo. Gostaria de saber sobre as seguintes questões:
+
+1-Levantar uma loja no cPanel da hostgator, é aplicável? É um primeiro cliente e no momento preciso de custos muito baixo.
+
+2-Cursos que me ensinem principalmente a parte visual da loja
+
+3-Se eu alugar um servidor MageUni por exemplo, consigo ter até quantas lojas nele?
+
+4-Um servidor weblink é uma boa alternativa?
+
+5-É possível instalar o Magento 2 em um servidor com 1 GB?
+
+------------------------------------------------------------------------------------------------------------
+::Instalar temas: Comandos:https://www.solwininfotech.com/product/magento-2-themes/freego-responsive-theme-magento-2/#
+
+Após copias as pastas "app" e "pub" para a raiz do site, rodas os comandoss abaixo:
+
+php bin/magento setup:upgrade
+php bin/magento setup:static-content:deploy -f    -==OU==-   php -dmemory_limit=1G bin/magento setup:static-content:deploy -f
+php bin/magento cache:clean
+
+
+------------------------------------------------------------------------------------------------------------
+
+
+Reindexar   => php bin/magento indexer:reindex
+Flush cache => php bin/magento cache:flush
+Clear Cache => php bin/magento cache:clean
+atualizar módulos => php bin/magento setup:upgrade
+
+modo desenvolvimento => 
+  rm -rf generated/metadata/* generated/code/*
+  php bin/magento deploy:mode:set developer
+
+modo produção => php bin/magento deploy:mode:set --skip-compilation production
+modo produção (Em duas etapas para pouca memória)=> :
+ php bin/magento deploy:mode:set --skip-compilation production
+ php -dmemory_limit=1G bin/magento setup:di:compile
+ 
+_Deletar arquivos estáticos:
+rm -rf pub/static/*
+rm -rf var/view_preprocessed/*
+
+
+ 
+bin/magento deploy:mode:set developer
+
+                        
+informações do php => php -i | grep memory_limit                        
+setar memória php  => php -d memory_limit=1G
+
+compilar => php bin/magento setup:di:compile
+
+bin/magento deploy:mode:show
+
+
+bin/magento deploy:mode:set production
+
+bin/magento deploy:mode:set default
+
+find /snap -iname "testimonial-outer-wrapper slider-block top-margin bottom-margin"*.*
+
+Alteranar modo statico(value: 1 (enabled) or 0 (disabled).) => bin/magento config:set dev/static/sign <value>
+
+
+------------------------------------------------------------------------------------------------------------
+::Cache - https://www.bounteous.com/insights/2019/06/26/best-practices-magento-cache-clearing/
+-cache_type de "/app/etc/env.php"   "https://devdocs.magento.com/guides/v2.4/extension-dev-guide/cache/page-caching/public-content.html"
+
+-content-type: max-age=<SEGUNDOS> em "/pub/static/.htaccess"  -   https://medium.com/@maxpronko/magento-2-static-content-lesson-learned-7bf8e796f682
+
+/home1/anayog29/www.overafitness.com.br/app/etc/env.php
+
+
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+

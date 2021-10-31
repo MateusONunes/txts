@@ -1,0 +1,90 @@
+Docker: Ferramenta essencial para Desenvolvedores - Leonardo Leitão
+
+Container é um processo isolado
+LXC - Linux Container.
+Container é um intermediário entre uma Vm e um "ChRoot"
+
+Imagem Docker
+
+Container : TDocker
+Dock Daemon = DockServer = Docker Engeny
+
+
+Docker hub - Reporsitório de imagens
+
+
+
+-------
+docker start <nome_container>
+       stop 
+	   restart
+	   run
+	   logs
+	   inpect
+	   exec (Executa comando dentro da docker que está em execução)
+	   
+docker container ls
+docker image ls
+docker volume ls
+
+docker rm container_name <container_name> => remove container
+docker rmi container_name <image_id> => remove imagem
+docker image rm <image_id>           => remove imagem (exatamente comando anterior)
+
+
+
+docker container run hello-world  => Run sempre cria um container
+docker container ps -a => mostra todos os containers existente
+docker container run -it debian bash => -i Modo imperativo -t executar no terminal
+                                         Este comando abre o terminal do container debian 
+										 
+docker container run --name teste_container_name -it debian bash => nomeia o container como "teste_container_name"
+
+docker container ls -a => Lista os container. -a lista todos (inclusive que não estão em execução). Não entendi a diferenca do "ls" para o "ps"
+
+docker container start -ai <nome_do_container> =>  o "ai"(Atasch Imperativo) é equivalente ao "it" do "ps"(acima). 
+                                                   Inicializa o container <nome_do_container>	
+												   
+
+docker container run -p 8080:80 nginx => cria o container apontando e redireciona a porta do host 8080 para dentro da porta 80 do container.
+                                         Se eu executar "curl http://localhost:8080" vou bater na porta 80 do container "nginx"
+										 
+										 
+docker container run -p 8080:80 -v $(pwd)/html:/usr/share/nginx/html nginx => -v mapeia a dentro do container "/usr/share/nginx/html" para o host "$(pwd)/html"
+                                                                              No exemplo acima se eu fizer "curl localhost:8080" vai me retornar o arquivo "$(pwd)/html"
+
+docker container run -d --name ex-daemon-basic -p 8080:80 -v $(pwd)/html:/usr/share/nginx/html nginx
+  => Detached(Segundo plano ou Daemon)
+
+docker container run teste_arg bash -c 'echo $S3_BUCKET'
+  => Executa o container e executa retorna a saída do comando 'echo $S3_BUCKET' que foi executado dentro do container;
+  
+----------------------------------------------------------------------------------------
+Construção de imagens
+
+docker image pull redis:latest => baixa a ultima(latest) versão da image "redis" do repositório de images - https://hub.docker.com/
+docker image tag redis teste   => cria uma copia da image "redis" para a image "teste"
+docker image rm redis teste    => Exclui as imagens redis e teste
+docker image ls                => Lista todas as imagens já baixadas, é possível ainda usar a sintaxe antiga: docker images
+docker image inspect <tag>     => Extrai diversas informações utilizando um formato JSON da imagem indicada.
+docker image build -t <tag>    => Permite a criação de uma nova imagem, como veremos melhor em build.
+docker image push <tag>        => Permite o envio de uma imagem ou tag local para um registry.
+
+docker image build -t myfirstimage . => considerando que na pasta atual exista o arquivo "Dockerfile", este comando gerou a imagem myfirstimage(-t é a tag ou nome da imagem)
+docker image inspect --format="{{index .Config.Labels \"maintainer\"}}" teste_arg
+	=> Mostra o conteúdo da tag "maintainer" do inspect
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# "43. Rede Tipo Bridge" Pingar container2 apartir do container1 - https://www.udemy.com/course/curso-docker/learn/lecture/7564278#overview
+docker container run -d --name container1 alpine sleep 1000
+docker container run -d --name container2 alpine sleep 1000
+docker container exec -it container1 ifconfig
+docker container exec -it container2 ifconfig
+docker container exec -it container1 pint 172.17.0.3
+ 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+docker container run -d --net host --name container1 alpine sleep 1000
+docker container run -d --net host --name container2 alpine sleep 1000
+docker container exec -it container1 ifconfig
+docker container exec -it container2 ifconfig
+docker container exec -it container1 pint 192.168.0.2

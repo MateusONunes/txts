@@ -1,0 +1,154 @@
+::Instalação do Postgre
+=======================
+
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install postgresql
+sudo su - postgres
+psql -c "alter user mateus with password 'mateus'"
+
+
+::geral
+=======
+sudo apt install postgresql postgresql-contrib
+service postgresql status      => verifica status do Postgre
+psql -U postgres -c 'SHOW config_file' => exibir localização do arquivo de configuração do postgres
+nmap localhost                 => Verifica as portas abertas
+postgres -v                    => Versão do Postgres
+sudo -u postgres psql -c "SELECT version();"
+create database dbgirassolapp_i with template dbgirassolapp =>  Copia(duplica) o database "dbgirassolapp" para "dbgirassolapp_i"
+psql -d <NOME_BANCO> -h <IP> -p <PORTA> -U <USUÁRIO> -W PASSWORD     => conectar a uma base de dados 
+
+::Importar um dump.sql
+======================
+Create database NovoBanco;
+psql NovoBanco < ArquivoDump.Sql 
+
+::Sqls
+======
+
+::Exibir conexões ativas
+c and p.state  = 'active'
+
+::Derrubar todas as conexões do banco
+select pg_terminate_backend(pid) from pg_stat_activity where datname='dbgirassolapp'
+
+--Gerar e agregar linhas em colunas
+SELECT array_agg(x) FROM generate_series(2,10) x
+
+::Get All Fields - Todos os campos do banco. Tabelas do banco-ALL TABLES
+SELECT *
+  FROM information_schema.columns c
+ WHERE table_schema = 'public'
+   and c.column_name like '%mediu%'
+
+
+PostGres
+========
+\?
+\c informação do banco conectado (Ou conectar em um banco se estiver desconectado no )
+\d => lista objetos
+\dt => lista tabelas
+\d <Table_Name> => Informações da tabela 
+psql -Upostgres -hlocalhost
+psql -Upostgres -hlocalhost -dNOMEDABASEDADOS
+\list => Lista dos Bancos de dados
+\! clear
+\dn  => Listar Schemas
+\du  => Listar usuários (role) e previlégios
+
+
+
+Comandos que utililizei para instalar o Odoo
+============================================
+sudo -u postgres -i
+createuser -s odoo
+
+createdb teste
+dropdb teste
+drop database NomeBanco => Apagar banco
+
+
+
+ 
+Ativar Log Insert, Update e Delete TRUNCATE e COPY FROM.
+========================================================
+copiado de https://stackoverflow.com/questions/1295795/how-can-i-use-a-postgresql-triggers-to-store-changes-sql-statements-and-row-cha
+mais detalhes: http://www.postgresql.org/docs/current/static/runtime-config-logging.html
+
+
+Comando para ver a localização do arquivo de configuração do potgres:
+	psql -U postgres -c 'SHOW config_file'
+
+no arquivo de configurações, aplicar as seguintes alterações:
+	log_directory '/path/to/log/dir'
+	log_filename = 'filename.log'
+	log_statement = 'mod'
+	
+Restart postgree
+	service postgresql restart
+	
+Monitorar Log 
+	tail -f /var/log/postgresql/postgresql-10-main.log | grep -v -i -E 'bus_presence|ir_cron|bus_bus'
+	*O Comando acima exclui as palavras bus_presence|ir_cron|bus_bus
+	*-v é para excluir a lista de palavras
+	*-i ignore case
+	*-E opção de acrescentar o "or" com o pipe("|")
+
+
+
+[FIM]-Ativar Log Insert, Update e Delete TRUNCATE e COPY FROM.
+==============================================================
+
+
+
+::Comandos que utilizei
+=====================
+::Utilizei o comando abaixo para encontrar arquivos em "/" com a string "/home/mateus/.var/app/com.visualstudio.code/data/node_modules/bin"
+
+	find / ! -path "/media/*" ! -path "/proc/*" ! -path "/sys/*"   -size -800k -type f -print0 | xargs -P0 -0 grep -l "/home/mateus/.var/app/com.visualstudio.code/data/node_modules/bin"
+	find / ! -path "/media/*" ! -path "/proc/*" ! -path "/sys/*" -iname adb_auth_host.cpp 2> /dev/null
+		copiar pelo arquivo "adb_auth_host.cpp" em "/"
+
+
+
+postgres=# CREATE ROLE mateus;
+
+
+------------------------------------------------------------------------------------------------------------
+::Organizar:
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA schema_name TO username;
+postgres=# ALTER ROLE "mateus" WITH LOGIN;
+psql trunk -c "select 'partner_'||id as id,name from res_partner" => exportar csv
+string postgre: postgres://username:password@host:5432/dbname 
+
+------------------------
+
+importação ead
+
+
+https://institutodepesca.org/web/database/manager-1ND1C0p4c1f1c0
+
+::Arquivo postgresql.conf
+=========================
+psql -U postgres -c 'SHOW config_file' => exibir localização do arquivo de configuração do postgres
+listen_addresses = '*' => para permitir conexões externas
+
+
+::Arquivo pg_hba.conf
+=====================
+Permitir conexões externas:
+host  	all  		all 		0.0.0.0/0 		trust
+
+
+::Base de dados externa
+=======================
+create extension dblink;
+SELECT dblink_connect('remote', 'hostaddr=192.168.0.55 port=5432 dbname=rowena user=postgres password=PASSWORD');
+SELECT * FROM dblink ('remote', 'select id, name from res_partner rp ') AS t (id int, name text)
+
+
+
+
+

@@ -1,0 +1,476 @@
+https://www.udemy.com/course/dart-basico/
+Dart Lang completa + Api Rest, Flutter, Aqueduct e Angular
+Básico, intermediário e avançado + projetos práticos com Dart servidor e web! Come to the Dart side!
+MAIS BEM COTADOS
+4,6 (293 classificações)
+1.220 alunos inscritos
+Criado por Leonardo Marinho
+Última atualização em 1/2020
+ Português
+ Português [Automático]
+ 
+ 
+
+Conteúdo do curso
+Recolher tudo 167 aulas
+20:28:34
+–
+Introdução
+11:11
+Introdução 
+Visualizar
+04:48
+Como podemos usar o dart
+Visualizar
+06:23
+–
+Configuração de ambiente
+30:18
+Baixando e instalando o Dart no OSX
+06:21
+Baixando e instalando o Dart no Windows
+01:44
+Baixando e instalando o Dart no Linux (Ubuntu)
+02:48
+Baixando e configurando a IDE no OSX
+04:24
+Estrutura do projeto
+10:12
+Como podemos começar? 
+3 perguntas
+Importante!
+04:49
+–
+Variáveis
+01:12:45
+O que são variáveis
+04:44
+Comentários
+05:32
+Variáveis numéricas
+15:29
+Funções para variáveis numéricas
+06:52
+Booleanos
+05:53
+Strings
+12:19
+Funções para variáveis Strings
+12:11
+Constantes
+05:38
+Interação com o usuário
+04:07
+Para que servem as variáveis 
+4 perguntas
+–
+Operações
+19:38
+Operações aritméticas
+06:55
+Operações lógicas
+12:43
+Operações
+2 perguntas
+–
+Coleções
+57:56
+Listas
+07:45
+Listas - Every
+07:46
+Listas - Lista expandida
+07:26
+Listas - Lista Reduce
+06:16
+Listas - Where
+04:42
+Set
+03:35
+Queue
+05:32
+Map
+10:47
+Lista interativa
+04:07
+Listas
+3 perguntas
+–
+Controle de fluxo
+58:23
+If e Else
+08:18
+Ternários
+08:05
+Escopo
+05:50
+Switch
+04:42
+Loops
+10:20
+While
+05:34
+doWhile
+03:38
+For & For each
+04:19
+For in
+03:48
+Exercício: contar até 10
+03:49
+Loops
+3 perguntas
+–
+Funções
+57:48
+Funções básicas
+07:19
+Parametros opcionais
+08:56
+Parâmetros nomeados
+Visualizar
+04:41
+Funções como objetos
+06:38
+Funções anônimas
+07:58
+Funções assíncronas
+07:55
+Organizando o código com funções
+08:00
+Closures
+06:21
+Funções
+2 perguntas
+–
+Tratamento de erros
+13:18
+Exceções
+02:22
+Try catch finally
+05:53
+Throwing & on
+05:03
+Exceções
+1 pergunta
+–
+Imports
+17:45
+Como usar os imports
+08:45
+Criando bibliotecas e importando de forma personalizada
+04:46
+Explorando o import http
+04:14
+Imports
+4 perguntas
+–
+Classes, atributos, métodos e orientação a objetos
+01:56:57
+Classes, Atributos, Métodos e Objetos
+11:09
+This
+04:31
+Construtores
+15:06
+Escopo
+03:41
+Escopo publico e privado
+12:57
+Getters e Setters
+08:22
+Membros estáticos
+06:11
+Herança
+17:14
+Mixins
+07:32
+Reescrita de método
+04:26
+Interfaces
+08:05
+Singletons
+08:07
+Factory singleton
+09:36
+Orientação a objetos
+3 perguntas
++
+Testes lógicos
+2 aulas
+14:57
+Asserts
+07:54
+Aplicando os asserts na prática
+07:03
++
+Sistema de arquivos
+7 aulas
+51:56
+O que aprenderemos nesse módulo
+07:36
+Problemas que você pode encontrar
+04:06
+Sistema de arquivos
+08:38
+Listando ítens em um diretório e detalhando os dados
+09:58
+Lendo um arquivo
+07:39
+Escrevendo em um arquivo
+04:52
+Escrevendo dados estruturados em um arquivo
+09:07
+Sistema de arquivos
+1 pergunta
++
+Projeto #1 - Extrator de dados financeiros
+4 aulas
+40:47
+Como vai funcionar?
+02:38
+Criando o projeto e preparando o mesmo para desenvolvimento
+03:26
+Lendo os dados da API
+21:21
+Salvando os dados
+13:22
++
+Projeto parte 2 - Relatório financeiro
+3 aulas
+09:40
+Como vai funcionar?
+Visualizar
+02:03
+Carregando os dados do arquivo
+03:31
+Exibindo os dados carregados de forma formatada
+04:06
++
+Sistema operacional
+3 aulas
+22:57
+Variáveis do sistema operacional
+08:45
+Rodando processos
+06:50
+Comunicando-se com processos
+07:22
++
+Programação assíncrona
+5 aulas
+47:12
+Timers e callbacks
+06:16
+Futures
+13:34
+Await
+09:58
+Streams
+07:30
+Generators
+09:54
++
+Compressão
+3 aulas
+33:12
+Compressão GZIP
+09:25
+GZIP vs ZLIB
+10:09
+Arquivos zip
+13:38
++
+Comunicação via socket
+6 aulas
+33:04
+Protocolos de transporte
+05:17
+Servidor Socket TCP
+07:53
+Cliente Socket TCP
+06:17
+Servidor Socket UDP
+07:21
+HTTP Get
+03:47
+HTTP Post
+02:29
++
+Banco de dados relacional - MySql
+14 aulas
+01:07:41
+Bancos de dados
+Visualizar
+05:49
+Instalando o mysql no mac (OSX)
+06:57
+Instalando o MySql no Linux (Ubuntu)
+06:08
+Instalando o MySql no Windows
+08:16
+Criando a conexão com o banco de dados
+06:41
+Criando uma tabela no banco de dados
+07:54
+Aviso sobre atualização - Inserindo dados
+00:43
+Inserindo dados na tabela do banco de dados
+04:14
+Aviso sobre atualização - Listando dados
+00:28
+Listando os dados da tabela
+04:49
+Alterando dados da tabela
+03:21
+Removendo dados da tabela
+02:21
+Removendo uma tabela
+02:51
+Transações
+07:09
++
+Testes unitários
+9 aulas
+01:03:56
+Teste manual e teste automatizado
+09:35
+TDD - Desenvolvimento Orientado por Testes
+07:21
+Teste unitário
+06:47
+#1 teste em Dart
+08:19
+#2 teste em Dart
+05:07
+Agrupando testes
+08:36
+Desenvolvendo testes para uma calculadora de aprovação
+05:19
+Criando uma calculadora de aprovação
+08:44
+Capturando excessões nos testes
+04:08
++
+Flutter
+10 aulas
+02:07:58
+Introdução ao módulo
+05:22
+Palestra: O que é Flutter e porque estão falando tanto dele? - parte 1
+15:59
+Palestra: O que é Flutter e porque estão falando tanto dele? - parte 2
+35:06
+Download e instalação do Flutter
+00:15
+Instalando Flutter no Windows
+20:37
+Configurando o Flutter no macOS
+16:04
+Configurando o Flutter no Ubuntu
+21:09
+Instalação e configuração do VS Code
+07:56
+Hello World, nosso primeiro app :D
+05:28
+Próximas aulas em breve! 
+00:02
++
+Dart para Web
+9 aulas
+56:32
+Introdução ao curso de Dart para Web
+03:55
+Um pouco sobre mim :)
+03:07
+Como funciona o dart para a web
+05:58
+Baixando e configurando a IDE, webdev e stagehand no Linux
+10:06
+Baixando e configurando a IDE, webdev e stagehand no OSX
+07:58
+Baixando e configurando a IDE, webdev e stagehand no Windows
+10:18
+Criando o primeiro projeto
+04:24
+Estrutura do projeto
+05:40
+Criando e disparando um evento
+05:06
++
+Dart Web Projeto prático #1 - Criando uma consulta de endereço via CEP
+3 aulas
+22:53
+Criando campos
+07:50
+Consultando a API
+08:25
+Carregando os dados da API nos campos
+06:38
++
+Dart Web - Projeto prático #2 - Relatório meteorológico
+5 aulas
+40:25
+Preparando o template
+12:22
+Consultando a API
+08:30
+Listando os dados
+10:06
+Preparando o layout para a busca dinâmica de dados
+02:31
+Realizando a busca dinâmica
+06:56
++
+Dart Web - Angular Dart
+7 aulas
+01:03:09
+Introdução ao AngularDart parte 1
+09:08
+Introdução ao AngularDart parte 2
+12:42
+Como criar um projeto AngularDart
+05:42
+Eba, agora sim! Vamos ao hello world
+12:07
+Modularização
+04:05
+Templates
+09:27
+Serviços (Services) e Injeção de dependência (DI)
+09:58
++
+Dart Web - Aqueduct
+4 aulas
+31:21
+Apresento-lhe, o Aqueduct!
+05:59
+Instalando o Aqueduct
+05:48
+Criando um projeto Aqueduct
+03:19
+Rotas, Controllers, Requisições e API
+16:15
++
+Dart Web - Aqueduct em detalhes
+7 aulas
+35:41
+O primeiro norte
+09:05
+Explorando a documentação
+07:24
+Recursos
+03:46
+Rotas
+03:38
+Controladores
+03:46
+Canal
+03:37
+Serviços
+04:25
++
+Um pouco sobre o curso
+1 aula
+09:13
+Fim? E agora?

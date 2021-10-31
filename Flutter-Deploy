@@ -1,0 +1,123 @@
+
+Link do leonardo Leitão:https://www.udemy.com/course/curso-flutter/learn/lecture/23030732#overview
+
+arquivos salvos em "/home/mateus/_des/mateus/flutter/popsolutions/goop_key"
+
+Configurações para Deploy 
+=========================
+
+::1 - Configurações para Android:
+
+android/app/src/main/AndroidManifest.xml
+	android:label="GoOp" => Nome que vai aparecer quando instalar a aplicação no dispositivo
+	package:"com.goop"
+
+android/app/src/debug/AndroidManifest.xml
+	package="com.goop"
+ 
+android/app/build.gradle
+	applicationId "com.goop"
+	
+android/app/src/main/kotlin/com/example/goop/MainActivity.kt
+	package com.goop
+	
+android/app/src/profile/AndroidManifest.xml
+	package="com.goop"
+	
+	
+------------------------------------------------------------------------
+	
+::2 - Configurações para Deploy - Configurações para IOs:
+
+
+=> Implementar
+
+
+------------------------------------------------------------------------
+::3 - Gerar keystore:https://flutter.dev/docs/deployment/android
+
+
+mateus@mateus-pc:~$   keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+Informe a senha da área de armazenamento de chaves:%popGoop$21
+Informe novamente a nova senha:
+
+Qual é o seu nome e o seu sobrenome?
+  [Unknown]:  Marcos Mendez
+Qual é o nome da sua unidade organizacional?
+  [Unknown]:  Desenvolvimento
+Qual é o nome da sua empresa?
+  [Unknown]:  PopSolutions Cooperativa               
+Qual é o nome da sua Cidade ou Localidade?
+  [Unknown]:  Barueri
+Qual é o nome do seu Estado ou Município?
+  [Unknown]:  São Paulo
+Quais são as duas letras do código do país desta unidade?
+  [Unknown]:  BR
+CN=Marcos Mendez, OU=Desenvolvimento, O=PopSolutions Cooperativa, L=Barueri, ST=São Paulo, C=BR Está correto?
+  [não]:  Sim
+
+Gerando o par de chaves RSA de 2.048 bit e o certificado autoassinado (SHA256withRSA) com uma validade de 10.000 dias
+	para: CN=Marcos Mendez, OU=Desenvolvimento, O=PopSolutions Cooperativa, L=Barueri, ST=São Paulo, C=BR
+[Armazenando /home/mateus/upload-keystore.jks]
+
+
+--------------------------------------
+::3.1 - Criar referencia para o arquivo key "upload-keystore.jks"(Gerado na etapa anterior) no app em "/android/key.properties"(Criar este arquivo)
+4.1. Este arquivo não deve ser enviado para o git.
+conteúdo do aquivo key.properties:
+storePassword=%popGoop$21
+keyPassword=%popGoop$21
+keyAlias=upload
+storeFile=/home/mateus/_des/mateus/flutter/popsolutions/goop_key/upload-keystore.jks
+
+------------------------------------------------------------------------
+::5 - Configurar a key no arquivo "/android/app/build.gradle"
+
+
+antes da chave android: android:
+   def keystoreProperties = new Properties()
+   def keystorePropertiesFile = rootProject.file('key.properties')
+   if (keystorePropertiesFile.exists()) {
+       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   }
+
+   android {
+         ...
+   }
+   
+   
+Subistituir buildTypes por:
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+
+
+------------------------------------------------------------------------
+::6 - Rodar "flutter Clean"
+::7 - flutter build appbundle
+	=> Gerado o arquivo "app-release.aab" para subir para deploy
+	
+========================================================================
+Próxima etapa: Fazer o Deploy - https://play.google.com/console
+
+
+
+------------------------------------------------------------------------
+pendencias
+
+ícone do App 515X512
+Recurso gráfico 1024x500
+
+
+
+

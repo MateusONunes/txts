@@ -1,0 +1,9 @@
+Tutorial: https://www.edivaldobrito.com.br/macos-em-uma-maquina-virtual-no-linux-instale-o-sosumi/
+
+
+
+sudo gedit /snap/sosumi/current/bin
+
+cd /home/mateus/snap/sosumi/common/
+qemu-img resize macos.qcow2 +20G
+

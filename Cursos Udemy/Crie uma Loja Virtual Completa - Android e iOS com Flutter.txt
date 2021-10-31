@@ -1,0 +1,471 @@
+https://www.udemy.com/course/lojaflutter/
+
+Crie uma Loja Virtual Completa - Android e iOS com Flutter
+Aprenda a criar um aplicativo completo de Loja Virtual. App do Cliente e Gerente integrados, com mais de 20 funções.
+MAIS BEM COTADOS
+4,8 (166 classificações)
+1.274 alunos inscritos
+Criado por Daniel Ciolfi, Flutter - Brasil | Oficial
+Última atualização em 6/2020
+
+
+
+Conteúdo do curso
+Recolher tudo 177 aulas
+32:14:28
+–
+Introdução
+16:20
+Conheça o App que Criaremos Juntos Neste Curso
+Visualizar
+12:48
+Recursos Especiais deste Curso
+Visualizar
+03:32
+–
+Configurações Iniciais
+11:07
+Criando o Projeto Flutter
+Visualizar
+05:22
+Criando o Projeto no VS Code (Opcional)
+00:29
+Configurando o Lint (Opcional)
+05:16
+–
+Firebase
+01:01:12
+O que é Firebase? Por que Firebase Neste App?
+Visualizar
+07:31
+Criando o Projeto Firebase
+Visualizar
+11:11
+Configurações Android
+09:41
+Configurações iOS (Opcional)
+05:32
+Organização dos Dados no Banco
+07:44
+Escrevendo Dados no Banco
+08:27
+Lendo Dados no Banco
+11:06
+–
+Navegação via Drawer
+39:28
+Criando a Tela Base
+06:31
+Criando o Drawer Customizado
+11:56
+Introdução ao Provider
+13:11
+Navegando via Provider
+07:50
+–
+Login com E-mail e Senha
+54:47
+Criando a Tela de Login
+12:55
+Validando o E-mail
+06:20
+Realizando o Login
+09:17
+Indicando a Causa do Erro no Login
+08:20
+Bloqueando os Campos Durante o Login
+10:37
+Carregando o Usuário ao Abrir o App
+07:18
+–
+Cadastro com E-mail e Senha
+01:08:12
+Criando a Tela de Cadastro
+10:19
+Validando e Salvando os Dados
+10:36
+Realizando o Cadastro
+07:20
+Salvando os Dados do Usuário
+08:27
+Recuperando os Dados no Login
+09:37
+Acessando o Usuário pelo Drawer e Logout
+15:10
+Bloqueando os Campos Durante o Cadastro
+06:43
+–
+Busca dos Produtos no Firebase
+01:14:16
+Buscando os Produtos no Firebase
+13:41
+Convertendo o Documento para um Produto
+06:32
+Exibindo a Lista de Produtos
+12:36
+Criando o Campo de Pesquisa
+08:35
+Pesquisando Produtos pelo Nome
+08:33
+Editando a Pesquisa
+09:27
+Criando a Tela de Produto
+14:52
+–
+Seleção de Tamanho
+42:29
+Buscando os Tamanhos no Firebase
+11:30
+Exibindo os Tamanhos na Tela do Produto
+10:19
+Selecionando um Tamanho
+08:58
+Botão para Adicionar ao Carrinho
+11:42
+–
+Carrinho de Compras
+01:58:25
+Estrutura do Carrinho no Firebase
+06:44
+Criando um Produto para o Carrinho
+07:17
+Criando a Tela do Carrinho e Exibindo Itens
+14:10
+Carregando o Carrinho do Usuário
+11:49
+Salvando o Carrinho do Usuário e Empilhando Itens
+09:57
+Modificando a Quantidade
+09:46
+Obtendo Atualizações dos Itens
+10:12
+Atualizando os Itens no Firebase
+16:18
+Verificando o Estoque do Item e Calculando o Preço
+13:46
+Cartão de Preço do Carrinho
+18:26
+–
+Tela Inicial
+01:11:15
+Estruturando as Seções no Firebase
+08:10
+Buscando as Seções no Firebase
+09:03
+Buscando as Imagens das Seções
+06:02
+Criando a Barra Flutuante
+09:19
+Criando a Lista de Seções
+09:41
+Exibindo Imagens em Lista
+05:54
+Exibindo Imagens em Grade
+11:05
+Vinculando Produto à Imagem
+12:01
++
+Administrador
+2 aulas
+19:02
+Verificando se Usuário é Administrador
+10:04
+Exibindo Comandos de Administrador
+08:58
++
+Exibindo Todos os Usuários (Admin)
+2 aulas
+29:17
+Criando uma Lista Alfabética de Usuários Falsos
+18:54
+Buscando os Usuários no Firebase
+10:23
++
+Editando Produtos (Admin)
+10 aulas
+01:40:17
+Navegando para a Tela de Edição
+07:14
+Formulário Customizado para Imagens
+10:01
+Exibindo as Imagens no Formulário
+10:20
+Exibindo BottomSheet Câmera/Galeria (Android)
+07:54
+Exibindo CupertinoModalPopup Câmera/Galeria (iOS)
+07:15
+Atualização de Packages e Configuração do ImagePicker
+08:03
+Escolhendo a Imagem da Câmera ou Galeria
+13:35
+Cortando/Rotacionando a Imagem
+11:43
+Validando o Campo de Imagens
+09:01
+Editando o Título e Descrição e Corrigindo Preço Base
+15:11
++
+Editando Tamanhos e Estoque (Admin)
+4 aulas
+46:05
+Formulário Customizado para Tamanhos
+11:01
+Adicionando/Removendo um Tamanho
+11:38
+Modificando a Ordem dos Tamanhos
+11:52
+Validando as Opções
+11:34
++
+Salvando Produto Editado (Admin)
+6 aulas
+01:14:35
+Duplicando o Objeto Produto
+14:37
+Armazenando os Dados Atualizados no Produto
+13:16
+Salvando os Dados Básicos no Firebase
+11:20
+Gerenciando as Imagens - Parte 1
+15:17
+Gerenciando as Imagens - Parte 2
+09:19
+Indicador de Carregamento e Atualizando Produto Local
+10:46
++
+Editando a Tela de Início (Admin)
+12 aulas
+02:16:47
+Entrando e Saindo do Modo de Edição
+11:58
+Clonando as Seções
+09:19
+Adicionando Novas Seções
+11:36
+Editando Título/Removendo Seção
+07:05
+Adicionando Imagens - Parte 1
+08:51
+Adicionando Imagens - Parte 2
+11:34
+Removendo Imagens
+06:19
+Vinculando/Desvinculando Produto
+16:05
+Validando Todos os Campos
+12:57
+Salvando os Dados Básicos da Seção
+08:58
+Salvando as Imagens da Seção
+15:55
+Mantendo a Ordenação e Exibindo Carregamento
+16:10
++
+Calculando Frete por Distância
+13 aulas
+02:49:52
+Criando Tela de Endereço
+13:22
+Obtendo o Endereço pelo CEP
+15:46
+Criando um Objeto de Endereço da API
+13:04
+Formatando o Campo do CEP
+11:50
+Convertendo o Objeto de Endereço
+11:50
+Campos de Edição de Endereço
+14:41
+Bloqueando o Campo do CEP
+09:40
+Calculando Distância da Entrega
+15:43
+Calculando Taxa de Entrega
+10:39
+Exibindo a Taxa de Entrega
+15:32
+Exibindo Barra de Carregamento e Erro
+16:39
+Salvando Endereço no Usuário
+12:39
+Solicitando o Login do Usuário no Carrinho
+08:27
++
+Enviando Pedido
+8 aulas
+01:37:24
+Criando a Tela de Checkout
+09:15
+Entendendo a Lógica da Transação
+17:41
+Gerando Número Único e Incremental de Pedido
+12:40
+Verificando Estoque e Decrementando
+19:39
+Indicando ao Usuário a Falta de Estoque
+09:23
+Enviando o Pedido
+12:41
+Indicando o Carregamento e Limpando o Carrinho
+11:31
+Fixando o Preço do Produto
+04:34
++
+Exibindo Pedidos do Usuário
+4 aulas
+56:45
+Buscando os Pedidos no Firebase
+17:12
+Exibindo os Pedidos
+14:47
+Exibindo os Produtos dos Pedidos
+13:28
+Tela de Confirmação do Pedido
+11:18
++
+Exibindo Todos os Pedidos (Admin)
+9 aulas
+01:47:30
+Buscando e Exibindo Todos os Pedidos
+11:29
+Exibindo o Status do Pedido
+11:26
+Modificando o Status do Pedido
+14:41
+Cancelando o Pedido e Corrigindo Bug
+10:04
+Filtrando os Pedidos por Usuário
+13:35
+Exibindo o Painel de Status
+14:57
+Filtrando os Pedidos por Status
+09:47
+Exibindo Endereço de Entrega
+09:18
+Exportando Endereço para Imagem
+12:13
++
+Deletando um Produto/Ajustes Gerais
+3 aulas
+36:27
+Corrigindo Bug da Home Duplicada, Orientação e Delete de Imagem
+11:12
+Deletando um Produto
+11:40
+Ajustando as Informações de Disponibilidade
+13:35
++
+Login com Facebook
+5 aulas
+46:47
+Criando o Botão de Login
+05:00
+Configurando o Login do Facebook (Android)
+19:55
+Realizando o Login
+10:33
+Configurando o Login do Facebook (iOS)
+07:04
+Melhorando a Experiência de Login
+04:15
++
+Exibindo as Lojas
+9 aulas
+01:38:08
+Estruturando as Lojas no Firebase
+10:10
+Buscando as Lojas no Firebase
+08:06
+Criando o Objeto da Loja
+14:03
+Exibindo as Lojas
+10:27
+Exibindo o Horário de Funcionamento
+10:31
+Verificando o Status da Loja
+12:56
+Exibindo o Status e Atualizando a Cada Minuto
+12:07
+Abrindo o Telefone
+07:49
+Exibindo a Loja no Mapa
+11:59
++
+Cartão de Crédito Animado
+7 aulas
+01:23:07
+Criando um Cartão Animado
+11:12
+Criando a Frente do Cartão
+10:38
+Formatando os Campos
+07:39
+Validando os Campos
+11:50
+Criando a Trazeira do Cartão
+15:48
+Trocando o Foco Automaticamente
+12:27
+Trocando o Foco (iOS)
+13:33
++
+Introdução às Cloud Functions
+7 aulas
+01:07:08
+Introdução ao Sistema de Pagamentos
+12:06
+Links Úteis
+00:05
+Configuração do Ambiente
+09:45
+Criando uma Função Hello World
+14:48
+Função com Leitura do Banco
+13:54
+Função com Escrita no Banco
+07:21
+Função com Trigger
+09:09
++
+Pagamento com Cartão de Crédito
+14 aulas
+02:53:06
+Adicionando o Campo de CPF
+12:20
+Coletando as Informações do Cartão
+13:03
+Configurando o Package da Cielo
+09:16
+Realizando a Autorização - Parte 1
+11:13
+Realizando a Autorização - Parte 2
+10:01
+Realizando a Autorização - Parte 3
+10:34
+Realizando a Autorização - Parte 4
+13:37
+Realizando a Autorização - Parte 5
+21:26
+Realizando a Autorização - Parte 6
+15:16
+Capturando a Transação - Parte 1
+09:36
+Capturando a Transação - Parte 2
+11:24
+Cancelando a Transação
+18:01
+Link para a Próxima Aula
+00:02
+Lidando com Pagamentos Reais
+17:17
++
+Notificações de Venda e Status
+4 aulas
+34:39
+Salvando os Tokens dos Usuários
+14:21
+Exibindo Notificação de Novo Pedido - Parte 1
+13:12
+Exibindo Notificação de Novo Pedido - Parte 2
+07:04
+Novas Aulas em Breve (Serão publicadas até 30/06/2020)

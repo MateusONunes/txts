@@ -1,0 +1,20 @@
+tabela de teclas: https://www.tcl.tk/man/tcl8.4/TkCmd/keysyms.html
+
+
+sudo gromit-mpx --key Pause --undo-key Escape
+
+
+
+
+::sudo gedit /root/.config/gromit-mpx.cfg
+"caneta" = PEN (size=10 color="red");
+"seta" = PEN (size=10 color="green" arrowsize=1);
+"borracha" = ERASER (size = 150);
+
+"default"[Button3] = "caneta";
+"default" = "seta";
+"default"[SHIFT] = "borracha";
+
+"Key"="Pause";
+"undo-key"="Escape";
+

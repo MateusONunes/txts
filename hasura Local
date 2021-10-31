@@ -1,0 +1,64 @@
+hasura local
+
+https://hasura.io/blog/moving-from-local-development-staging-production-with-hasura/
+https://hasura.io/docs/latest/graphql/core/deployment/graphql-engine-flags/config-examples.html
+
+postgres://postgres:postgres@192.168.0.55:5432/odoo_mateus
+postgres://postgres:postgres@192.168.0.55:5432/odoo_mateus
+
+
+
+query MyQuery {
+  pops_missions {
+    id
+    name
+    partner_id
+    pops_establishment{
+      city
+      address
+    }    
+    pops_measurements(where: {partner_id: {_eq: 3}}) {
+      missions_id
+      name
+      state
+      date_started
+      partner_id
+    }
+  }
+}
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+query MyQuery {
+  pops_missions {
+    id
+    name
+    partner_id
+    pops_establishment {
+      city
+      address
+    }
+    pops_measurements(where: {partner_id: {_eq: 3}, _and: {date_started: {_eq: "2021-08-30"}}}) {
+      missions_id
+      name
+      state
+      date_started
+      partner_id
+    }
+  }
+}
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+subscription MySubscription {
+  pops_establishment {
+    id
+    name
+    longitude
+    latitude
+  }
+}
+

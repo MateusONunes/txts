@@ -1,0 +1,331 @@
+flutter create mpp => Cria projeto mpp
+flutter devices    => Exibe os emuladores/dispositivos
+
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14245376#questions
+Neste curso ele faz limpesa no projeto inicial. Estrutura de um app
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14245382#questions
+Aqui ele faz formatações básicas nos textos
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14245384#questions
+Criação de botão
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14245388#questions
+Margen, Padding, borda do container
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14245390#questions
+Alinhamentos-Align, Space Betwen, FlexDirection:Row/Column
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14245392#questions
+pucspec.yaml - arquivo de configurações
+trabalhando com imagens - Alinhamentos/exibição da imagem
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14245396#questions
+*estrutura básica do visual do app-scaffold()-parece um tema. Esqueleto
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14245398#questions
+Widgets - Stateless & Stateful
+Alterar textos na tela do app
+Conceito de componentes do React Native
+Conceito de Estado useState()
+Aqui também ele começou inserir o controle de variáveis
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14245408#questions
+|App "Frases do dia"
+Nesta aula ele inicia a construção do App "Frases do dia"
+width: double.infinity
+Classe Center()
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14245410#questions
+|App "Frases do dia"
+Aqui ele está mexendo na funcionalidade de gerar a frase
+Uso do setState() para mostrar frase sorteada
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14283394#questions
+|App JokenPo
+11:48 ALinhamento de texto "Escolha do App" com crossAxisAlignment.sttretch
+Trabalha com posicionamento do layoute básico do JokenPo
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14311342#notes
+|App JokenPo
+Detecção de toque na tela - GestureDetector() on Tap, onDoubleTab onLongPress 
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14283410#notes
+|App JokenPo
+Imagem dinâmica
+Criação da funcionalidade do jogo - clicar na opção e o app exibir a opção dele
+uso do switch que não entendi para que serve. parece que atualiza a interface
+&& E
+|| OU
+
+
+==Seção 10 Componentes de entrada de dados
+==========================================
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14283414#questions
+Campo texto-Input-Text Field
+senhas:14:33
+onchanged:14:53 - pegar valor
+onSubmitted:18:15 - (Quando confirma, ou quando clica no botão)
+19:35 - Capturar o que foi digitado quando o usuário pressionar um botão
+	    Criando um botão salvar.
+		On pressed
+		21:40-Acessar o valor dos componentes
+		
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14283422#questions
+Criando App álcool ou gasolina - Criando a interface do app
+11:37 - Aplicando formatações - style - stilos
+14:20 controlador - controler
+17:10 - formatando botão - style estilo  
+21:00 - Scrol - scroll - single scroll view - SingleChildeScrollView
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14283424#questions
+Criando App álcool ou gasolina - Criando a parte de cálculo
+01:00 Criando métodos/procedure/void
+04:00 String para número conversão utilizando tryparse
+10:10 - equivalente a passagem de estado -setState(_texto_Resultado)
+11:50 - efetuando o cálculo do álcool/gasolina
+15:40 - limpar o campo após exibir o cálculo
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14350010#questions
+-CheckBox
+04:30 - Criação do Checkbox
+11:00 - CheckboxListTile - outro tipo de checkbox talves mais interessante. ele se marca inteiro
+18:40 - raisedbutton para ver se os checkbox estão marcados.
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14350014#questions
+71. RadioButton
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14350016#questions
+72. Utilizando Switch
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14350022#questions
+73. Slider
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14283426#questions
+Navegar entre telas - Navigator ( O Navigator é utilizado no próximo link)
+00:00-xxx
+05:00 - inicío da aplicação
+08:40 - *** Criando a navegação 
+	10:18 - Hierarquia do App
+	12:20 - Definindo Rota - MaterialPageRoute
+	
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14423224#questions
+Atm consultoria - praticar Navegação - Criando a tela principal
+08:42 Criando o layoute principal do APP - Tela principal - 
+	10:50 GestureDetector
+	14:11 - Formatando - estilizando - style
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/15986834#questions
+vsCode
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14423224#questions
+Atm consultoria - praticar Navegação - Criando a telas Secundárias - Uso do Navigator propriamente dito - Efetuando navegação entre telas
+07:00 Criando a tela de empresa
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14283430#questions
+Passando dados entre telas
+00:00 - xxx
+02:56 - início da passagem
+	05:29 - parâmetro opcional
+	06:44 - widget  - Acessar o ancestral ou o Owner
+	
+	
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14423236#questions
+App Cara ou Coroa - Interface
+	Recuso:https://www.w3schools.com/colors/colors_picker.asp
+08:22 - BackGroudColor - fromRGB0 - Opacidade
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14423238#questions
+App Cara ou Coroa - Programação
+07:53 - array e randon
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14423442#questions
+Nomeando Rotas - Navigator.pushNamed
+
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14687498#overview
+84. Criando requisição http do cep - viacep.com.br
+
+xxx
+04:40 - efetuando requisição
+	09:49 - Síncrono/Síncrona Assincrona - async await
+	14:50 - converter string para json - json.decode(string)
+	
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14687502#overview
+85. Exibindo o retorno da api na interface
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14687506#overview
+86 - App Preço do Bitcoin
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14687512#overview
+87 - Trabalhando com listas - ListView
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14687520#overview
+88. ListView - Evento de clique em uma lista com um Alert - msgbox - pergunta
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14687526#overview
+89. Trabalhando com Future - uma outra forma de fazer request - Forma avançada de fazer requisição
+
+02:25 - inicio
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14687530#overview
+90. Carregando dados em uma lista (ListView)
+gera o post apartir de uma lista
+Preenchendo uma lista consulmindo dados da API https://jsonplaceholder.typicode.com/posts
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14687536#overview
+91. Requisições e WidgetExpanded
+03:10 - Início
+04:40 -  WidgetExpanded 
+	10:30 - Início do WidgetExpanded
+12:18 - Inicio POST
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14687544#overview
+92. Utilizando Put
+
+02:00 Inicio PUT
+07:00 - patch
+11:35 - DELETE
+15:20: ***Instanciar POST "new Post(..." 
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14687550#overview
+93. #App7 Youtube - Botões de ação
+Criando botões na parte superior da Barra
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14687550#overview
+Criar botões e objetos na barra de títulos - Tela semelhante ao Youtube
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14687554#overview
+94. #App7 Youtube - Navegação inferior (BottomNavigationBar)
+bottonNavigatorBar
+17:14 Fez um carregamento de várias telas muito interessante. Carregamento dinâmico de telas
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821400#overview
+104. Utilizando preferências - parte 1
+shared_preferences - Aqui fez apenas a parte de interface
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821504#overview
+105. Utilizando preferências - parte 2
+shared_preferences - Aqui fez apenas a parte de interface
+É uma espécie de um .ini ou um Registro do windows
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821436#overview
+106. #App8 Lista de tarefas - Floating Action button
+Botão flutuante "+" - FloatingActionButton
+10:00 (OU MAIS) ELE TRABALHA COM BOTTONnAVIGATIONbAR - bUTTONaPPbAR - bOTÃO mINI
+Bastante opções de formatação e visualização de botões 
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821446#overview
+107. #App8 Lista de tarefas - Criando interface
+Janela ShowMessage para coletar a tarefa a adcionar
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821452#overview
+108. #App8 Lista de tarefas - Salvando dados utilizando arquivo
+Aqui ele vai salvar/criar um arquivo dentro do android em uma unidade do android/ios
+utilizar o path_provider
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821456#overview
+109. #App8 Lista de tarefas - Recuperando dados
+Aqui ele vai lero o arquivo para trazer os dados em tela
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821458#overview
+110. #App8 Lista de tarefas - Criando e alterando status de uma tarefa
+CheckBoxLisTitle
+Acrescentar a tarefa
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821464#overview
+111. #App8 Lista de tarefas - Utilizando Dismissible widget
+Dismissible - efeito por exemplo de arrastar o item para o lado e exluir o item
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821468#overview
+112. #App8 Lista de tarefas - Removendo item com Dismissible
+variável Widget
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821472#overview
+113. #App8 Lista de tarefas - Desfazendo ação com Snackbar
+Snackbar - tarefa removida - ShowSnackBar - Mensagem na parte inferior - ShowMessage
+Desfazer ultima tarefa excluída
+MileSecondsSinceEpoch
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821478#overview
+115. Configurando banco de dados
+Sqlite
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821486#overview
+116. Salvando dados
+Insert into USUARIOS
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821490#overview
+117. Listando e filtrando - parte 1
+Listar Usuários
+SELECT - rawQuery
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14821496#overview
+119. Atualizando e deletando - parte 1
+bd.query - select com ferramentas internas
+delete
+
+::App-Minhas Anotações
+App para salvar anotações no banco sqlite
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/15034576#overview
+121. #App9 Notas diárias - Criando interface
+Exibir tela de cadastro modal showDialog
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/15088134#overview
+122. #App9 Notas diárias - Inicializando banco de dados
+padrão Singleton-Apenas a mesma instancia da classe
+05:50 - construtor factoy
+12:40 - Criação da classe AnotacaoHelper para salvar dados no banco no padrão Singleton
+Nesta aula ele criou uma classe base para manipulação do banco de dados.
+
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/15034588#overview
+123. #App9 Notas diárias - Salvando anotação
+Usando Classe.Insert (Classe criada na aula anterior)
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/15088232#overview
+125. #App9 Notas diárias - Formatando datas
+Criado função _formatarData
+Formatar datas com intl
+links: https://pub.dev/documentation/intl/latest/intl/DateFormat-class.html
+	   https://pub.dev/documentation/intl/latest/intl/DateFormat-class.html
+	   
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/15088712#overview
+126. #App9 Notas diárias - Atualizando anotação
+Alterar uma anotação no App
+
+====================================================================================
+====================================================================================
+== Seção 15: Firebase ==============================================================
+====================================================================================
+====================================================================================
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14935326#overview
+141. Configurando projeto no Android
+
+https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14935362#overview
+146. Aplicando filtros básicos
+
+
+

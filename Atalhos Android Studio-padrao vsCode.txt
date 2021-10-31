@@ -1,0 +1,98 @@
+
+::Interface do Android Studio
+==============================
+http://www.basef.com.br/index.php/Atalhos_do_IntelliJ_Idea
+
+Ctrl+shift+k => Deletar linha atual
+Alt+Shift+down arrow => Duplicar Linha Atual
+Ctrl+M           => Posiciona o cursor no centro da tela
+Ctrl+Shift+A     => Exibe lista de pesquisa geral. No vsCode faz bloco de comentário /**/
+Double Shift     => Exibe lista de pesquisa geral. idem (Ctrl+shift+a)
+Ctrl+P           => Exibe pesquisa de arquivos
+Ctrl+Enter       => Insere linha abaixo do Cursor
+Ctrl+Shift+Enter => Insere linha acima  do Cursor
+Ctrl + i         => Seleciona a linha atual
+Ctrl+j           => Traz a linha de baixo para o final da linha atual
+Alt+Shif+I       => Seleção em Bloco.
+Ctrl+D           => Econtrar e selecionar a mesma string
+Ctrl+L           => Econtrar e selecionar a mesma string(Ctrl+D) porém em uma única etapa 
+Ctrl+Enter       => Inserir linha vazia acima
+Ctrl+Shift+Enter => Inserir linha vazia abaixo
+Navegar atrás    => Alt + pgDown (Definido manualmente)
+Navegar a frente => Alt + pgUp (Definido manualmente)
+
+Alt+Seta direita  => Saltar/Jump/Pular cursor 5 abaixo (ctrl + shift + abaixo faz o mesmo selecionando)
+Alt+Seta esquerda => Saltar/Jump/Pular cursor 5 acima  (ctrl + shift + acima  faz o mesmo selecionando)
+Ctrls+"/"         => Comenta seleção
+Alt+Shif+A        => Comenta seleção com /**/
+Shift+Alt+I       => Move o cursor para o final de todas as linhas selecionadas (VsCode)
+
+AltGr-f1(definido) - "Swap selection boudaries" - troca os limites da seleção
+Cytl+[ ou ]       => identar
+
+AltGr+SetaAcima ou Seta Abaixo => Encontrar próxima ocorrencia da palavra que está sobre o cursor. plugin BrowseWordAtCaret
+Ctrl+o            => Toggle Case - alternar case sensitive (Definido manualmente)
+Shift+Alt+SetaEsq/Dir => Seleção em Blocos-Extender a seleção()
+
+
+:Configurei na interface do android:
+-Matched brace
+
+::plugin Android Studio:
+https://github.com/acejump/AceJump configurado com "Ctrl+Ç". este plugin tem funcionalidades de atalho parecida com  o VIM
+Scratch => em teste - acesso rápido a texto
+CodeGlange => Miniatura do Fonte. Ctrl+Shif+G para habilitar/desabilitar
+Presentation Assistant => Plugin para exibir os atalhos que estão sendo efetuados.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+::VsCode
+========
+links    => https://www.linkedin.com/pulse/todos-os-atalhos-do-vs-code-mateus-barbosa/
+Ctrl+D => Econtrar e selecionar a mesma string
+Ctrl+L         => Seleciona linha atual e passa para a próxima
+
+Alt +Shift+Seta Cima => Marca várias linhas
+Ctrl+Shift+Seta Cima => Idem
+Ctrl+F2              => Marcar todas as palavras igual a palavra que o cursor se encontra
+Alt+Up/Down          => Mover linha ou bloco selecionado para cima ou para baixo.
+Ctrls+"\" => Duplica o arquivo atual na ide
+
+
+Ctrls+"/" => Comenta seleção
+ctrl+shift+d   => Duplicar linha atual (produzido)
+alt+shift+zero => horizontal/vertical
+
+Ctrl+k Ctrl+s => Lista os atalhos do VsCode
+Ctrl+Shift+Enter => Insere linha   na linha atual
+Ctrl       Enter => Insere linha após linha atual
+Ctrl+Del         => Deleta apartir do cursor até o próximo " " 
+Ctrl+Shitf+K     => Deleta linha atuale
+Shitf+Del        => Deleta linha atuale copia seu conteúdo para área de transferencia
+
+Ctrl + Shift + k => linha atual
+
+
+
+Ctrl+Enter       => Inserir linha vazia acima
+Ctrl+Shift+Enter => Inserir linha vazia abaixo
+
+Ctrl+Shift+\     => Saltar para final ou comneço do parenteses
+
+atalhos do vscode e geral(universal para outros editores)
+-------------------------
+Ctrl+Backspace => Apaga palavra a esquerda
+Ctrl+Del       => Apaga palavra a direita
+
+Backup das extensões vsCode
+---------------------------
+code --list-extensions >> ~/vs_code_extensions_list.txt                                  => Salva as extensões em  ~/vs_code_extensions_list.txt
+cat ~/vs_code_extensions_list.txt | xargs -n 1 code --install-extension                  => reinstala as extensões em  ~/vs_code_extensions_list.txt
+code --list-extensions | xargs -n 1 code --uninstall-extension                           => Cuidado!! este comando limpa todas as extensões do vscode 
+
+Snippets => Constutores de código automático 
+
+::scp - Transferência de Arquivos
+scp ~/t.txt root@45.82.72.139:~/teste_scp/t.txt => Copiei o arquivo "~/t.txt" da minha máquina para o servidor vps no destino "~/teste_scp/t.txt"
+Eu estava estudando aqui: https://www.youtube.com/watch?v=r4te72Fq-18
+

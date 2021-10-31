@@ -1,0 +1,133 @@
+Instalação do Magento(2.4.2):
+
+utilizados os links:
+https://www.magenteiro.com/blog/para-magenteiros/configurando-elasticsearch/
+https://magento2.club.hotmart.com/lesson/B146mvLQOd/3.1-instalando-o-composer
+
+ apt-get install openssh-server openssh-client openssh
+------------------------------------------------------------------------------------------------------------------------------------------------ 
+:: 1-instalar php 7.4
+===================
+sudo apt update
+sudo apt -y install software-properties-common
+sudo apt -y install net-tools
+sudo add-apt-repository ppa:ondrej/php
+
+sudo apt update
+sudo apt -y install php7.4
+
+sudo apt-get install php7.4-curl
+sudo apt-get install php7.4-bcmath
+sudo apt-get install php7.4-ctype
+sudo apt-get install php7.4-dom
+sudo apt-get install php7.4-gd
+sudo apt-get install php7.4-hash
+sudo apt-get install php7.4-iconv
+sudo apt-get install php7.4-intl
+sudo apt-get install php7.4-mbstring
+sudo apt-get install php7.4-openssl
+
+sudo apt -y install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt-get install -y php7.4-mysql
+#sudo apt-get install php7.4-pdo_mysql
+
+sudo apt-get install php7.4-simplexml
+sudo apt-get install php7.4-soap
+sudo apt-get install php7.4-xsl
+sudo apt-get install php7.4-zip
+sudo apt-get install php7.4-sockets
+
+#php -m
+#php -v
+
+::2-Instalar apache
+===================
+sudo apt-get install apache2 -y
+apache2 -v
+#/var/www/htm
+#systemctl restart apache2
+
+
+::3-Instalar mariaDb(Xenial) - https://computingforgeeks.com/how-to-install-mariadb-on-ubuntu/
+==============================================================================================
+sudo apt update
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+sudo add-apt-repository "deb [arch=amd64,arm64,ppc64el] http://mariadb.mirror.liquidtelecom.com/repo/10.4/ubuntu $(lsb_release -cs) main"
+sudo apt update
+sudo apt -y install mariadb-server mariadb-client
+sudo mysql_secure_installation
+#sudo systemctl status mysql
+#mysql -u root -p
+#select version();
+
+
+::4-Instalar composer
+=====================
+Latest stable de https://getcomposer.org/composer.phar
+chmod +x composer.phar 
+sudo mv composer.phar /usr/local/bin/
+
+::5-Instalar Magento
+====================
+sudo composer self-update
+composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition ~/_prog/magento
+
+
+::6-Criar banco mysql
+===================
+mysql -u root -p
+create database magento2 default character set utf8 default collate utf8_general_ci;
+#show databases;
+#mysql -h localhost -u root -p -D magento
+
+::7-Instalando ElasticSearch(Busca de produtos no front end)-https://www.youtube.com/watch?v=-F-yVKFbNaI
+========================================================================================================
+#https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-key
+
+
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.11.0-amd64.deb
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.11.0-amd64.deb.sha512
+shasum -a 512 -c elasticsearch-7.11.0-amd64.deb.sha512 
+sudo dpkg -i elasticsearch-7.11.0-amd64.deb
+#Descobrir com o comando abaixo se é systemd ou init:
+ps -p 1
+
+#para systemd usar os comandos abaixo(fazer o serviço ser recarregado ao reiniciar o linux):
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable elasticsearch.service
+
+#para init usar o comando abaixo:
+#sudo update-rc.d elasticsearch defaults 95 10
+
+#sudo -i service elasticsearch start
+#sudo -i service elasticsearch stop
+#arquivos de log: /var/log/elasticsearch/
+
+#testar
+#curl http://localhost:9200
+
+#Para efetuar configurações no elasticsearch
+#bin/magento config:set catalog/search/elasticsearch7_server_hostname localhost
+
+::8 - Instalar magento
+chmod +x bin/magento
+
+bin/magento setup:install --backend-frontname=admin --db-name=magento2 --db-user=root --db-password=qw21 --db-host=localhost:3306 --admin-user=mateus --admin-password=Mateus1- --admin-email="mateus.2006@gmail.com" --admin-firstname=Mateus --admin-lastname=ONunes --currency=BRL --session-save=files
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------------------------------------------------------------------------ 
+

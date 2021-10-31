@@ -1,0 +1,865 @@
+https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
+
+Flutter & Dart - The Complete Guide [2020 Edition]
+A Complete Guide to the Flutter SDK & Flutter Framework for building native iOS and Android apps
+MAIS VENDIDOS
+4,7 (22.726 classificações)
+85.729 alunos inscritos
+Criado por Academind by Maximilian Schwarzmüller, Maximilian Schwarzmüller
+Última atualização em 6/2020
+ Inglês
+ Português [Automático], Inglês, Mais 6
+ 
+ 
+Conteúdo do curso
+Recolher tudo 365 aulas
+41:08:57
+–
+Introduction
+01:35:33
+Introduction
+Visualizar
+01:48
+What is Flutter? 
+Visualizar
+05:54
+Join our Online Learning Community 
+00:21
+Understanding the Flutter Architecture 
+Visualizar
+04:47
+How Flutter & Dart Code Gets Compiled To Native Apps 
+Visualizar
+03:12
+Understanding Flutter Versions 
+Visualizar
+02:49
+Flutter macOS Setup 
+Visualizar
+19:35
+macOS Development Environment 
+Visualizar
+04:08
+Android Licenses & XMLSchema Error
+00:41
+Flutter Windows Setup 
+Visualizar
+31:46
+Windows Development Environment 
+Visualizar
+03:45
+Flutter & Material Design 
+Visualizar
+01:15
+Flutter Alternatives 
+Visualizar
+06:06
+Course Outline 
+Visualizar
+06:40
+How To Get The Most Out Of The Course 
+Visualizar
+02:40
+Useful Resources & Links
+00:05
+–
+Flutter Basics [QUIZ APP]
+04:29:49
+Module Introduction
+02:25
+Creating a New Project
+12:15
+An Overview of the Generated Files & Folders
+08:20
+More on Git (Version Control System)
+00:26
+Analyzing the Default App
+05:32
+Dart Basics
+17:17
+More Dart Basics
+13:06
+Dart Basics - Summary
+04:57
+Dart Fundamentals 
+7 perguntas
+Building an App From Scratch
+11:02
+Running the App on an Emulator
+03:25
+Class Constructors & Named Arguments
+08:29
+First Summary & Additional Syntax
+08:10
+Flutter App Basics 
+3 perguntas
+Building a Widget Tree
+07:40
+Visible (Input / Output) & Invisible (Layout / Control) Widgets
+03:13
+Adding Layout Widgets
+06:52
+Widget Basics 
+6 perguntas
+Connecting Functions & Buttons
+07:30
+Anonymous Functions
+03:20
+Updating Widget Data (Or: Using StatelessWidget Incorrectly)
+06:36
+[DART DEEP DIVE] Understanding Lists
+01:30
+Updating Correctly with Stateful Widgets
+11:58
+Stateful & Stateless Widgets 
+3 perguntas
+A Brief Look Under The Hood
+02:27
+Using Private Properties
+05:16
+Creating a New, Custom Widget
+11:50
+First Styling & Layouting Steps
+08:01
+Enums & Multiple Constructors
+04:06
+Official Docs & The Widget Catalog
+02:39
+Passing Callback Functions Around
+10:38
+Introducing Maps
+05:52
+Mapping Lists to Widgets
+10:24
+final vs const
+10:50
+Advanced Flutter & Dart Basics 
+6 perguntas
+Introducing "if" Statements
+06:51
+[DART DEEP DIVE] More on "if" Statements
+11:15
+[DART DEEP DIVE] The "null" Value
+02:03
+Outputting Widgets Conditionally
+02:20
+Splitting the App Into Widgets
+09:57
+Calculating a Total Score
+07:46
+Getters & "else-if"
+06:34
+Resetting the Quiz
+04:53
+Time to Practice: Flutter Basics 
+1 pergunta
+Wrap Up
+01:53
+Module Resources
+00:09
+–
+Running Apps on Different Devices & Debugging Apps
+37:54
+Module Introduction
+02:00
+Running the App on a Real Android Device
+03:56
+Running the App on an iOS Emulator
+05:54
+Running the App on a Real iOS Device
+01:52
+Working with the Emulators / Using the Emulators
+02:25
+Understanding Error Messages & Fixing Errors
+05:27
+Using the Debugger
+06:21
+Getting Started with the Dart DevTools
+04:54
+Understanding the Repaint Rainbow
+03:23
+Wrapping up the Dart DevTools
+01:34
+Useful Resources & Links
+00:08
+–
+Widgets, Styling, Adding Logic - Building a Real App [PERSONAL EXPENSES APP]
+05:02:18
+Module Introduction
+03:19
+An Overview of the Core Flutter Widgets
+09:42
+Planning the App
+02:43
+Combining Widgets
+09:18
+Understanding Column Alignment
+06:11
+Columns & Rows 
+3 perguntas
+Not a Widget: Adding a Transaction Model & Transaction Data
+08:28
+Mapping Data Into Widgets
+03:39
+Building a Custom List Item
+05:26
+Styling a Container
+05:12
+Styling Text
+02:46
+More Styling!
+01:55
+Styling Time!
+3 perguntas
+Containers vs Columns vs Rows
+03:38
+Using String Interpolation
+05:21
+Installing External Packages & Formatting Dates
+07:29
+DateFormat Patterns
+00:33
+Adding Text Input Widgets (TextField)
+09:41
+Fetching User Input
+09:29
+Splitting the App Into Widgets
+12:44
+Connecting Widgets & Managing Data / State
+06:33
+Adding User Transactions to the List
+03:58
+Making the List Scrollable!
+06:11
+Working with ListViews
+12:02
+Lists, Scrolling & Text Input
+3 perguntas
+Further Input & Output Styling and Configuration
+08:28
+Adding AppBar Buttons & Floating Action Buttons
+04:32
+Showing a Modal Bottom Sheet
+09:32
+Improving & Styling the Modal Bottom Sheet
+06:30
+Configuring & Using Themes
+08:42
+Custom Fonts & Working with Text Themes
+11:07
+Theming
+3 perguntas
+Adding Images to the App
+07:57
+Planning the Chart Widget
+04:22
+Looping Through Lists
+13:47
+More on "for" Loops
+00:28
+Deriving Recent Transactions
+07:24
+Creating Bars for our Chart
+10:59
+Populating the Chart with Values
+06:19
+Finishing the Chart Bars
+05:25
+Flexible & Expanded: Deep Dive
+10:23
+Adding a ListTile Widget
+05:29
+Improving the Overall Chart
+03:08
+Widgets & Configuring Widgets - Summary / Overview
+05:07
+Getting Started with Date Selection
+05:19
+Showing a DatePicker
+11:13
+Adding Transactions with a Date
+03:07
+Deleting Transactions & Using IconButtons
+07:02
+Final Polishing!
+05:34
+Wrap Up
+03:54
+Useful Resources & Links
+00:11
+–
+Responsive & Adaptive User Interfaces and Apps
+01:25:23
+Module Introduction
+01:37
+What does "Responsive" and "Adaptive" Mean?
+05:55
+Examples: Where we could improve the App!
+03:04
+Calculating Sizes Dynamically
+09:13
+Working with the "textScaleFactor"
+00:38
+Using the LayoutBuilder Widget
+07:44
+Responsiveness
+3 perguntas
+Controlling the Device Orientation
+04:19
+Rendering Alternative Landscape Content - 1
+04:42
+Finishing Landscape Mode
+02:58
+Showing Different Content Based on Device Orientation
+05:33
+Respecting the Softkeyboard Insets
+03:43
+Using the Device Size in Conditions
+04:10
+Managing the MediaQuery Object
+02:06
+Checking the Device Platform
+05:36
+Using Cupertino (iOS) Widgets
+09:05
+Using the SafeArea
+01:43
+More Cupertino Styles
+03:09
+Using Cupertino Buttons
+03:11
+Creating Custom Adaptive Widgets
+05:04
+Adaptive Widgets
+3 perguntas
+Wrap Up
+01:43
+Useful Resources & Links
+00:09
+–
+Widget & Flutter Internals - Deep Dive
+02:00:03
+Module Introduction
+02:32
+The Problem At Hand
+03:13
+Widget Tree & Element Tree - What, Why and How?
+10:45
+How Flutter Rebuilds & Repaints the Screen
+08:48
+How Flutter Executes build()
+09:18
+Using "const" Widgets & Constructors
+11:16
+Widgets, Elements, build()
+4 perguntas
+Writing Good Code
+03:57
+Extracting Widgets
+06:07
+Using Builder Methods
+10:21
+Time to Practice: Builder Methods 
+1 pergunta
+Understanding the Widget Lifecycle
+12:55
+Calling super.initState() etc.
+00:48
+Understanding the App Lifecycle
+09:25
+Understanding Context
+06:46
+A Problem with Lists & Stateful Widgets
+05:34
+Understanding the Problem Root
+05:09
+Using Keys
+11:15
+Keys, Lists, Stateful Widgets
+3 perguntas
+Wrap Up
+01:41
+Useful Resources & Links
+00:13
+–
+Navigation & Multiple Screens [MEALS APP]
+04:09:18
+Module Introduction
+02:23
+Planning the App
+04:45
+Starting With The App - Adding Base Data
+11:18
+Creating a Grid & Working with Linear Gradients
+07:49
+Registering a Screen as the Main Screen
+03:10
+Styling & Theming
+07:04
+Navigating to a New Page
+10:10
+Passing Data via the Constructor
+02:38
+Using Named Routes & Passing Data With Named Routes
+06:42
+Screens & Navigation 
+5 perguntas
+Diving Deeper into Named Routes
+02:46
+Adding a Meal Model & Data
+12:44
+Selecting Meals for a Chosen Category
+04:56
+Displaying Recipe Items & Using Network Images
+14:59
+Finishing the Meal List Item
+15:21
+Navigating to the Meal Detail Page
+07:17
+onGenerateRoute & onUnknownRoute
+05:27
+More Navigation! 
+2 perguntas
+Finishing the Meal Detail Page
+17:34
+Adding a TabBar to the Appbar
+10:26
+Adding a Bottom TabBar
+13:12
+Adding a Custom Drawer
+12:37
+Adding Links to the Drawer
+04:03
+Tabs & Drawers! 
+2 perguntas
+Replacing Pages (Instead of Pushing)
+04:21
+Popping Pages & Passing Data Back
+17:06
+Replacing, Popping & Data
+3 perguntas
+Adding Filter Switches
+08:31
+Adding Filtering Logic
+16:19
+Adding a "Mark as Favorite" Feature
+19:57
+A Problem!
+02:40
+Wrap Up
+02:55
+Useful Resources & Links
+00:08
+–
+State Management [SHOP APP]
+03:54:32
+Module Introduction
+02:13
+Planning the App
+06:55
+Defining a Data Model
+06:32
+Working on the "Products" Grid & Item Widgets
+16:24
+Styling & Theming the App
+05:14
+Adding Navigation to the App
+10:30
+Why State Management? And what is "State" and "State Management"?
+06:29
+Understanding the "Provider" Package & Approach
+02:55
+Working with Providers & Listeners
+21:09
+[DART DEEP DIVE] Inheritance ("extends") vs Mixins ("with")
+06:23
+Providing non-Objects
+00:52
+Listening in Different Places & Ways
+05:58
+State, State Management & The Provider Package/ Approach 
+3 perguntas
+Using Nested Models & Providers
+14:03
+Exploring Alternative Provider Syntaxes
+06:55
+Using "Consumer" instead of "Provider.of"
+07:25
+Local State vs App-wide State
+15:40
+Adding Shopping Cart Data
+08:39
+More on State Management & The Provider Package
+3 perguntas
+Working with Multiple Providers
+03:41
+Connecting the Cart Provider
+11:31
+Working on the Shopping Cart & Displaying a Total
+11:37
+Displaying a List of Cart Items
+11:17
+Making Cart Items Dismissible
+08:47
+Adding Product Detail Data
+04:49
+Providing an Orders Object
+07:44
+Adding Orders
+02:47
+Adding an Orders Screen
+08:11
+Using a Side Drawer
+05:45
+Making Orders Expandable & Stateful Widgets vs Providers
+10:29
+Wrap Up
+03:29
+Useful Resources & Links
+00:08
+–
+Working with User Input & Forms [SHOP APP]
+02:02:58
+Module Introduction
+03:02
+Snackbars & Undoing "Add to Cart" Actions
+10:30
+Showing Alert Dialogs
+07:12
+Adding a "Manage Products" Page
+14:15
+"Edit Product" Screen & A Problem
+05:06
+Using Forms & Working with Form Inputs
+07:59
+ListView or Column
+00:49
+Managing Form Input Focus
+04:35
+Multiline Inputs & Disposing Objects
+04:11
+Image Input & Image Preview
+13:15
+Submitting Forms
+12:01
+Validating User Input
+04:14
+Adding Validation to All Inputs
+09:50
+[OPTIONAL] Working with Regular Expressions
+01:08
+Saving New Products
+03:52
+Time to Update Products!
+16:19
+Allowing Users to Delete Products
+03:39
+Wrap Up
+00:53
+Useful Resources & Links
+00:07
+–
+Sending Http Requests [SHOP APP]
+02:45:43
+Module Introduction
+02:05
+On-Device vs Web Storage
+04:08
+How to Connect Flutter to a Database
+03:36
+Preparing Our Backend
+04:31
+How To Send Http Requests
+05:56
+Sending POST Requests
+10:55
+Working with Futures in Dart
+07:35
+[DART DEEP DIVE] Futures & Async Code
+09:27
+Http Requests & Futures
+5 perguntas
+Showing a Loading Indicator
+06:59
+Handling Errors Gracefully
+12:11
+Working with "async" & "await"
+09:52
+Fetching Data, initState & "of(context)"
+08:27
+How to Transform Fetched Data
+07:38
+Implementing Pull-to-Refresh
+04:12
+Updating Data via PATCH Requests
+06:35
+Utilizing Optimistic Updating
+08:07
+Creating Custom Exceptions & More Error Handling
+09:05
+A Challenge For You!
+01:48
+Updating the "Favorite" Status Optimistically
+06:38
+Storing Orders in the Web
+11:29
+Fetching Orders & Fixing an Issue
+12:21
+Using the "FutureBuilder" Widget & Improving the Code
+10:06
+Wrap Up
+01:54
+Useful Resources & Links
+00:08
++
+Adding User Authentication [SHOP APP]
+18 aulas
+02:25:37
+Module Introduction
+01:44
+How Authentication Works
+05:46
+Prepare Backend
+03:39
+Adding the Auth Screen
+15:49
+Adding User Signup
+13:33
+Allowing Users to Log In
+06:03
+Handling Authentication Errors
+13:10
+Managing the Auth Token Locally (in the App)
+11:07
+Using the "ProxyProvider" and Attaching the Token to Outgoing Http Requests
+09:49
+Adding the Token to All Requests
+08:31
+Connecting the "Favorite" Status to Users
+10:17
+Attaching Products to Users & Filtering By Creator
+13:25
+Attaching Orders to Users
+02:55
+Adding a Logout Functionality
+04:18
+Automatically Logging Users Out (After Some Time)
+05:26
+Automatically Logging Users In
+18:19
+Wrap Up
+01:36
+Useful Resources & Links
+00:10
++
+Adding Animations [SHOP APP]
+13 aulas
+58:31
+Module Introduction
+01:26
+Animations From Scratch (Completely Manually Controlled)
+14:03
+Using the "AnimatedBuilder" Widget
+03:51
+Working with the "AnimatedContainer"
+02:47
+More Built-in Animation & Transition Widgets
+09:12
+Fading Loaded Images In (And Showing a Placeholder)
+03:35
+Adding a "Hero" Transition
+02:35
+Working with Slivers
+05:55
+Practice: Animating Order Boxes
+04:00
+A Fix for the Latest Version of Flutter
+00:17
+Implementing Custom Route Transitions
+09:50
+Wrap Up
+00:53
+Useful Resources & Links
+00:07
++
+Using Native Device Features (Camera, Maps, Location, ...) [GREAT PLACES APP]
+20 aulas
+02:59:19
+Module Introduction
+01:35
+Planning the App
+03:23
+PlaceList & Place Provider Setup
+12:44
+Adding the "Add Place" Screen & An Image Input
+17:16
+Using Image Picker & The Device Camera
+12:11
+Storing the Image on the Filesystem (on the Device)
+10:15
+Managing Data & Images via the Provider Package
+15:32
+Handling Errors
+01:23
+Testing on Real Devices
+04:37
+Preparing SQLite
+12:33
+Storing & Fetching Data with SQLite
+11:48
+Adding a Location Input & The "location" Package
+09:44
+Fetching the User Coordinates
+02:29
+Displaying a Static Map Snapshot
+08:31
+Rendering a Dynamic Map (via Google Maps)
+13:55
+Allowing Users to Pick a Location on the Map
+09:43
+Storing the Location in SQLite
+18:09
+Adding a "Place Detail" Screen & Opening the Map in "readonly" Mode
+11:33
+Wrap Up
+01:48
+Useful Resources & Links
+00:10
++
+Firebase, Image Upload, Push Notifications - Building a Chat App
+40 aulas
+04:56:41
+Module Introduction
+01:51
+What is Firebase?
+04:12
+Creating a New App
+04:37
+Getting Started with Firebase
+10:56
+Getting Started with Flutter & the Firebase SDK
+16:22
+Adding "GoogleServices-Info.plist" correctly to iOS
+00:18
+Rendering Stream Data with StreamBuilder
+06:26
+Adding Data
+02:39
+A Basic Authentication Screen
+10:25
+Adding an App Theme
+03:39
+Creating an Authentication Form
+14:02
+Connecting Auth Form & Auth Screen
+04:58
+Implementing Authentication
+13:15
+Storing Extra User Data
+06:57
+Finishing Authentication & Logout
+07:33
+Adding Firebase Security Rules
+09:44
+Listening to Chat Messages
+05:11
+Sending & Ordering Chat Messages
+11:56
+Creating a Basic Chat Bubble Widget
+06:04
+Improving the Chat Bubbles
+12:29
+Testing on Multiple Devices
+04:23
+Displaying User Names
+11:36
+ImagePicker: Latest Version
+00:25
+Adding an Image Picker
+13:54
+Preparing File Upload & Validating Images
+07:11
+Uploading Images
+10:55
+Improving Image Upload
+05:13
+Running on a Real iOS Device
+02:14
+Displaying User Images
+11:08
+How Push Notifications Work
+05:41
+An Introduction to Firebase Cloud Messaging
+04:26
+Android & Push Notifications
+09:44
+iOS & Push Notifications
+13:41
+Handling Push Notifications
+10:04
+Getting Started with Firebase Cloud Functions
+06:24
+MUST READ: Firebase Cloud Functions & Billing
+01:12
+Setting a Firestore Trigger
+08:50
+Sending Automated Push Notifications
+08:46
+Polishing & Wrap Up
+07:15
+Module Resources
+00:03
++
+Running Native Swift, ObjectiveC, Java or Kotlin Code
+7 aulas
+36:51
+Module Introduction
+01:30
+Using a Proper Project Setup
+00:16
+Sending a Method Call from Flutter
+08:33
+Running Android Code
+15:01
+Running iOS Code
+10:25
+Wrap Up
+00:58
+Useful Resources & Links
+00:08
++
+Publishing to the App Stores
+8 aulas
+35:24
+Module Introduction
+01:42
+Preparing the Code
+02:24
+Preparing the App Configuration
+05:54
+Preparing Third-Party Services
+01:18
+Adding Icons & Splash Screens
+09:07
+Publishing Android Apps
+08:46
+Publishing iOS Apps
+06:11
+Useful Resources & Links
+00:02
++
+Roundup & Next Steps
+3 aulas
+15:39
+You did it!
+01:11
+Your Next Steps (To Become an Awesome Developer!)
+03:31
+How to Plan & Develop Successful Apps
+10:57
++
+Roundup
+1 aula
+00:20
+Bonus: More Content!
+

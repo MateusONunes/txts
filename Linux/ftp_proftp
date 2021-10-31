@@ -1,0 +1,14 @@
+::Instalação
+============
+sudo apt install proftpd
+
+/etc/init.d/proftpd status
+
+sudo nano /etc/proftpd/proftpd.conf
+{
+DefaultRoot
+}
+
+/etc/init.d/proftpd restart
+
+sudo apt-get install filezilla

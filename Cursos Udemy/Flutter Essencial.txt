@@ -1,0 +1,912 @@
+https://www.udemy.com/course/flutter-essencial/
+Flutter Essencial
+
+22:45:40
+–
+Introdução ao Curso
+11:31
+Bem vindo 
+Visualizar
+01:09
+Sobre o autor 
+01:37
+Conteúdo do curso - parte 1 
+Visualizar
+02:24
+Conteúdo do curso - parte 2 
+Visualizar
+04:56
+Aplicativo dos Filmes
+Visualizar
+01:02
+Dúvidas sobre os exercícios ?
+00:20
+Cödigo-fonte
+00:02
+–
+Instalação do Flutter SDK
+33:54
+Resumo da configuração do Ambiente de Desenvolvimento 
+17:10
+Instalando o Android Studio 
+00:50
+Instalando o Flutter SDK no Windows e configuração do PATH 
+04:07
+Instalando o Flutter SDK - Mac/Linux 
+02:56
+Configurar a variável de ambiente PATH (Linux/Mac) 
+01:27
+Instalando o Xcode (Se você possui Mac) 
+01:22
+Criando um projeto no Android Studio 
+01:44
+Executando o projeto no emulador Android/iOS 
+01:18
+Explicando as pastas nativas android e ios 
+02:04
+Dicas para desenvolvedor de outras plataformas 
+00:56
+–
+Dart básico
+15:30
+Dart Tour 
+00:10
+Dart básico (variáveis, funções, print) 
+03:04
+Criando Classes 
+02:57
+Listas em Dart 
+03:05
+Maps em Dart 
+02:41
+Herança 
+01:15
+Mixin 
+01:28
+Sintaxe da seta nas funções (=>)
+00:50
+–
+Flutter básico e Widgets
+02:46:08
+Projeto de Exemplo 
+01:34
+MaterialApp 
+04:30
+Scaffold 
+04:40
+Text / TextStyle 
+04:20
+Dica para mostrar os Comentários
+02:23
+Dica de como organizar as classes
+01:22
+Dica de como organizar as classes - parte 2
+02:47
+Dica sobre o import das classes
+02:12
+Dica sobre o assistente de código
+06:19
+Image e SizedBox 
+Visualizar
+09:30
+Button 
+07:10
+Column e Row
+02:26
+MainAxisAlignment
+01:45
+CrossAxisAlignment
+03:41
+Column 
+01:42
+Row 
+03:41
+PageView 
+01:44
+Margin
+01:06
+Padding 
+01:25
+Scroll básico - SingleChildScrollView 
+01:04
+Navegação de Telas (parte 1- context)
+03:59
+Navegação de Telas (parte 2 - Route)
+03:58
+Navegação de Telas (parte 3 - organizando as funções)
+04:15
+Voltar para a tela anterior (pop)
+03:49
+Retornando parâmetros ao fazer Navigator.pop
+03:00
+Dica - Reutilizando Widgets (BlueButton)
+07:10
+Dica - Navegação
+02:15
+ListView (parte 1)
+02:36
+Expanded
+03:21
+ListView - itemExtent (parte 2)
+03:25
+ListView dinâmico - builder (parte 3)
+05:55
+ListView dinâmico - objetos (parte 4)
+03:09
+Stack (parte 1)
+02:57
+Stack - Align (parte 2)
+03:10
+Stack - BoxDecoration (parte 3)
+03:28
+GridView
+01:08
+App Bar - Actions (botões na appbar) 
+01:32
+Stateful Widgets e o método setState() 
+05:36
+State - Counter
+01:54
+Navegando para a tela de detalhes (Dog)
+03:02
+Alertas com Snack 
+04:43
+Alertas com Dialog 
+06:13
+Alertas com Toast + Instalando plugins do DART 
+03:37
+Introdução ao Material Design 
+01:15
+Floating Action Button (FAB) 
+03:52
+Navigation Drawer (menu lateral) 
+01:08
+ListTile 
+04:11
+UserAccountsDrawerHeader 
+02:33
+SafeArea 
+00:36
+Tabs 
+03:00
+–
+Projeto dos Carros - Formulário de Login
+51:28
+GitHub - Carros
+00:12
+Criar o projeto
+02:28
+Criando a estrutura básica do projeto
+03:59
+Tema do Scaffold
+02:23
+Layout do Form de Login (básico)
+03:53
+TextFormField (decoration)
+03:42
+Dica - criando widgets com métodos
+05:04
+TextEditingController
+05:43
+Dica - Sintaxe para passar uma função como parâmetro
+01:56
+Validator - validação de formulários
+06:43
+Controlando o Teclado (TextInputType e TextInputAction)
+08:18
+Criando Widgets (AppText e AppButton)
+06:01
+InputDecoration - Border
+01:06
+–
+Login com Web Service
+49:29
+Navegação para HomePage
+01:32
+Web Service (form urlencoded)
+10:18
+Web Service (application/json)
+06:49
+Parser de JSON (simples)
+02:46
+Parser de JSON (Classe Usuario)
+04:47
+Parser de JSON (construtores)
+04:29
+Dica - Serialização
+01:06
+ApiResponse - Retorno e Tratamento de erros
+08:42
+Nome do usuário na Home
+01:58
+CircularProgressIndicator
+05:06
+setState()
+01:56
+–
+Home & Drawer
+03:59
+Navigator.pushReplacement
+01:34
+Drawer - menu lateral na Home
+02:25
+–
+Lista de Carros
+36:37
+Classe Carro
+04:06
+ListView - Carros
+06:17
+Layout com Card
+05:31
+ButtonTheme.bar (deprecated)
+00:12
+FutureBuilder
+08:24
+Web Services - GET Lista Carros
+05:46
+Parser JSON Lista Carros
+04:14
+Parser JSON - função map
+02:07
+–
+TabBar
+09:58
+CarrosListView
+01:27
+TabBar (clássicos, esportivos e luxo)
+01:35
+Busca por Tipo
+04:10
+Salvando estado da TabBar
+02:46
+–
+Shared Preferences
+35:47
+TabBar - listener
+03:05
+Salvando o índice da Tab com shared_preferences
+06:53
+Await e Async
+03:19
+* Importante: Ajuste: Tabs vs Prefs
+00:57
+Salvando o usuário logado nas Prefs
+08:14
+Nav Drawer (dados do usuário)
+04:09
+Login Automático
+04:47
+JWT - /api/v2/carros
+04:23
++
+Futures e Streams
+6 aulas
+23:06
+Tela de Detalhes do Carro
+02:35
+Problema com o método build()
+03:31
+Refactor - Future e initState()
+04:14
+Streams e StreamBuilder
+05:03
+StreamBuilder no Login
+06:36
+Stream - close
+01:07
++
+Padrão Bloc (Business Logic Component)
+6 aulas
+26:18
+Introdução ao Bloc - Palestra Google
+01:08
+Bloc - Lista de Carros
+05:06
+Bloc - Login
+03:46
+Bloc - Tratamento de Exceções
+06:25
+Próxima Dica
+00:17
+SimpleBloc: Dica Importante para simplificar o código
+09:36
++
+Mobx
+3 aulas
+20:58
+Introdução ao MobX
+03:35
+Código do Mobx
+00:19
+MobX na prática
+Visualizar
+17:04
++
+Tela de Detalhes do Carro
+6 aulas
+20:27
+Actions: IconButton e PopupMenuButton
+04:15
+Carro Detalhes - layout parte 1
+04:50
+Dica função text()
+01:20
+Carro Detalhes - layout parte 2 - scroll
+03:09
+Carro Detalhes - Revisão Futures Stream Bloc
+05:48
+Cache - LoripsumApi
+01:05
++
+Pull To Refresh
+3 aulas
+10:17
+Refactor: CarrosPage e CarrosListView
+04:06
+RefreshIndicator - parte 1
+03:37
+RefreshIndicator - parte 2
+02:34
++
+SQLite - banco de dados
+9 aulas
+48:51
+SQLite - Introdução (plugin)
+03:07
+Salvando todos os carros
+03:35
+Visualizando o banco de dados (iPhone)
+02:29
+Visualizando o banco de dados (Android)
+02:17
+DatabaseHelper
+07:24
+CarroDAO
+04:51
+Explicar inicialização DB (Splash)
+08:42
+DAO Generics
+10:35
+Assets SQL
+05:51
++
+Brincando com Cache
+3 aulas
+08:59
+CachedNetworkImage (plugin)
+03:04
+Cache com banco de dados
+04:34
+Lógica no Bloc
+01:21
++
+Salvar nos Favoritos
+7 aulas
+25:38
+Tabela Favoritos
+02:08
+Favorito - Entity e DAO
+02:41
+Favoritos - Salvar
+04:25
+Favoritos - Tab 4
+04:32
+Favoritos - SQL Join
+06:11
+Cor do coração com setState
+05:33
+Atualizar Tab de Favoritos
+00:08
++
+Inserir/Atualizar/Excluir o Carro no Web Service
+10 aulas
+46:55
+Adicionar botão FAB (+) na Home
+02:07
+Formulário para Salvar
+02:16
+Formulário para Salvar (explicação)
+11:42
+Refactor - AppText e AppButton
+02:58
+WebService para Salvar/Atualizar o Carro
+05:45
+Salvar o Carro (POST com Json)
+05:18
+Alerta de OK com função de callback
+02:44
+Atualizar o Carro
+05:48
+Deletar o Carro
+05:54
+Http Helper e Token JWT
+02:23
++
+Camera - fotos e galeria
+7 aulas
+19:52
+Câmera e Fotos - GitHub (código fonte)
+00:18
+Criar o projeto para Fotos
+03:06
+Layout para tirar Fotos
+01:50
+plugin image_picker (configuração)
+03:59
+image_picker - Tirando fotos
+03:26
+Upload - web service
+03:33
+Upload - código
+03:40
++
+Fotos nos Carros
+2 aulas
+07:51
+Tirando a Foto
+03:07
+Upload da Foto
+04:44
++
+Gerenciamento de Estado com Provider
+4 aulas
+20:49
+Bloc Global (variável global)
+06:08
+Provider (provedor de conteúdo para o Bloc)
+06:34
+ChangeNotifierProvider
+07:56
+Mais sobre Provider
+00:11
++
+Streams e Bus de Eventos
+2 aulas
+16:17
+Streams e Bus de Eventos (parte 1) - broadcast
+11:01
+Streams e Bus de Eventos (parte 2)
+05:16
++
+Alertas do tipo LongClick, BottomSheet e Share
+3 aulas
+09:58
+Long press - Selecionando um carro na lista 
+04:02
+Alerta do tipo BottomSheet 
+02:06
+Share - compartilhar dados do aplicativo 
+03:50
++
+Multimídia - VideoPlayer
+2 aulas
+06:45
+Mostrando vídeo com o launch 
+02:14
+Mostrando o vídeo com o Video Player 
+04:31
++
+Google Maps
+4 aulas
+19:10
+Configurando o plugin de mapas e obtendo a API Key 
+08:32
+GoogleMap - parte 1 
+05:51
+GoogleMap - parte 2
+04:20
+Aplicativo de Mapas e Cidades
+00:27
++
+Firebase Authentication
+14 aulas
+44:27
+GoogleSignInButton
+01:05
+Criar o projeto no Firebase
+01:26
+AndroidX e Multidex
+04:27
+Firebase configuração no Android (parte 1)
+03:44
+Firebase configuração no Android (parte 2)
+04:32
+Firebase configuração no iOS
+04:48
+Firebase Authentication (configuração)
+02:28
+Google Login - Firebase Authentication (demo)
+01:41
+Firebase Authentication (código)
+05:11
+Firebase Auth - Logout
+01:16
+FirebaseUser - Menu Lateral
+01:51
+FirebaseUser - manter logado no app
+00:59
+Login com email/senha pelo Firebase
+04:22
+Cadastro de usuário pelo Firebase Auth (Form)
+06:37
++
+Firebase Firestore
+5 aulas
+29:40
+Criando um banco de dados no Firestore
+01:24
+Criando a lista de carros no Firestore
+Visualizar
+03:39
+Conectando a lista de favoritos no Firestore
+05:24
+Salvando os dados no Firestore
+11:02
+Salvando a lista de favoritos por usuário 
+08:11
++
+FCM - Firebase Cloud Messaging (Push Notifications)
+4 aulas
+29:11
+Firebase Messaging 
+07:04
+Data Messaging
+07:51
+Web Service do Firebase
+03:43
+Configurando o FCM para o iOS
+10:33
++
+Firebase Outros
+1 aula
+03:21
+RemoteConfig 
+03:21
++
+Firebase Storage
+2 aulas
+03:58
+Upload no Firebase Storage - fonte
+00:26
+Upload no Firebase Storage 
+03:32
++
+Outros Widgets
+2 aulas
+23:29
+Dropdown 
+13:15
+Dropdown com uma lista em JSON 
+10:14
++
+Outros plugins
+6 aulas
+24:36
+WebView 
+05:23
+WebView - onPageFinished + IndexedStack 
+02:06
+WebView - onPageFinished + Opacity 
+02:14
+Fingerprint 
+03:48
+GPS 
+08:27
+Dots Indicator - Page Indicator 
+02:38
++
+Revisão ListView/PageView e Futures
+6 aulas
+21:37
+Introdução - Revisão ListView/PageView/GridView e Futures 
+01:16
+ListView / PageView / GridView
+01:40
+ListView - dinâmico - exemplo 1
+03:11
+Função map 
+03:28
+ListView.builder
+05:22
+FutureBuilder
+06:40
++
+Revisão app dos Filmes
+21 aulas
+01:16:12
+Introdução - App dos Filmes
+02:01
+GitHub - App dos Filmes 
+01:12
+API Key - The Movie DB
+00:20
+Login - Stack - Imagem Background
+02:55
+Login - Widget AppText
+02:43
+Login - Widget AppButton
+03:42
+Login - Widget AppLink
+01:19
+Login - onSaved
+03:13
+Login - Bloc Local vs Global
+03:54
+Login - Tratamento de Erros (try/catch)
+04:49
+Login - Bloc - ProgressBloc
+08:36
+Tabs - HomePage
+01:44
+Movies Bloc - parte 1
+05:10
+Movies Bloc - parte 2 (Stream Error)
+05:53
+GenericBloc - SimpleBloc
+03:28
+Tabs Favoritos - parte 1
+03:38
+Tabs Favoritos - parte 1 (Bloc lista)
+02:41
+Tabs Favoritos - Bloc Detalhes
+05:42
+Flare - parte 1
+06:48
+Flare - parte 2
+03:41
+Animação Hero - Filmes
+02:43
++
+Extras - app Carros
+3 aulas
+20:20
+Listas com Paginação 
+15:08
+Busca (Search) 
+03:31
+Busca com lib Rx e debounceTime
+01:41
++
+Extras - Parser de JSON
+2 aulas
+12:19
+Parser de Json - avançado 
+08:52
+Dica - Parser de JSON 
+03:27
++
+Dúvidas & Extras
+20 aulas
+01:41:37
+Como criar a API de Carros 
+00:04
+Futures - then vs async
+04:18
+Live Templates
+03:47
+Dúvida: Button - onPressed 
+05:50
+Dúvida sobre o context passado nos parâmetros 
+01:52
+Dica de configuração dos assets no pubspec 
+01:27
+Dica import da lib dart:convert e a palavra json
+02:15
+Como ler um arquivo da pasta assets 
+02:28
+Dúvida Layout - Stack 
+04:02
+Dica - https://mocky.io 
+03:35
+Flavors 
+09:35
+Git e GitHub 
+23:24
+AndroidX 
+15:59
+Splash Screen 
+10:58
+SliverAppBar.
+Visualizar
+10:15
+Dica: Como ligar os comentários automáticos ao fechar parênteses 
+00:15
+Trocando o Tema com Streams
+00:46
+Como executar uma função depois do método build() terminar? 
+00:18
+Lendo JSON resultado da API em UTF-8
+00:09
+nav.dart e pop (Breaking Change)
+00:19
++
+Exemplos de Código (Dúvidas)
+2 aulas
+00:44
+Sobre os exemplos
+00:07
+Criar Tabs dinamicamente
+00:37
++
+Build Android e Google Play
+2 aulas
+21:19
+Build Android e Google Play 
+10:20
+Build iOS e App Store 
+10:59
++
+Flutter Web - Introdução
+8 aulas
+22:43
+Flutter Web - Bem Vindo
+00:59
+Introdução
+01:59
+Conteúdo do curso de Flutter Web
+10:52
+Configuração do ambiente do Flutter Web
+02:53
+Criando o projeto Flutter Web
+01:09
+Executando o projeto
+02:05
+Flutter Web - hot reload
+01:44
+Plugins para Flutter Web
+01:02
++
+Flutter Web - Conceitos Básicos
+24 aulas
+01:15:23
+GitHub - Web Template
+00:09
+Hello Flutter Web
+01:34
+Apps Responsivos
+00:56
+MediaQuery
+01:17
+Overflow
+02:26
+Expanded (flex)
+01:41
+Layout com MediaQuery
+01:51
+Nav Drawer no Flutter Web
+02:50
+App Responsivo (Nav Drawer)
+03:26
+Removendo App Bar (parte 1)
+01:48
+Removendo App Bar (parte 2)
+06:22
+Widgets Header/Menu
+02:09
+Header - PopupMenuButton
+03:39
+Menu (Inkwell - hover)
+05:11
+Menu - classe (Pages)
+01:57
+Provider - gerenciamento de estado do menu (parte 1)
+04:58
+Provider - gerenciamento de estado do menu (parte 2)
+04:56
+Manter o item de menu selecionado (exemplo 1)
+02:57
+Manter o item de menu selecionado (exemplo 2)
+04:32
+LayoutBuilder (parte 1)
+04:36
+LayoutBuilder (parte 2)
+04:34
+Cards
+02:34
+Fonte responsiva
+06:27
+ConstrainedBox
+02:33
++
+Flutter Web - Navegação e Breadcrumb
+12 aulas
+31:18
+Explicação do Exercício
+01:20
+Grid de Carros pela API
+04:21
+Detalhes do Carro
+02:41
+Navegação de telas com Provider
+02:55
+Voltar para a tela anterior (pop)
+01:42
+Breadcrumb (parte 1 - layout)
+03:35
+Breadcrumb (parte 2 - menu lateral)
+01:17
+Breadcrumb (parte 3 - home)
+02:06
+Breadcrumb (parte 4 - título das páginas)
+03:10
+Breadcrumb (parte 5 - ListView - horizontal)
+03:17
+Breadcrumb (parte 6 - Cor)
+01:30
+Breadcrumb (parte 7 - Navegação)
+03:24
++
+Flutter Web - Funcionalidades de Web
+8 aulas
+18:30
+Web vs App (introdução)
+02:19
+Fonte customizada
+02:21
+Upload de arquivos
+07:28
+Shared Preferences
+00:32
+Salvar dados no Storage
+02:32
+Descobrir se está rodando na Web
+00:30
+User Agent
+02:17
+Gráficos
+00:30
++
+Flutter Web - Projeto compartilhado (App vs Web)
+7 aulas
+33:30
+GitHub - App vs Web
+00:13
+Introdução - Web vs App
+01:34
+Criando o projeto com o plugin url_launcher
+05:06
+Criando um package e projetos específicos para cada plataforma.
+02:39
+Utilizando um Package/Plugin local
+06:57
+Injeção de dependências com Provider
+12:39
+Exemplo - Prefs
+04:22
++
+Carros Web - Demo
+5 aulas
+23:06
+Carros Web - GitHub
+00:01
+Carros Web - explicação
+05:40
+Firestore e Favoritos (parte 1)
+Visualizar
+02:34
+Firestore e Favoritos (parte 2)
+06:51
+Flutter Web Build e Deploy no Firebase Hosting
+08:00
++
+Flutter Web - Extras
+8 aulas
+01:40
+CORS
+00:41
+Rotas nomeadas
+00:22
+Exemplos da Internet
+00:12
+Exemplo - Web Dashboard 1
+00:02
+Exemplo - Web Dashboard 2
+00:01
+Exemplo - Gráficos
+00:11
+Exemplo - Flutter Gallery
+00:05
+Demo código ao Vivo Site
+00:03
+

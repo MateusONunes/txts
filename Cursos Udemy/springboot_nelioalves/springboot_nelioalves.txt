@@ -1,0 +1,78 @@
+https://www.udemy.com/course/spring-boot-ionic/
+
+Spring Boot, Hibernate, REST, Ionic, JWT, S3, MySQL, MongoDB
+
+
+Perguntas frequentes: http://educandoweb.com.br/duvidas-sbi.html
+
+git back: https://github.com/acenelio/springboot2-ionic-backend (Spring Boot versão 2.0.x)
+git back: https://github.com/acenelio/spring-boot-ionic-backend (Spring Boot versão 1.5.x)
+git front: https://github.com/acenelio/curso-spring-ionic-frontend
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+10. Nivelamento sobre JPA - PARTE 3 (AULA EXTRA)
+https://www.udemy.com/course/spring-boot-ionic/learn/lecture/8460548#overview
+Exemplo interessante de insert no banco com a JPA, get e delete. Este exemplo está em JAVA e não em SpringBoot
+------------------------------------------------------------------------------------------------------------------------------------------------------
+https://www.udemy.com/course/spring-boot-ionic/learn/lecture/8090536#overview
+17. Criando repository e service para Categoria
+
+Controladores - RESTs - APIS. Linha de frente
+Domínio-> Banco
+Servico ->
+Repository -> Acesso a dados
+
+
+CategoriaResource.java   - "Contraladores REST" - Controllers - Contraladores - APIS
+CategoriaService.java    - "Camada de Serviço" - Regras de negócio. Não tem contato com tecnologias
+CategoriaRepository.java - "Camada de acesso a dados (Repository)" - Acesso a dados - DAO - Aqui vão ficar as consultas, inserts - JpaRepository etc
+Categoria.java           - "Camada de domínio" Domain - A classe pura, a tabela. Poderia se chamar CategoriaDomain.  
+------------------------------------------------------------------------------------------------------------------------------------------------------
+8. Criando operação de instanciação
+https://www.udemy.com/course/spring-boot-ionic/learn/lecture/8090540#questions
+Cria automaticamento os dados no banco. popula o banco.
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+-Assuntos
+
+Arquitetura - 4 camadas - Resource(APIS), Service(Regras), Repository(Banco), Domain(Classe)
+H2
+Modelo relacional com os objetos da JPA
+MOntar o JSons filhos automaticamente com a cadeia de relacionamentos
+JPQL
+Validações JPA
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Finalmente!! Finalmente encontrei um curso que trabalha em paralelo com o GitHub.
+Parabéns professor Nélio Alves por estar alinhado com o ano 2021.
+
+Eu basicamente assisto a aula numa velocidade maior só pra ter uma noção +- do que ele fez. Depois eu vou lá no git e vou copiando o código e colando no meu projeto(Claro, entendendo o que estou fazendo). Uma aula que eu levaria 30 minutos pra fazer eu faço em menos de 10 minutos. Isto quando dá tudo certo, pois as vezes (quase sempre) erro na digitação e lá vai eu rodar vídeo pra frente e pra traz, até descobrir um detalhezinho que faltou, então aquela aula que era pra ser de 30 minutos vira horas. Já passei 1 dia todo enroscado em um detalhe.
+
+A maioria dos cursos disponibilizam o projeto pronto no github. Ajuda bastante, mas o bom mesmo é quando mantém fidelidade nos commits aula por aula (Utilizar os recursos que temos né?).
+
+Não tem nem comparação na produtividade que é fazer um curso que faz os commit aula a aula. E a coisa ainda fica mais turbinada quando estou querendo apenas ter uma noção geral de como a linguagem funciona e se organiza, ai vou a milhão.
+
+E também antes de começar a aula da pra dar uma espiada no que ele fez.
+
+Peço desculpa escrever tanto, mas isto é ao mesmo tempo uma revolta particular minha de não encontrar aulas que se organizam da maneira que o Professor Nélio se organizou no github(Isto em 2017). Tem inclusive escolas grandes de tecnologias que estão fazendo cursos de tecnologias de ponta e não tiveram a sensibilidade, ou a noção, ou o carinho, ao dedicação ou sei lá o que de se organizar desta maneira. Porque?
+
+Outra coisa. Quando preciso revisar uma aula, geralmente só de bater o olho no git já tenho o panorama geral do que aconteceu, e geralmente isto é suficiente. Geralmente pra revisar aula procuramos por um comando ou por uma sintaxe que já vai estar lá no git pronta pro Ctrl+C.
+
+Parabéns Progessor Nélio

@@ -1,0 +1,46 @@
+------------------------------------------------------------------------------------------
+mysql -u root -p
+
+sudo apt install mysql-server
+sudo mysql_secure_installation
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+sudo service mysql restart
+sudo mysql -u root
+  sudo service mysql restart
+  sudo mysql -u root
+  mysql -u root -p
+  sudo mysql -u root
+  sudo mysqladmin -u root -p password
+  sudo netstat -tap |grep mysql
+  sudo mysql -u root
+  sudo apt install mysql-workbench
+  sudo mysql -u root -p
+  mysql -u root -p
+  sudo service status mysql
+------------------------------------------------------------------------------------------
+
+Eclipse STS => Eclipse  Spring Tool Suite.
+
+spring-boot:run -f pom.xml
+
+spring-boot:run
+
+------------------------------------------------------------------------------------------
+Spring boot no android Studio:
+
+
+"Caused by: java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException" no 
+    // JAX-B dependencies for JDK 9+
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
+    
+* lembrar de configurar corretamente variável JAVA_HOME
+*gradle init
+
+
+
+application-dev.properties
+
+::mostrar parâmetro do sql
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE

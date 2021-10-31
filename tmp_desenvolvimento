@@ -1,0 +1,69 @@
+
+FIREBASE
+========
+Cloud Firestore vs Realtime database
+------------------------------------
+
+-Cloud Firestore é mais recente que Realtime database
+
+-O Jamilton utiliza "Cloud Firestore conforme 18:28 de  https://www.udemy.com/course/desenvolvimento-android-e-ios-com-flutter/learn/lecture/14935326#overview
+-O Leonardo Leitão utiliza o Realtime que "É o banco mais antigo mas o mais simples de se trabalhar".
+
+FIREBASE
+========-FIM
+
+::Celular - Comandos gerais
+===========================
+adb-Android Debug Bridge -https://developer.android.com/studio/command-line/adb
+adb devices      => exibe dispositivos conectados
+adb kill-server  => mata o servidor adb
+
+
+
+::Espelhamento do Celular
+========================
+scrcpy
+	scrcpy -S => tela do cel desligada
+vysor
+
+
+FALHA DE SEGMENTAÇÃO:
+utilize o comando: snap run scrcpy
+
+USAR COM A TELA DESLIGADA:
+Utilize -S ao final do comendo: snap run scrcpy -S
+
+
+
+mateus@mateus-pc:~$ scrcpy
+INFO: scrcpy 1.14 <https://github.com/Genymobile/scrcpy>
+adb server version (41) doesn't match this client (39); killing...
+ADB server didn't ACK
+Full server startup log: /tmp/adb.1000.log
+Server had pid: 2099
+--- adb starting (pid 2099) ---
+adb I 06-20 12:30:27  2099  2099 main.cpp:57] Android Debug Bridge version 1.0.39
+adb I 06-20 12:30:27  2099  2099 main.cpp:57] Version 1:8.1.0+r23-5~18.04
+adb I 06-20 12:30:27  2099  2099 main.cpp:57] Installed as /snap/scrcpy/233/usr/lib/android-sdk/platform-tools/adb
+adb I 06-20 12:30:27  2099  2099 main.cpp:57] 
+adb I 06-20 12:30:27  2099  2099 adb_auth_host.cpp:416] adb_auth_init...
+adb I 06-20 12:30:27  2099  2099 adb_auth_host.cpp:174] read_key_file '/home/mateus/snap/scrcpy/233/.android/adbkey'...
+adb I 06-20 12:30:27  2099  2099 adb_auth_host.cpp:391] adb_auth_inotify_init...
+adb I 06-20 12:30:27  2099  2099 adb_auth_host.cpp:467] Calling send_auth_response
+adb server killed by remote request
+
+* failed to start daemon
+adb: error: failed to get feature set: cannot connect to daemon
+ERROR: "adb push" returned with value 1
+mateus@mateus-pc:~$
+
+
+
+Error: "adb reverse" returned with value 1
+Warn: 'adb reverse' failed, fallback to 'adb forward'
+Falha de segmentação (imagem do núcleo gravada)
+
+
+
+
+

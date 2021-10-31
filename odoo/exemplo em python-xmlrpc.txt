@@ -1,0 +1,16 @@
+#https://www.youtube.com/watch?v=A-8AdU9SnBw
+
+url = "http://localhost:8041"
+db = 'test_local_enterprise_db'
+username = '14'
+password = '14'
+import xmlrpc.client
+common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
+version = common.version()
+print("version", version)
+uid = common.authenticate(db, username, password, {})
+print("uid = ",uid)
+models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
+search_read = models.execute_kw(db, uid, password,'res.partner', 'search_read',[[]],{'fields': ['name', 'country_id', 'comment'], 'limit': 5})
+print("search_read",search_read)
+

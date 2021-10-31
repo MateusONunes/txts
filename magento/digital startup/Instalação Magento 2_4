@@ -1,0 +1,340 @@
+adduser mateus-@Sala1982-_
+sudo usermod -aG sudo mateus
+#desativar acesso ssh do root "PermitRootLogin no"
+sudo nano /etc/ssh/sshd_config
+
+::1-Firewall
+============
+# Gufw - interface gráfica do ufw-Uncomplicated FireWall
+sudo ufw allow ssh
+sudo ufw enable
+sudo apt update
+
+::2-Apache
+==========
+sudo apt install apache2 -y
+
+#permitir arquivos .htaccess no diretório da web
+sudo nano /etc/apache2/sites-available/000-default.conf
+<Directory "/var/www/html">
+    AllowOverride All
+</Directory>
+
+#definir o Global ServerName - acrescentar "ServerName 123.123.123.123" no final do arquivo
+sudo nano /etc/apache2/apache2.conf
+
+#Verificar se há erros
+sudo apache2ctl configtest
+
+#habilitar reescrita no apache
+sudo a2enmod rewrite
+
+sudo systemctl restart apache2
+
+#Habilitar4 firewall
+sudo ufw allow 'Apache Full'
+
+::3-PHP
+=======
+sudo apt update
+sudo apt install php7.4 libapache2-mod-php7.4 php7.4-mysql php7.4-soap php7.4-bcmath php7.4-xml php7.4-mbstring php7.4-gd php7.4-common php7.4-cli php7.4-curl php7.4-intl php7.4-zip zip unzip -y
+
+#Mover index.php pro início da lista
+sudo nano /etc/apache2/mods-enabled/dir.conf
+
+sudo nano /etc/php/7.4/apache2/php.ini
+/*****
+;mateus;date.timezone =America/Sao_Paulo
+date.timezone =America/Sao_Paulo
+
+;mateus;memory_limit=128M
+memory_limit=4GM
+*****/
+
+sudo systemctl restart apache2
+
+
+::4-My Sql
+==========
+sudo apt install mysql-server -y
+sudo mysql_secure_installation
+##sudo apt install --reinstall dbconfig-mysql
+sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'XHUWKxKyCX8LmEGsHKG@cER'"
+sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'qw21'"
+
+##sudo apt purge dbconfig-common
+
+
+
+::5-PHP Admin
+=============
+sudo apt update
+sudo apt install phpmyadmin php7.4-mbstring php7.4-gettext -y
+
+sudo systemctl restart apache2
+#acessar com http://192.168.0.101/phpmyadmin
+##sudo dpkg-reconfigure phpmyadmin
+##/usr/share/phpmyadmin/
+
+#Criar usuário magento conceder todos os previlégios
+sudo mysql -u root -p
+CREATE USER 'magento'@'localhost' IDENTIFIED BY 'qw21'; 
+ALTER USER 'magento'@'localhost' IDENTIFIED WITH mysql_native_password BY 'qw21';
+#snap install dbeaver-ce
+
+::6-Habilite o recurso SMTP
+===========================
+sudo apt install mailutils -y
+sudo nano /etc/postfix/main.cf
+/*****
+#mateus#inet_interfaces = all
+inet_interfaces = loopback-only
+*****/
+##bin/magento module:disable Magento_TwoFactorAuth
+
+sudo systemctl restart postfix
+
+::7 - Instalando Elasticsearch 7
+================================
+sudo apt install openjdk-8-jdk -y
+java -version
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.0-amd64.deb
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.0-amd64.deb.sha512
+shasum -a 512 -c elasticsearch-7.6.0-amd64.deb.sha512
+sudo dpkg -i elasticsearch-7.6.0-amd64.deb
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable elasticsearch.service
+sudo systemctl start elasticsearch
+sudo apt install curl
+curl -X GET 'http://localhost:9200'
+
+::8 - Configurando Elasticsearch 7
+==================================
+sudo nano /etc/elasticsearch/elasticsearch.yml
+/*****
+#mateus#cluster.name: my-application
+cluster.name: Magento Cluster
+
+#mateus#node.name: node-1
+node.name: Magento Node
+
+#mateus#network.host: 192.168.0.1
+network.host: localhost
+*****/
+
+sudo systemctl restart elasticsearch
+
+****************************
+***** Instalar Magento *****
+****************************
+
+::9 - criar usuário Magento
+===========================
+sudo adduser magento
+sudo usermod -g www-data magento
+sudo chown -R magento:www-data /var/www/html/
+
+::10 - Instalar Composer
+========================
+sudo curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+#downgrade
+sudo composer self-update 1.10.16
+cd /var/www/html
+su magento
+rm index.html
+
+::11 - Instalar magento
+=======================
+composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.4.0 .
+#publica:d6bd42d655a84504b4a2291d3259cd96
+#private:8c8646722850c213e51fc6bfa12508f4
+
+::Criar o banco (mudar isto acima para onde crio o usuário)
+----------------------------------------------------------------
+mysql -u root -p
+create database magento default character set utf8 default collate utf8_general_ci;
+GRANT ALL PRIVILEGES ON magento.* TO 'magento'@'localhost';
+FLUSH PRIVILEGES;
+#mail -s "teste" mateus.2006@gmail.com (Ctrl+d p enviar)
+sudo chmod -R 777 /var/mail
+sudo chmod -R 777 /usr/bin/mail
+
+
+cd /var/www/html
+su magento
+----------------------------------------------------------------
+find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + && find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + && chown -R :www-data . && chmod u+x bin/magento
+
+bin/magento setup:install \
+--base-url=http://localhost \
+--db-host=localhost \
+--db-name=magento \
+--db-user=magento \
+--db-password="qw21" \
+--admin-firstname=mateus \
+--admin-lastname=onunes \
+--admin-email=mateus.2006@gmail.com \
+--admin-user=mateus \
+--admin-password=mateus12 \
+--language=pt_BR \
+--currency=BRL \
+--timezone=America/Sao_Paulo \
+--use-rewrites=1
+
+> ~/log_magento.txt
+
+#bin/magento module:disable Magento_TwoFactorAuth
+
+
+##[SUCCESS]: Magento Admin URI: /admin_86idne
+
+::12 - Finalizações
+===================
+nano .htaccess
+/*****
+    #mateus#php_value memory_limit 768MB
+    php_value memory_limit 2G
+*****/
+
+#taregas agendadas Cron segundo plano. Indexação, backup, atualizações, etc
+bin/magento cron:install
+#php bin/magento cron:remove   => em /var/www/html
+
+#mudar magneto para modo desenvolvedor
+bin/magento deploy:mode:set developer
+
+#limpar pastas e cache
+rm -rf generated/metadata/* generated/code/*
+bin/magento cache:clean
+
+
+::expor servidor internet
+meu ip: 179.108.7.9
+
+sudo mousepad /etc/apache2/apache2.conf
+listen
+de 127.0.0.1:80
+para 80
+
+
+
+====================================================================================================================================================================================
+====================================================================================================================================================================================
+==FIM INSTALALÇAO ==================================================================================================================================================================
+====================================================================================================================================================================================
+====================================================================================================================================================================================
+:: desabilitar o cgnat
+
+::Segurança da pasta www - https://www.youtube.com/watch?v=R8NeO5eAmJ8 18:00 (+-)
+Verificar o chmod -R 755 /var/www/html
+mudar o grupo e proprietário da pastas: chown -R www-data:www-data /var/www/html
+conferir com: ll
+
+
+
+::modo Produção/Desenvolvimento
+bin/magento deploy:mode:set [production ou developer]
+
+
+::Organizar
+php bin/magento setup:store-config:set --base-url="http://192.168.0.101"
+php bin/magento setup:store-config:set --db-host="192.168.0.101"
+#baixar loja demo
+bin/magento sampledata:deploy
+
+#instalar as alterações mais recentes que acabamos de fazer(incluindo themas)
+bin/magento setup:upgrade
+
+#depois de copiar temas nas pasta :
+bin/magento setup:upgrade
+php bin/magento setup:static-content:deploy
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+::comando gerado por https://www.cursomagento.com.br/blog/como-instalar-magento/
+
+mkdir temp; 
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"; 
+
+php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"; 
+
+php composer-setup.php --version=1.10.17; 
+
+php -d memory=-1 composer.phar create-project --repository=https://repo.magento.com/ magento/project-community-edition:2.4.2 $PWD/temp/; 
+
+mv temp/* $PWD; 
+
+mv temp/.* $PWD; 
+
+rm -rf temp/; 
+
+php -f bin/magento setup:install 
+--base-url=loja 
+--use-secure=0 
+--db-host=localhost 
+--db-name=nome_banco 
+--db-user=usuario_banco_magento 
+--db-password=senhabanco 
+--admin-firstname=nomeadmin 
+--admin-lastname=sobrenomeadmin 
+--admin-email=emailadmin 
+--admin-user=UsuarioPainelAdmin 
+--admin-password=SenhaPainelAdmin 
+--language=pt_BR 
+--currency=BRL 
+--timezone=America/Sao_Paulo 
+--backend-frontname=enderecopaineladmin 
+--use-rewrites=1; 
+
+
+---- desligando módulos
+rm -rf generated/ -f;
+php bin/magento module:disable -c Dotdigitalgroup_Email Dotdigitalgroup_Chat;
+php bin/magento module:disable -c Magento_NewRelicReporting;
+php bin/magento module:disable -c Vertex_Tax Vertex_AddressValidation;
+php bin/magento module:disable -c Yotpo_Yotpo;
+php bin/magento module:disable -c Magento_Fedex;
+php bin/magento module:disable -c Magento_Dhl;
+php bin/magento module:disable -c Amazon_Payment;
+php bin/magento module:disable -c Amazon_Login;
+php bin/magento module:disable -c Amazon_Core;
+php bin/magento module:disable -c Klarna_KpGraphQl;
+php bin/magento module:disable -c Klarna_Onsitemessaging;
+php bin/magento module:disable -c Klarna_Kp;
+php bin/magento module:disable -c Klarna_Ordermanagement;
+php bin/magento module:disable -c Klarna_Core;
+php bin/magento module:disable -c PayPal_BraintreeGraphQl;
+php bin/magento module:disable -c PayPal_Braintree;
+php bin/magento module:disable -c Temando_ShippingRemover;
+php bin/magento module:disable -c Vertex_AddressValidationApi;
+php bin/magento module:disable -c Magento_Usps;
+php bin/magento module:disable -c Magento_Ups;
+
+
+--importar dados de exemplo
+php -d memory=-1 bin/magento sampledata:deploy; php -d memory=-1 bin/magento setup:upgrade;
+
+--importar pacote idiome portugues
+php -d memory=-1 composer.phar require magento2translations/language_pt_br:dev-master; php bin/magento setup:static-content:deploy pt_BR -f; php bin/magento c:f;
+
+--pré-configurar opções painel comum ao Brasil
+php bin/magento config:set general/country/default BR;
+php bin/magento config:set general/country/destinations BR;
+php bin/magento config:set general/single_store_mode/enabled 0;
+php bin/magento config:set general/country/allow BR;
+php bin/magento config:set general/locale/weight_unit kgs;
+php bin/magento config:set general/region/state_required BR;
+php bin/magento config:set customer/address/street_lines 4;
+php bin/magento config:set customer/address/taxvat_show req;
+php bin/magento config:set customer/create_account/vat_frontend_visibility 1;
+php bin/magento config:set dev/template/minify_html 1;
+php bin/magento config:set dev/js/minify_files 1;
+php bin/magento config:set dev/js/move_script_to_bottom 1;
+php bin/magento config:set dev/css/merge_css_files 1;
+php bin/magento config:set dev/css/minify_files 1;
+php bin/magento c:f;
+
+
+
+

@@ -1,0 +1,7 @@
+Definir a Swap para 32 GB. Extraído de https://linuxdicasesuporte.blogspot.com/2018/06/manipulando-swap-no-ubuntu-1804-e.html
+
+swapoff -a
+dd if=/dev/zero of=/swapfile bs=1k count=32M
+mkswap /swapfile
+swapon -a
+

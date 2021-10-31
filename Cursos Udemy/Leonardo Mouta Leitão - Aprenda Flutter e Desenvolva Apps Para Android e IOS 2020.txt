@@ -1,0 +1,841 @@
+https://www.udemy.com/course/curso-flutter/
+
+
+Aprenda Flutter e Desenvolva Apps Para Android e IOS 2020
+Um Curso Completo Para Aprender Google Flutter e Dart Para a Construção de Apps Nativas Para iOS e Android.
+MAIS BEM COTADOS
+4,7 (1.457 classificações)
+6.128 alunos inscritos
+Criado por Leonardo Moura Leitao, Cod3r Cursos Online, Academind by Maximilian Schwarzmüller, Maximilian Schwarzmüller
+
+
+Conteúdo do curso
+Recolher tudo 381 aulas
+44:29:10
+–
+Fundamentos de Flutter
+01:44:22
+Bem Vindo ao curso de Flutter
+Visualizar
+02:19
+Mensagem do Max
+Visualizar
+01:31
+O que é flutter?
+11:58
+Características do Flutter
+08:00
+Flutter para APP Nativa
+06:18
+Atualizações do Flutter
+03:11
+Instalação no Windows
+16:21
+Instalação no MacOS
+17:11
+Instalação no Linux
+16:08
+Material Design
+03:03
+Flutter vs React Native vs Ionic
+Visualizar
+10:56
+Como Aproveitar o Curso
+05:42
+Conclusão do Módulo Fundamentos de Flutter
+01:44
+–
+Noções básicas de Flutter
+03:32:15
+Introdução do Módulo Noções Básicas de Flutter
+00:49
+Conhecendo o Projeto
+02:24
+Código Fonte do Módulo
+00:02
+Criando um Novo Projeto
+07:22
+Estrutura do Projeto Criado
+06:58
+Analisando o Código Padrão
+06:18
+Resumão da Linguagem Dart #01
+05:53
+Resumão da Linguagem Dart #02
+Visualizar
+09:40
+Resumão da Linguagem Dart #03
+17:23
+Construindo o Primeiro Widget #01
+01:41
+Construindo o Primeiro Widget #02
+05:13
+Resumo até Aqui
+02:45
+Árvore de Widgets
+03:28
+Widgets Visíveis & Widgets Invisíveis #01
+01:11
+Widgets Visíveis & Widgets Invisíveis #02
+02:24
+Usando Column para Organizar o Widgets
+06:10
+Conectando Função ao Evento do Botão
+01:40
+Funções Anônimas
+05:48
+Variáveis em StatelessWidget
+05:39
+Usando StatefulWidget #01
+05:20
+Usando StatefulWidget #02
+11:47
+Flutter é Cirúrgico
+01:53
+Tornando Membros Privados
+07:45
+Criando Widget Questão
+03:56
+Container Widget
+02:18
+Aplicando Estilo ao Widget Questão
+04:29
+Documentação Oficial
+03:03
+Desafio Novo Widget
+01:19
+Desafio Novo Widget - Resposta
+02:10
+Passando Função Callback
+05:32
+Usando Tipo Map nas Perguntas
+05:19
+Lista para Widgets #01
+08:25
+Lista para Widgets #02
+06:42
+Evitando Acessar Pergunta Inválida
+05:37
+Exibindo Resultado
+01:32
+Dividindo APP em Widgets
+04:41
+Desafio Widget Resultado
+00:45
+Desafio Widget Resultado - Resposta
+02:01
+Widget Questionário
+07:17
+Adicionando Pontuação #01
+05:05
+Adicionando Pontuação #02
+07:35
+Adicionando Pontuação #03
+03:05
+Reiniciando Questionário
+09:05
+Testando APP no Android
+01:57
+Conclusão do Módulo Noções Básicas de Flutter
+00:49
+–
+Debugging & Diferentes Dispositivos
+45:51
+Introdução do Módulo
+02:06
+Executando em Dispositivos Android Real
+02:37
+Executando em Dispositivos iOS Real
+07:07
+Problema do "iproxy" no Deploy no iOS
+00:01
+Trabalhando com Emuladores
+03:29
+Corrigindo Erros
+07:47
+Usando Debugger
+07:47
+DevTools
+04:22
+Entendendo Repaint Rainbow
+03:38
+Resumo DevTools
+05:53
+Conclusão do Módulo
+01:04
+–
+Construindo App Real - Despesas Pessoais
+05:09:12
+Introdução do Módulo
+01:29
+Visão Geral do Projeto
+Visualizar
+03:59
+Widgets Importantes
+07:35
+Planejando a Aplicação
+04:06
+Código Fonte do Módulo
+00:02
+Criando o Projeto
+05:27
+Combinando Widgets
+03:49
+Column & Row
+04:26
+Criando Classe de Modelo (Transaction)
+04:49
+Mapear Dados para Widgets
+03:36
+Item Lista Personalizado #01
+03:06
+Item Lista Personalizado #02
+02:01
+Aplicando Estilo no Container
+03:42
+Aplicando Estilo no Texto
+02:01
+Desafio Estilo Título & Data
+01:40
+Desafio Estilo Título & Data - Resposta
+02:24
+Container vs Column/Row
+03:44
+Usando Interpolação de Strings
+03:41
+Instalando Pacote Externo Intl
+05:19
+Usando TextField #01
+06:33
+Usando TextField #02
+07:16
+Dividindo App em Widgets
+09:17
+Adicionando Transação #01
+06:37
+Adicionando Transação #02
+07:02
+Lista com Rolagem (Scroll)
+07:26
+Usando ListView
+06:32
+Teclado Numérico
+07:43
+Botões para Adicionar Transação
+03:08
+Exibindo Formulário (Modal)
+06:29
+Correção do Formulário
+02:50
+Parâmetros em Stateful Widget
+03:28
+Fechando Formulário (Modal)
+06:04
+Estilo com Theme
+07:52
+Pequena correção do 'title deprecated'.
+00:13
+Fontes Personalizadas & Theme
+15:06
+Adicionar Imagem
+08:48
+Planejando Chart Widget
+03:59
+Chart Widget #01
+15:43
+Chart Widget #02
+09:39
+Chart Widget #03
+04:03
+Chart Widget #04
+06:28
+Chart Widget #05
+07:19
+Usando Chart Widget
+04:27
+Finalizando Chart Widget
+06:19
+Flexible & Expanded
+11:17
+Usando ListTile
+08:20
+Melhorando Chart Widget
+03:25
+São Muitos Widgets Diferentes!
+05:57
+Preparando Formulário
+06:27
+Exibindo DatePicker
+12:52
+Transação com Data
+05:54
+Excluindo Transação
+08:38
+Ajustando Altura da Lista
+06:10
+Deploy no iOS
+01:55
+Conclusão do Módulo
+00:59
+–
+Interfaces Responsivas & Adaptativas
+02:01:46
+Introdução do Módulo
+01:44
+O Que é Responsividade?
+07:34
+Pontos de Melhoria
+02:25
+Calculando Tamanho Dinamicamente
+11:22
+Responsividade em Textos
+03:20
+Usando LayoutBuilder
+08:12
+Orientações Suportadas
+04:06
+Modo Paisagem #01
+06:48
+Modo Paisagem #02
+04:16
+Modo Paisagem #03
+05:00
+Modo Paisagem #04
+03:25
+Ajustando Formulário
+03:58
+Aproveitando Larguras Maiores
+06:16
+Objeto Media Query
+01:53
+Alternando para Simulador iOS
+02:42
+Detectando a Plataforma
+03:50
+Componentes iOS
+09:59
+Componente SafeArea
+04:48
+Botão Adaptativo
+07:24
+Desafio TextField Adaptativo
+01:32
+Desafio TextField Adaptativo - Resposta
+09:31
+DatePicker Adaptativo
+10:45
+Conclusão do Módulo
+00:55
+Código Final do Capítulo
+00:01
+–
+Flutter & Widgets Internamente
+02:09:27
+Introdução do Módulo Flutter & Widgets Internamente
+02:24
+60FPS é um Problema?
+02:16
+Árvore de Widgets & Árvore Elementos
+17:09
+Como a Tela é Atualizada?
+08:36
+Quando o Método Build é Chamado?
+07:48
+Construtores e Widgets Constantes
+09:23
+Escrevendo Bons Códigos
+11:44
+Desafio Extraindo Widget
+02:08
+Desafio Extraindo Widget - Resposta
+04:08
+Ciclo de Vida dos Widgets
+17:00
+Ciclo de Vida da Aplicação
+10:06
+Entendendo Context
+08:52
+O Problema com Listas e StatefulWidget
+06:37
+Entendendo a Causa do Problema
+05:02
+Usando Chaves
+14:17
+Conclusão do Módulo Flutter & Widgets Internamente
+01:55
+Versão Final Projeto Despesas Pessoais
+00:02
+–
+Navegação & Múltiplas Telas - Flutter
+03:57:47
+Introdução do Módulo
+01:16
+Visão Geral da APP
+05:31
+Iniciando a APP
+11:27
+Tela de Categorias
+05:53
+Componente Item Categoria
+03:17
+Tema & Estilo
+09:39
+Navegando para uma Nova Tela
+09:54
+Passando Dados via Construtor
+02:41
+Rotas Nomeadas #01
+06:56
+Rotas Nomeadas #02
+04:59
+Criando Modelo Refeição
+08:31
+Selecionando Refeições por Categoria
+04:49
+Componente Item Refeição #01
+08:05
+Componente Item Refeição #02
+12:53
+Navegando para Tela de Detalhe da Refeição
+07:35
+onGenerateRoute & onUnknownRoute
+06:52
+Tela Detalhe Refeição #01
+09:44
+Tela Detalhe Refeição #02
+08:18
+Adicionando TabBar na AppBar
+10:41
+Adicionar TabBar na Parte Inferior
+12:10
+Adicionar Drawer Personalizado
+11:27
+Adicionando Links no Drawer
+06:39
+Substituindo Telas
+04:13
+Fechando a Tela & Passando Dados de Volta
+09:26
+Tela de Configurações
+11:13
+Filtrando os Dados #01
+06:39
+Filtrando os Dados #02
+10:17
+Filtrando os Dados #03
+05:02
+Marcar como Favorito
+17:58
+Problema com a Marcação de Favorito
+02:22
+Conclusão do Módulo Navegação & Múltiplas Telas - Flutter
+01:19
+Código Final do Capítulo
+00:01
+–
+Gerenciamento de Estado
+04:18:50
+Introdução do Módulo
+02:02
+Visão Geral da APP
+03:24
+Código Inicial e Final do Módulo
+00:02
+Inherited Widget
+06:43
+Criando Modelo Produto
+08:37
+Componente Grid de Produtos
+07:49
+Componente Item de Produto
+06:49
+Estilizando APP
+05:09
+Navegando para Detalhe de Produto
+11:50
+Inherited Widget na Prática
+15:25
+O que é Estado?
+05:45
+Como o Provider Funciona?
+05:25
+Entendendo Mixins
+10:21
+Usando Provider
+16:15
+Extraindo Grid de Produtos
+02:34
+Marcando Produto como Favorito
+06:47
+ChangeNotifierProvider.value
+04:29
+Alterando Listen para False
+03:09
+Usando Consumer
+08:05
+Filtrar Favoritos
+18:19
+Carrinho e Item do Carrinho
+12:12
+MultiProvider
+03:04
+Criando Provider para Carrinho
+16:02
+Componente Carrinho
+11:11
+Itens do Carrinho
+09:53
+Remover Item #01
+02:59
+Remover Item #02
+07:10
+Componente Detalhe Produto
+04:34
+Criando Provider para Pedido
+10:18
+Adicionar Pedidos
+03:49
+Componente Pedidos #01
+01:39
+Navegação com Drawer
+06:23
+Componente Pedidos #02
+07:48
+Componente Pedidos #03
+09:12
+Conclusão do Módulo
+03:37
+–
+Trabalhando com Formulários - Flutter
+02:10:37
+Introdução do Módulo
+04:19
+Código Inicial e Final do Módulo
+00:02
+Usando Snackbar
+12:58
+Confirmação com Dialog
+07:12
+Alterando Widget Item de Produto
+01:35
+Componente Gerenciamento de Produto #01
+07:49
+Componente Gerenciamento de Produto #02
+07:22
+Componente Formulário de Produto
+04:41
+Usando o Form do Flutter
+02:53
+Controlando o Foco
+04:08
+Campo de Entrada de Multiplas Linhas
+02:49
+Testando no Android
+02:46
+Campo de Entrada de URL
+12:59
+Submetendo o Formulário
+09:37
+Validação do Formulário #01
+05:11
+Validação do Formulário #02
+13:25
+Salvar Produto
+05:31
+Editar Produto #01
+13:24
+Editar Produto #02
+01:25
+Excluir Produto
+04:11
+Desafio Confirmar Exclusão do Produto
+01:04
+Desafio Confirmar Exclusão do Produto - Resposta
+04:42
+Conclusão do Módulo
+00:34
+–
+Enviando Requisições HTTP
+02:50:57
+Introdução do Módulo
+03:23
+Código Inicial e Final do Módulo
+00:02
+Tipos de Armazenamento
+05:30
+Como é feita a conexão com BD?
+07:32
+Configurando o Backend com Firebase
+04:26
+Requisições HTTP e API Rest
+09:21
+Enviando Requisição POST
+12:03
+Entendendo Future #01
+09:57
+Entendendo Future #02
+07:59
+Exibindo Indicador de Progresso
+08:25
+Tratamento de Erro
+10:19
+Async/Await
+10:39
+Obtendo Produtos
+04:54
+Exibindo os Produtos
+08:38
+Correção no Carregamento dos Produtos
+02:07
+Implementando Pull-To-Refresh
+04:11
+Atualizando o Produto
+06:53
+Exclusão Otimista #01
+06:21
+Exclusão Otimista #02
+08:24
+Desafio Atualizar Favoritos
+01:15
+Desafio Atualizar Favoritos - Resposta
+05:57
+Armazenando os Pedidos no Firebase
+11:59
+Carregando os Pedidos
+11:00
+FutureBuilder
+05:20
+Criando uma Constante para URL
+03:03
+Conclusão do Módulo
+01:19
++
+Adicionando Autenticação
+21 aulas
+02:43:41
+Introdução Módulo
+06:11
+Código Inicial e Final do Módulo
+00:02
+Funcionamento Autenticação
+05:08
+Configurando o Backend (Firebase)
+04:56
+Tela de Autenticação #01
+05:29
+Tela de Autenticação #02
+09:28
+Tela de Autenticação #03
+17:24
+Tela de Autenticação #04
+12:19
+Registrando Usuário
+09:57
+Login de Usuário
+04:58
+Tratando Erros de Autenticação
+11:35
+Gerenciando Token
+12:06
+Usando "ProxyProvider" para Compartilhar o Token
+08:05
+Aplicando Token em Todas as Requisições
+06:48
+Associar Marcação de Favorito ao Usuário #01
+08:27
+Associar Marcação de Favorito ao Usuário #02
+08:57
+Associar Pedido ao Usuário
+03:51
+Implementando o Logout
+03:14
+Logout Automático
+05:50
+Login Automático
+17:34
+Conclusão do Módulo
+01:22
++
+Projeto Campo Minado - Curso Flutter
+14 aulas
+01:45:33
+Visão Geral do Projeto
+02:06
+Código Fonte do Projeto
+00:01
+Classe Campo
+21:34
+Classe Campo - Teste
+08:07
+Classe Tabuleiro
+12:15
+Classe Tabuleiro - Teste
+03:51
+App Campo Minado
+02:11
+Componente Resultado
+10:34
+Registrar Imagens
+04:19
+Componente Campo
+16:05
+Componente Tabuleiro
+07:34
+Componente Stateful
+02:16
+Integrando Lógica
+06:46
+Calcular Tamanho do Tabuleiro
+07:54
++
+Projeto Calculadora
+2 aulas
+01:18:44
+Construindo a Interface Gráfica
+Visualizar
+42:08
+Implementando a Lógica
+36:36
++
+Dart - Fundamentos
+19 aulas
+03:15:56
+Introdução do Módulo
+Visualizar
+10:21
+Configuração do Dart
+05:45
+Como usar o Code Runner #01
+10:24
+Como usar o Code Runner #02
+02:58
+Primeiro Programa
+16:48
+Variáveis #01
+08:57
+Variáveis #02
+07:05
+Constantes #01
+18:00
+Tipos Básicos #01
+13:58
+Tipos Básicos #02
+21:37
+Notação Ponto
+09:45
+Operadores #01
+13:50
+Operadores #02
+11:00
+Operadores #03
+10:12
+Operadores #04
+09:28
+Constantes #02
+07:41
+Interpolação
+06:21
+Usando Generics
+10:19
+Conclusão do Módulo
+01:27
++
+Dart - Estruturas de Controle
+12 aulas
+01:33:50
+Introdução do Módulo
+01:47
+If/Else
+13:52
+Desafio If/Else
+06:35
+For #01
+11:30
+For #02
+14:18
+For #03
+06:10
+While
+13:14
+Switch
+11:09
+Break/Continue
+05:49
+Desafio For
+03:21
+Desafio For - Resposta
+03:35
+Conclusão do Módulo
+02:30
++
+Dart - Funções
+20 aulas
+03:02:25
+Introdução do Módulo
+01:59
+Algoritmo e Funções
+05:34
+Básico sobre Função #01
+09:35
+Básico sobre Função #02
+07:42
+Parâmetros de Tipo Dinâmico
+06:27
+Parâmetros Opcionais
+07:10
+Parâmetros Nomeados
+08:39
+Função em Variável #01
+11:34
+Função em Variável #02
+08:06
+Função como Parâmetros
+14:43
+Retornar Função #01
+10:02
+Retornar Função #02
+05:59
+Função com Generics
+09:53
+Função Filter #01
+04:49
+Função Filter #02
+09:53
+Função Filter #03
+16:18
+Map & Reduce #01
+15:59
+Map & Reduce #02
+16:53
+Map & Reduce #03
+09:33
+Conclusão do Módulo
+01:37
++
+Dart - Orientação a Objetos
+12 aulas
+02:07:52
+Introdução do Módulo
+01:37
+O Básico sobre Classe
+15:22
+Métodos
+12:21
+Construtores
+15:11
+Construtores Nomeados
+07:33
+Import Relativo
+04:20
+Desafio Classe Carro
+05:26
+Desafio Classe Carro - Resposta
+12:39
+Getters/Setters
+13:04
+Composição #01
+12:08
+Composição #02
+12:59
+Composição #03
+

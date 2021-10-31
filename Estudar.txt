@@ -1,0 +1,88 @@
+:: 10:11 AM 3/30/2020
+Linguagem Jade geradora de HTML. Vi isto no vídeo abaixo em 31:30
+https://www.youtube.com/watch?v=hclIveDmH8s
+flutter
+	MobX
+	Get_it - outra forma de provider - https://www.youtube.com/watch?v=NemPoBD34OI 
+ 	Get, Provider, Mobx e Bloc	
+FullCycle
+	Microserviços-https://www.youtube.com/watch?v=XOvTAhg6Om8
+		Monitoramento
+		Mensageria
+		Filas
+			RabbitMQ
+	Deploy Automático
+	Docker
+		Kubertes
+	gRPC-Remote Procedure Call https://www.youtube.com/watch?v=QyyMjF764mo
+		-Usa Http2 - Comprimido binario e Multiplex(bidirecional e assincrono)
+		
+	
+
+scrum
+Bootstrap
+Typescript TypORM
+Adonis
+Aqueduct - frameword backend desenvolvido em dart. Criação de rest API dd
+	https://www.youtube.com/watch?v=0kKge3K0ZwI
+	https://www.youtube.com/watch?v=-OvfaZE1_5U
+	Angel dart
+Spring - java
+Spring boot
+-java quarkus - micro serviços "atômicos" - https://youtu.be/BVWdPuNjuiY?t=1024
+   https://quarkus.io/
+   Neste mesmo vídeo ele fala de vertex
+
+microserviços-https://www.youtube.com/watch?v=n0rPo2LVmhI
+
+Ruby-framework Rails https://blog.geekhunter.com.br/ruby-on-rails-por-que-eu-deveria-conhecer-esse-framework/
+
+::Programação funcional
+-elixir - https://elixir-lang.org/getting-started/introduction.html
+-elixir phoenix framework - foi dito no vídeo "Universo Elixir | Rocketseat" https://www.youtube.com/watch?v=8asV5hADN78&t=2398s
+"É a melhor ferramenta para controle de complexididade do código"
+funções puras - "função dentro do conceito de função matemática"
+-imutabilidade/pureza
+-composição
+-responsabilidade única (solid)sss
+-mais produtividade (?)
+-mais fácil de testar "a documentação já testa o seu código"
+-mais fácil debugar
+
+
+
+o que existe com programação funcional funcionando hoje?
+
+
+Erlang/Elixir - video do fabio akita  https://www.youtube.com/watch?v=8Ng6TfAj7Sk
+	Elixir é a camada(bonita) em cima do Erlang. Phonexis é o framework mais popular do elixir
+	
+haskell-programacao puramente funcional
+Elm -> Linguagem funcional pura pro desenvolvimente de front end
+
+link:
+https://www.youtube.com/watch?v=GxnbUqPwuKw
+https://www.youtube.com/watch?v=woYESPuwmNo&t=28s
+::
+
+
+
+
+o que o cliente quer? 
+lucrar mais - agregar valor
+
+
+
+Os navegadores entenderão dart no futuro?
+
+
+
+
+
+FullCycle - Microserviços, Monitoramento, Mensageria, Filas, Deploy Automático, Docker, gRPC, Http2
+
+
+		Kubertes
+	gRPC-Remote Procedure Call https://www.youtube.com/watch?v=QyyMjF764mo
+		-Usa Http2 - Comprimido binario e Multiplex(bidirecional e assincrono)
+		

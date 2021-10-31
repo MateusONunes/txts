@@ -1,0 +1,9 @@
+Controladores - Rest
+Domínio ??
+Serviços - Regras
+BD (Repository)
+
+CategoriaResource.java   - "Contraladores REST" - Controllers - Contraladores - APIS
+CategoriaService.java    - "Camada de Serviço" - Regras de negócio. Não tem contato com tecnologias
+CategoriaRepository.java - "Camada de acesso a dados (Repository)" - Acesso a dados - DAO - Aqui vão ficar as consultas, inserts - JpaRepository etc
+Categoria.java           - "Camada de domínio" Domain - A classe pura, a tabela. Poderia se chamar CategoriaDomain.  

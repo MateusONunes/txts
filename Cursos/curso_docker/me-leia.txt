@@ -1,0 +1,6 @@
+Curso de Docker da Udemy 
+Docker: Ferramenta essencial para Desenvolvedores-Leonardo Leitão
+
+
+
+https://www.udemy.com/course/curso-docker/learn/lecture/7559986?start=405#overview
