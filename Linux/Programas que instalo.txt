@@ -16,6 +16,8 @@ sudo apt-get install net-tools
 HISTSIZE=5000
 HISTFILESIZE=5000
 
+sudo apt-get install rabbitvcs-nautilus -y
+
 
 --------------------------------------------------------------------------------------------------------------------------------
 ::discos:
