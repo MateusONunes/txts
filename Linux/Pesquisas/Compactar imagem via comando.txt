@@ -1,0 +1,5 @@
+https://pt.linux-console.net/?p=1363
+
+apt-get install jpegoptim
+
+jpegoptim --size=250k tecmint.jpeg

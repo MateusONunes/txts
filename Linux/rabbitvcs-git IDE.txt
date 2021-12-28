@@ -1,0 +1,30 @@
+https://askubuntu.com/questions/890091/rabbitvcs-not-displaying-compare-revisions-correctly-with-meld-in-ubuntu-16-10
+-Erro em que ele exibe arquivos que não foram alterados.
+
+sudo apt-add-repository "deb http://us.archive.ubuntu.com/ubuntu xenial universe"
+sudo apt update
+sudo apt install rabbitvcs-core=0.16-1
+sudo apt-mark hold rabbitvcs-core
+
+------------------------------------------------------------------------------------------------------------------------
+
+>>>>>>>>>>>
+**extenção do nemo:
+https://github.com/rabbitvcs/rabbitvcs/tree/master/clients/nemo
+
+nemo -q
+pgrep -f service.py | xargs kill
+nohup nautilus > /dev/null &
+<<<<<<<<<<<
+        
+
+Links
+
+
+https://tutorialforlinux.com/2020/01/24/how-to-install-rabbitvcs-on-ubuntu-20-04-focal-lts/2/
+
+
+http://wiki.rabbitvcs.org/wiki/install/ubuntu
+
+
+
