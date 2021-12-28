@@ -4,3 +4,5 @@ gsettings set org.cinnamon.desktop.default-applications.terminal exec gnome-shel
 ou
 gsettings set org.cinnamon.desktop.default-applications.terminal exec xfce4-terminal
 
+
+

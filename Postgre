@@ -1,4 +1,4 @@
-::Instalação do Postgre
+::Instalação do Postgre (https://www.postgresql.org/download/linux/ubuntu/)
 =======================
 
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
@@ -7,23 +7,36 @@ sudo apt-get update
 sudo apt-get install postgresql
 sudo su - postgres
 psql -c "alter user mateus with password 'mateus'"
+psql -c "alter user postgres with password 'postgres'"
+
+
+
+
 
 
 ::geral
 =======
 sudo apt install postgresql postgresql-contrib
+sudo -u postgres psql          => Abrir psql
 service postgresql status      => verifica status do Postgre
-psql -U postgres -c 'SHOW config_file' => exibir localização do arquivo de configuração do postgres
+psql -U postgres -c 'SHOW config_file' => exibir localização/informação/informações do arquivo de configuração do postgres
+show hba_file (no psql)        => exibir localização do arquivo pg_hba.conf 
 nmap localhost                 => Verifica as portas abertas
 postgres -v                    => Versão do Postgres
-sudo -u postgres psql -c "SELECT version();"
+sudo -u postgres psql -c "SELECT version();"-s
 create database dbgirassolapp_i with template dbgirassolapp =>  Copia(duplica) o database "dbgirassolapp" para "dbgirassolapp_i"
-psql -d <NOME_BANCO> -h <IP> -p <PORTA> -U <USUÁRIO> -W PASSWORD     => conectar a uma base de dados 
+psql -d <NOME_BANCO> -h <IP> -p <PORTA> -U <USUÁRIO> -W PASSWORD     => conectar a uma base de dados
+
 
 ::Importar um dump.sql
 ======================
 Create database NovoBanco;
 psql NovoBanco < ArquivoDump.Sql 
+
+::Exportar um dump.sql
+======================
+pg_dump <NomeDoBanco > <ArquivoDestino>
+pg_dump agrotec_prod > bck.sql    ==> Gerei o Dump do banco de dados "agrotec_prod" para o arquivo "bck.sql"
 
 ::Sqls
 ======
@@ -42,8 +55,39 @@ SELECT *
   FROM information_schema.columns c
  WHERE table_schema = 'public'
    and c.column_name like '%mediu%'
+   
+   
+:: Tamanho do banco
+(SELECT
+	datname                                   AS banco,
+	pg_database_size(datname)                 AS tamanho,
+	pg_size_pretty(pg_database_size(datname)) AS tamanho_pretty
+FROM pg_database
+WHERE datname NOT IN ('template0', 'template1', 'postgres')
+ORDER BY tamanho DESC, banco ASC)
 
+UNION ALL
 
+(SELECT
+	'TOTAL'                                        AS banco,
+	sum(pg_database_size(datname))                 AS tamanho,
+	pg_size_pretty(sum(pg_database_size(datname))) AS tamanho_pretty
+FROM pg_database
+WHERE datname NOT IN ('template0', 'template1', 'postgres'));
+
+:: Quantidade de registro de todas as tabelas
+SELECT relname,
+       n_live_tup     
+  FROM pg_stat_user_tables
+ where schemaname = 'dbo'
+ ORDER BY n_live_tup DESC;
+
+::Recarregar as configurações do postgres:
+select pg_reload_conf()
+   
+   
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 PostGres
 ========
 \?
@@ -136,9 +180,9 @@ psql -U postgres -c 'SHOW config_file' => exibir localização do arquivo de con
 listen_addresses = '*' => para permitir conexões externas
 
 
-::Arquivo pg_hba.conf
+::Arquivo pg_hba.conf(psql => show hba_file)
 =====================
-Permitir conexões externas:
+Permitir conexões externas(# IPv4 local connections):
 host  	all  		all 		0.0.0.0/0 		trust
 
 

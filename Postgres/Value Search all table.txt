@@ -1,0 +1,62 @@
+--https://stackoverflow.com/questions/5350088/how-to-search-a-specific-value-in-all-tables-postgresql
+
+--A função abaixo funcionou melhor que a primeira
+CREATE OR REPLACE FUNCTION search_whole_db(_like_pattern text)
+  RETURNS TABLE(_tbl regclass, _ctid tid) AS
+$func$
+BEGIN
+   FOR _tbl IN
+      SELECT c.oid::regclass
+      FROM   pg_class c
+      JOIN   pg_namespace n ON n.oid = relnamespace
+      WHERE  c.relkind = 'r'                           -- only tables
+      AND    n.nspname !~ '^(pg_|information_schema)'  -- exclude system schemas
+      ORDER BY n.nspname, c.relname
+   LOOP
+      RETURN QUERY EXECUTE format(
+         'SELECT $1, ctid FROM %s t WHERE t::text ~~ %L'
+       , _tbl, '%' || _like_pattern || '%')
+      USING _tbl;
+   END LOOP;
+END
+$func$  LANGUAGE plpgsql;        
+
+------------------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION search_columns(
+    needle text,
+    haystack_tables name[] default '{}',
+    haystack_schema name[] default '{}'
+)
+RETURNS table(schemaname text, tablename text, columnname text, rowctid text)
+AS $$
+begin
+  FOR schemaname,tablename,columnname IN
+      SELECT c.table_schema,c.table_name,c.column_name
+      FROM information_schema.columns c
+        JOIN information_schema.tables t ON
+          (t.table_name=c.table_name AND t.table_schema=c.table_schema)
+        JOIN information_schema.table_privileges p ON
+          (t.table_name=p.table_name AND t.table_schema=p.table_schema
+              AND p.privilege_type='SELECT')
+        JOIN information_schema.schemata s ON
+          (s.schema_name=t.table_schema)
+      WHERE (c.table_name=ANY(haystack_tables) OR haystack_tables='{}')
+        AND (c.table_schema=ANY(haystack_schema) OR haystack_schema='{}')
+        AND t.table_type='BASE TABLE'
+  LOOP
+    FOR rowctid IN
+      EXECUTE format('SELECT ctid FROM %I.%I WHERE cast(%I as text)=%L',
+       schemaname,
+       tablename,
+       columnname,
+       needle
+      )
+    LOOP
+      -- uncomment next line to get some progress report
+      -- RAISE NOTICE 'hit in %.%', schemaname, tablename;
+      RETURN NEXT;
+    END LOOP;
+ END LOOP;
+END;
+$$ language plpgsql;

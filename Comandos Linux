@@ -16,7 +16,9 @@ rm -rf diretorio
 
 gls -l   => Lista arquivos exibindo detalhes
 ls -la   => Lista arquivos exibindo detalhes e ocultos
+ls -t    => lista arquivos em ordem de modificação (última modificação primeiro)
 ll       => equivalente a ls -la
+ls -sh   => Mostra tamanho dos arquivos legíveis (Em KB, MB, GB)
 df -h    => Mostra pastas e espaços disponíveis e utilizados no hd
 du       => Tamanho das pastas
 du /home =?< tamanho dos arquivos "du -h /home" => Formato humano
@@ -63,7 +65,7 @@ ln -s            => Cria link simbólico (-s)
 
 nc
 ufw => Firewall
-chmod 777 mateus => Permissão total para a pasta "mateus"
+chmod -R 777 mateus => Permissão total para a pasta "mateus"
 chmod +x composer.phar => permissão de execução para o arquivo composer.phar
 chmod 755 /etc/init.d/meuscript => Permissão de Execução
 chown => Altera proprietário
@@ -368,7 +370,10 @@ vi /etc/ssh/sshd_config          => Edita o principal arquivo de configuração 
 /etc/init.d/ssh stop             => Pausa  o serviço ssh (sudo service ssh stop)(sudo systemctl ssh stop)
 /etc/init.d/ssh start            => Inicia o serviço ssh (sudo service ssh start)restart 
 sudo su|passwd root              => Definir senha root
-
+netstat -tnpa | grep 'ESTABLISHED.*sshd' => ssh conectados
+ps auxwww | grep sshd:                   => ssh conectados
+ss | grep ssh                            => ssh conectados
+echo $SSH_CONNECTION                     => dados da minha conexao ssh
 mais detalhes em https://www.vivaolinux.com.br/dica/Instalando-e-configurando-servidor-SSH-(Ubuntu)
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -473,6 +478,7 @@ code --list-extensions | xargs -n 1 code --uninstall-extension                  
 Snippets => Constutores de código automático 
 
 ::scp - Transferência de Arquivos
+--https://www.hostinger.com.br/tutoriais/usar-comando-scp-linux-para-transferir-arquivos
 ::ssh-transferir arquivos (Os 2 comandos abaixo são executaos estando fora do ssh)
 scp ~/t.txt root@45.82.72.139:~/teste_scp/t.txt => Copiei o arquivo "~/t.txt" da minha máquina para o servidor vps no destino "~/teste_scp/t.txt"
 cp psapparel.zip mateus@45.82.72.139:~mateus@45.82.72.139 => copiei da maquina local para a máquina remota
@@ -673,6 +679,9 @@ mateus@mateus-VirtualBox:/media$
 ::OracleVm - Virtual Box - Alterar o tamanho do hd. O Exemplo abaixo aumenta para 15 GB
 =======================================================================================
 vboxmanage modifyhd "ubuntu 18.04 Odoo 12.vdi" --resize 15000
+obs: Depois de executar este comando é necessário atualizar o tamnho do hd dentro do sistema operacional
+     No Ubuntu existe no utilitário "Discos" a opção "Redimensionar"
+
 
 
 ::tail
@@ -693,10 +702,36 @@ egrep -c '(vmx|svm)' /proc/cpuinfo
 kvm-ok
 
 
+:: Cron
+=======
+https://www.youtube.com/watch?v=Qf5SPjHzvyw
+
+sudo /etc/init.d/cron statu
+contrab -e -u postgres
+crontab -l -u postgres
+
+
+
+:: Cron-fim
+===========
+
+::Grub
+======
+LInks: https://qastack.com.br/unix/198003/set-default-kernel-in-grub
+sudo mousepad /etc/default/grub
+sudo update-grub
+
+-Configuração para o grub manter última configuração:
+GRUB_SAVEDEFAULT=true
+GRUB_DEFAULT=saved
+
+::Grub-Fim
+==========
 
 
 ::Sites:
 ========
 https://packages.ubuntu.com/
+
 
 

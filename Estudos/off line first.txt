@@ -1,0 +1,14 @@
+cached_netwoek_image => para cache de imagens.
+flutter_offline => verificar se o app está online
+
+https://medium.com/flutter-community/offline-first-with-flutter-be1e8335d976
+
+UUID - https://pub.dev/packages/uuid
+
+00100
+
+
+
+https://www.youtube.com/watch?v=JG6tctZRH4w
+42:00 - início
+

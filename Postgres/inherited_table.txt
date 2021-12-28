@@ -1,0 +1,47 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+drop table if exists capitals;
+drop table if exists cities;
+drop function if exists func_cities_set_record_version;
+
+CREATE TABLE cities (
+);
+
+--CREATE TABLE capitals (
+--    state           char(2)
+--) INHERITS (cities);
+
+CREATE TABLE capitals (
+    id integer,
+    state varchar(20),
+    primary key (id)
+);
+
+insert into capitals values (1, 'sp'), (2, 'rj'), (3, 'mg');
+
+alter table public.capitals INHERIT public.cities;
+
+alter table cities add column record_version timestamp;
+
+alter table cities add column inherited_key uuid DEFAULT uuid_generate_v4 ();
+
+ALTER TABLE cities ADD CONSTRAINT cities_pk PRIMARY KEY (inherited_key);
+
+CREATE OR REPLACE FUNCTION func_cities_set_record_version()   
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.record_version = now();
+    RETURN NEW;   
+END;
+$$ language 'plpgsql';
+
+
+CREATE TRIGGER trg_cities_set_record_version before UPDATE OR INSERT ON capitals FOR EACH ROW EXECUTE PROCEDURE func_cities_set_record_version();
+
+insert into capitals values (4, 'ms'), (5, 'df'), (6, 'ba');
+
+update capitals set state = 'sp-alterado' where id = 1;
+
+select * from capitals;
+
+
+SELECT uuid_generate_v4()

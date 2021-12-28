@@ -1,0 +1,104 @@
+-- no exemplo abaixo, tabelas que teem res_partner.id como FK 
+
+SELECT r.table_name
+  FROM information_schema.constraint_column_usage u
+INNER JOIN information_schema.referential_constraints fk
+           ON u.constraint_catalog = fk.unique_constraint_catalog
+               AND u.constraint_schema = fk.unique_constraint_schema
+               AND u.constraint_name = fk.unique_constraint_name
+INNER JOIN information_schema.key_column_usage        r
+           ON r.constraint_catalog = fk.constraint_catalog
+               AND r.constraint_schema = fk.constraint_schema
+               AND r.constraint_name = fk.constraint_name
+WHERE
+    u.column_name = 'id' AND
+--    u.table_catalog = 'db_name' AND
+    u.table_schema = 'public' AND
+    u.table_name = 'res_partner'
+    
+    
+    
+::Abaixo a função recursiva usando o sql acima    
+-----
+--drop function table_references;
+
+create or replace function table_references (
+  p_table varchar,
+  p_tablesnotin varchar = '',
+  p_nivel integer = 0,
+  p_table_owner_sequence varchar = ''
+) 
+ returns table (
+  nivel int,
+  table_owner varchar,
+  table_child varchar,
+  table_owner_sequence varchar
+  
+ ) 
+ language plpgsql
+as $$
+ declare var_r record;
+ declare var_rRecursive record;
+begin
+--  raise notice '';
+--  raise notice '============================================';
+--  raise notice 'p_table: %, p_nivel: %', p_table, p_nivel;
+ 
+ p_tablesnotin = p_tablesnotin || ';';
+ p_table_owner_sequence = p_table_owner_sequence || '-' || p_table;
+ 
+  for var_r in (
+   SELECT distinct r.table_name
+     FROM information_schema.constraint_column_usage u
+   INNER JOIN information_schema.referential_constraints fk
+              ON u.constraint_catalog = fk.unique_constraint_catalog
+                  AND u.constraint_schema = fk.unique_constraint_schema
+                  AND u.constraint_name = fk.unique_constraint_name
+   INNER JOIN information_schema.key_column_usage        r
+              ON r.constraint_catalog = fk.constraint_catalog
+                  AND r.constraint_schema = fk.constraint_schema
+                  AND r.constraint_name = fk.constraint_name
+   WHERE
+   --    u.table_catalog = 'db_name' AND
+       u.table_schema = 'public' AND
+       u.table_name = p_table
+  ) loop
+    if position(var_r.table_name || ';' in p_tablesnotin) = 0 then
+      p_tablesnotin = p_tablesnotin || ';' || var_r.table_name || ';';
+    
+      nivel = p_nivel;
+      table_owner = p_table;
+      table_child = var_r.table_name;
+      table_owner_sequence = p_table_owner_sequence;
+     return next;
+    
+   
+--    raise notice '% -  %/%', p_nivel, table_owner, table_child;
+--    raise notice 'p_tablesnotin: %', p_tablesnotin;
+ --   raise notice 'table_owner:' || table_owner || ' - ' || 'table_child:' || table_child;
+ --   print('table_child:');
+      
+      if (table_owner <> table_child) then
+        for var_rRecursive in (select t.nivel, t.table_owner, t.table_child, t.table_owner_sequence from table_references(var_r.table_name, p_tablesnotin, p_nivel + 1, p_table_owner_sequence) t)
+        loop
+          if position(var_rRecursive.table_child|| ';' in p_tablesnotin) = 0 then
+            p_tablesnotin = p_tablesnotin || ';' || var_rRecursive.table_child || ';';
+        
+            nivel = var_rRecursive.nivel;
+            table_owner = var_rRecursive.table_owner;
+            table_child = var_rRecursive.table_child;
+           table_owner_sequence = var_rRecursive.table_owner_sequence;
+    
+ --        raise notice '1 - table_owner: %, table_child, nivel: ', table_owner, table_child, nivel;
+         end if;
+        
+         return next;     
+        end loop;
+      end if;
+     
+   else
+--     raise notice '"%" ignored', var_r.table_name;
+   end if;
+   
+  end loop;
+end;$$

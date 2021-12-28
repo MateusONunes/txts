@@ -1,6 +1,7 @@
 sala-conta-Mateus12-
 sala-servidor-Mateus1982-_X!
-mateus-@Sala1982-_X!
+poiPOI098)(*-X!
+mateus-@Sala1982-_-X!
 
 ssh root@45.82.72.139
 
@@ -32,4 +33,7 @@ mv web html
 :: Copiar o diretório para dentro do ssh (Estando fora do ssh)
 scp -r /home/mateus/_des/mateus/flutter/AgroTec/dev/flutter/AgroTec/build root@45.82.72.139:/var/www/html
 
+------------------------------------------------------------------------------------------
+::hasura
 
+/usr/local/bin/hasura
