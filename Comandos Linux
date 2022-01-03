@@ -728,6 +728,22 @@ GRUB_DEFAULT=saved
 ::Grub-Fim
 ==========
 
+::TMUX
+======
+Ctrl+b
+
+c - Create
+? - help
+
+<<<<<<
+
+::Restaurar Boot
+>>>>>>>>>>>>>>>>
+sudo add-apt-repository ppa:yannubuntu/boot-repair
+sudo apt update
+sudo apt install boot-repair
+<<<<<<<<<<<<<<<<<
+
 
 ::Sites:
 ========
