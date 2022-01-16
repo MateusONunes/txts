@@ -20,6 +20,8 @@ git log --oneline => log compacto em apenas uma linha
 git diff main origin/main => Diferença com o repositório local para o repositório remoto. Necessário executar "git fetch" antes
 git config --global credential.helper cache => Salva as credencias (a próxima senha solicitada será salva)
 git show => exibe a diferença do local (Que já foi commitado) e do repositório remoto
+git config core.fileMode false => remover comparação de acordo com o atributo do arquivo (se o arquivo foi alterado por chmod)
+
 
 
 ::Sequência de comandos para subir um repositório apartir do terminal (testar melhor esta sequência)

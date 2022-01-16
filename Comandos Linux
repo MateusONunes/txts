@@ -24,6 +24,7 @@ du       => Tamanho das pastas
 du /home =?< tamanho dos arquivos "du -h /home" => Formato humano
 man     => Manual do Comando
 pwd     => (Print Working Directory) - Diretório atual 
+du -sh <diretorio> => tamanho do diretório
 touch   => Tocar o arquivo
 echo    => Escrever testo. Pode ser usado pra escrever no arquivo => echo "hello word" > a.txt
 cat     => ver o conteúdo de um arquivo
@@ -34,10 +35,22 @@ head    => ver o conteúdo de um arquivo - primeiras 10 linhas "head -n2 <Nome_a
 sudo update-alternatives --config java  => |
 sudo update-alternatives --config javac => |=> alternar versão do Java
 if config => informações do ip
-ip addr   => informações do ip
+ip addr   => informações do ip (ip a)
+ip r      => informações do ip
+nmcli dev show wlx8882790dce1e | grep IP4  => DNS, gateway (Usar if config para descobrir o nome da rede a verificar)
 alias ff="php bin/magento cache:flush"   
 Alt + F2-gksu nemo => Abre o nemo no modo sudo
 nmtui => utilitário para configurar a rede
+tar -czf <NovoArquivo>.tar.gz <pastacompactar>/ => compactar
+tar -xzf <NomeArquivoDescompactar>              => descompactar
+cal => calendário
+
+::atalhos terminal
+>>>>>>>>>>>>>>>>>>
+ctrl + k => apaga do cursor para frente
+ctrl + k => apaga do cursor para traz
+ctrl + r => reverse search
+<<<<<<<<<<<<<<<<<<
 
 
 <Comando> | less => Stream da saída do comando. sudo apt-get install -f
@@ -54,8 +67,20 @@ ps aux => Lista Processos  (ps aux | grep 9999)
 
 echo "export HISTTIMEFORMAT="%F %T: "" >> .bashrc            => acrescenta data/hora
 export HISTFILESIZE=0
+
+::history
+>>>>>>>>>
 history - Histórico dos comandos digitados
 history -c => limpa histórico
+history | less => o afixo less da pausas quando enxe a tela (cria páginas).
+!<número> => executa o comando <número> do history
+
+utilitário hstr:
+
+hstr --show-configuration
+
+ctrl+r => reverse search
+<<<<<<<<<<
 
 vi /etc/profile  => Parece ser um arquivo equivalente ao ~/.bashrc porém é para o ambiente todo
 ln -s            => Cria link simbólico (-s)
@@ -731,9 +756,24 @@ GRUB_DEFAULT=saved
 ::TMUX
 ======
 Ctrl+b
-
+d - sair da sessão tmux sem desligar
+" - Divide janela horizontalmente - split
+% - divide a janela verticalmente
+S - (Setas) caminha/navega pelos paineis(Splits) da tela
 c - Create
+n - Próxima janela
+p - janela anterior
+w - lista d janelas abertas
 ? - help
+, - renomear janela
+$ - renomear sessão
+[ - ativa rolagem do mouse - "q" para sair
+ALT ou CTRL - Setas aumenta/iminui tamanho da janela
+
+--
+tmux ls => lista sessões igual a => tmux list-sessions 
+tmux attach-session -t <session name>
+tmux new-session -s <session name>
 
 <<<<<<
 
@@ -750,4 +790,7 @@ sudo apt install boot-repair
 https://packages.ubuntu.com/
 
 
-
+::Programas/aplicativos/utilitários
+>>>>>>>>>>>>>>>>>>>>>>>
+alsamixer => utitário de som
+<<<<<<<<<<<<<<<<<<<<<<<

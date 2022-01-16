@@ -5,4 +5,11 @@ ou
 gsettings set org.cinnamon.desktop.default-applications.terminal exec xfce4-terminal
 
 
+>>>>>>>>>>>>>>>>>
+criar disco de inicialização para windows no ubuntu 20.0 - https://www.youtube.com/watch?v=EhUQWK8nraY
+sudo apt install git p7zip-full python3-pip python3-wxgtk4.0
+sudo pip3 install WoeUSB-ng
 
+<<<<<<<<<<<<<<<<<
+
+correção do sistema de arquivos(initramfs): https://linuxdicasesuporte.blogspot.com/2017/12/erro-no-boot-initramfs-no-seu-gnulinux.html

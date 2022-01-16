@@ -1,3 +1,5 @@
+
+
 SELECT OBJECT_NAME(OBJECT_ID) TableName, st.row_count
  FROM sys.dm_db_partition_stats st
  WHERE index_id < 2

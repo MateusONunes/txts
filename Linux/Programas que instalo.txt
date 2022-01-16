@@ -49,10 +49,21 @@ https://github.com/rabbitvcs/rabbitvcs/tree/master/clients/nemo
 
 nemo -q
 pgrep -f service.py | xargs kill
-nohup nautilus > /dev/null &
+nohup nemo > /dev/null &
+
+
+
 <<<<<<<<<<<
 
+#hstr - history turbo - https://linuxhint.com/hstr-command-history-browser-in-linux/
+>>>>>>>>>>>>>>>>>>>>
+sudo add-apt-repository ppa:ultradvorka/ppa
+sudo apt-get update
+sudo apt-get install hstr
 
+hstr --show-configuration >> "$HOME/.bashrc"
+source "$HOME/.bashrc"
+<<<<<<<<<<<<<<<<<<<<<
 ------------------------------------------------------------
 
 sudo apt-get install nemo-compare nemo-audio-tab nemo-emblems nemo-filename-repairer nemo-fileroller nemo-gtkhash nemo-image-converter nemo-media-columns nemo-pastebin python-nemo nemo-rabbitvcs nemo-seahorse nemo-share nemo-terminal
