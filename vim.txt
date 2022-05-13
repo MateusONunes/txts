@@ -1,0 +1,24 @@
+https://guialinux.uniriotec.br/vim/#:~:text=dd%20%3A%20deletar%20linha%20atual.,n%2D%C3%A9sima%20linha%20do%20arquivo.
+
+
+:q! => sair sem salvar
+:qw => sair salvando
+ctrl + z => escapar para console. fg(foreground) para voltar
+u => desfazer última edição(undo)
+set nu => utilização das linhas (set nonu desliga)(set nu! troca)
+set rnu => set relativenumber
+dd => recorta linha atual
+p => insere linha da área de transferencia para a linha seguinte (shift + p insere na linha que estou)
+yy => Copiar linha (Puxão)
+
+::navegar 
+G => final do arquivo. Se tiver um número salta para a linha
+
+
+
+--
+organizar
+
+Mover uma linha para cima: ddkP
+
+Mover uma linha para baixo: ddp

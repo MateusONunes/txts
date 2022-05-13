@@ -3,8 +3,12 @@ https://sqlite.org/cli.html
 /home/mateus/Android/Sdk/platform-tools/adb
 
 cd /data/user/0/com.example.agrotec/app_flutter
-adb devices
-adb shell
+adb devices  => ver dispositivos disponíveis
+adb shell    => Conectar no dispositivo
+adb root     => Conectar no dispositivo como root (não testei ainda)
+adb -s "emulator-5554" shell => conectar em um dispositivo específico
+adbd cannot run as root in production builds
+adb -s "RX8N3034Z7H" root => rodar no dispositivo como root
 sqlite3 -help
 ctrl+d => sair do sqlite
 
@@ -20,6 +24,8 @@ sqlite3 agrotec.db
 
 #Copiar(Puxar) o arquivo"/data/user/0/com.example.agrotec/app_flutter/agrotec.db" do emulador para o computador em "/home/mateus/_dev/AgroTec/Arquivos/sqlite/agrotec.db"
 adb pull /data/user/0/com.example.agrotec/app_flutter/agrotec.db /home/mateus/_dev/AgroTec/Arquivos/sqlite/agrotec.db
+#outro exemplo
+adb pull "/data/user/0/com.example.agrotec/app_flutter/globalData-38.json" "/home/mateus/_dev/AgroTec/Arquivos/sqlite/lobalData-38.json"
 
 #Copiar(Empurrar) o arquivo do computador"/home/mateus/_dev/AgroTec/Arquivos/sqlite/agrotec.db" para dentro do celular em"/data/user/0/com.example.agrotec/app_flutter/agrotec.db"
 adb push /data/user/0/com.example.agrotec/app_flutter/agrotec.db /home/mateus/_dev/AgroTec/Arquivos/sqlite/agrotec.db
@@ -29,10 +35,34 @@ adb push /data/user/0/com.example.agrotec/app_flutter/agrotec.db /home/mateus/_d
 sqlite3 agrotec.db -column -header "select * from usuariotipo" 
 sqlite3 agrotec.db -column -header "select * from usuario" 
 sqlite3 agrotec.db -column -header "select * from geojsons" 
+sqlite3 agrotec.db -column -header "select * from offline_proc order by id desc"
+sqlite3 agrotec.db -column -header "select * from image"
+sqlite3 agrotec.db -column -header "select id,statusgeraltipo_id,data,sequencia,key_id,descricao,record_version from image order by id desc"
+sqlite3 agrotec.db -column -header "select * from plantio"
+sqlite3 agrotec.db -column -header "select * from plantioprod"
+sqlite3 agrotec.db -column -header "select id, titulo, data, record_version, p.velocidade, p.observacao, p.calda, p.bico, p.observacao from plantio p"
+sqlite3 agrotec.db -column -header "select * from vw_offline_toSync"
+
+
+
 sqlite3 agrotec.db -column -header "select idgeojson,nome, substr(geojson, 1, 20) geojson, idtalhao,exibirborda,unimed,profundidade,idgrupomapa,ano,idgeojsontipo,record_version from  geojsons"
 sqlite3 agrotec.db -column -header "select idgeojson,nome, substr(geojson, 1, 20) geojson, idtalhao,exibirborda,unimed,profundidade,idgrupomapa,ano,idgeojsontipo,record_version from  geojsons where idgeojson = 464"
 
 sqlite3 agrotec.db "update geojsons set record_version = '2021-12-27 20:30:18' where idgeojson = 464"
+
+##offline
+>>>>>>>>>
+sqlite3 agrotec.db ".table"
+sqlite3 agrotec.db ".schema offline_proc"
+sqlite3 agrotec.db ".schema image"
+sqlite3 agrotec.db "insert into offline_proc(datetime_start) values ('2018-12-19 01:30:22');"
+sqlite3 agrotec.db "delete from offline_proc"
+sqlite3 agrotec.db "delete from image"
+<<<<<<<<<
+
+
+
+
 
 
 

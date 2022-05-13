@@ -137,7 +137,8 @@ journalctl
 ::Serviços
 ==========
 systemctl status            => raiz dos servições em execução
-systemctl status |grep ssh  => raiz dos servições em execução - filtrando os status
+systemctl status |grep 
+  => raiz dos servições em execução - filtrando os status
 systemctl status ssh.service=> Status do serviço  "ssh.service"
 
 
@@ -505,7 +506,7 @@ Snippets => Constutores de código automático
 ::scp - Transferência de Arquivos
 --https://www.hostinger.com.br/tutoriais/usar-comando-scp-linux-para-transferir-arquivos
 ::ssh-transferir arquivos (Os 2 comandos abaixo são executaos estando fora do ssh)
-scp ~/t.txt root@45.82.72.139:~/teste_scp/t.txt => Copiei o arquivo "~/t.txt" da minha máquina para o servidor vps no destino "~/teste_scp/t.txt"
+scp -C ~/t.txt root@45.82.72.139:~/teste_scp/t.txt => Copiei o arquivo "~/t.txt" da minha máquina para o servidor vps no destino "~/teste_scp/t.txt"
 cp psapparel.zip mateus@45.82.72.139:~mateus@45.82.72.139 => copiei da maquina local para a máquina remota
 Eu estava estudando aqui: https://www.youtube.com/watch?v=r4te72Fq-18
 
@@ -599,6 +600,10 @@ depois inserir cd Adcionais e executar no cd:
 
 sudo sh ./VBoxLinuxAdditions*.run
 observação: Teve uma versão que tive que executar o run.sh
+
+::Correção de bug quando área cópia da área de trabalho para de funcionar(Reiniciar "VBoxClient --clipboard"):
+kill -9 `ps aux | grep "VBoxClient --clipboard" | grep -Fv "grep" | awk '{print $2}'`; /usr/bin/VBoxClient --clipboard
+
 
 reiniciar e ativar área de trabalho bi-direcional
 FIM==================================================================================
@@ -704,6 +709,11 @@ mateus@mateus-VirtualBox:/media$
 ::OracleVm - Virtual Box - Alterar o tamanho do hd. O Exemplo abaixo aumenta para 15 GB
 =======================================================================================
 vboxmanage modifyhd "ubuntu 18.04 Odoo 12.vdi" --resize 15000
+
+::Máquina atual do odoo - ubuntu 18.04 Odoo Marcos
+cd "/home/mateus/VirtualBox VMs/ubuntu 18.04 Odoo Marcos"
+vboxmanage modifyhd "ubuntu 18.04 Odoo Marcos.vdi" --resize 120000
+
 obs: Depois de executar este comando é necessário atualizar o tamnho do hd dentro do sistema operacional
      No Ubuntu existe no utilitário "Discos" a opção "Redimensionar"
 
@@ -784,6 +794,15 @@ sudo apt update
 sudo apt install boot-repair
 <<<<<<<<<<<<<<<<<
 
+::erro inttramfs-https://www.youtube.com/watch?v=IDSyE2qbi58
+>>>>>>>>>>>>>>>
+fsck /dev/sda1
+<<<<<<<<<<<<<<<
+
+::Sed-Localizar e substituir arquivo texto
+==========================================
+-i => Altera o arquivo
+sed -i '/BOLETOS EMITIDOS NO PER/d'  => Excluir no arquivo todas as linhas contendo "BOLETOS EMITIDOS NO PER"
 
 ::Sites:
 ========

@@ -1,3 +1,29 @@
+::Swap Memória
+==============
+Aumentar o tamanho da memória
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sudo swapon --show  => Mostra status da memória
+free -h             => mostra memória usada
+df -h               => Mostra pastas e espaços disponíveis e utilizados no hd
+
+sudo fallocate -l 3G /swapfile  => cria o arquivo "/swapfile" com 3GB
+ls -lh /swapfile                => lista detalhes do arquivo "/swapfile" 
+
+sudo mkswap /swapfile
+chmod 600 /swapfile
+sudo swapon /swapfile |=> estes dois comandos apontam para o arquivo "/swapfile" para serem utilizados como swap
+
+Os comandos acima deixaram a swap disponível para esta sessão. Agora para fixar sempre que reiniciar:
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+----
+solução abaixo não está dando certo
+
+
+
 Definir a Swap para 32 GB. Extraído de https://linuxdicasesuporte.blogspot.com/2018/06/manipulando-swap-no-ubuntu-1804-e.html
 
 swapoff -a

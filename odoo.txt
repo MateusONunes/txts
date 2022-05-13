@@ -39,4 +39,13 @@ source venv/bin/activate
 cd core
 ./odoo-bin -c odoo.conf
 -u <ModelToUpdate>
+=====================================================================================
+Importar para odoo apartir de um dump
+create database riviera-migracao-20220330.dmp
+psql riviera-migracao-20220330.dmp > "riviera-migracao-local-0330"
+
+após importar banco do odoo via psql:
+
+ALTER DATABASE "riviera-migracao-local-0330" OWNER TO mateus;
+REASSIGN OWNED BY odoo TO mateus; => alterar o proprietário das tabelas "\d" de odoo para mateus. isto evita o erro "relation "base_registry_signaling" already exists" 
 

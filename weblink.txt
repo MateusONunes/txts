@@ -5,6 +5,8 @@ mateus-@Sala1982-_-X!
 
 ssh root@45.82.72.139
 
+tmux attach-session -t 0
+
 ------------------------------------------------------------------------------------------
 :: Script para Agrotec
 **Testar

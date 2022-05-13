@@ -1,0 +1,28 @@
+CREATE OR REPLACE FUNCTION public.anomes_inc(anomes int, inc int)
+RETURNS integer
+ LANGUAGE plpgsql
+ IMMUTABLE STRICT
+AS $function$
+declare anomesStr varchar(6);
+declare ano int;
+declare mes int;
+begin
+  ano = substring(anomes::varchar, 1, 4);
+  mes = substring(anomes::varchar, 5, 2);
+ 
+  mes = mes + inc;
+
+  if mes >= 12 then
+    mes = 1;
+    ano = ano + 1;
+  elseif mes <= 0 then
+    mes = 12;
+    ano = ano -1;
+  end if;
+ 
+  anomesStr = ano || lpad(mes::varchar, 2, '0');
+  
+  return anomesStr;
+END
+$function$
+;

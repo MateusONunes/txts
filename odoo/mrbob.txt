@@ -1,0 +1,6 @@
+mrbob bobtemplates.odoo:addon => Criar módulo
+
+mrbob bobtemplates.odoo:model => Cria módulo
+
+
+

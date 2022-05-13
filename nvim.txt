@@ -1,0 +1,56 @@
+https://guialinux.uniriotec.br/vim/#:~:text=dd%20%3A%20deletar%20linha%20atual.,n%2D%C3%A9sima%20linha%20do%20arquivo.
+
+download wget https://github.com/neovim/neovim/releases/tag/v0.6.1
+
+---------------------------------------------------------------
+sudo apt remove neovim -y
+
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim
+---------------------------------------------------------------
+
+::Configurações/comandos
+:q! => sair sem salvar
+:qw => sair salvando
+ctrl + z => escapar para console. fg(foreground) para voltar
+u => desfazer última edição(undo) equivalente ao ctrl+z
+set nu => utilização das linhas (set nonu desliga)(set nu! troca)
+set rnu => set relativenumber
+
+::Navegação
+===========
+H/L - Primeira/Última linha exibida [Ctrl+PagUp]
+G => final do arquivo. Se tiver um número salta para a linha
+ged
+
+::Edição
+========
+o - Adciona linha abaixo^acima
+x - deleta caracter no cursor^atrás do cursor
+J - Juntar linha atual com linha abaixo [Ctrl+J]
+
+::Copiar/Colar
+==============
+v => selecinar Caracter^linha
+y - copia selecção
+p => Cola área de transferência antes^após
+* yy => Copiar linha (Puxão)
+* dd => recorta linha atual
+
+::Outros
+========
+c+p - menu autocompletar
+c+n - menu autocompletar
+
+
+
+::navegar 
+
+
+--
+organizar
+
+Mover uma linha para cima: ddkP
+
+Mover uma linha para baixo: ddp

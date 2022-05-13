@@ -1,0 +1,25 @@
+--Converter String para numeric
+CREATE OR REPLACE FUNCTION public.string_tonumeric(_str text)
+ RETURNS numeric
+ LANGUAGE plpgsql
+AS $function$
+begin
+  _str = replace(_str, ' ', '');
+  _str = replace(_str, '.', '');
+  _str = replace(_str, 'R', '');
+  _str = replace(_str, '$', '');
+  _str = replace(_str, ',', '.');
+ 
+  if (strpos(_str, '(') <> 0) and (strpos(_str, '(') <> 0) then
+    _str = replace(_str, '(', '');
+    _str = replace(_str, ')', '');
+    _str = '-' || _str;
+  end if;
+ 
+  --raise notice '%', _str;
+ 
+  return _str::numeric;
+END
+$function$
+;
+

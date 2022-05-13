@@ -1,0 +1,31 @@
+links:
+
+https://github.com/Kurgol/keychron/blob/master/k2.md
+-Link com lista de discuções sobre keykron:
+https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1814481
+
+-----------------------------------------------------------------------------------------------------------------------------
+::Problema teclas Fs não funcionan:
+
+echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode
+echo 'options hid_apple fnmode=0' | sudo tee /etc/modprobe.d/hid_apple.
+sudo update-initramfs -u
+
+------
+dica retirada do texto(https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1814481):
+Hello,
+
+Please try this:
+ echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode
+
+If it works for you you can make permanent fix by:
+ echo 'options hid_apple fnmode=0' | sudo tee /etc/modprobe.d/hid_apple.conf
+ sudo update-initramfs -u
+
+Hope it will help!
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+fn+del=> insert
+AltGr+- => \
+

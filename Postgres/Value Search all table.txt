@@ -1,6 +1,6 @@
 --https://stackoverflow.com/questions/5350088/how-to-search-a-specific-value-in-all-tables-postgresql
 
---A função abaixo funcionou melhor que a primeira
+--A função abaixo(search_whole_db) funcionou melhor que a segunda
 CREATE OR REPLACE FUNCTION search_whole_db(_like_pattern text)
   RETURNS TABLE(_tbl regclass, _ctid tid) AS
 $func$

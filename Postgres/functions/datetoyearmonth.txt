@@ -1,0 +1,7 @@
+CREATE OR REPLACE FUNCTION public.datetoyearmonth(timestamp without time zone)
+ RETURNS text
+ LANGUAGE internal
+ IMMUTABLE STRICT
+AS $function$timestamptz_to_char$function$
+;
+

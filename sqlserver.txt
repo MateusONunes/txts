@@ -4,3 +4,22 @@ SELECT OBJECT_NAME(OBJECT_ID) TableName, st.row_count
  FROM sys.dm_db_partition_stats st
  WHERE index_id < 2
  ORDER BY st.row_count DESC
+ 
+ 
+--all field from all tables. Todos os campos de todas as tabelas 
+SELECT T.name AS Table_Name ,
+       C.name AS Column_Name ,
+       P.name AS Data_Type ,
+       P.max_length AS Size ,
+       (
+        SELECT st.row_count
+         FROM sys.dm_db_partition_stats st
+         WHERE index_id < 2
+           and OBJECT_NAME(OBJECT_ID) = T.name
+       ) table_rows_count
+FROM   sys.objects AS T
+       JOIN sys.columns AS C ON T.object_id = C.object_id
+       JOIN sys.types AS P ON C.system_type_id = P.system_type_id
+where C.name like '%bai_idbaixa%'
+
+  
