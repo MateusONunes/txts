@@ -1,0 +1,6 @@
+keycode 47 = ccedilla Ccedilla ccedilla Ccedilla dead_acute dead_grave dead_grave
+keycode 34 = bracketleft braceleft bracketleft braceleft ordfeminine dead_macron ordfeminine
+keycode 35 = bracketright braceright bracketright braceright masculine masculine masculine
+keycode 51 = backslash bar bracketright braceright masculine masculine masculine
+keycode 119 = slash question slash question degree questiondown degree
+keycode 105 = Delete NoSymbol Delete
