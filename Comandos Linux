@@ -262,6 +262,7 @@ grep -R -H -i "abc" .    => Localiza a string "abc" no diretório atual independ
 Geral do Sistema/Hardware
 =========================
 glances => visão geral do sistema
+Criar disco de inicialização do windows no linux: (WoeUSB-ng) https://www.edivaldobrito.com.br/como-criar-um-pen-drive-bootavel-windows-no-ubuntu/
 
 
 escanear portas-informações de portas abertas - dicas daqui: https://www.youtube.com/watch?v=UY0f7cs5GpU
@@ -794,7 +795,7 @@ sudo apt update
 sudo apt install boot-repair
 <<<<<<<<<<<<<<<<<
 
-::erro inttramfs-https://www.youtube.com/watch?v=IDSyE2qbi58
+::erro inittramfs-https://www.youtube.com/watch?v=IDSyE2qbi58
 >>>>>>>>>>>>>>>
 fsck /dev/sda1
 <<<<<<<<<<<<<<<

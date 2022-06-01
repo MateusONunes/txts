@@ -212,7 +212,9 @@ create extension dblink;
 SELECT dblink_connect('remote', 'hostaddr=192.168.0.55 port=5432 dbname=rowena user=postgres password=PASSWORD');
 SELECT * FROM dblink ('remote', 'select id, name from res_partner rp ') AS t (id int, name text)
 
-
+::Sessions
+==========
+select * from pg_stat_activity;
 
 
 

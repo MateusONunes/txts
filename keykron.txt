@@ -5,6 +5,20 @@ https://github.com/Kurgol/keychron/blob/master/k2.md
 https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1814481
 
 -----------------------------------------------------------------------------------------------------------------------------
+
+::Atalhos do teclado
+====================
+fn+del(Agora /?)=> insert
+fn+end=> Acho que pega a última configuração de teclado
+AltGr+- => \
+#abaixo teclas mapeadas:
+' => altGr + ç
+` => altGr + shift + ç
+
+
+
+
+
 ::Problema teclas Fs não funcionan:
 
 echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode
@@ -24,8 +38,45 @@ If it works for you you can make permanent fix by:
 
 Hope it will help!
 -----------------------------------------------------------------------------------------------------------------------------
+::restart keyboard
+/etc/init.d/keyboard-setup.sh restart
+
+::arquivo de configuração do teclado:
+/etc/default/keyboard
+sudo gedit /usr/share/X11/xkb/symbols/br
 
 
-fn+del=> insert
-AltGr+- => \
+::Mapear a tecla pressionada:
+xev
+#Ou para mapear com tratamento:
+xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+
+
+xmodmap(~/.Xmodmap)
+=======
+xmodmap ~/.Xmodmap => roda o arquivo de configuração
+setxkbmap -option => Resetar mapa de teclas
+xmodmap -pke  => Lista os atuais códigos de teclas
+
+
+Colunas do xmodmap -pke:
+1- Key
+2- Shift+Key
+3- Mode_switch+Key
+4- Mode_switch+shift+key
+5- Altgr+Key
+6- Altgr+Shift+Key
+
+
+
+
+----
+links:
+
+https://help.ubuntu.com/community/Custom%20keyboard%20layout%20definitions
+
+
+--Vídeo "Remap Keys on your Keyboard in Linux"
+https://www.youtube.com/watch?v=l5LJ9tO7G74
+mapa das teclas => https://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap
 

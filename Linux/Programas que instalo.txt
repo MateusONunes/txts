@@ -1,23 +1,87 @@
 sudo add-apt-repository ppa:noobslab/nemo
 sudo apt install nemo
 
+#https://www.youtube.com/watch?v=LzXaMBQOs4w
 sudo apt install tmux
+sudo apt install meld
+sudo apt install gpick
+
+#Desenhar no desktop
+sudo apt install gromit-mpx
+#sudo gedit /etc/gromit-mpx/gromit-mpx.cfg
+#sudo gromit-mpx --key Pause --undo-key Escape
+
+#explorer modo texto
+sudo apt install mc
+
+#analisador de espaços no disco
+sudo apt install k4dirstat
+
+#filmar a tela
+sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder
+sudo apt-get update
+sudo apt-get install simplescreenrecorder
+
+sudo apt-get install net-tools
+
+sudo apt install gnome-system-monitor
+
+#filezila
+sudo add-apt-repository ppa:sicklylife/filezilla
+sudo apt-get update
+sudo apt-get install filezilla
 
 
+#####DEV
+
+sudo apt update
+sudo snap install dbeaver-ce
+
+#Nautilus (Defazado, agora eu uso a opção seguinte para instalar extenção para nomo:)
+sudo apt install nautilus
+sudo add-apt-repository ppa:rabbitvcs/ppa
+sudo apt-get update
+sudo apt-get install rabbitvcs-nautilus 
+
+>>>>>>>>>>>
+**extenção do nemo:
+https://github.com/rabbitvcs/rabbitvcs/tree/master/clients/nemo
+
+nemo -q
+pgrep -f service.py | xargs kill
+nohup nemo > /dev/null &
+
+
+
+<<<<<<<<<<<
+
+#hstr - history turbo - https://linuxhint.com/hstr-command-history-browser-in-linux/
+>>>>>>>>>>>>>>>>>>>>
+sudo add-apt-repository ppa:ultradvorka/ppa
+sudo apt-get update
+sudo apt-get install hstr
+
+hstr --show-configuration >> "$HOME/.bashrc"
+source "$HOME/.bashrc"
+<<<<<<<<<<<<<<<<<<<<<
+------------------------------------------------------------
 
 sudo apt-get install nemo-compare nemo-audio-tab nemo-emblems nemo-filename-repairer nemo-fileroller nemo-gtkhash nemo-image-converter nemo-media-columns nemo-pastebin python-nemo nemo-rabbitvcs nemo-seahorse nemo-share nemo-terminal
-gnome-system-monitor
 
-SimpleScreenRecorder
-smartGit /media/mateus/Dados/Programacao/salvar/Linux/Programas que instalo.txt
-sudo apt-get install net-tools
+
+
+--------------------------------------------------------------------------------------------------------------------------------
 
 ~/.bashrc
 HISTSIZE=5000
 HISTFILESIZE=5000
 
+<<<<<<< HEAD
+alias lm='ll -sh'
+=======
 sudo apt-get install rabbitvcs-nautilus -y
 
+>>>>>>> a82edab6c2722fda95c74935bd0cbc540249328c
 
 --------------------------------------------------------------------------------------------------------------------------------
 ::discos:
@@ -66,4 +130,8 @@ ferramentas GUI git: https://git-scm.com/download/gui/linux
 asdf
 --------------------------------------------------------------------------------------------------------------------------------
 # pasta para salvar arquivos no comando "gnome-screenshot"
-gsettings set org.gnome.gnome-screenshot auto-save-directory "file:////home/mateus/Imagens/sc"
+gsettings set org.gnome.gnome-screenshot auto-save-directory "file:////home/mateus/Imagens/_sc"
+
+#papagaio
+curl parrot.live
+
