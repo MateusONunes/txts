@@ -55,9 +55,22 @@ xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $
 xmodmap(~/.Xmodmap)
 =======
 xmodmap ~/.Xmodmap => roda o arquivo de configuração
-setxkbmap -option => Resetar mapa de teclas
+comando individual => xmodmap -e "keycode 47 = ccedilla Ccedilla ccedilla Ccedilla dead_acute dead_grave dead_grave"
+setxkbmap -option => Resetar(limpar) mapa de teclas
 xmodmap -pke  => Lista os atuais códigos de teclas
 
+
+::Configuração padrão do Xmodmap para o teclado KeyKron:
+ 
+keycode 47 = ccedilla Ccedilla ccedilla Ccedilla dead_acute dead_grave dead_grave
+keycode 48 = dead_tilde dead_circumflex dead_tilde dead_circumflex dead_acute dead_grave dead_grave
+keycode 34 = bracketleft braceleft bracketleft braceleft ordfeminine dead_macron ordfeminine
+keycode 35 = bracketright braceright bracketright braceright masculine masculine masculine
+keycode 51 = backslash bar bracketright braceright masculine masculine masculine
+keycode 119 = slash question slash question degree questiondown degree
+keycode 105 = Delete NoSymbol Delete
+
+::Configuração padrão do Xmodmap para o teclado KeyKron[FIM]
 
 Colunas do xmodmap -pke:
 1- Key
@@ -76,7 +89,8 @@ links:
 https://help.ubuntu.com/community/Custom%20keyboard%20layout%20definitions
 
 
---Vídeo "Remap Keys on your Keyboard in Linux"
+--Vídeo ****"Remap Keys on your Keyboard in Linux"
 https://www.youtube.com/watch?v=l5LJ9tO7G74
-mapa das teclas => https://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap
+mapa das teclas*** => https://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap
+xmodmap*** => https://wiki.archlinux.org/title/Xmodmap
 
