@@ -1,0 +1,25 @@
+CREATE EXTENSION postgres_fdw;
+
+CREATE SERVER kimenz_11 FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host '192.168.1.208', dbname 'kimenz-prod', port '5432');
+
+CREATE USER MAPPING FOR CURRENT_USER
+    SERVER kimenz_11
+    OPTIONS (user 'postgres', password 'XXXXXXXXXX');
+   
+CREATE SCHEMA kimenz_11;   
+
+IMPORT FOREIGN SCHEMA public FROM SERVER kimenz_11  INTO kimenz_11;
+
+
+
+--Desconectar
+--SELECT * FROM postgres_fdw_get_connections() ORDER BY 1;
+
+--SELECT postgres_fdw_disconnect('kimenz_11');
+
+--SELECT postgres_fdw_disconnect_all();
+
+
+llLinks:
+
+
