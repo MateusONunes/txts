@@ -1,0 +1,52 @@
+como entrar no metaverso
+https://www.youtube.com/watch?v=m8EDRbSpXX0&t=172s
+
+Surgiu na década de 80 no livro Snow Crash - Neal Stephenson
+-Realidade paralela
+
+
+https://hubs.mozilla.com/
+https://spatial.io/
+nvidia.com/pt-br/omniverse/
+secondlive
+fortnite
+https://www.roblox.com/
+manicraft
+
+horizon words
+Facebook Horizon
+
+SDKs
+Interaction
+Voice SDK - Conjunto de linguagem para navegação sem as mãos
+Tracked Keyboard sdk
+
+::Digital Twins - https://www.youtube.com/watch?v=-ka70CD6fhs - A Construção de Metaversos já é Realidade. (VOCÊ VAI FICAR DE FORA?) - NVIDIA GTC 2022
+nvidia.com/pt-br/omniverse/
+-Maya, 3ds Max, Unreal Engine, Blender (USD - Html3d)
+
+::Game engine:
+Unity 3d(C#) -> Desenvolvimento de games
+Unreal Engine(C++)
+
+USD - Universal Scene Description - HTML 3d
+
+Microsoft Hybrid World
+
+
+Multiversos Abertos:
+Mozilla Hubs
+Roblox
+
+
+NFT,
+Blockchain
+
+::Artes/coleçções NTF:
+CryptoPunks
+Bored Ape Yacht Club - macacos mal humorados
+Doodles NFT
+
+
+::Vídeos
+COMO CRIAR UM METAVERSO? - Professor Nisenbaum-Criar salas no mozila
