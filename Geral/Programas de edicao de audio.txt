@@ -1,0 +1,20 @@
+::Programas para desenhar/tocar/fazer acordes
+-Band in a Box
+-https://www.guitartabcreator.com/
+
+Pro Tools, Reaper, Cubase, Studio One e Logic, Fl Studio, Band in a Box
+
+Links
+https://www.youtube.com/watch?v=ipjEEhf_2qg
+fala dos 5 programas abaixo:
+1º Band in a Box
+2º Reaper
+3º Ampeg
+4º Ezdrummer
+5º Guitar Pro
+
+
+::tuxguitar (Alternativa ao guitar prox-linux)
+
+se não der som no linux, seguir https://dev-pages.info/tuxguitar-no-sound/#:~:text=Go%20to%20Tools%20%2D%3E%20Settings%20.,and%20verify%20everything%20works%20fine.
+sudo apt install tuxguitar-jsa

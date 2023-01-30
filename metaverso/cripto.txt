@@ -1,0 +1,82 @@
+sites:
+
+https://docs.web3dev.com.br/
+
+MetaMask => extenção com minha carteira
+
+
+::Geral
+Lista de todas moedas - https://www.coingecko.com/pt
+
+
+::Verificar saldos:
+https://polygonscan.com/
+
+https://etherscan.io/ (???)
+
+
+::Operação de Compra de Moedas:
+https://docs.melkdao.com/missoes/missao-6
+
+https://rampbr.com/
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+O Bitcoin não pode ficar numa corretora (ex: Binance), ele tem que ficar numa wallet (Carteira de criptomoedas)
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Histórico das missões https://docs.melkdao.com/missoes/missao-7
+
+Missão 6 -> Compra de Matic (30,00)
+utilizado o link https://rampbr.com/
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Missão 7 - Swap de Tokens
+
+Converter 1,5 MATIC para USDC
+- O USDC é um stablecoin (Moeda fixada em uma fiduciária). No caso USDC é fixado no dollar
+
+Swap é as troca de token. Por exemplo de MATIC para ETH
+-é feito em corretora descentralizada (pode ser em uma corretora centralizada manualmente)
+
+usado o link https://uniswap.org/
+
+
+
+
+A Uniswap se transformou em um ecossistema de vários aplicativos descentralizados, além do swap ela também tem protocolos de investimentos, empréstimos e quase tudo relacionado à DEFI (sigla para Decentralized Finance, que em português significa Finanças Descentralizadas).
+
+outros links:
+https://app.uniswap.org/
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Missão  - 8 - Doação de 1 USDC para o wallet do BOT
+
+GAS -> Taxas aos mineradores
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Missão  - 9 - -Snapshot
+
+Mostrou exemplo da DAO Web3Dev https://docs.web3dev.com.br/
+
+https://snapshot.org/#/
+https://demo.snapshot.org/#/
+
+- DAO - Organização distruibuída (Descentralizada) autônoma
+- As DAOs também fazem uso de smart contracts, ou seja, contratos de código que são imutáveis, para implantar operações automatizadas, que ninguém controla.
+-PODs  - Pods são grupos de trabalho compostos por 2 líderes e até 7 membros fixos que se unem com o objetivo de resolver um problema específico.
+
+-Governança - Por exemplo a Web3Dev pode ser governada por detentores do token W3D
+
+- Criar propostas e votar no Snapshot é user-friendly e não custa gas, pois o processo é off-chai
+Os votos podem ser feitos utilizando tokens (como o nosso MELK), NFTs e outros assets digitais
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Chave de blockchain sha256 - vídeo curso sobre DAPP em https://www.youtube.com/watch?v=mwgPR2pD2ww
+ - algorítimo em http://operationblockchain.org/data-hashing-sha256.html
+ 
+ 
+------------------------
+

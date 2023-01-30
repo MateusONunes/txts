@@ -1,0 +1,19 @@
+Missão 1-https://docs.melkdao.com/missoes/missao-1
+----------
+Carteira Crypto => Manipular Tokens - Metamask
+é um conjunto de chaves privadas
+
+
+Missão 2
+----------
+Redes de Blockchain ou chain, ou base de dados
+exemplos =÷ BitCoin(BTC), Ether(ETH)
+
+Outras reder derivadas do Etherum
+ -Polygon => possui o token MELK
+
+-Metamask é o software para gerenciamento do Blockchain Ethereum e derivados
+
+
+
+

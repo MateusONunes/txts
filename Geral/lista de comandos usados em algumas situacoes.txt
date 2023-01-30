@@ -1,0 +1,27 @@
+::Marcos subindo lxc do odoo
+============================
+  877  ls
+  878  lxc import backup.tar.gz 
+  879  lxc list
+  880  lxc laung odoo14-test
+  881  lxc launch odoo14-test
+  882  lxc start doo14-test
+  883  lxc 
+  884  lxc start odoo14-test
+  885  lxc list
+  886  history
+
+
+-----
+#Conectar no terminal
+lxc exec odoo14-test bash
+
+------------------------------------------------
+:: levantar lxc
+tutorial: https://github.com/popsolutions/PROXMOX-2-LXD
+
+
+1-baixar máquina
+2-aqruivo metadata
+
+

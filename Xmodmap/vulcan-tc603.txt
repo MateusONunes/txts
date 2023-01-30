@@ -1,0 +1,13 @@
+!keycode  25 = w W comma less question question U0329 U0313
+keycode  25 = w W comma less Up Prior U0329 U0313
+!keycode  39 = s S e E ssharp section EuroSign EuroSign
+keycode  39 = s S comma less Down Next EuroSign EuroSign
+!keycode  38 = a A i I ae AE idotless Iabovedot
+keycode  38 = a A i I Left Home Iabovedot
+!keycode  40 = d D a A eth ETH ae AE
+keycode  40 = d D a A Right End ae AE
+!O Control (105) não estava funcionando, vinha uma "/" no lugar. Por isto precisei acrescentar esta linha
+!keycode 105 = slash question slash question degree questiondown degree questiondown
+keycode 105 = Control_R NoSymbol Control_R
+
+
