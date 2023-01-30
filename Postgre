@@ -21,12 +21,14 @@ sudo -u postgres psql          => Abrir psql
 service postgresql status      => verifica status do Postgre
 psql -U postgres -c 'SHOW config_file' => exibir localização/informação/informações do arquivo de configuração do postgres (/etc/postgresql/10/main/postgresql.conf)
 show hba_file (no psql)        => exibir localização do arquivo pg_hba.conf 
+show data_directory            => exibe pasta do postgres
 pg_lsclusters                  => exibe pasta de arquivos de configurações e o local do arquivo de log
 nmap localhost                 => Verifica as portas abertas
 postgres -v                    => Versão do Postgres
 sudo -u postgres psql -c "SELECT version();"-s
 create database dbgirassolapp_i with template dbgirassolapp =>  Copia(duplica) o database "dbgirassolapp" para "dbgirassolapp_i"
 psql -d <NOME_BANCO> -h <IP> -p <PORTA> -U <USUÁRIO> -W PASSWORD     => conectar a uma base de dados
+SELECT pg_reload_conf()        => Restart Configurações postgres
 
 sudo netstat -ltnp | grep postgres    => Verificar portas de escuta do postgres
 sudo lsof -n -u postgres |grep LISTEN => Verificar portas de escuta do postgres
@@ -50,7 +52,7 @@ pg_dump agrotec_prod > bck.sql    ==> Gerei o Dump do banco de dados "agrotec_pr
 c and p.state  = 'active'
 
 ::Derrubar todas as conexões do banco
-select pg_terminate_backend(pid) from pg_stat_activity where datname='dbgirassolapp'
+select pg_terminate_backend(pid) from pg_stat_activity where datname='kimens-prod';
 
 --Gerar e agregar linhas em colunas
 SELECT array_agg(x) FROM generate_series(2,10) x
@@ -204,6 +206,8 @@ listen_addresses = '*' => para permitir conexões externas
 =====================
 Permitir conexões externas(# IPv4 local connections):
 host  	all  		all 		0.0.0.0/0 		trust
+host    all             postgres             192.168.1.199/32            trust   => liberar ip específico
+
 
 
 ::Base de dados externa
@@ -217,6 +221,18 @@ SELECT * FROM dblink ('remote', 'select id, name from res_partner rp ') AS t (id
 select * from pg_stat_activity;
 
 
+::Tamanho de uma tabela específica
+==================================
+select schemaname as table_schema,
+       relname as table_name,
+       pg_size_pretty(pg_total_relation_size(relid)) as total_size,
+       pg_size_pretty(pg_relation_size(relid)) as data_size,
+       pg_size_pretty(pg_total_relation_size(relid) - pg_relation_size(relid)) 
+        as external_size
+from pg_catalog.pg_statio_user_tables
+order by pg_total_relation_size(relid) desc,
+         pg_relation_size(relid) desc;
+        
 
 ------------------------------------------------------------------------------------------------------------
 ::Organizar:

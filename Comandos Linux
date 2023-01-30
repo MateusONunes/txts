@@ -21,14 +21,15 @@ ll       => equivalente a ls -la
 ls -sh   => Mostra tamanho dos arquivos legíveis (Em KB, MB, GB)
 df -h    => Mostra pastas e espaços disponíveis e utilizados no hd
 du       => Tamanho das pastas
+du -sh <diretorio> => tamanho do diretório atual
 du /home =?< tamanho dos arquivos "du -h /home" => Formato humano
 man     => Manual do Comando
 pwd     => (Print Working Directory) - Diretório atual 
-du -sh <diretorio> => tamanho do diretório
 touch   => Tocar o arquivo
 echo    => Escrever testo. Pode ser usado pra escrever no arquivo => echo "hello word" > a.txt
 cat     => ver o conteúdo de um arquivo
 less    => ver o conteúdo de um arquivo um pouco diferente do cat
+        => o less serve para pausar na tela quando toda preenchida. exemplo: ls | less
 tail    => ver o conteúdo de um arquivo - últimas   10 linhas "tail -n2 <Nome_arquivo>" => últimas   2 linhas
 tail -f => Deveria ficar monitorando o arquivo
 head    => ver o conteúdo de um arquivo - primeiras 10 linhas "head -n2 <Nome_arquivo>" => primeiras 2 linhas
@@ -44,6 +45,15 @@ nmtui => utilitário para configurar a rede
 tar -czf <NovoArquivo>.tar.gz <pastacompactar>/ => compactar
 tar -xzf <NomeArquivoDescompactar>              => descompactar
 cal => calendário
+unset x => limpa a variável de ambiente "x"
+dpkg --get-selections | grep -i virtualbox => Verifica por exemplo se o virtualbox está instalado
+
+
+::Atualizar distribuição do Linux:
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+sudo apt update && sudo apt dist-upgrade
+sudo do-release-upgrade -d
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 ::atalhos terminal
 >>>>>>>>>>>>>>>>>>
@@ -96,6 +106,7 @@ chmod 755 /etc/init.d/meuscript => Permissão de Execução
 chown => Altera proprietário
 update-rc.d mateus.sh defaults => Add o arquivo mateus.sh para executar na inicialização (O Arquivo tem que estar em "/etc/init.d") - https://www.vivaolinux.com.br/dica/Colocando-script-na-inicializacao-do-Linux-(Ubuntu-Debian)
 printenv    => exibe variáveis de ambiente
+env         => indem printenv 
 
 uname -or      => Informações do Sistema - Retorna nome do linux(tipo de sistema) => "5.4.0-42-generic GNU/Linux"
 uname -as      => Informações do Sistema -  Retorna nome do linux(tipo de sistema) => "Linux mateus-pc 5.4.0-42-generic #46~18.04.1-Ubuntu SMP Fri Jul 10 07:21:24 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux"
@@ -248,6 +259,7 @@ links: https://www.linuxforce.com.br/comandos-linux/comandos-linux-comando-find/
        https://e-tinet.com/linux/comando-find-linux/
        
 find . -name odoo.conf                   => Localizar recursivamente apartir da pasta atual o arquivo "odoo.conf"
+find . -name *multi* -type d             => Localizar recursivamente apartir da pasta atual o Diretórico que contenham no nome a palavra "multi"
 find . -maxdepth 2 -size -80k -type f    => Localizar na pasta atual "." tipos de arquivos file "f" com profundidade 2(-maxdepth 2) arquivos com menos que 80 Kilobytes
 find . -maxdepth 2 -size +2M -type f     => Localizar na pasta atual "." tipos de arquivos file "f" com profundidade 2(-maxdepth 2) arquivos com mais  que 2  Megabytes
 find /snap -iname ffserve*.*             => Localizar na pasta e subpasta "/snap" arquivos que contenham a string "ffserve" independente de Maiúsc/Min.
@@ -320,8 +332,8 @@ snap list                   => Lista pacotes instalados
 => instala o pacote "scrcpy"
 
 
-::Arquivos do linux
------------------------
+::Arquivos/pastas do linux
+==========================
 ~/.bashrc          => Arquivo de arranque do terminal
 Tilix              => Terminal multiabas
 iftop-monitorar rede
@@ -336,6 +348,7 @@ source .bashrc     => Reexecuta o arquivo .bashrc para a sessão atual
 /etc/environment       => também é utilizado para configurações iniciais mas não sei ao certo. É indicado para JAVA_HOME. Mas por padrão na minha máquina está "/etc/profile"
 /home/mateus/.profile  => Executado quando efetua o login
 /etc/hosts             => arquivo de hosts do linux
+/etc/init.d            => serviços inicializados no boot
 
 =============================================
 
@@ -449,6 +462,7 @@ Super+Shift+Seta => Troca a janela de monitor
 Alt+f7 => Equivale a duplo clique na barra de títulos
 Ctrl+N => Duplica a janela atual
 Alt+Clique e arrastar => Arrastar a janela
+Alt+roda => Zoom no desktop do linux
 
 Atalhos terminal
 ----------------
@@ -510,6 +524,8 @@ Snippets => Constutores de código automático
 scp -C ~/t.txt root@45.82.72.139:~/teste_scp/t.txt => Copiei o arquivo "~/t.txt" da minha máquina para o servidor vps no destino "~/teste_scp/t.txt"
 cp psapparel.zip mateus@45.82.72.139:~mateus@45.82.72.139 => copiei da maquina local para a máquina remota
 Eu estava estudando aqui: https://www.youtube.com/watch?v=r4te72Fq-18
+
+scp root@192.168.1.145:"/root/riviera-migracao-20220425.zip" riviera-migracao-20220425.zip => Copia do servidor para a máquina loca (Estou fora do ssh [fora do host])
 
 
 ::Interface do Android Studio
@@ -768,6 +784,7 @@ GRUB_DEFAULT=saved
 ======
 Ctrl+b
 d - sair da sessão tmux sem desligar
+x - Fechar sessão
 " - Divide janela horizontalmente - split
 % - divide a janela verticalmente
 S - (Setas) caminha/navega pelos paineis(Splits) da tela
@@ -781,10 +798,21 @@ $ - renomear sessão
 [ - ativa rolagem do mouse - "q" para sair
 ALT ou CTRL - Setas aumenta/iminui tamanho da janela
 
---
+--Comandos ":"
+setw -g mouse on  => Ativar rolagem do mouse
+
+-------------------
+--nano ~/.tmux.conf
+set-window-option -g mode-mouse on
+   ou (Versão mais recente do tmux)
+setw -g mouse on
+
+-------------------
 tmux ls => lista sessões igual a => tmux list-sessions 
 tmux attach-session -t <session name>
 tmux new-session -s <session name>
+
+https://wiki.archlinux.org/title/tmux
 
 <<<<<<
 
@@ -795,7 +823,7 @@ sudo apt update
 sudo apt install boot-repair
 <<<<<<<<<<<<<<<<<
 
-::erro inittramfs-https://www.youtube.com/watch?v=IDSyE2qbi58
+::erro initramfs-https://www.youtube.com/watch?v=IDSyE2qbi58
 >>>>>>>>>>>>>>>
 fsck /dev/sda1
 <<<<<<<<<<<<<<<
@@ -814,3 +842,29 @@ https://packages.ubuntu.com/
 >>>>>>>>>>>>>>>>>>>>>>>
 alsamixer => utitário de som
 <<<<<<<<<<<<<<<<<<<<<<<
+
+::Mapear a tecla pressionada:
+xev
+#Ou para mapear com tratamento:
+xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+
+::Terminal colorido
+programa grc https://github.com/garabik/grc
+Exemplos:
+ grc tail
+pasta de configurações: /usr/share/grc/ 
+ 
+
+::Conectar 2 mouses:
+====================
+link: https://blog.dbrgn.ch/2010/7/14/how-to-use-mpx-to-control-several-pointers-at-the-same-time/
+
+xinput --list  (ou simplesmente xpinut) => lista os dispositivos conectados
+
+xinput create-master secondary          => Cria outro controlador independente com o nome "secondary"
+xinput reattach <Id do mouse> <id do Contralador independente(O novo contrador criaro)>
+  => exemplos: xinput reattach 14 19
+  => Este comando atribui o mouse a um novo controlador independente
+  
+xinput remove-master 19                 => Remove o contralador de id 19
+

@@ -1,0 +1,3 @@
+/etc/ssh/sshd_config MUDAR AllowTcpForwarding para YES
+
+/etc/init.d/ssh restart

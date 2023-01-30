@@ -22,7 +22,7 @@ sqlite3 agrotec.db
 
 ---------------------------------------------------------------------------
 
-#Copiar(Puxar) o arquivo"/data/user/0/com.example.agrotec/app_flutter/agrotec.db" do emulador para o computador em "/home/mateus/_dev/AgroTec/Arquivos/sqlite/agrotec.db"
+#Copiar(Puxar) o arquivo agrotec.db do celular para o pc
 adb pull /data/user/0/com.example.agrotec/app_flutter/agrotec.db /home/mateus/_dev/AgroTec/Arquivos/sqlite/agrotec.db
 #outro exemplo
 adb pull "/data/user/0/com.example.agrotec/app_flutter/globalData-38.json" "/home/mateus/_dev/AgroTec/Arquivos/sqlite/lobalData-38.json"
@@ -38,6 +38,8 @@ sqlite3 agrotec.db -column -header "select * from geojsons"
 sqlite3 agrotec.db -column -header "select * from offline_proc order by id desc"
 sqlite3 agrotec.db -column -header "select * from image"
 sqlite3 agrotec.db -column -header "select id,statusgeraltipo_id,data,sequencia,key_id,descricao,record_version from image order by id desc"
+sqlite3 agrotec.db -column -header "select * from pontomapa where id = -1"
+sqlite3 agrotec.db -column -header "select * from pragaagrupada"
 sqlite3 agrotec.db -column -header "select * from plantio"
 sqlite3 agrotec.db -column -header "select * from plantioprod"
 sqlite3 agrotec.db -column -header "select id, titulo, data, record_version, p.velocidade, p.observacao, p.calda, p.bico, p.observacao from plantio p"

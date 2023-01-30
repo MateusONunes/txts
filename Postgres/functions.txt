@@ -23,3 +23,9 @@ END
 $function$
 ;
 
+--Gera sequencia de datas
+select generate_series(
+           (date '2022-05-01')::date,
+           (date '2022-06-22')::date,
+           interval '1 days'
+         )::date

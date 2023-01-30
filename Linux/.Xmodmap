@@ -1,8 +1,3 @@
-#Salvar este arquivo em "~/.Xmodmap"
-#para rodar => "xmodmap ~/.Xmodmap"
-#setxkbmap -option => Resetar mapa de teclas
-#xmodmap -pke  => Lista os atuais códigos de teclas
-
 keycode 47 = ccedilla Ccedilla ccedilla Ccedilla dead_acute dead_grave dead_grave
 keycode 34 = bracketleft braceleft bracketleft braceleft ordfeminine dead_macron ordfeminine
 keycode 35 = bracketright braceright bracketright braceright masculine masculine masculine

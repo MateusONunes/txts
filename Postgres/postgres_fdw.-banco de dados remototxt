@@ -20,6 +20,7 @@ IMPORT FOREIGN SCHEMA public FROM SERVER kimenz_11  INTO kimenz_11;
 --SELECT postgres_fdw_disconnect_all();
 
 
-llLinks:
+--Links:
 
-
+https://www.postgresql.org/docs/current/postgres-fdw.html
+https://h50146.www5.hpe.com/products/software/oe/linux/mainstream/support/lcc/pdf/PostgreSQL14GA_New_Features_en_20211001-1.pdf
