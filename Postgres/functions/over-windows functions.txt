@@ -1,0 +1,18 @@
+--https://www.postgresql.org/docs/current/functions-window.html
+
+select t.val,
+       row_number() over() row_number_,
+       rank() over(order by t.val) rank_,
+       dense_rank() over(order by t.val) dense_rank_,
+       lag(t.val, 1) over(order by t.val) lag_, --Valor de tval no registro anterior (poderia ser posterior -1)
+       lead(t.val, 1) over(order by t.val) lead_, --mesmo que lag(t.val, -1)
+       ntile(3) over(order by t.val) ntile_, --dilui o 3 entre os registros
+       percent_rank() over(order by t.val) percent_rank_,--?? Algo relacionado a rank
+       cume_dist() over(order by t.val) cume_dist_,--?
+       first_value(t.val) over(order by t.val) first_value_,
+       last_value(t.val) over(order by t.val) last_value_, --??
+       nth_value(t.val, 108) over(order by t.val) nth_value_ -- ?
+--  from (select unnest(string_to_array('A-A-A-B-B-B-C-E', '-')) val) t
+  from (select unnest(string_to_array('A-A-A-A-A-A-A-B-B-B-B-B-C-C', '-')) val) t
+  
+    
