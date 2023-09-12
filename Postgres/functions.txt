@@ -29,3 +29,6 @@ select generate_series(
            (date '2022-06-22')::date,
            interval '1 days'
          )::date
+         
+--apenas números de uma string:
+regexp_replace(rp.cnpj_cpf, '[^0-9]', '', 'g')         

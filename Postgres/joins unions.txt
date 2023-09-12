@@ -1,0 +1,28 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+::full join (rigth + left)
+select *
+  from (
+        select 1 num, 'a' nome union
+        select 2 num, 'b' nome union
+        select 3 num, 'c' nome
+       ) t1 
+       full JOIN
+       (select 1 num, 'ccc' valor union
+        select 3 num, 'aaa' valor union
+        select 5 num, 'zzz' nome
+       ) t2 
+    on t1.num = t2.num  
+
+num|nome|num|valor|
+---+----+---+-----+
+  3|c   |  3|aaa  |
+  2|b   |   |     |
+  1|a   |  1|ccc  |
+   |    |  5|zzz  |
+   
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:cross join
+
+select 1 from tabela join funcao('x') on 0 = 0 
+ou
+select 1 from tabela cross join funcao('x')

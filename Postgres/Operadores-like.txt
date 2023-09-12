@@ -1,0 +1,29 @@
+::Operadores de corresnpondência - https://pgdocptbr.sourceforge.io/pg80/functions-matching.html#:~:text=O%20PostgreSQL%20disponibiliza%20tr%C3%AAs%20abordagens,express%C3%B5es%20regulares%20no%20estilo%20POSIX%20.
+
+
+
+'abc' LIKE 'abc'    verdade
+'abc' LIKE 'a%'     verdade
+'abc' LIKE '_b_'    verdade
+'abc' LIKE 'c'      falso
+
+select ('abc_s' like '%c\_' escape '\')::varchar -- deveria ser o escape mas não está funcionando
+
+select 'abc' ilike '%A%' -- TRUE
+
+select 'abc' ilike 'abc' -- TRUE
+
+::operador:"~~" => é o like
+
+select 'abc' ~~ '%a%'  -- TRUE => ~~ é o mesmo que LIKE
+
+select 'abc' ~~* '%a%' -- TRUE => ~~* é o mesmo que ILIKE
+
+select 'abc' !~~ '%a%'  -- FALSE
+
+::operador:"~" => expressão regular
+
+'abc' ~ 'abc'    verdade
+'abc' ~ '^a'     verdade
+'abc' ~ '(b|d)'  verdade
+'abc' ~ '^(b|c)' falso

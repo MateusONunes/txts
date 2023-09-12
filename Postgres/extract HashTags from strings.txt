@@ -1,0 +1,11 @@
+select v.str, hashtags
+from (values ('hello #i #hate #regex world')) v(str) cross join lateral
+     (select string_agg(rm[1], ' ') as hashtags
+      from regexp_matches(str, '#[-a-zA-Z0-9_]+', 'g') rm 
+     ) rm;
+
+------------------------------------------------------------------------------------------------------------
+
+select v.str,  regexp_matches(str, '#[-a-zA-Z0-9_]+', 'g')
+from (values ('hello #i #hate #regex world')) v(str) ;
+
