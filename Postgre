@@ -7,6 +7,7 @@ sudo apt-get install postgresql
 sudo su - postgres
 psql -c "alter user mateus with password 'mateus'"
 psql -c "alter user postgres with password 'postgres'"
+psql -U odoo => Conectar com usuário específico
 
 
 
@@ -29,10 +30,12 @@ sudo -u postgres psql -c "SELECT version();"-s
 create database dbgirassolapp_i with template dbgirassolapp =>  Copia(duplica) o database "dbgirassolapp" para "dbgirassolapp_i"
 psql -d <NOME_BANCO> -h <IP> -p <PORTA> -U <USUÁRIO> -W PASSWORD     => conectar a uma base de dados
 SELECT pg_reload_conf()        => Restart Configurações postgres
+select * from pg_settings      => verificar configurações atuais
 
 sudo netstat -ltnp | grep postgres    => Verificar portas de escuta do postgres
 sudo lsof -n -u postgres |grep LISTEN => Verificar portas de escuta do postgres
 -v ON_ERROR_STOP=1  => parar no primeiro erro do psql
+Linguagens instalaladas:SELECT * FROM pg_language;
 
 
 ::Importar um dump.sql
@@ -68,7 +71,11 @@ SELECT *
 ===================
 -Alternativa 1
 --------------
-SELECT pg_database.datname, pg_size_pretty(pg_database_size(pg_database.datname)) AS size FROM pg_database;
+SELECT pg_database.datname, 
+       pg_database_size(datname) / 1024 / 1024 size_MB, 
+       pg_database_size(datname) / 1024 / 1024 / 1024 size_GB, 
+       pg_size_pretty(pg_database_size(pg_database.datname)) AS size 
+  FROM pg_database;
 
 -Alternativa 2
 --------------
@@ -88,25 +95,35 @@ FROM pg_database
 WHERE datname NOT IN ('template0', 'template1', 'postgres'));
 
 ::Tamanho da tabela em disco
-SELECT table_name,
+SELECT table_catalog,
+       table_name,
        pg_size_pretty(total_size) AS total_size
   FROM (
-        SELECT table_name,
+        SELECT table_catalog,
+               table_name,
                pg_total_relation_size(table_name) AS total_size
           FROM (
-                SELECT ('"' || table_schema || '"."' || table_name || '"') AS table_name
+                SELECT table_catalog, ('"' || table_schema || '"."' || table_name || '"') AS table_name
                   FROM information_schema.tables
                ) AS all_tables
          ORDER BY total_size DESC
        ) AS pretty_sizes
-       
 
 :: Quantidade de registro de todas as tabelas
-SELECT relname,
-       n_live_tup     
-  FROM pg_stat_user_tables
+ SELECT relname,
+       n_live_tup,
+       (
+       SELECT count(0)
+         FROM information_schema.columns c
+        WHERE table_schema = t.schemaname
+          and c.table_name = t.relname
+       ) qtdecampos   
+  FROM pg_stat_user_tables t
  where schemaname = 'dbo'
+--   and relname in ('igp_igpm', 'ind_indexador', 'indexador', 'val_valorfixo') --200
+   and n_live_tup between 50 and 900
  ORDER BY n_live_tup DESC;
+
 
 ::Recarregar as configurações do postgres:
 select pg_reload_conf()
@@ -161,14 +178,30 @@ no arquivo de configurações, aplicar as seguintes alterações:
 Restart postgree
 	service postgresql restart
 	
-Monitorar Log 
+--Monitorar Log(Monitorar Select) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	tail -f /var/log/postgresql/postgresql-10-main.log | grep -v -i -E 'bus_presence|ir_cron|bus_bus'
 	*O Comando acima exclui as palavras bus_presence|ir_cron|bus_bus
 	*-v é para excluir a lista de palavras
 	*-i ignore case
 	*-E opção de acrescentar o "or" com o pipe("|")
 
+SELECT pg_reload_conf()	 => recarregar configurações
 
+select * from pg_catalog.pg_cancel_backend(12271)  --pg_stat_activity.pid => matar sessão kill
+
+--Matar kill sessões sessions:
+SELECT pg_cancel_backend(pid),
+       a.*
+  FROM pg_stat_activity a 
+WHERE 0 = 0 
+--  and pid <> pg_backend_pid()
+  and client_addr = '74.125.88.49'
+
+
+::arquivo de configuração do log: /etc/postgresql/11/main/postgresql.conf
+log_statement = all  
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 [FIM]-Ativar Log Insert, Update e Delete TRUNCATE e COPY FROM.
 ==============================================================
@@ -196,10 +229,14 @@ importação ead
 
 https://institutodepesca.org/web/database/manager-1ND1C0p4c1f1c0
 
-::Arquivo postgresql.conf
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+::Arquivo postgresql.conf (/etc/postgresql/11/main/)
 =========================
 psql -U postgres -c 'SHOW config_file' => exibir localização do arquivo de configuração do postgres
 listen_addresses = '*' => para permitir conexões externas
+log_line_prefix => configuração de exibição do log
+
 
 
 ::Arquivo pg_hba.conf(psql => show hba_file)
@@ -209,6 +246,8 @@ host  	all  		all 		0.0.0.0/0 		trust
 host    all             postgres             192.168.1.199/32            trust   => liberar ip específico
 
 
+SELECT pg_reload_conf() => recarregar configurações
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 ::Base de dados externa
 =======================
@@ -233,7 +272,37 @@ from pg_catalog.pg_statio_user_tables
 order by pg_total_relation_size(relid) desc,
          pg_relation_size(relid) desc;
         
+::UTC-Time zone
+===============
+show time zone => exibe timezone atual
+set time zone 'America/Sao_Paulo' => altera o time zone da SESSÃO
+SELECT * FROM pg_timezone_names where name ilike '%paulo%'; => listas dos timezones
 
+------------------------------------------------------------------------------------------------------------
+Rest Api no postgres
+
+https://hevodata.com/learn/postgresql-rest-api/
+------------------------------------------------------------------------------------------------------------
+::orafce - funções do oracle - exemplo:decode
+
+select *
+  from pg_catalog.pg_available_extensions e
+ where e."name" = 'orafce'  => ver se extenção 'orafce' já está disponíveis
+
+::Para instalar o pacote orafce:  >>>
+#1 - ver a versão do postgres
+sudo apt install postgresql-11-orafce
+#2
+CREATE EXTENSION orafce
+#3
+select decode(2, 2, 'Igual 2', 'Diferente 2')
+<<<
+
+
+links:
+https://access.crunchydata.com/documentation/orafce/3.11.1/
+https://github.com/orafce/orafce
+  
 ------------------------------------------------------------------------------------------------------------
 ::Organizar:
 link sobre grant: https://tableplus.com/blog/2018/04/postgresql-how-to-grant-access-to-users.html
@@ -243,4 +312,51 @@ psql trunk -c "select 'partner_'||id as id,name from res_partner" => exportar cs
 string postgre: postgres://username:password@host:5432/dbname 
 
 EXPLAIN (ANALYZE, BUFFERS)
+------------------------------------------------------------------------------------------------------------
+igual, is equal, is distinct from considerando null
+
+select t.v1,
+       t.v2,
+       t.igual_calc,
+       t.v1 is not distinct from t.v2 igual
+  from (
+        select 1 v1, 1 v2, true igual_calc union all
+        select 1 v1, 2 v2, false igual_calc union all
+        select null v1, 1 v2, false igual_calc union all
+        select 1 v1, null v2, false  igual_calc union all
+        select null v1, null v2, true igual_calc
+        ) t
+--   v1|   v2|igual_calc|igual|
+-------+-----+----------+-----+
+--    1|    1|true      |true |
+--    1|    2|false     |false|
+-- null|    1|false     |false|
+--    1| null|false     |false|
+-- null| null|true      |true |        
+
+
+------------------------------------------------------------------------------------------------------------
+Extensão Python - plpython3u
+--https://blog.mclaughlinsoftware.com/2020/11/08/installing-pl-python-extension/
+
+apt install postgresql-plpython3
+CREATE EXTENSION plpython3u;
+
+CREATE FUNCTION pymax (a integer, b integer)
+  RETURNS integer
+AS $$
+  if a > b:
+    return a
+  return b
+$$ LANGUAGE plpython3u;
+
+select pymax(1, 3)
+
+------------------------------------------------------------------------------------------------------------
+
+"inchaço" do Banco
+
+SELECT   current_database(), schemaname, tablename, /*reltuples::bigint, relpages::bigint, otta,*/   ROUND((CASE WHEN otta=0 THEN 0.0 ELSE sml.relpages::float/otta END)::numeric,1) AS tbloat,   CASE WHEN relpages < otta THEN 0 ELSE bs*(sml.relpages-otta)::BIGINT END AS wastedbytes,   iname, /*ituples::bigint, ipages::bigint, iotta,*/   ROUND((CASE WHEN iotta=0 OR ipages=0 THEN 0.0 ELSE ipages::float/iotta END)::numeric,1) AS ibloat,   CASE WHEN ipages < iotta THEN 0 ELSE bs*(ipages-iotta) END AS wastedibytes FROM (   SELECT     schemaname, tablename, cc.reltuples, cc.relpages, bs,     CEIL((cc.reltuples*((datahdr+ma-       (CASE WHEN datahdr%ma=0 THEN ma ELSE datahdr%ma END))+nullhdr2+4))/(bs-20::float)) AS otta,     COALESCE(c2.relname,'?') AS iname, COALESCE(c2.reltuples,0) AS ituples, COALESCE(c2.relpages,0) AS ipages,     COALESCE(CEIL((c2.reltuples*(datahdr-12))/(bs-20::float)),0) AS iotta /* very rough approximation, assumes all cols */   FROM (     SELECT       ma,bs,schemaname,tablename,       (datawidth+(hdr+ma-(case when hdr%ma=0 THEN ma ELSE hdr%ma END)))::numeric AS datahdr,       (maxfracsum*(nullhdr+ma-(case when nullhdr%ma=0 THEN ma ELSE nullhdr%ma END))) AS nullhdr2     FROM (       SELECT         schemaname, tablename, hdr, ma, bs,         SUM((1-null_frac)*avg_width) AS datawidth,         MAX(null_frac) AS maxfracsum,         hdr+(           SELECT 1+count(*)/8           FROM pg_stats s2           WHERE null_frac<>0 AND s2.schemaname = s.schemaname AND s2.tablename = s.tablename         ) AS nullhdr       FROM pg_stats s, (         SELECT           (SELECT current_setting('block_size')::numeric) AS bs,           CASE WHEN substring(v,12,3) IN ('8.0','8.1','8.2') THEN 27 ELSE 23 END AS hdr,           CASE WHEN v ~ 'mingw32' THEN 8 ELSE 4 END AS ma         FROM (SELECT version() AS v) AS foo       ) AS constants       GROUP BY 1,2,3,4,5     ) AS foo   ) AS rs   JOIN pg_class cc ON cc.relname = rs.tablename   JOIN pg_namespace nn ON cc.relnamespace = nn.oid AND nn.nspname = rs.schemaname AND nn.nspname <> 'information_schema'   LEFT JOIN pg_index i ON indrelid = cc.oid   LEFT JOIN pg_class c2 ON c2.oid = i.indexrelid ) AS sml ORDER BY wastedbytes DESC;
+
+Extraído de https://www.crunchydata.com/developers/playground/high-level-performance-analytics
 

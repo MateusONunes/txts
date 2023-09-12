@@ -23,6 +23,10 @@ git show => exibe a diferença do local (Que já foi commitado) e do repositóri
 git config core.fileMode false => remover comparação de acordo com o atributo do arquivo (se o arquivo foi alterado por chmod)
 
 
+::Credenciais:
+git config --global user.name "MateusONunes"
+git config --global user.email "mateus.2006@gmail.com"
+
 
 ::Sequência de comandos para subir um repositório apartir do terminal (testar melhor esta sequência)
 git init
@@ -35,22 +39,20 @@ git push -u origin master
 git remote show origin
 
 
+::Trocar repositório no git hub
+===============================
+fonte: https://www.youtube.com/watch?v=NXJjNk7aHrI&t=44s
 
-    8  2020-05-12 10:02:31 : sudo apt install git
-    9  2020-05-12 10:02:31 : git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
-   10  2020-05-12 10:02:31 : git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-   23  2020-05-12 10:02:31 : asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-  409  2020-05-12 10:02:31 : /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  452  2020-05-12 09:24:41 : git status
-  453  2020-05-12 09:24:47 : git commit
-  454  2020-05-12 09:25:01 : git update
-  455  2020-05-12 09:25:14 : history git
-  501  2020-05-12 10:21:33 : history git
-  503  2020-05-12 10:21:41 : history | grep g
-  
-  
+git remote -v
+git remote remove origin
+git remote add origin URL_NOVA_ORIGEN
+git remote -v
+git pull   - vai dar "erro"
+git branch --set-upstream-to=origin/master master   ## testei até aqui e deu erro
+git pull 
 
 
+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
 
 
 estudar:

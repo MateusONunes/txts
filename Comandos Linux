@@ -1,4 +1,3 @@
-Links sobre comandos linux
 https://www.uniaogeek.com.br/guia-de-comandos-shell-terminal-gnulinux/
 
 ::Básicos
@@ -17,9 +16,11 @@ rm -rf diretorio
 gls -l   => Lista arquivos exibindo detalhes
 ls -la   => Lista arquivos exibindo detalhes e ocultos
 ls -t    => lista arquivos em ordem de modificação (última modificação primeiro)
+ls -d */ => lista diretórios
 ll       => equivalente a ls -la
 ls -sh   => Mostra tamanho dos arquivos legíveis (Em KB, MB, GB)
 df -h    => Mostra pastas e espaços disponíveis e utilizados no hd
+ncdu     => comando para monitorar as pastas/arquivos que mais consomem espaço semelhante ao programa k4dirstat ou windir
 du       => Tamanho das pastas
 du -sh <diretorio> => tamanho do diretório atual
 du /home =?< tamanho dos arquivos "du -h /home" => Formato humano
@@ -32,6 +33,7 @@ less    => ver o conteúdo de um arquivo um pouco diferente do cat
         => o less serve para pausar na tela quando toda preenchida. exemplo: ls | less
 tail    => ver o conteúdo de um arquivo - últimas   10 linhas "tail -n2 <Nome_arquivo>" => últimas   2 linhas
 tail -f => Deveria ficar monitorando o arquivo
+multitail *.log => Monitora todos os arquivos .log da pasta
 head    => ver o conteúdo de um arquivo - primeiras 10 linhas "head -n2 <Nome_arquivo>" => primeiras 2 linhas
 sudo update-alternatives --config java  => |
 sudo update-alternatives --config javac => |=> alternar versão do Java
@@ -47,7 +49,12 @@ tar -xzf <NomeArquivoDescompactar>              => descompactar
 cal => calendário
 unset x => limpa a variável de ambiente "x"
 dpkg --get-selections | grep -i virtualbox => Verifica por exemplo se o virtualbox está instalado
+source ~/.bashrc => recarrega ~/.bashrc
 
+::ls
+>>>>
+ls -a => All, exibe ocultostodos os arquivos, inclusive ocultos
+<<<<
 
 ::Atualizar distribuição do Linux:
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -101,7 +108,7 @@ ln -s            => Cria link simbólico (-s)
 nc
 ufw => Firewall
 chmod -R 777 mateus => Permissão total para a pasta "mateus"
-chmod +x composer.phar => permissão de execução para o arquivo composer.phar
+chmod +x composer.phar => permissão de execução para o arquivo composer.phar - tornar o arquivo executável-executavel
 chmod 755 /etc/init.d/meuscript => Permissão de Execução
 chown => Altera proprietário
 update-rc.d mateus.sh defaults => Add o arquivo mateus.sh para executar na inicialização (O Arquivo tem que estar em "/etc/init.d") - https://www.vivaolinux.com.br/dica/Colocando-script-na-inicializacao-do-Linux-(Ubuntu-Debian)
@@ -264,6 +271,9 @@ find . -maxdepth 2 -size -80k -type f    => Localizar na pasta atual "." tipos d
 find . -maxdepth 2 -size +2M -type f     => Localizar na pasta atual "." tipos de arquivos file "f" com profundidade 2(-maxdepth 2) arquivos com mais  que 2  Megabytes
 find /snap -iname ffserve*.*             => Localizar na pasta e subpasta "/snap" arquivos que contenham a string "ffserve" independente de Maiúsc/Min.
 find /snap -iname ffserve*.* > /dev/null => Localizar na pasta e subpasta "/snap" arquivos que contenham a string "ffserve" independente de Maiúsc/Min. (Elimina aqui as mensagens de erros como por exemplo "Permissão negada". Desta maneira o resultado fica apenas com o que interessa)
+find . -name *lazarus* -type d -not -path "./media/*" -prune 2>&1 | grep -v "negada" => localizar diretórios que contenham a palavra lazarus EXCETO "./media/*" (-not -path "./media/*" -prune)
+                                                                                     => (2>&1 | grep -v "negada") Não exibe(oculta hide) mensagem "Permissão negada)
+
 
 ::find Conteúdo do arquivo
 ==========================
@@ -810,7 +820,9 @@ setw -g mouse on
 -------------------
 tmux ls => lista sessões igual a => tmux list-sessions 
 tmux attach-session -t <session name>
+tmux kill-session -t <session name> => Matar sessão do tmux 
 tmux new-session -s <session name>
+pkill -f tmux => fechar todas as sessões do tmux
 
 https://wiki.archlinux.org/title/tmux
 
@@ -867,4 +879,47 @@ xinput reattach <Id do mouse> <id do Contralador independente(O novo contrador c
   => Este comando atribui o mouse a um novo controlador independente
   
 xinput remove-master 19                 => Remove o contralador de id 19
+
+
+::time zone UTC - brasília-são paulo 
+====================================
+dpkg-reconfigure tzdata
+
+timedatectl
+timedatectl list-timezones
+timedatectl list-timezones | grep America/Sao_Paulo
+timedatectl set-timezone "America/Sao_Paulo"   ==>> altera o timezone do linux. 
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+::sequência de comandos-início
+
+root@mateusonunes:/var/log# date
+Fri Mar  3 14:08:44 UTC 2023
+root@mateusonunes:/var/log# timedatectl
+                      Local time: Fri 2023-03-03 14:08:55 UTC
+                  Universal time: Fri 2023-03-03 14:08:55 UTC
+                        RTC time: n/a
+                       Time zone: Etc/UTC (UTC, +0000)
+       System clock synchronized: yes
+systemd-timesyncd.service active: yes
+                 RTC in local TZ: no
+root@mateusonunes:/var/log# timedatectl set-timezone "America/Sao_Paulo"  <<== ****alterei o timezone*** 
+root@mateusonunes:/var/log# date
+Fri Mar  3 11:09:30 -03 2023
+root@mateusonunes:/var/log# timedatectl set-timezone "America/Sao_Paulo"
+root@mateusonunes:/var/log# timedatectl
+                      Local time: Fri 2023-03-03 11:10:14 -03
+                  Universal time: Fri 2023-03-03 14:10:14 UTC
+                        RTC time: n/a
+                       Time zone: America/Sao_Paulo (-03, -0300)
+       System clock synchronized: yes
+systemd-timesyncd.service active: yes
+                 RTC in local TZ: no
+root@mateusonunes:/var/log# 
+
+::sequência de comandos-fim
+<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 

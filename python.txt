@@ -1,5 +1,8 @@
 virtualenv OpenUpgrade/ --python=python3 => Cria ambiente virtual dentro da pasta OpenUpgrade/ com o python3
 
+
+python3.12 -m venv nome_ambiente => cria um ambiente virtual
+
 source bin/activate  => Ativa o ambiente virtual
 deactivate => Sair do ambiente virtual
 
