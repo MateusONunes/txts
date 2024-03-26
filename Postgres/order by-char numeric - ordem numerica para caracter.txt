@@ -1,0 +1,32 @@
+SELECT COD, 
+       regexp_replace(cod, '\D', '', 'g') cod_int,
+       regexp_replace(cod, '[^a-zA-Z]', '', 'g') cod_char
+  from (select '1' COD union all
+        select '12' union all
+        select '2' union all
+        select '2c' union all
+        select '2B' union all
+        select '21' union all
+        select '3' union all
+        select '231' union all
+        select '2b' union all
+        select '231A' union all
+        select '111' 
+       ) t
+ order by NULLIF(regexp_replace(cod, '\D', '', 'g'), '')::int,
+         regexp_replace(cod, '[^a-zA-Z]', '', 'g')
+
+cod |cod_int|cod_char|
+----+-------+--------+
+1   |1      |        |
+2   |2      |        |
+2B  |2      |B       |
+2b  |2      |b       |
+2c  |2      |c       |
+3   |3      |        |
+12  |12     |        |
+21  |21     |        |
+111 |111    |        |
+231 |231    |        |
+231A|231    |A       |
+

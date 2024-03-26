@@ -1,3 +1,5 @@
+--fdw(Foreign Data Wrapper)
+
 CREATE EXTENSION postgres_fdw;
 
 CREATE SERVER kimenz_11 FOREIGN DATA WRAPPER postgres_fdw OPTIONS (host '192.168.1.208', dbname 'kimenz-prod', port '5432');
@@ -24,3 +26,11 @@ IMPORT FOREIGN SCHEMA public FROM SERVER kimenz_11  INTO kimenz_11;
 
 https://www.postgresql.org/docs/current/postgres-fdw.html
 https://h50146.www5.hpe.com/products/software/oe/linux/mainstream/support/lcc/pdf/PostgreSQL14GA_New_Features_en_20211001-1.pdf
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+::Conectar ao SqlServer
+
+tds_fdw - 

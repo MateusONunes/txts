@@ -1,11 +1,59 @@
 --------------------------------------------------------------------------------------------------------------------------------
---retorno básico de sql
+--retorno básico de sql (Table) - Retorno diretamente do sql
 CREATE OR REPLACE FUNCTION func_apagar()
  RETURNS TABLE(x integer, y varchar)
  LANGUAGE sql
 AS $function$
- select 1, 'y';
+ select 1, 'y';  -- <== Retorno diretamente do sql
 $function$
 ;
---------------------------------------------------------------------------------------------------------------------------------
 
+--------------------------------------------------------------------------------------------------------------------------------
+--retorno básico de sql (Table) - Retorno no fonte linha a linha
+
+
+CREATE OR REPLACE FUNCTION public.func_teste_retorno_table(_cod integer)
+ RETURNS TABLE(cod integer, descricao varchar)
+ LANGUAGE plpgsql
+AS $function$
+begin
+   cod = _cod;
+   descricao = 'Retorno normal no fonte - 1';
+   return next;  -- <=== Retorno no fonte linha a linha
+  
+   cod = cod + 1;
+   descricao = 'Retorno normal no fonte - 2';
+   return next;  -- <=== Retorno no fonte linha a linha
+   
+   for cod,
+       descricao
+    in select t.cod,
+              'Retorno no loop de sql' descricao
+         from (
+               select _cod + 2 as cod union all
+               select _cod + 3 as cod
+              ) t 
+   loop
+     return next;-- <=== Retorno no loop de sql
+    
+   end loop;
+end
+$function$
+;
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+--retorno básico de sql - Retornar uma string
+
+CREATE OR REPLACE FUNCTION public.func_statusgen_nome_byid(statusgen_id integer)
+ RETURNS character varying
+ LANGUAGE sql
+ STABLE
+AS $function$
+  select s.nome::varchar(30)
+   from statusgen s 
+  where s.id = statusgen_id;
+$function$
+;
+ 
