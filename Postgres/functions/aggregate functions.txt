@@ -1,0 +1,63 @@
+links:
+
+
+https://tim.mcnamara.nz/post/177172657187/user-defined-aggregates-in-postgresql
+
+
+------------------------------------------------------------------------------------------------
+https://stackoverflow.com/questions/27899642/how-to-get-definition-source-code-of-an-aggregate-in-postgresql
+
+::Uma versão moderna para gerar a CREATE AGGREGATEinstrução - usando format()e lançando tipos de identificadores de objeto para simplificá-la e adicionar aspas duplas e qualificação de esquema aos identificadores quando necessário automaticamente:
+
+
+SELECT format('CREATE AGGREGATE %s (SFUNC = %s, STYPE = %s%s%s%s%s)'
+            , aggfnoid::regprocedure
+            , aggtransfn
+            , aggtranstype::regtype
+            , ', SORTOP = '    || NULLIF(aggsortop, 0)::regoper
+            , ', INITCOND = '  || agginitval
+            , ', FINALFUNC = ' || NULLIF(aggfinalfn, 0)
+            , CASE WHEN aggfinalextra THEN ', FINALFUNC_EXTRA' END
+            --  add more to cover special cases like moving-aggregate etc.
+              ) AS ddl_agg
+FROM   pg_aggregate
+WHERE  aggfnoid = 'my_agg_func'::regproc;  -- name of agg func here
+
+------------------------------------------------------------------------------------------------
+
+
+create table tester_pagto(
+  id serial,
+  idpedido integer,
+  valorpagto numeric
+);
+
+
+create table tester_itens(
+  id serial,
+  idpedido integer,
+  valoritem numeric
+);
+
+ALTER TABLE public.tester_itens ADD CONSTRAINT tester_itens_pk PRIMARY KEY (id);
+
+ALTER TABLE public.tester_pagto ADD CONSTRAINT tester_tester_pagto_pk PRIMARY KEY (id);
+
+
+
+INSERT INTO public.tester_pagto (idpedido,valorpagto) VALUES
+	 (1,10),
+	 (1,20),
+	 (1,200),
+	 (2,100);
+
+
+INSERT INTO public.tester_itens (idpedido,valoritem) VALUES
+	 (1,100),
+	 (1,200),
+	 (1,400),
+	 (2,20),
+	 (2,40),
+	 (2,100),
+	 (2,50);
+

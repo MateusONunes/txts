@@ -200,4 +200,42 @@ Sql similar ao anterior (window alias)
        ) T
   window w as (partition by t.code)
 
+--------------------------------------------------------------------------------------------------------------------------------
+================================================================================================================================
+::rows between
 
+create table teste as
+(
+select  1 codigo, 'A' grupo,  10 valor union all
+select  2 codigo, 'A' grupo,  20 valor union all
+select  3 codigo, 'A' grupo,  30 valor union all
+select  4 codigo, 'A' grupo,  40 valor union all
+select  5 codigo, 'A' grupo,  50 valor union all
+select  6 codigo, 'B' grupo, 110 valor union all
+select  7 codigo, 'B' grupo, 120 valor union all
+select  8 codigo, 'B' grupo, 130 valor union all
+select  9 codigo, 'B' grupo, 140 valor union all
+select 10 codigo, 'C' grupo, 250 valor union all
+select 11 codigo, 'C' grupo, 210 valor union all
+select 12 codigo, 'C' grupo, 220 valor union all
+select 13 codigo, 'C' grupo, 230 valor union all
+select 14 codigo, 'C' grupo, 240 valor union all
+select 15 codigo, 'C' grupo, 250 valor 
+);
+
+
+
+--UNBOUNDED => ilimitada
+select t.*, 
+       sum(valor) over(ROWS between UNBOUNDED preceding and current row) soma_todas_linhas_antes_e_atual,
+       sum(valor) over(ROWS UNBOUNDED PRECEDING) idem,
+       sum(valor) over(ROWS UNBOUNDED PRECEDING EXCLUDE CURRENT ROW) valor_anterior, --estranho, deveria somar todos os valores anterior excluindo o atual
+       sum(valor) over(ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) somatotal,
+       sum(valor) over(ROWS BETWEEN 1 PRECEDING AND CURRENT row) soma_1_linha_antes_e_atual,
+       sum(valor) over(ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING) soma_1_linha_posterior_e_atual,
+       sum(valor) over(partition by grupo ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING) soma_atual_e_2_seguintes_resetando_por_grupo,
+       sum(valor) over(order by grupo) soma_agrupada_acumulando,
+       sum(valor) over(partition by grupo) soma_agrupada_resetando_por_grupo,
+       null x
+  from teste t
+ order by t.codigo 

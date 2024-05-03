@@ -1,0 +1,131 @@
+/*
+
+ratear valores pagos e principalmente considerar a soma de diferencas de centavos no item de maior valor
+
+*/
+
+create table tester_pagto(
+  id serial,
+  idpedido integer,
+  valorpagto numeric
+);
+
+
+create table tester_itens(
+  id serial,
+  idpedido integer,
+  valoritem numeric
+);
+
+ALTER TABLE tester_itens ADD CONSTRAINT tester_itens_pk PRIMARY KEY (id);
+
+ALTER TABLE tester_pagto ADD CONSTRAINT tester_tester_pagto_pk PRIMARY KEY (id);
+
+
+INSERT INTO tester_pagto (id, idpedido, valorpagto) VALUES(1, 1, 10);
+INSERT INTO tester_pagto (id, idpedido, valorpagto) VALUES(2, 1, 20);
+INSERT INTO tester_pagto (id, idpedido, valorpagto) VALUES(4, 2, 100);
+INSERT INTO tester_pagto (id, idpedido, valorpagto) VALUES(3, 1, 200.01);
+
+
+INSERT INTO tester_itens (id, idpedido, valoritem) VALUES(1, 1, 100);
+INSERT INTO tester_itens (id, idpedido, valoritem) VALUES(2, 1, 200);
+INSERT INTO tester_itens (id, idpedido, valoritem) VALUES(4, 2, 20);
+INSERT INTO tester_itens (id, idpedido, valoritem) VALUES(5, 2, 40);
+INSERT INTO tester_itens (id, idpedido, valoritem) VALUES(6, 2, 100);
+INSERT INTO tester_itens (id, idpedido, valoritem) VALUES(7, 2, 50);
+INSERT INTO tester_itens (id, idpedido, valoritem) VALUES(3, 1, 400.01);
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+create or replace view vw_tester_rateio as
+select tp.idpedido,
+       tp.id idpgto,
+       ti.id iditem,
+       ti.valoritem_sum,
+       tp.valorpagto,
+       tp.valorpagto / ti.valoritem_sum perc_pagto,
+       ti.valoritem,
+       round(ti.valoritem * (tp.valorpagto / ti.valoritem_sum), 2) + 
+         coalesce(
+           case when row_number() over(partition by ti.idpedido, tp.id order by ti.idpedido, tp.id, ti.valoritem desc) = 1 then 
+               (tp.valorpagto - sum(round(ti.valoritem * (tp.valorpagto / ti.valoritem_sum), 2)) over(partition by ti.idpedido, tp.id))
+             else
+              0
+           end
+       , 0) valoritem_rat --<<<====  campo de rateio calculado aqui
+  from (select ti.id,
+               ti.idpedido,
+               ti.valoritem,
+               sum(ti.valoritem) over(partition by ti.idpedido) valoritem_sum
+          from tester_itens ti
+       ) ti join tester_pagto tp on tp.idpedido = ti.idpedido
+ order by 
+       tp.id,
+       ti.id;
+       
+
+
+--sql abaixo para fazer a conferência da somatória do valor de rateio com o valor total pago.
+select t.idpedido,
+       t.valoritem_sum,
+       valoritem_rat_sum,
+       t.valorpagto,
+       valoritem_rat_sum - t.valorpagto valoritem_rat_sum_dif
+  from (select v.idpedido,
+               v.valoritem_sum,
+               sum(v.valoritem_rat) valoritem_rat_sum,
+               (select sum(tp.valorpagto)
+                  from tester_pagto tp
+                 where tp.idpedido = v.idpedido 
+               ) valorpagto
+          from vw_tester_rateio v
+         group by 1, 2 
+       ) t
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--RASCUNHOS :P
+
+select tp.idpedido,
+       tp.id idpgto,
+       ti.id iditem,
+       ti.valoritem_sum,
+       tp.valorpagto,
+       tp.valorpagto / ti.valoritem_sum perc_pagto,
+       ti.valoritem,
+       round(ti.valoritem * (tp.valorpagto / ti.valoritem_sum), 2) valoritem_rat,
+       sum(round(ti.valoritem * (tp.valorpagto / ti.valoritem_sum), 2)) over(partition by tp.id, ti.id order by tp.id, ti.id ROWS between UNBOUNDED preceding and current row),
+       sum(round(ti.valoritem * (tp.valorpagto / ti.valoritem_sum), 2)) over(order by tp.id, ti.id ROWS between UNBOUNDED preceding and current row) x2,
+       sum(round(ti.valoritem * (tp.valorpagto / ti.valoritem_sum), 2)) over(partition by ti.idpedido, tp.id) x3,
+       row_number() over(partition by ti.idpedido, tp.id order by ti.idpedido, tp.id, ti.valoritem desc) seq,
+       case when row_number() over(partition by ti.idpedido, tp.id order by ti.idpedido, tp.id, ti.valoritem desc) = 1 then 
+         sum(round(ti.valoritem * (tp.valorpagto / ti.valoritem_sum), 2)) over(partition by ti.idpedido, tp.id)
+         else
+          null
+       end x4,
+       case when row_number() over(partition by ti.idpedido, tp.id order by ti.idpedido, tp.id, ti.valoritem desc) = 1 then 
+         tp.valorpagto - sum(round(ti.valoritem * (tp.valorpagto / ti.valoritem_sum), 2)) over(partition by ti.idpedido, tp.id)
+         else
+          null
+       end x5,
+       round(ti.valoritem * (tp.valorpagto / ti.valoritem_sum), 2) + 
+       coalesce(
+         case when row_number() over(partition by ti.idpedido, tp.id order by ti.idpedido, tp.id, ti.valoritem desc) = 1 then 
+             (tp.valorpagto - sum(round(ti.valoritem * (tp.valorpagto / ti.valoritem_sum), 2)) over(partition by ti.idpedido, tp.id))
+           else
+            0
+         end, 0) x6
+  from (select ti.id,
+               ti.idpedido,
+               ti.valoritem,
+               sum(ti.valoritem) over(partition by ti.idpedido) valoritem_sum
+          from tester_itens ti
+--         where ti.idpedido = 1 
+       ) ti join tester_pagto tp on tp.idpedido = ti.idpedido
+ order by 
+       tp.id,
+       ti.valoritem
+       
+       
