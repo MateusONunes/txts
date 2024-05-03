@@ -6,3 +6,16 @@ python3.12 -m venv nome_ambiente => cria um ambiente virtual
 source bin/activate  => Ativa o ambiente virtual
 deactivate => Sair do ambiente virtual
 
+---------------------------------------------------------------------------------------------
+::pip
+
+pip3 install --upgrade setuptools pip
+
+pip3 install <nomepacote> => instalar pacote
+pip3 install <nomepacote>==<versao> => instala versão específica do pacote
+pip3 install <nomepacote> --upgrade => atualizaversão
+pip3 show <nomepacote> => mostra versão do pacote
+pip3 uninstall <nomepacote> => desinstala pacote
+
+
+---------------------------------------------------------------------------------------------

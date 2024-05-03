@@ -1,0 +1,26 @@
+::Gereric table reporting - odoo
+https://apps.odoo.com/apps/modules/10.0/report_table/
+
+
+::Bold Reports
+pago
+https://www.youtube.com/watch?v=RHR467GaD1o
+https://www.boldreports.com/
+
+
+
+:: Jasper reports
+comunity e enterprise
+https://reportserver.net/en/pricing/
+
+https://www.youtube.com/watch?v=jef_hklhfUI&t=951s
+
+
+::Jaspersoft
+https://www.youtube.com/watch?v=FwRJW2jJAkk
+
+
+::https://www.mrc-productivity.com/
+web
+https://www.youtube.com/watch?v=3N-NSrrDiMw
+https://www.mrc-productivity.com/

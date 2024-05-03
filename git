@@ -21,7 +21,8 @@ git diff main origin/main => Diferença com o repositório local para o reposit�
 git config --global credential.helper cache => Salva as credencias (a próxima senha solicitada será salva)
 git show => exibe a diferença do local (Que já foi commitado) e do repositório remoto
 git config core.fileMode false => remover comparação de acordo com o atributo do arquivo (se o arquivo foi alterado por chmod)
-
+git commit --ammend => Alterar/Imendar o conteúdo atual com o último conteúdo que está no repositório
+git rebase -i HEAD~4 => Juntar os últimos 4 commits
 
 ::Credenciais:
 git config --global user.name "MateusONunes"

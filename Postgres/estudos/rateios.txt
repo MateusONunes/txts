@@ -2,6 +2,8 @@
 
 ratear valores pagos e principalmente considerar a soma de diferencas de centavos no item de maior valor
 
+O pricipal ponto deste arquivo está no campo vw_tester_rateio.valoritem_rat!!!!!
+
 */
 
 create table tester_pagto(
@@ -39,6 +41,9 @@ INSERT INTO tester_itens (id, idpedido, valoritem) VALUES(3, 1, 400.01);
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--View para efetuar o cálculo de rateio no campo valoritem_rat
+
 create or replace view vw_tester_rateio as
 select tp.idpedido,
        tp.id idpgto,

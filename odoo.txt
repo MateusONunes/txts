@@ -22,6 +22,19 @@ sudo docker container exec -it odoo /bin/bash
 
 http://localhost:8069/
 
+problemas na instalação do odoo(tentativas para correção de erros):
+=================================
+
+sudo apt install python3.6-distutils
+
+::erros pyhton.h
+pip3 uninstall lxml_html_clean
+pip3 install lxml==4.8.0
+pip3 install psutil
+sudo apt-get install python3.7-dev  ==> parece resolver a questão phyton.h not found. Observar a versão do python utilizada
+pip3 install Werkzeug==0.11.15
+
+
 
 Instalção do Odoo pelo link enviado pelo Marcos (Akademy) https://academy.kmee.com.br/documentacao/html/2-install-manage/install.html
 =================
@@ -48,4 +61,20 @@ após importar banco do odoo via psql:
 
 ALTER DATABASE "riviera-migracao-local-0330" OWNER TO mateus;
 REASSIGN OWNED BY odoo TO mateus; => alterar o proprietário das tabelas "\d" de odoo para mateus. isto evita o erro "relation "base_registry_signaling" already exists" 
+=====================================================================================
+debug automático/load automático de xml/instação automática, dev mode, modo dev, colocar parâmetro abaixo na compilação
+--dev xml
+
+=====================================================================================
+Atalhos:
+
+ver todos os atalhos => Alt+Shift no odoo 12 - Alt no odoo 14
+
+=====================================================================================
+::Geral
+
+::Assets não carregam - css não carregam. Uma maneira é forçar a recriação dos assets:
+DELETE FROM ir_attachment WHERE name ilike '%assets%';
+
+
 

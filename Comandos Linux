@@ -269,6 +269,7 @@ find . -name odoo.conf                   => Localizar recursivamente apartir da 
 find . -name *multi* -type d             => Localizar recursivamente apartir da pasta atual o Diretórico que contenham no nome a palavra "multi"
 find . -maxdepth 2 -size -80k -type f    => Localizar na pasta atual "." tipos de arquivos file "f" com profundidade 2(-maxdepth 2) arquivos com menos que 80 Kilobytes
 find . -maxdepth 2 -size +2M -type f     => Localizar na pasta atual "." tipos de arquivos file "f" com profundidade 2(-maxdepth 2) arquivos com mais  que 2  Megabytes
+find . -type f -name '*.*' -exec grep -i 'multi_due' {} \; -print => Localizar recursivamente no diretório atual arquivos que contenham a palavra "multi_due" - ALTERNATIVA AO COMANDO SEGUINTE QUE NÃO FUNCIONOU!! FUNCINOU ESTE AQUI
 find /snap -iname ffserve*.*             => Localizar na pasta e subpasta "/snap" arquivos que contenham a string "ffserve" independente de Maiúsc/Min.
 find /snap -iname ffserve*.* > /dev/null => Localizar na pasta e subpasta "/snap" arquivos que contenham a string "ffserve" independente de Maiúsc/Min. (Elimina aqui as mensagens de erros como por exemplo "Permissão negada". Desta maneira o resultado fica apenas com o que interessa)
 find . -name *lazarus* -type d -not -path "./media/*" -prune 2>&1 | grep -v "negada" => localizar diretórios que contenham a palavra lazarus EXCETO "./media/*" (-not -path "./media/*" -prune)
@@ -416,7 +417,7 @@ asdf install java openjdk-11
 ssh root@192.168.0.101 -p 22
 
 sudo apt-get install openssh-server   => Instalar o ssh
-vi /etc/ssh/sshd_config          => Edita o principal arquivo de configuração do ssh mudar chave (PermitRootLogin no)
+vi /etc/ssh/sshd_config          => Edita o principal arquivo de configuração do ssh mudar chave (PermitRootLogin no/yes)
 /etc/init.d/ssh stop             => Pausa  o serviço ssh (sudo service ssh stop)(sudo systemctl ssh stop)
 /etc/init.d/ssh start            => Inicia o serviço ssh (sudo service ssh start)restart 
 sudo su|passwd root              => Definir senha root
@@ -425,8 +426,24 @@ ps auxwww | grep sshd:                   => ssh conectados
 ss | grep ssh                            => ssh conectados
 echo $SSH_CONNECTION                     => dados da minha conexao ssh
 mais detalhes em https://www.vivaolinux.com.br/dica/Instalando-e-configurando-servidor-SSH-(Ubuntu)
----------------------------------------------------------------------------------------------------------------------------------------------
 
+::ssh chaves
+============
+links: https://dan.langille.org/2013/06/10/using-compression-with-postgresqls-pg_dump/
+ssh-keygen -t rsa => gerar chave local
+ssh-copy-id root@200.206.5.61 => Copia a chave para o servidor de destino
+
+
+   font: https://serverfault.com/questions/241588/how-to-automate-ssh-login-with-password
+---------------------------------------------------------------------------------------------------------------------------------------------
+::sshpass
+>>>>>>>>>
+# Fixar password no comando ssh
+
+sudo apt-get install sshpass
+shpass -p your_password ssh user@hostname
+
+<<<<<<<<<
 
 ::VIM
 =====
@@ -921,5 +938,4 @@ root@mateusonunes:/var/log#
 
 ::sequência de comandos-fim
 <<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 
