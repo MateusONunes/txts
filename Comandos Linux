@@ -424,7 +424,15 @@ sudo su|passwd root              => Definir senha root
 netstat -tnpa | grep 'ESTABLISHED.*sshd' => ssh conectados
 ps auxwww | grep sshd:                   => ssh conectados
 ss | grep ssh                            => ssh conectados
+who -a                                   => ssh conectados
 echo $SSH_CONNECTION                     => dados da minha conexao ssh
+
+ssh -L 8182:localhost:8069 root@45.82.72.139 => Túnel ssh normal -> colocando no browser do computador local "http://localhost:8182" é como se fizesse "http://45.82.72.139:8069"
+ssh -R 8012:127.0.0.1:8013 root@45.82.72.139 => Túnel ssh reverso -> se eu colocar no browse na internet http://45.82.72.139:8013 vai ser como se colocar no browse local http://127.0.0.1:8012
+                                             => precisa ativar "GatewayPorts yes" no servidor(45.82.72.139) conforme link https://tiparaleigo.wordpress.com/2019/02/15/como-usar-o-tunel-reverse-ssh-para-permitir-conexoes-externas-ao-seu-pc/
+
+
+
 mais detalhes em https://www.vivaolinux.com.br/dica/Instalando-e-configurando-servidor-SSH-(Ubuntu)
 
 ::ssh chaves
@@ -906,6 +914,9 @@ timedatectl
 timedatectl list-timezones
 timedatectl list-timezones | grep America/Sao_Paulo
 timedatectl set-timezone "America/Sao_Paulo"   ==>> altera o timezone do linux. 
+
+::iftop
+=======
 
 
 

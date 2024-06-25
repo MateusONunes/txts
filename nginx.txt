@@ -17,3 +17,5 @@ service nginx restart
 nginx -t => Valida consistência das configurações
 
 
+::proxy reverso:
+================

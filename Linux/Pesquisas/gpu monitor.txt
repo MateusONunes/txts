@@ -13,3 +13,10 @@ https://www.youtube.com/watch?v=mbySAhhf5Ug
 https://plus.diolinux.com.br/t/uso-alto-de-gpu-sem-nada-pesado-sendo-executado-no-linux/52105
 
 watch -n0.5 nvidia-smi
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+teste de stress:
+
+glmark2
+
+https://sempreupdate.com.br/como-fazer-benchmark-da-gpu-e-teste-de-estresse-no-linux/

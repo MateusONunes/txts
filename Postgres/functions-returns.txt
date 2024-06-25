@@ -9,6 +9,23 @@ $function$
 ;
 
 --------------------------------------------------------------------------------------------------------------------------------
+--Executar sql dinâmico:
+
+CREATE OR REPLACE FUNCTION public.exec_sql(text)
+RETURNS SETOF RECORD
+LANGUAGE 'plpgsql'
+AS $BODY$
+BEGIN 
+    RETURN QUERY EXECUTE $1 ; 
+END 
+$BODY$;
+
+
+select * from exec_sql('select now()') as t(dt timestamptz)
+
+
+select * from exec_sql('select 1, 2') as t(v1 integer, v2 integer)
+--------------------------------------------------------------------------------------------------------------------------------
 --retorno básico de sql (Table) - Retorno no fonte linha a linha
 
 

@@ -54,7 +54,7 @@ select tp.idpedido,
        ti.valoritem,
        round(ti.valoritem * (tp.valorpagto / ti.valoritem_sum), 2) + 
          coalesce(
-           case when row_number() over(partition by ti.idpedido, tp.id order by ti.idpedido, tp.id, ti.valoritem desc) = 1 then 
+           case when row_number() over(partition by ti.idpedido, tp.id order by ti.idpedido, tp.id, abs(ti.valoritem) desc) = 1 then 
                (tp.valorpagto - sum(round(ti.valoritem * (tp.valorpagto / ti.valoritem_sum), 2)) over(partition by ti.idpedido, tp.id))
              else
               0

@@ -34,7 +34,12 @@ pip3 install psutil
 sudo apt-get install python3.7-dev  ==> parece resolver a questão phyton.h not found. Observar a versão do python utilizada
 pip3 install Werkzeug==0.11.15
 
-
+::Formas de instalar o odoo(dockers container, isos, etc):
+============================
+- doodba (Tecnativa) - https://github.com/Tecnativa/doodba
+- docky (Akretion) - https://github.com/akretion/docky-odoo-brasil
+- odoo.sh
+- turnkey - https://www.turnkeylinux.org/updates/new-turnkey-odoo-version-160
 
 Instalção do Odoo pelo link enviado pelo Marcos (Akademy) https://academy.kmee.com.br/documentacao/html/2-install-manage/install.html
 =================
@@ -42,7 +47,7 @@ Instalção do Odoo pelo link enviado pelo Marcos (Akademy) https://academy.kmee
 git submodule add https://github.com/odoo/odoo -b 12.0
 git clone https://github.com/odoo/odoo -b 12.0
 
-virtualenv venv --python=python3
+virtualenv venv --python=python3/home/mateus/_dev/odoo14/odoo/confo/ecommerce_16.confo 
 source bin/activate
 
 
