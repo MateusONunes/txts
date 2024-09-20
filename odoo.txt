@@ -20,7 +20,24 @@ sudo docker container restart 9e497c2e706c
 sudo docker container exec -it odoo /bin/bash
 
 
-http://localhost:8069/
+::Odoo-empresas
+===============
+
+::Akretion
+  -Renato e Raphael 
+  
+::Escodoo  
+  Marcel
+  
+::Kmee
+  Luis Felipe Miléo - https://github.com/mileo
+  
+::Engenere
+ Antonio Neto - @antoniospn
+
+::Tecnativa
+ 
+
 
 problemas na instalação do odoo(tentativas para correção de erros):
 =================================
@@ -28,15 +45,31 @@ problemas na instalação do odoo(tentativas para correção de erros):
 sudo apt install python3.6-distutils
 
 ::erros pyhton.h
+>>>>>>>>>>>>>>>>
+
+#Apenas o comando abaixo resolveu novamente para mim em 23/07/2024 para anlix odoo 17 python 10:
+sudo apt-get install python3.7-dev  ==> parece resolver a questão phyton.h not found. Observar a versão do python utilizada
+
+#Abaixo comandos em rascunho
+
 pip3 uninstall lxml_html_clean
 pip3 install lxml==4.8.0
 pip3 install psutil
-sudo apt-get install python3.7-dev  ==> parece resolver a questão phyton.h not found. Observar a versão do python utilizada
 pip3 install Werkzeug==0.11.15
+
+
+<<<<<<<<<<<<<<<<
 
 ::Formas de instalar o odoo(dockers container, isos, etc):
 ============================
+- Oficial odoo docs install: https://www.odoo.com/documentation/14.0/administration/install.html
 - doodba (Tecnativa) - https://github.com/Tecnativa/doodba
+  https://www.youtube.com/watch?v=PDoogefKiSw
+  https://github.com/Escodoo/escodoo.github.io/wiki/Doodba
+  
+- Dockker.com
+  https://hub.docker.com/_/odoo
+  
 - docky (Akretion) - https://github.com/akretion/docky-odoo-brasil
 - odoo.sh
 - turnkey - https://www.turnkeylinux.org/updates/new-turnkey-odoo-version-160

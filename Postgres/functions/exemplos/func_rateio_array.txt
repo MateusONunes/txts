@@ -1,0 +1,65 @@
+
+CREATE OR REPLACE FUNCTION public.func_rateio_array(_valbase numeric[], valorreferencia numeric)
+ RETURNS TABLE(seq integer, id integer, valbase_sum numeric, perc_rateio numeric, valbase numeric, valrateio numeric)
+ LANGUAGE plpgsql
+AS $function$
+  declare i integer;
+  declare valbase_length integer;
+  declare valbase_maxvalue_index integer;
+  declare valrateio_sum numeric;
+begin
+ 
+  valbase_length := array_length(_valbase, 1);
+  valbase_sum = 0;
+  valbase_maxvalue_index = 1;
+  valrateio_sum = 0;
+  seq = 1;
+ 
+  raise notice '_valbase % ', _valbase;
+ 
+  for i in 1..valbase_length 
+  loop
+    valbase_sum = valbase_sum + _valbase[i];
+   
+    if _valbase[i] > _valbase[valbase_maxvalue_index] then
+      valbase_maxvalue_index = i;
+    end if;
+    raise notice 'valbase_sum % ', valbase_sum;
+   
+  end loop;
+ 
+  perc_rateio = valorReferencia / valbase_sum;
+  raise notice 'perc_rateio % ', perc_rateio;
+ 
+  for i in 1..valbase_length 
+  loop
+    if i <> valbase_maxvalue_index then -- o item de maior(valbase_maxvalue_index) valor será calculado por último pois este receberá possível diferenca de arredondamentos
+      raise notice 'loop seq %, valbase_maxvalue_index % ', seq, valbase_maxvalue_index;
+    
+      valbase = _valbase[i];
+      valrateio = round(valbase * perc_rateio, 2);
+      valrateio_sum = valrateio_sum + valrateio;
+      return next;
+      seq = seq + 1;
+    end if;
+  end loop;
+ 
+  -- Calculando o item de maior valor (valbase_maxvalue_index)
+  valbase = _valbase[valbase_maxvalue_index];
+  valrateio = valorReferencia - valrateio_sum;
+  valrateio_sum = valbase_sum - valrateio_sum;
+  return next;
+end;
+$function$
+;
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+::chamada:
+select * from func_rateio_array(
+array[
+178.33,
+3.60,
+1.44,
+1.80
+], 1)
+

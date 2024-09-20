@@ -1,0 +1,50 @@
+https://www.youtube.com/watch?v=dKMuQMePzK8&t=234s
+
+nested virtualization(vpx) => permite inserir virtualização em cima de um virtualizador
+
+
+::Abertura da proxmox para internet externa
+
+https://www.youtube.com/watch?v=Kw-zzBjJ5fg
+
+1. criar rede brig
+
+2. monitorar interface
+tcpdump -i vmbr0 -n -p icmp
+
+3. ativar encaminhamento de ip (No node)
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+
+4. ativar resposta(No node)
+
+iptable -t nat -I POSTROUTING -o vmbr1 -j MASQUERADE
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+::configuracao rivi
+
+  GNU nano 3.2                /etc/network/interfaces                           
+
+# UNCONFIGURED INTERFACES
+# remove the above line if you edit this file
+
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+        address 192.168.200.110/24
+        gateway 192.168.200.1
+
+#auto eth1
+#iface eth1 inet dhcp
+
+
+
+

@@ -1,0 +1,14 @@
+::Exportar para excel:
+======================
+
+link: https://github.com/dbeaver/dbeaver/wiki/Extension-Office
+
+1. Menu Ajuda/Install Software
+
+2. colar no campo "Work with" e pressionar enter: https://dbeaver.io/update/office/latest/
+
+3. Selecionar "Dbeaver Office Supporte" e instalar
+
+
+
+https://github.com/dbeaver/dbeaver/wiki/Extension-Office

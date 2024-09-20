@@ -1,0 +1,11 @@
+drop table if exists demo;
+
+CREATE TABLE demo(t text);
+
+COPY demo from '/file_path_utf8.TXT';
+
+alter table demo add column line serial
+
+SELECT * FROM demo;
+
+

@@ -1,0 +1,74 @@
+CREATE OR REPLACE FUNCTION public.func_palavra_pos(_texto varchar, _posicao integer, _charsplit char(1) = ' ')
+ RETURNS varchar
+ LANGUAGE plpgsql
+ IMMUTABLE STRICT
+AS $function$
+declare str CHAR = 'x';
+declare str_old CHAR;
+declare i integer;
+declare texto_tamanho integer;
+declare qtde_palavras_ja_encontradas integer = 0;
+declare procurando_espaco bool = true; --True => Procurando _charsplit
+                                       --False => Procurando outra coisa(Palavra)
+declare pos_inicio_palavra_atual integer = 1;  
+begin
+  /*
+  Exemplos de uso:
+    func_str_pos_split('Mateus Ornelas Nunes', 1)   => 'Mateus'
+    func_str_pos_split('Mateus Ornelas Nunes', 2)   => 'Ornelas'
+    func_str_pos_split('Mateus Ornelas Nunes', 3)   => 'Nunes'
+    func_str_pos_split('Mateus    Ornelas    Nunes', 1)   => 'Mateus'
+    func_str_pos_split('Mateus    Ornelas    Nunes', 2)   => 'Ornelas'
+    func_str_pos_split('Mateus    Ornelas    Nunes', 3)   => 'Nunes'
+  */
+ 
+ i = 1;
+ _texto = trim(_texto);
+ texto_tamanho = length(_texto);
+ raise notice '';
+ raise notice '--------------';
+
+ while true
+ loop
+   str_old = str;
+   str = substring(_texto from i for 1);
+  
+   if procurando_espaco and (str = _charsplit) then
+     raise notice 'Encontrou Espaco -str"%", str_old"%"', str, str_old;
+   
+     procurando_espaco = false;
+    
+     if str_old <> str then
+       qtde_palavras_ja_encontradas = qtde_palavras_ja_encontradas + 1;
+     end if;
+   elseif not procurando_espaco and (str <> _charsplit) then
+     raise notice 'Encontrou palavra -str"%", str_old"%"', str, str_old;
+    
+     procurando_espaco = true;
+     pos_inicio_palavra_atual = i; 
+   end if;
+  
+   raise notice 'loop i:%, str:"%", qtde_palavras_ja_encontradas:%, procurando_espaco:%', i, str, qtde_palavras_ja_encontradas, procurando_espaco;
+  
+   if qtde_palavras_ja_encontradas >= _posicao then
+     return substring(_texto from pos_inicio_palavra_atual for (i - pos_inicio_palavra_atual));
+   end if;
+   
+   i = i + 1;
+   exit when i > texto_tamanho; 
+ end loop;
+
+ if qtde_palavras_ja_encontradas + 1 >= _posicao then
+   return substring(_texto from pos_inicio_palavra_atual for (i - pos_inicio_palavra_atual));
+ else
+   return null;
+ end if;
+  
+END
+$function$
+;
+
+
+select func_palavra_pos('1    222 3 4', 5);
+
+

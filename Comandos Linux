@@ -43,13 +43,17 @@ ip r      => informações do ip
 nmcli dev show wlx8882790dce1e | grep IP4  => DNS, gateway (Usar if config para descobrir o nome da rede a verificar)
 alias ff="php bin/magento cache:flush"   
 Alt + F2-gksu nemo => Abre o nemo no modo sudo
-nmtui => utilitário para configurar a rede
+nmtui => utilitário para configurar a rede -  sudo apt-get install network-manager  - https://ioflood.com/blog/install-nmtui-command-linux/#:~:text=For%20Debian%2Dbased%20distributions%20like,sudo%20yum%20install%20NetworkManager%2Dtui%20.&text=This%20is%20just%20a%20basic,installing%20and%20using%20'nmtui'.
 tar -czf <NovoArquivo>.tar.gz <pastacompactar>/ => compactar
 tar -xzf <NomeArquivoDescompactar>              => descompactar
 cal => calendário
 unset x => limpa a variável de ambiente "x"
 dpkg --get-selections | grep -i virtualbox => Verifica por exemplo se o virtualbox está instalado
 source ~/.bashrc => recarrega ~/.bashrc
+
+sudo systemctl daemon-reload  => recarregar servico configurado em /etc/systemd/system/
+sudo systemctl enable --now odoo => habilitar inicialização automática
+
 
 ::ls
 >>>>
@@ -120,6 +124,8 @@ uname -as      => Informações do Sistema -  Retorna nome do linux(tipo de sist
 lsb_release -a => retorna informações do sistema 
 cat /etc/os-release => informações do sistema - arcaico
 inxi -S        => informações do sistema
+cat /proc/cpuinfo => informações da cpu
+
 
 
 watch -n 0.5 nvidia-smi       => Monitorar GPU
@@ -288,34 +294,6 @@ glances => visão geral do sistema
 Criar disco de inicialização do windows no linux: (WoeUSB-ng) https://www.edivaldobrito.com.br/como-criar-um-pen-drive-bootavel-windows-no-ubuntu/
 
 
-escanear portas-informações de portas abertas - dicas daqui: https://www.youtube.com/watch?v=UY0f7cs5GpU
-=============================================
-nmap IP    => Mapear as portas abertas em um IP 
-nmap -p 1-65535 localhost  => Mapear as portas abertas em um IP - da porta 1 a 65535
-nmap -sV -p 1-65535 localhost  => Mapear as portas abertas em um IP - da porta 1 a 65535 e Mostra mais detalhes dos serviços desta porta.
-
-netstat -nlptu | grep 6907 => Informações locais de uma porta
-netstat -nlptu | grep -i "dotnet"=> Servicos dotnet
-netstat -nlptu
-netstat -lntp  => mostra porta abertas
- 
-
-lsof -i :6907 => Informações de arquivos abertos (No exemplo, informações de arquivos abertos na porta 6907)
-
-
-
-tcpdump -D => Mostra as redes disponíveis
-tcpdump -i <NOMEDAREDE> => monitora a rede
-tcpdump -i wlx8882790dce1e -w testeacp.tx => Monitora a rede e joga no arquivo testeacp.txt
-tcpdump -r testeacp.txt => Visualiza os dados no arquivo capturado.
-
-tcpdump -i enp0s3 port 6907 => Monitora a porta.
-tcpdump -i eth0 dst 64.233.186.121 and icmp   ==> Captura com condição AND
-** tcpdump -i enp0s3 -A port 6907  => -A Exibe o conteúdo do arquivo 
-
-iptraf   -> Interface gráfica texto para monitoramento da rede.
-nethogs  -> Monitora programas/tráfedo de rede
-
 ::Pacotes instalados-apt
 ------------------------
 |dpkg -l iptraf                            => Informações de Pacotes instalados (No caso informação do pacote iptraf)
@@ -421,16 +399,21 @@ vi /etc/ssh/sshd_config          => Edita o principal arquivo de configuração 
 /etc/init.d/ssh stop             => Pausa  o serviço ssh (sudo service ssh stop)(sudo systemctl ssh stop)
 /etc/init.d/ssh start            => Inicia o serviço ssh (sudo service ssh start)restart 
 sudo su|passwd root              => Definir senha root
+sudo passwd postgres             => estando logado com root, definir senha do usuário postgres
 netstat -tnpa | grep 'ESTABLISHED.*sshd' => ssh conectados
 ps auxwww | grep sshd:                   => ssh conectados
 ss | grep ssh                            => ssh conectados
 who -a                                   => ssh conectados
+w                                        => ssh conectados
 echo $SSH_CONNECTION                     => dados da minha conexao ssh
 
 ssh -L 8182:localhost:8069 root@45.82.72.139 => Túnel ssh normal -> colocando no browser do computador local "http://localhost:8182" é como se fizesse "http://45.82.72.139:8069"
 ssh -R 8012:127.0.0.1:8013 root@45.82.72.139 => Túnel ssh reverso -> se eu colocar no browse na internet http://45.82.72.139:8013 vai ser como se colocar no browse local http://127.0.0.1:8012
                                              => precisa ativar "GatewayPorts yes" no servidor(45.82.72.139) conforme link https://tiparaleigo.wordpress.com/2019/02/15/como-usar-o-tunel-reverse-ssh-para-permitir-conexoes-externas-ao-seu-pc/
 
+
+fail2ban-client status sshd => Lista ips banidos para conexão ssh
+fail2ban-client set sshd unbanip SEU_IP => desbaanir IP do ssh
 
 
 mais detalhes em https://www.vivaolinux.com.br/dica/Instalando-e-configurando-servidor-SSH-(Ubuntu)
@@ -654,10 +637,13 @@ sudo sh ./VBoxLinuxAdditions*.run
 observação: Teve uma versão que tive que executar o run.sh
 
 ::Correção de bug quando área cópia da área de trabalho para de funcionar(Reiniciar "VBoxClient --clipboard"):
+
+
 kill -9 `ps aux | grep "VBoxClient --clipboard" | grep -Fv "grep" | awk '{print $2}'`; /usr/bin/VBoxClient --clipboard
-
-
 reiniciar e ativar área de trabalho bi-direcional
+
+vboxmanage clonehd NOME_MAQUINA.vdi DESTINO.vd --format raw
+
 FIM==================================================================================
 
 
@@ -758,8 +744,9 @@ bash: cd: sf_home_host/: Permissão negada
 mateus@mateus-VirtualBox:/media$ 
 => reiniciar
 
-::OracleVm - Virtual Box - Alterar o tamanho do hd. O Exemplo abaixo aumenta para 15 GB
+::OracleVm - Virtual Box - Alterar/Extender o tamanho do hd. O Exemplo abaixo aumenta para 15 GB
 =======================================================================================
+#aumentar tamanho do hd#extender
 vboxmanage modifyhd "ubuntu 18.04 Odoo 12.vdi" --resize 15000
 
 ::Máquina atual do odoo - ubuntu 18.04 Odoo Marcos
@@ -768,6 +755,18 @@ vboxmanage modifyhd "ubuntu 18.04 Odoo Marcos.vdi" --resize 120000
 
 obs: Depois de executar este comando é necessário atualizar o tamnho do hd dentro do sistema operacional
      No Ubuntu existe no utilitário "Discos" a opção "Redimensionar"
+     
+::Redimensionar partição no debian (Linha de comando) com gparted
+--em construção. parece que uma boa alternativa é o parted
+--tem este link para verificar https://www.youtube.com/watch?v=vbZsrXoNZXI
+--outro link https://www.youtube.com/watch?v=ongzLswB_mc&t=98s
+
+
+::1. gerar  arquivo qcow2(.iso)
+-------------------------------
+#qcow2 é um arquivo de imagem assim como o .iso. Utilzado por exemplo pelo contabo
+qemu-img convert -f vdi -O qcow2 "/media/mateus/fb5e81a4-7c10-4097-84d3-23f96c233640/proxmox/oracle_vm/debian Odoo 16/Snapshots/debian odoo 16/debian odoo 16.vdi" "/media/mateus/fb5e81a4-7c10-4097-84d3-23f96c233640/proxmox/oracle_vm/debian Odoo 16/Snapshots/debian odoo 16/debian_odoo_16_image_contabo.qcow2"
+
 
 
 
@@ -918,6 +917,9 @@ timedatectl set-timezone "America/Sao_Paulo"   ==>> altera o timezone do linux.
 ::iftop
 =======
 
+::fdisk
+=======
+fdisk -l => Lista partições e tamanhos
 
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -949,4 +951,75 @@ root@mateusonunes:/var/log#
 
 ::sequência de comandos-fim
 <<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+::rede-network
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+::arquivos da rede:
+nano /etc/network/interfaces
+nano /etc/resolv.conf
+nano /etc/hostname
+nano /etc/hosts
+-------------------
+
+nmtui => utilitário para configurar a rede -  sudo apt-get install network-manager  - https://ioflood.com/blog/install-nmtui-command-linux/#:~:text=For%20Debian%2Dbased%20distributions%20like,sudo%20yum%20install%20NetworkManager%2Dtui%20.&text=This%20is%20just%20a%20basic,installing%20and%20using%20'nmtui'.
+sudo /etc/init.d/networking restart
+ifup <instarface> => subir interface 
+ifdown <instarface> => desligar interface 
+systemctl status networking.service
+dhclient <interface/vazio> => renova dhcp
+ROUTE => informações da tabela de roteamento do kernel
+traceroute google.com
+mtr google.com
+netstat -n => conexões abertas na maquina
+netstat -i  => informações da interface
+dig gogole.com => informações do DNS
+nlslookup gogole.com  => informações do DNS
+ethtool => Informações/estatísticas da interface
+iwconfig => informações da placa de rede
+
+::ifconfig
+ifconfig eth0 down/ip => ativa/desativa
+
+::tcpdump
+tcpdump -i ens18 port 80  => Monitorar(escutar) porta 80
+
+sudo tcpdump icmp => Monitorar ping
+
+
+
+
+escanear portas-informações de portas abertas - dicas daqui: https://www.youtube.com/watch?v=UY0f7cs5GpU
+=============================================
+nmap IP    => Mapear as portas abertas em um IP 
+nmap -p 1-65535 localhost  => Mapear as portas abertas em um IP - da porta 1 a 65535
+nmap -sV -p 1-65535 localhost  => Mapear as portas abertas em um IP - da porta 1 a 65535 e Mostra mais detalhes dos serviços desta porta.
+
+netstat -nlptu | grep 6907 => Informações locais de uma porta
+netstat -nlptu | grep -i "dotnet"=> Servicos dotnet
+netstat -nlptu
+netstat -lntp  => mostra porta abertas
+ 
+
+lsof -i :6907 => Informações de arquivos abertos (No exemplo, informações de arquivos abertos na porta 6907)
+
+
+
+tcpdump -D => Mostra as redes disponíveis
+tcpdump -i <NOMEDAREDE> => monitora a rede
+tcpdump -i wlx8882790dce1e -w testeacp.tx => Monitora a rede e joga no arquivo testeacp.txt
+tcpdump -r testeacp.txt => Visualiza os dados no arquivo capturado.
+
+tcpdump -i enp0s3 port 6907 => Monitora a porta.
+tcpdump -i eth0 dst 64.233.186.121 and icmp   ==> Captura com condição AND
+** tcpdump -i enp0s3 -A port 6907  => -A Exibe o conteúdo do arquivo 
+
+iptraf   -> Interface gráfica texto para monitoramento da rede.
+nethogs  -> Monitora programas/tráfedo de rede
+
+::iptables
+==========
+
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 

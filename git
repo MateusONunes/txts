@@ -23,6 +23,7 @@ git show => exibe a diferença do local (Que já foi commitado) e do repositóri
 git config core.fileMode false => remover comparação de acordo com o atributo do arquivo (se o arquivo foi alterado por chmod)
 git commit --ammend => Alterar/Imendar o conteúdo atual com o último conteúdo que está no repositório
 git rebase -i HEAD~4 => Juntar os últimos 4 commits
+git clone --depth 1 https://github.com/user/repo.git => últimos commits
 
 ::Credenciais:
 git config --global user.name "MateusONunes"
