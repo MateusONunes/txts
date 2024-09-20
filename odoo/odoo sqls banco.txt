@@ -1,0 +1,6 @@
+--Descobrir o arquivo físico de uma view (12)
+==============================================
+select arch_fs
+  from ir_ui_view i
+ where i.name ilike '%project.task.search.form%'
+    or i.name ilike '%account.invoice.select%'

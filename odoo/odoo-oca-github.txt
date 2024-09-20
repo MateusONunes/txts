@@ -1,0 +1,22 @@
+pre-commit run --all-files
+
+pre-commit run -a => Pré commit antes de enviar para o github
+
+
+::Sequência de comandos para complementar o último commit (mesmo que esteja já no github):
+
+git commit --ammend => Este comando não deu muito certo, acabei utilizando o ammend da interface do pycharm
+git push --force => Depois do ammend é necessário dar o force
+
+
+git rebase -i HEAD~4
+
+
+
+Ah, o git ammend ele muda o seu histórico, então na hora de dar push tem que ser com —force
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+:: Cherry Pick - https://www.youtube.com/watch?v=Wi1vdL57gd0
+- Copia um commit para o local
+

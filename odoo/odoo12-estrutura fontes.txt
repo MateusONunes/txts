@@ -1,0 +1,4 @@
+::odoo/odoo/addons/base/models/ir_ui_view.py._compute_arch-fullpath = get_resource_path(*view.arch_fs.split('/'))
+
+=> Nesta linha a variável fullpath retorna a localização do arquivo xml
+=> fazer search por "def _compute_arch(self)"

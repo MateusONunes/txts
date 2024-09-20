@@ -1,0 +1,47 @@
+::Adcionar ngnix para Odoo
+
+
+
+
+::tentativa 1:
+==============
+link: https://www.cybrosys.com/blog/how-to-configure-odoo-with-nginx-as-reverse-proxy
+
+::verificar se possui apache rodando:
+-------------------------------------
+systemctl stop apache2
+
+
+sudo apt-get purge apache2*
+
+sudo apt autoremove
+
+::instalar ngnix
+----------------
+
+sudo apt-get update
+
+sudo apt-get install nginx
+
+sudo service nginx start
+
+::odoo.conf - apontar odoo para ngnix (Ao menos deveria ser isto mas o odoo continuou funcionando com o ngnix parado (P )
+-------------------------------------------------------------------------------------------------------------------------
+
+xmlrpc_interface=127.0.0.1
+interface_netrpc = 127.0.0.1
+proxy_mode=True
+
+::configurações do ngnix
+------------------------
+/etc/nginx/sites-enabled/default
+
+================================================================================================================================================================================================
+
+::tentativa 2
+=============
+https://medium.com/@karan.bk/configure-odoo-with-nginx-as-a-reverse-proxy-9b758056de66
+
+
+
+

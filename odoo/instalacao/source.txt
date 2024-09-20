@@ -1,0 +1,89 @@
+instalação conforme link: https://www.odoo.com/documentation/16.0/administration/on_premise/source.html
+
+
+##rascunho##
+
+
+git clone --depth 1 https://github.com/odoo/odoo.git -b 16.0
+
+após instalação
+
+python odoo/odoo-bin -c <path-to-config> -d <database-name> -s --stop-after-init 
+
+
+
+::Após finalização:
+===================
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+sudo adduser --system --home=/opt/odoo --group odoo --shell=/bin/bash
+sudo adduser --system --quiet --shell=/bin/bash --home=$OE_HOME --gecos 'ODOO' --group $OE_USER            ###ESTE EU NÃO UTILIZEI
+
+sudo su - postgres
+
+createuser odoo -U postgres -dRSP password:p0stgr35123123
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+gerar serviço: https://www.odoo.com/pt_BR/forum/ajuda-1/how-to-create-a-simple-startup-service-for-service-odoo-server-start-200479
+
+
+sudo nano /etc/systemd/system/odoo.service
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[Unit]
+Description=Odoo16
+Requires=postgresql.service
+After=network.target postgresql.service
+[Service]
+Type=simple
+SyslogIdentifier=odoo16
+PermissionsStartOnly=true
+User=root
+Group=root
+ExecStart=/usr/bin/python3.11 /usr/lib/python3/dist-packages/odoo/16.0/odoo-bin -c /usr/lib/python3/dist-packages/odoo/16.0/odoo.conf --logfile /var/log/odoo/odoo-server.log 
+StandardOutput=journal+console
+Restart=always
+[Install]
+WantedBy=multi-user.target
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+#copiar as permissões de odoo-bin para odoo.conf
+chmod --reference=odoo-bin odoo.conf
+
+sudo systemctl daemon-reload
+
+#Iniciar o serviço e habilitar na inicialização
+sudo systemctl enable --now odoo    
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+gerar arquivo config
+python3 odoo-bin -c /usr/lib/python3/dist-packages/odoo/16.0/odoo.conf -d db_teste1 -s --stop-after-init 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+links adcionais:
+add sudo debian
+https://blog.rosnertech.com.br/arquivos/937
+
+
+-outro link de instalação 
+https://gist.github.com/sourabh-upadhyay/d266ae96d3d34fcc58caf6df31969d0b
+
+
+
+
+
+
+
+
+
+
