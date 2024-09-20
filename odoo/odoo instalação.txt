@@ -4,3 +4,30 @@ git clone https://github.com/odoo/odoo -b 12.0
 https://www.odoo.com/ro_RO/forum/suport-1/odoo-worker-number-calculation-for-multiprocessing-172597
 
 -------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+::Formas de instalar o odoo(dockers container, isos, etc):
+============================
+- Oficial odoo docs install: https://www.odoo.com/documentation/14.0/administration/install.html
+- doodba (Tecnativa) - https://github.com/Tecnativa/doodba
+  https://www.youtube.com/watch?v=PDoogefKiSw
+  https://github.com/Escodoo/escodoo.github.io/wiki/Doodba
+  
+- Dockker.com
+  https://hub.docker.com/_/odoo
+  
+- docky (Akretion) - https://github.com/akretion/docky-odoo-brasil
+- odoo.sh
+- turnkey - https://www.turnkeylinux.org/updates/new-turnkey-odoo-version-160
+
+- Instalção do Odoo pelo link enviado pelo Marcos (Akademy) https://academy.kmee.com.br/documentacao/html/2-install-manage/install.html
+
+
+- Vídeo da KME https://www.youtube.com/watch?v=DREyOqM_6K0
+
+- Links enviado pelo Tiago Rigo 1: https://www.howtoforge.com/how-to-install-odoo-16-on-ubuntu-22-04/
+
+- Links enviado pelo Tiago Rigo 2: https://www.cybrosys.com/blog/how-to-install-odoo-16-on-ubuntu-2004-lts
+=================
+
