@@ -1,3 +1,5 @@
+--Alternativa 1
+===============
 drop table if exists demo;
 
 CREATE TABLE demo(t text);
@@ -5,6 +7,28 @@ CREATE TABLE demo(t text);
 COPY demo from '/file_path_utf8.TXT';
 
 alter table demo add column line serial
+
+SELECT * FROM demo;
+
+
+--Alternativa 2
+===============
+
+
+drop table if exists demo;
+
+CREATE TABLE demo(t text, line serial);
+insert into demo(t)
+SELECT unnest(string_to_array(
+'Linha 1
+Linha 2
+Linha 3
+Linha 4
+Linha 5
+Linha 6
+Linha 7'
+, E'\n'));
+
 
 SELECT * FROM demo;
 

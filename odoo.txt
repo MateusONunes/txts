@@ -114,5 +114,68 @@ ver todos os atalhos => Alt+Shift no odoo 12 - Alt no odoo 14
 ::Assets não carregam - css não carregam. Uma maneira é forçar a recriação dos assets:
 DELETE FROM ir_attachment WHERE name ilike '%assets%';
 
+----------------------------------------------------
+
+#Console do odoo
+./odoo-bin shell -d nome_do_banco
+
+::Ver addons_path carregado via console do odoo
+===============================================
+>>**
+
+>>>>>>
+import odoo.tools.config
+print(odoo.tools.config.options['addons_path'])
+<<<<<<
+#alternativa 2
+>>>>
+import odoo
+odoo.addons.__path__
+<<<<
+
+<<**
+
+
+
+::Path da view - Caminho da view
+===============================================
+select v.arch_fs, v.* from ir_ui_view v
+
+
+::Busca avançada - Localizar arquivos que contenham o texto "_name = 'res.partner'" e o texto "company_id = fields.Many2one"
+============================================================================================================================
+
+grep -rl "= 'res.partner'" --include="*.py" ./ | xargs grep -l 'company_id = fields.Many2one'
+# também foi testado o aplicativo searchmonkey
+
+
+::Busca avançada - Contendo na mesma linha a string "context" e "Many2one"
+==========================================================================
+grep -E 'context.*Many2one|Many2one.*context' --include="*.py" -r ./
+
+
+
+::Componentes criar
+===================
+
+-Search individualizado. Exemplo, campo para buscar por nome diretamente
+
+
+::Cache java script-Recarregar
+==============================
+**Funcionou:
+  * Abrir o DevTools, ir até a aba Network e marcar a opção Disable cache.
+  * Firefox: Ctrl + Shift + R (Recarrega java script)
+  * Chome: Ctrl + Shift + R ou Ctrl + F5 (Recarrega java script)
+  
+**não funcionou(porém interessante, tentar novamente) :
+  * odoo-bin --dev assets
+  
+Outras sugestões:
+self.env["ir.qweb"].clear_caches()  
+  
+  
+  
+
 
 

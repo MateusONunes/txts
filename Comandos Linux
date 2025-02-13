@@ -32,7 +32,7 @@ cat     => ver o conteúdo de um arquivo
 less    => ver o conteúdo de um arquivo um pouco diferente do cat
         => o less serve para pausar na tela quando toda preenchida. exemplo: ls | less
 tail    => ver o conteúdo de um arquivo - últimas   10 linhas "tail -n2 <Nome_arquivo>" => últimas   2 linhas
-tail -f => Deveria ficar monitorando o arquivo
+tail -f  => Monitorar o arquivo
 multitail *.log => Monitora todos os arquivos .log da pasta
 head    => ver o conteúdo de um arquivo - primeiras 10 linhas "head -n2 <Nome_arquivo>" => primeiras 2 linhas
 sudo update-alternatives --config java  => |

@@ -38,6 +38,13 @@ sudo lsof -n -u postgres |grep LISTEN => Verificar portas de escuta do postgres
 Linguagens instalaladas:SELECT * FROM pg_language;
 
 
+::Usuário
+=========
+Criiar => CREATE USER nome_do_usuario WITH PASSWORD 'sua_senha';
+previlégios > GRANT ALL PRIVILEGES ON DATABASE nome_do_banco TO nome_do_usuario;
+
+
+
 ::Importar um dump.sql
 ======================
 Create database NovoBanco;
@@ -47,6 +54,9 @@ psql NovoBanco < ArquivoDump.Sql
 ======================
 pg_dump <NomeDoBanco > <ArquivoDestino>
 pg_dump agrotec_prod > bck.sql    ==> Gerei o Dump do banco de dados "agrotec_prod" para o arquivo "bck.sql"
+
+pg_dump --format=c --no-owner -U odoo17 -p 5432 -h localhost -d vex2con -W > /tmp/vex2con.dump => Exemplo utilizado por vex2con
+
 
 ::Sqls
 ======
@@ -294,9 +304,60 @@ set time zone 'America/Sao_Paulo' => altera o time zone da SESSÃO
 SELECT * FROM pg_timezone_names where name ilike '%paulo%'; => listas dos timezones
 
 ------------------------------------------------------------------------------------------------------------
-Rest Api no postgres
+::Rest Api no postgres:
+=======================
 
-https://hevodata.com/learn/postgresql-rest-api/
+https://github.com/pramsey/pgsql-http
+
+--#Verificar extensões existentes no postgres
+select *
+  from pg_catalog.pg_available_extensions e
+ where true 
+   and name = 'http'
+   and installed_version  is not null
+
+
+#Instalar extensão no linux:
+apt install postgresql-14-http
+
+
+--#Verificar extensões existentes no postgres
+select *
+  from pg_catalog.pg_available_extensions e
+ where true 
+   and name = 'http'
+   and installed_version  is not null
+
+
+--#Criar a extensão no postgres:
+create extension http;
+
+
+--#Exemplo de uso:
+SELECT status, content_type
+  FROM http_get('http://httpbun.com/');
+
+
+--#Outro exemplo:
+select round((vals->>1)::numeric, 2) val1,
+       round((vals->>2)::numeric, 2) val2,
+       vals
+  from (SELECT json_array_elements(content::json) vals
+          FROM http_get('https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=1m&limit=5000')
+       ) t;
+
+--#Outro exemplo com cabeçalho na api:
+
+SELECT content::json->'headers'->>'Authorization'
+  FROM http((
+          'GET',
+           'http://httpbun.com/headers',
+           ARRAY[http_header('Authorization','Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9')],
+           NULL,
+           NULL
+        )::http_request);
+
+
 ------------------------------------------------------------------------------------------------------------
 ::orafce - funções do oracle - exemplo:decode
 
