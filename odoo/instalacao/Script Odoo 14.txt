@@ -1,0 +1,77 @@
+#!/bin/bash
+
+# Variáveis
+ODOO_VERSION=14.0
+ODOO_USER=odoo14
+ODOO_HOME=/opt/$ODOO_USER
+ODOO_PORT=8069
+
+# Atualizar sistema
+apt update && apt upgrade -y
+
+# Instalar dependências básicas
+apt install -y git python3-pip build-essential wget python3-dev \
+    python3-venv libxslt-dev libzip-dev libldap2-dev libsasl2-dev \
+    libpq-dev libxml2-dev libjpeg-dev libjpeg8-dev liblcms2-dev \
+    libblas-dev libatlas-base-dev libssl-dev libffi-dev \
+    libmysqlclient-dev libjpeg8-dev libtiff5-dev libopenjp2-7 \
+    zlib1g-dev libfreetype6-dev libharfbuzz-dev libfribidi-dev \
+    libwebp-dev node-less libpq-dev
+
+# Instalar e configurar PostgreSQL
+apt install -y postgresql
+sudo -u postgres createuser -s $ODOO_USER
+
+# Criar usuário do sistema
+adduser --system --home=$ODOO_HOME --group $ODOO_USER
+
+# Criar diretório do Odoo
+mkdir -p $ODOO_HOME
+chown $ODOO_USER:$ODOO_USER $ODOO_HOME
+
+# Baixar código do Odoo
+cd $ODOO_HOME
+sudo -u $ODOO_USER git clone https://www.github.com/odoo/odoo --depth 1 --branch $ODOO_VERSION --single-branch .
+
+# Criar ambiente virtual
+sudo -u $ODOO_USER python3 -m venv $ODOO_HOME/venv
+
+# Ativar ambiente virtual e instalar dependências
+sudo -u $ODOO_USER $ODOO_HOME/venv/bin/pip install wheel
+sudo -u $ODOO_USER $ODOO_HOME/venv/bin/pip install -r requirements.txt
+
+# Instalar Node.js e rtlcss (para assets)
+curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
+apt install -y nodejs
+npm install -g rtlcss
+
+# Criar diretório para addons customizados
+mkdir -p $ODOO_HOME/custom_addons
+chown $ODOO_USER:$ODOO_USER $ODOO_HOME/custom_addons
+
+# Criar arquivo de configuração
+cat <<EOF > /etc/${ODOO_USER}.conf
+[options]
+; Admin password for the database
+admin_passwd = admin
+db_host = False
+db_port = False
+db_user = $ODOO_USER
+db_password = False
+addons_path = $ODOO_HOME/addons,$ODOO_HOME/custom_addons
+logfile = /var/log/${ODOO_USER}.log
+xmlrpc_port = $ODOO_PORT
+EOF
+
+chown $ODOO_USER:$ODOO_USER /etc/${ODOO_USER}.conf
+
+# Criar script de execução
+cat <<EOF > /usr/local/bin/start-odoo14
+#!/bin/bash
+sudo -u $ODOO_USER $ODOO_HOME/venv/bin/python3 $ODOO_HOME/odoo-bin -c /etc/${ODOO_USER}.conf
+EOF
+
+chmod +x /usr/local/bin/start-odoo14
+
+echo "✅ Instalação concluída. Use 'start-odoo14' para iniciar o Odoo 14."
+
