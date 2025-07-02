@@ -161,6 +161,11 @@ grep -E 'context.*Many2one|Many2one.*context' --include="*.py" -r ./
 -Search individualizado. Exemplo, campo para buscar por nome diretamente
 
 
+-ferramentas dev
+-opção para exibir o nome do campo na página ao invés de exibir a label 
+-exibir no info o id da view (/odoo17/enterprise/odoo/addons/web/static/src/core/tooltip/tooltip_service.js)
+
+
 ::Cache java script-Recarregar
 ==============================
 **Funcionou:
